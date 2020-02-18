@@ -22,7 +22,7 @@ namespace Game1
             this.position = new Vector2(0);
             this.Speed = 7; /*Changeable */
             this.tolerance = 5;
-            sprite = SpriteFactory.Instance.GetWandWaveDown(this);
+            sprite = SpriteFactory.Instance.GetBoomerangDown(this);
         }
         public int Size { get; set; }
         public int Speed { get; set; }

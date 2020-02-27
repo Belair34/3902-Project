@@ -48,6 +48,12 @@ namespace Game1
         {
 
         }
+
+        void PlayerCollision(ICollidable player)
+        {
+            player.ItemCollision(this);
+        }
+
         public void Update()
         {
             sprite.Update();
@@ -58,6 +64,41 @@ namespace Game1
         {
 
             sprite.Draw(spriteBatch);
+        }
+
+        public void CheckCollisions(ICollidable collidable)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        void ICollidable.PlayerCollision(ICollidable collidable)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void EnemyCollision(ICollidable collidable)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ProjectileCollision(ICollidable collidable)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ItemCollision(ICollidable collidable)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void BlockCollision(ICollidable collidable)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void BorderCollision()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

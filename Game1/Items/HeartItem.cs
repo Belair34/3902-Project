@@ -49,11 +49,6 @@ namespace Game1
 
         }
 
-        void PlayerCollision(ICollidable player)
-        {
-            player.ItemCollision(this);
-        }
-
         public void Update()
         {
             sprite.Update();
@@ -64,6 +59,16 @@ namespace Game1
         {
 
             sprite.Draw(spriteBatch);
+        }
+
+        void PlayerCollision(ICollidable collidable)
+        {
+            IPlayer player = (IPlayer)collidable;
+            IInventory inventory = player.GetInventory();
+            if (inventory.Health < inventory.MaxHealth)
+            {
+                inventory.Health += 2;
+            }
         }
 
         public void CheckCollisions(ICollidable collidable)

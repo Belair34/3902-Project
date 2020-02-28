@@ -68,7 +68,7 @@ namespace Game1
 
         public void PlayerCollision(ICollidable collidable)
         {
-            throw new System.NotImplementedException();
+            ((IPlayer)collidable).GetInventory().Arrows++;
         }
 
         public void EnemyCollision(ICollidable collidable)

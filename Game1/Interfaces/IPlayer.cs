@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 namespace Game1 {
-    public interface IPlayer
+    public interface IPlayer: ICollidable
     {
         int Speed { get; set; }
         int Size{ get; set;}

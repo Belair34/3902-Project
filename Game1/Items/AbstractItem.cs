@@ -7,11 +7,11 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    public class AbstractItem : IItems
+    public abstract class AbstractItem : IItems
     {
-        private Vector2 position;
-        private Vector2 Boundary;
-        ISprite sprite;
+        internal Vector2 position;
+        internal Vector2 boundary;
+        internal ISprite sprite;
 
         public int Size { get; set; }
 
@@ -27,7 +27,7 @@ namespace Game1
         }
         public Vector2 GetBoundary()
         {
-            return Boundary;
+            return boundary;
         }
         public void Stop()
         {
@@ -35,13 +35,11 @@ namespace Game1
         }
         public void Update()
         {
-                sprite.Update();
-
+            sprite.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
             sprite.Draw(spriteBatch);
         }
 

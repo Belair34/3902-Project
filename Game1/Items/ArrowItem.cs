@@ -9,23 +9,19 @@ namespace Game1
 {
     public class ArrowItem : AbstractItem, IItems
     {
-        private Vector2 position;
-        private Vector2 Boundary;
-        ISprite sprite;
-
         public ArrowItem(int x, int y, GraphicsDevice window)
         {           
             /*Changeable*/
-            this.Size = 3;      
+            base.Size = 3;      
 
-            this.position = new Vector2();
-            this.position.X = x;
-            this.position.Y = y;
-            this.sprite = SpriteFactoryItems.Instance.GetArrow(this);
+            base.position = new Vector2();
+            base.position.X = x;
+            base.position.Y = y;
+            base.sprite = SpriteFactoryItems.Instance.GetArrow(this);
 
-            this.Boundary = new Vector2();
-            this.Boundary.X = window.Viewport.Width;
-            this.Boundary.Y = window.Viewport.Height;
+            base.boundary = new Vector2();
+            base.boundary.X = window.Viewport.Width;
+            base.boundary.Y = window.Viewport.Height;
              /*Items*/
         }
 

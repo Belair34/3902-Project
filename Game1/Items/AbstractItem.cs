@@ -72,5 +72,7 @@ namespace Game1
         {
             //default implentation: do nothing
         }
+
+        public abstract void PlayerCollision(ICollidable collidable);
     }
 }

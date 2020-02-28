@@ -25,7 +25,7 @@ namespace Game1
              /*Items*/
         }
 
-        public void PlayerCollision(ICollidable collidable)
+        public override void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().Arrows++;
         }

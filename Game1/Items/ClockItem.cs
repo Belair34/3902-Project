@@ -67,7 +67,7 @@ namespace Game1
 
         public void PlayerCollision(ICollidable collidable)
         {
-            throw new System.NotImplementedException();
+            //freeze all enemies on a cooldown timer. How to do this?
         }
 
         public void EnemyCollision(ICollidable collidable)

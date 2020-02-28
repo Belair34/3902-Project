@@ -24,6 +24,7 @@ namespace Game1
         public int HaveBow { get; set; }
         public int HaveBlueRing { get; set; }
         public int HaveWand { get; set; }
+        public int HaveSword { get; set; }
         IPlayer player;
         ICommand slotB;
 

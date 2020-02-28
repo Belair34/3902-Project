@@ -9,7 +9,7 @@ namespace Game1
     class BoomerangSprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int BoomerangSrcWidth = 5;
         int BoomerangSrcHeight = 10;
         int BoomerangDestWidth = 5;
@@ -17,7 +17,7 @@ namespace Game1
         int BoomerangSrcX = 0;
         int BoomerangSrcY = 111;
 
-        public BoomerangSprite(IItems item, Texture2D texture)
+        public BoomerangSprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

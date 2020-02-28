@@ -9,7 +9,7 @@ namespace Game1
     class HeartSprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int HeartSrcWidth = 15;
         int HeartSrcHeight = 15;
         int HeartDestWidth = 15;
@@ -17,7 +17,7 @@ namespace Game1
         int HeartSrcX = 300;
         int HeartSrcY = 195;
 
-        public HeartSprite(IItems item, Texture2D texture)
+        public HeartSprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

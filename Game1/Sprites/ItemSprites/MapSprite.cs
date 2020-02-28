@@ -9,7 +9,7 @@ namespace Game1
     class MapSprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int MapSrcWidth = 10;
         int MapSrcHeight = 20;
         int MapDestWidth = 10;
@@ -17,7 +17,7 @@ namespace Game1
         int MapSrcX = 272;
         int MapSrcY = 253;
 
-        public MapSprite(IItems item, Texture2D texture)
+        public MapSprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

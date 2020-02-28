@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    public abstract class AbstractItem : IItems
+    public abstract class AbstractItem : IItem
     {
         internal Vector2 position;
         internal Vector2 boundary;
@@ -46,11 +46,6 @@ namespace Game1
         public void CheckCollisions(ICollidable collidable)
         {
             throw new System.NotImplementedException();
-        }
-
-        public void PlayerCollision(ICollidable collidable)
-        {
-            //default implentation: do nothing
         }
 
         public void EnemyCollision(ICollidable collidable)

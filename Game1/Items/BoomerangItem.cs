@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    public class BoomerangItem : AbstractItem, IItems
+    public class BoomerangItem : AbstractItem, IItem
     {
 
         public BoomerangItem(int x, int y, GraphicsDevice window)

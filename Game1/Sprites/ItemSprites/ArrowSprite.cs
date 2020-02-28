@@ -9,7 +9,7 @@ namespace Game1
     class ArrowSprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int arrowSrcWidth = 15;
         int arrowSrcHeight = 15;
         int arrowDestWidth = 15;
@@ -17,7 +17,7 @@ namespace Game1
         int arrowSrcX = 181;
         int arrowSrcY = 195;
 
-        public ArrowSprite(IItems item, Texture2D texture)
+        public ArrowSprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

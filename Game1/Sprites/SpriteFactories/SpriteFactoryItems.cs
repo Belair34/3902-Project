@@ -28,53 +28,53 @@ namespace Game1
             altLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/AltLinkSheet");
         }
 
-        public ISprite GetArrow(IItems item)
+        public ISprite GetArrow(IItem item)
         {
             return new ArrowSprite(item,linkSheet);
         }
         
-        public ISprite GetBomb(IItems item)
+        public ISprite GetBomb(IItem item)
         {
             return new BombSprite(item,linkSheet);
         }
         
-        public ISprite GetBoomerang(IItems item)
+        public ISprite GetBoomerang(IItem item)
         {
             return new BoomerangSprite(item,altLinkSheet);
         }
 
-        public ISprite GetBow(IItems item)
+        public ISprite GetBow(IItem item)
         {
             return new BowSprite(item, linkSheet);
         }
 
-        public ISprite GetClock(IItems item)
+        public ISprite GetClock(IItem item)
         {
             return new ClockSprite(item, linkSheet);
         }
-        public ISprite GetHeart(IItems item)
+        public ISprite GetHeart(IItem item)
         {
             return new HeartSprite(item, linkSheet);
         }
 
-        public ISprite GetKey(IItems item)
+        public ISprite GetKey(IItem item)
         {
             return new KeySprite(item,linkSheet);
         }
 
-        public ISprite GetRupee(IItems item)
+        public ISprite GetRupee(IItem item)
         {
             return new RupeeSprite(item,linkSheet);
         }
-        public ISprite GetFlashingRupee(IItems item)
+        public ISprite GetFlashingRupee(IItem item)
         {
             return new FlashingRupeeSprite(item, linkSheet);
         }
-        public ISprite GetMap(IItems item)
+        public ISprite GetMap(IItem item)
         {
             return new MapSprite(item, linkSheet);
         }
-        public ISprite GetSword(IItems item)
+        public ISprite GetSword(IItem item)
         {
             return new SwordSprite(item, linkSheet);
         }

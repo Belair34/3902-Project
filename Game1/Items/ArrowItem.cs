@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    public class ArrowItem : AbstractItem, IItems
+    public class ArrowItem : AbstractItem, IItem
     {
         public ArrowItem(int x, int y, GraphicsDevice window)
         {           
@@ -25,7 +25,7 @@ namespace Game1
              /*Items*/
         }
 
-        new public void PlayerCollision(ICollidable collidable)
+        public void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().Arrows++;
         }

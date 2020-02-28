@@ -9,7 +9,7 @@ namespace Game1
     class ClockSprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int ClockSrcWidth = 12;
         int ClockSrcHeight = 20;
         int ClockDestWidth = 12;
@@ -17,7 +17,7 @@ namespace Game1
         int ClockSrcX = 391;
         int ClockSrcY = 163;
 
-        public ClockSprite(IItems item, Texture2D texture)
+        public ClockSprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

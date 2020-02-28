@@ -14,12 +14,12 @@ namespace Game1
         Rectangle backgroundSrcRec;
         Rectangle backgroundDestRec;
         //SpriteFont text;
-        public Stack<IItems> items1;
-        public Stack<IItems> items2;
+        public Stack<IItem> items1;
+        public Stack<IItem> items2;
         List<IController> controllers;
         IPlayer player;
         IEnemy enemy;
-        IItems item;
+        IItem item;
         private Texture2D background;
 
 
@@ -38,7 +38,7 @@ namespace Game1
         {
             return this.player;
         }
-        public IItems GetItem()
+        public IItem GetItem()
         {
             return this.item;
         }
@@ -64,8 +64,8 @@ namespace Game1
             controllers = new List<IController>();           /*Controllers*/
             controllers.Add(new KeyboardController(this));
             //push items onto stack for rotation
-            items1 = new Stack<IItems>();
-            items2 = new Stack<IItems>();
+            items1 = new Stack<IItem>();
+            items2 = new Stack<IItem>();
             items1.Push(new ArrowItem(150,150,GraphicsDevice));
             items1.Push(new BombItem(150, 150, GraphicsDevice));
             items1.Push(new RupeeItem(150, 150, GraphicsDevice));

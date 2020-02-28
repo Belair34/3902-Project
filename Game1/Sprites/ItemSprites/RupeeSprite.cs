@@ -9,7 +9,7 @@ namespace Game1
     class RupeeSprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int RupeeSrcWidth = 12;
         int RupeeSrcHeight = 20;
         int RupeeDestWidth = 12;
@@ -17,7 +17,7 @@ namespace Game1
         int RupeeSrcX = 271;
         int RupeeSrcY = 224;
 
-        public RupeeSprite(IItems item, Texture2D texture)
+        public RupeeSprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

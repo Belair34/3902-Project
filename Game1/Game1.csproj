@@ -65,6 +65,7 @@
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="Interfaces\IInventory.cs" />
     <Compile Include="EnemyDefault.cs" />
+    <Compile Include="Items\AbstractItem.cs" />
     <Compile Include="Items\BombItem.cs" />
     <Compile Include="Items\BoomerangItem.cs" />
     <Compile Include="Items\BowItem.cs" />

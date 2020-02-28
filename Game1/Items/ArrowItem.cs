@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    public class ArrowItem : IItems
+    public class ArrowItem : AbstractItem, IItems
     {
         private Vector2 position;
         private Vector2 Boundary;
@@ -29,71 +29,9 @@ namespace Game1
              /*Items*/
         }
 
-        public int Size { get; set; }
-
-        public void SetPosition(int x, int y)
-        {
-            this.position.X = x;
-            this.position.Y = y;
-        }
-
-        public Vector2 GetPosition()
-        {
-            return this.position;
-        }
-        public Vector2 GetBoundary()
-        {
-            return Boundary;
-        }
-        public void Stop()
-        {
-
-        }
-        public void Update()
-        {
-                sprite.Update();
-
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-
-            sprite.Draw(spriteBatch);
-        }
-
-        public void CheckCollisions(ICollidable collidable)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void PlayerCollision(ICollidable collidable)
+        new public void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().Arrows++;
-        }
-
-        public void EnemyCollision(ICollidable collidable)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void ProjectileCollision(ICollidable collidable)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void ItemCollision(ICollidable collidable)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void BlockCollision(ICollidable collidable)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void BorderCollision()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

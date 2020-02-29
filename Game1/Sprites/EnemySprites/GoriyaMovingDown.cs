@@ -9,24 +9,26 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1.EnemySprites
 {
-    class GoriyaDown : ISprite
+    class GoriyaMovingDown : ISprite
     {
-        Texture2D texture;
-        IEnemy enemy;
-        int srcWidth = 16;
-        int srcHeight = 16;
-        int destWidth = 13;
-        int destHeight = 13;
-        int srcX = 222; /*Change this*/
-        int srcY = 11;  /*and this*/
+        private Texture2D texture;
+        private IEnemy enemy;
+        private int srcWidth = 16;
+        private int srcHeight = 16;
+        private int destWidth = 16;
+        private int destHeight = 16;
+        private int srcX = 222; /*Change this*/
+        private int srcY = 11;  /*and this*/
+        private int moveSpeed;
 
 
-        public GoriyaDown(IEnemy enemy, Texture2D texture)
+        public GoriyaMovingDown(IEnemy enemy, Texture2D texture)
         {
             this.texture = texture;
             this.enemy = enemy;
-            this.destWidth *= enemy.Size;
-            this.destHeight *= enemy.Size;
+            moveSpeed = enemy.Speed;
+            destWidth *= enemy.Size;
+            destHeight *= enemy.Size;
         }
         public void Update()
         {

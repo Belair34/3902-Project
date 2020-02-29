@@ -139,7 +139,7 @@
     <Compile Include="Sprites\EnemySprites\GelIdleJump.cs" />
     <Compile Include="Sprites\EnemySprites\GelMovingHorizontal.cs" />
     <Compile Include="Sprites\EnemySprites\GelMovingVertical.cs" />
-    <Compile Include="Sprites\EnemySprites\GoriyaDown.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaMovingDown.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaLeft.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaRight.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaThrowRight.cs" />

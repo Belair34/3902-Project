@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="EnemyStates\EStateGoriyaDown.cs" />
+    <Compile Include="EnemyStates\EStateGoriyaMovingRandom.cs" />
     <Compile Include="Goriya.cs" />
     <Compile Include="Commands\InventoryCommands\BoomerangCommand.cs" />
     <Compile Include="Commands\InventoryCommands\WandCommand.cs" />

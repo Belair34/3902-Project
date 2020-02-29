@@ -61,7 +61,7 @@
 /processorParam:TextureFormat=Color
 /build:ProjectSpriteSheets/dungeon.png
 
-#begin ProjectSpriteSheets/ExplosionSheet.jpg
+#begin ProjectSpriteSheets/ExplosionSheet.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -71,7 +71,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:ProjectSpriteSheets/ExplosionSheet.jpg
+/build:ProjectSpriteSheets/ExplosionSheet.png
 
 #begin ProjectSpriteSheets/LinkSpriteSheet.png
 /importer:TextureImporter

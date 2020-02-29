@@ -8,16 +8,12 @@ namespace Game1.PlayerSprites
     {
         private Texture2D texture;
         private IPlayer player;
-        private int backgroundHeight = 176;
-        private float backgroundVerticalRatio;
         private int srcWidth = 15;
         private int srcHeight = 16;
         private int destWidth = 15;
         private int destHeight = 16;
         private int srcX = 60; /*Change this*/
         private int srcY = 30;  /*and this*/
-        private int spriteX;
-        private int spriteY;
         private int curFrame = 1;
         private int totalFrames = 2; /*Maybe this*/
         private int delay = 0;
@@ -30,16 +26,6 @@ namespace Game1.PlayerSprites
             this.moveSpeed = player.Speed;
             this.destWidth *= player.Size;
             this.destHeight *= player.Size;
-            this.backgroundVerticalRatio = (int)player.GetBoundary().Y / backgroundHeight;
-        }
-        public void calcPosition()
-        {
-            spriteX = (int)player.GetPosition().X;
-            spriteY = (int)player.GetPosition().Y - moveSpeed;
-            if(spriteY < 33 * backgroundVerticalRatio)
-            {
-                spriteY = (int)(33 * backgroundVerticalRatio);
-            }
         }
         public void Update()
         {
@@ -53,8 +39,7 @@ namespace Game1.PlayerSprites
                     curFrame = 1;
                 }
             }
-            calcPosition();
-            player.SetPosition(spriteX, spriteY); /*Change this*/
+            player.SetPosition((int)player.GetPosition().X, (int)player.GetPosition().Y-moveSpeed); /*Change this*/
         }
 
         public void Draw(SpriteBatch spriteBatch)

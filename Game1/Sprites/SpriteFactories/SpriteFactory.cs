@@ -32,7 +32,7 @@ namespace Game1
             linkSheet = content.Load<Texture2D>("ProjectSpriteSheets/LinkSpriteSheet");
             altLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/AltLinkSheet");
             enemyLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/Blade trap, Gel, Goriya, keese, stalfos, wall master");
-            //explosionSheet = content.Load<Texture2D>("ProjectSpriteSheets/");
+            explosionSheet = content.Load<Texture2D>("ProjectSpriteSheets/ExplosionSheet");
         }
 
         public ISprite GetLinkIdleDown(IPlayer player)
@@ -132,31 +132,42 @@ namespace Game1
         {
             return new ArrowDown(projectile, linkSheet);
         }
+
         public ISprite GetLinkArrowUp(IProjectile projectile)
         {
             return new ArrowUp(projectile, linkSheet);
         }
+
         public ISprite GetLinkArrowLeft(IProjectile projectile)
         {
             return new ArrowLeft(projectile, linkSheet);
         }
+
         public ISprite GetLinkArrowRight(IProjectile projectile)
         {
             return new ArrowRight(projectile, linkSheet);
+        }
+
+        public ISprite GetLinkArrowExplode(IProjectile projectile)
+        {
+            return new ArrowExplode(projectile, altLinkSheet);
         }
 
         public ISprite GetWandWaveDown(IProjectile projectile)
         {
             return new WandWaveDown(projectile, altLinkSheet);
         }
+
         public ISprite GetWandWaveUp(IProjectile projectile)
         {
             return new WandWaveUp(projectile, altLinkSheet);
         }
+
         public ISprite GetWandWaveLeft(IProjectile projectile)
         {
             return new WandWaveLeft(projectile, altLinkSheet);
         }
+
         public ISprite GetWandWaveRight(IProjectile projectile)
         {
             return new WandWaveRight(projectile, altLinkSheet);
@@ -166,23 +177,20 @@ namespace Game1
         {
             return new BoomerangDown(projectile, altLinkSheet);
         }
+
         public ISprite GetBoomerangUp(IProjectile projectile)
         {
             return new BoomerangUp(projectile, altLinkSheet);
         }
+
         public ISprite GetBoomerangLeft(IProjectile projectile)
         {
             return new BoomerangLeft(projectile, altLinkSheet);
         }
+
         public ISprite GetBoomerangRight(IProjectile projectile)
         {
             return new BoomerangRight(projectile, altLinkSheet);
-        }
-
-
-        public ISprite GetLinkArrowExplode(IProjectile projectile)
-        {
-            return new ArrowExplode(projectile, altLinkSheet);
         }
 
         public ISprite GetLinkSwordBeamDown(IProjectile projectile)
@@ -210,10 +218,11 @@ namespace Game1
             return new SwordExplode(projectile, linkSheet);
         }
 
-        public ISprite GetLinkBombDown(IProjectile projectile)
+        public ISprite GetLinkBomb(IProjectile projectile)
         {
-            return new BombDown(projectile, linkSheet);
+            return new Bomb(projectile, linkSheet);
         }
+
         public ISprite GetLinkBombExplode(IProjectile projectile)
         {
             return new BombExplode(projectile, explosionSheet);

@@ -6,7 +6,7 @@ using System;
 
 namespace Game1.ProjectileSprites
 {
-    class BombDown : ISprite
+    class Bomb : ISprite
     {
         private Texture2D texture;
         private IProjectile projectile;
@@ -18,13 +18,13 @@ namespace Game1.ProjectileSprites
         private int srcY = 225;
         private int timer;
 
-        public BombDown(IProjectile projectile, Texture2D texture)
+        public Bomb(IProjectile projectile, Texture2D texture)
         {
             this.texture = texture;
             this.projectile = projectile;
             this.destWidth *= projectile.Size;
             this.destHeight *= projectile.Size;
-            this.timer = 20;
+            this.timer = 45;
         }
         public void Update()
         {
@@ -38,7 +38,7 @@ namespace Game1.ProjectileSprites
         public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle arrowSrcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)projectile.GetPosition().X, (int)projectile.GetPosition().Y+15*projectile.Size, destWidth, destHeight);
+            Rectangle arrowDestRec = new Rectangle((int)projectile.GetPosition().X, (int)projectile.GetPosition().Y, destWidth, destHeight);
             spriteBatch.Begin();
             spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
             spriteBatch.End();

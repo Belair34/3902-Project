@@ -34,7 +34,7 @@ namespace Game1
             MaxHealth = 6;
             Rupees = 0;
             Keys = 0;
-            Bombs = 6;
+            Bombs = 10;
             Arrows = 10; //set to 4 for testing purposes. will be 0 eventually
             TriforceShards = 0;
             CandleUsed = 0;

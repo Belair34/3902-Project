@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Game1.PlayerStates;
+using System;
 
 namespace Game1
 {
@@ -26,7 +27,7 @@ namespace Game1
 			if (inventory.Bombs != 0)
 			{
 				IPlayerState pState;
-				/*switch (inventory.Direction)
+				switch (inventory.Direction)
 				{
 					case 0:
 						pState = new PStateShootingUp(player, new ProjLinkBombUp(player));
@@ -43,8 +44,7 @@ namespace Game1
 					default:
 						pState = new PStateShootingDown(player, new ProjLinkBombDown(player));
 						break;
-				}*/
-				pState = new PStateShootingDown(player, new ProjLinkBombDown(player));
+				}
 				player.SetState(pState);
 				inventory.Bombs--;
 			}

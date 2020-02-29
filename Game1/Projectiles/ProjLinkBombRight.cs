@@ -5,7 +5,7 @@ using System;
 
 namespace Game1
 {
-    class ProjLinkBombDown : IProjectile
+    class ProjLinkBombRight : IProjectile
     {
         bool shooting;
         bool exploding;
@@ -14,7 +14,7 @@ namespace Game1
         Vector2 position;
         int explodeTimer;
 
-        public ProjLinkBombDown(IPlayer player)
+        public ProjLinkBombRight(IPlayer player)
         {
             shooting = false;
             exploding = false;
@@ -42,7 +42,7 @@ namespace Game1
             { 
                 this.ShotDistance = 0;
                 this.position = player.GetPosition();
-                this.position.Y += 15 * Size;
+                this.position.X += 14 * Size;
             }
             shooting = true;
         }

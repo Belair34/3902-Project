@@ -17,6 +17,7 @@ namespace Game1.EnemySprites
         int curFrame = 1;
         int totalFrames = 2; /*Maybe this*/
         int delay = 0;
+
         public GelIdleJump(IEnemy enemy, Texture2D texture)
         {
             this.texture = texture;
@@ -24,6 +25,7 @@ namespace Game1.EnemySprites
             this.destWidth *= enemy.Size;
             this.destHeight *= enemy.Size;
         }
+
         public void Update()
         {
             delay++;

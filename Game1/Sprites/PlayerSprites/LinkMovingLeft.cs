@@ -8,20 +8,16 @@ namespace Game1.PlayerSprites
     {
         private Texture2D texture;
         private IPlayer player;
-        private int backgroundWidth = 256;
         private int srcWidth = 15;
         private int srcHeight = 16;
         private int destWidth = 15;
         private int destHeight = 16;
         private int srcX = 30; /*Change this*/
         private int srcY = 29;  /*and this*/
-        private int spriteX;
-        private int spriteY;
         private int curFrame = 1;
         private int totalFrames = 2; /*Maybe this*/
         private int delay = 0;
         private int moveSpeed;
-        private float backgroundHorizontalRatio;
 
         public LinkMovingLeft(IPlayer player, Texture2D texture)
         {
@@ -30,16 +26,6 @@ namespace Game1.PlayerSprites
             this.moveSpeed = player.Speed;
             this.destWidth *= player.Size;
             this.destHeight *= player.Size;
-            this.backgroundHorizontalRatio = (int)player.GetBoundary().X / backgroundWidth;
-        }
-        public void calcPosition()
-        {
-            spriteX = (int)player.GetPosition().X - moveSpeed;
-            spriteY = (int)player.GetPosition().Y;
-            if(spriteX < (290 * backgroundHorizontalRatio - 257 * backgroundHorizontalRatio))
-            {
-                spriteX = (int)(290 * backgroundHorizontalRatio - 257 * backgroundHorizontalRatio);
-            }
         }
         public void Update()
         {
@@ -53,8 +39,7 @@ namespace Game1.PlayerSprites
                     curFrame = 1;
                 }
             }
-            calcPosition();
-            player.SetPosition(spriteX, spriteY); /*Change this*/
+            player.SetPosition((int)player.GetPosition().X-moveSpeed, (int)player.GetPosition().Y); /*Change this*/
         }
 
         public void Draw(SpriteBatch spriteBatch)

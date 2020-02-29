@@ -10,22 +10,21 @@ namespace Game1.ProjectileSprites
     {
         private Texture2D texture;
         private IProjectile projectile;
-        private int srcWidth = 60;
-        private int srcHeight = 55;
-        private int destWidth = 60;
-        private int destHeight = 55;
-        private int srcX = 50;
-        private int srcY = 60;
+        private int srcWidth = 16;
+        private int srcHeight = 16;
+        private int destWidth = 16;
+        private int destHeight = 16;
+        private int srcX = 138;
+        private int srcY = 185;
         private int curFrame = 1;
-        private int totalFrames = 3; /*Maybe this*/
         private int delay = 0;
 
         public BombExplode(IProjectile projectile, Texture2D texture)
         {
             this.texture = texture;
             this.projectile = projectile;
-            this.destWidth /= projectile.Size;
-            this.destHeight /= projectile.Size;
+            this.destWidth *= projectile.Size;
+            this.destHeight *= projectile.Size;
         }
         public void Update()
         {
@@ -34,10 +33,6 @@ namespace Game1.ProjectileSprites
             {
                 delay = 0;
                 curFrame++;
-                if (curFrame > totalFrames)
-                {
-                    curFrame = 1;
-                }
             }
         }
 
@@ -45,12 +40,35 @@ namespace Game1.ProjectileSprites
         {
             if (curFrame == 1)
             {
-
+                srcX = 138;
+                srcY = 185;
             }
-            Rectangle arrowSrcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)projectile.GetPosition().X, (int)projectile.GetPosition().Y+15*projectile.Size, destWidth, destHeight);
+            else if(curFrame == 7)
+            {
+                srcX = 155;
+            }
+            else if(curFrame == 10)
+            {
+                srcX = 170;
+            }
+            Rectangle srcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
+            Rectangle middle = new Rectangle((int)projectile.GetPosition().X, (int)projectile.GetPosition().Y, destWidth, destHeight);
+            Rectangle left = new Rectangle((int)projectile.GetPosition().X-destWidth, (int)projectile.GetPosition().Y, destWidth, destHeight);
+            Rectangle right = new Rectangle((int)projectile.GetPosition().X+destWidth, (int)projectile.GetPosition().Y, destWidth, destHeight);
+            Rectangle topLeft = new Rectangle((int)projectile.GetPosition().X - destWidth / 2, (int)projectile.GetPosition().Y-destHeight, destWidth, destHeight);
+            Rectangle topRight = new Rectangle((int)projectile.GetPosition().X + destWidth / 2, (int)projectile.GetPosition().Y-destHeight, destWidth, destHeight);
+            Rectangle botLeft = new Rectangle((int)projectile.GetPosition().X - destWidth / 2, (int)projectile.GetPosition().Y + destHeight, destWidth, destHeight);
+            Rectangle botRight = new Rectangle((int)projectile.GetPosition().X + destWidth / 2, (int)projectile.GetPosition().Y + destHeight, destWidth, destHeight);
+
             spriteBatch.Begin();
-            spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
+            spriteBatch.Draw(texture, middle, srcRec, Color.White);
+            spriteBatch.Draw(texture, left, srcRec, Color.White);
+            spriteBatch.Draw(texture, right, srcRec, Color.White);
+            spriteBatch.Draw(texture, topLeft, srcRec, Color.White);
+            spriteBatch.Draw(texture, topRight, srcRec, Color.White);
+            spriteBatch.Draw(texture, botLeft, srcRec, Color.White);
+            spriteBatch.Draw(texture, botRight, srcRec, Color.White);
+
             spriteBatch.End();
         }
     }

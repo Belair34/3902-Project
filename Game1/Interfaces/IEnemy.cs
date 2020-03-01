@@ -5,9 +5,8 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    public interface IEnemy
+    public interface IEnemy : ICollidable
     {
-        
         int Speed { get; set; }
         int Size { get; set; }
         List<IProjectile> GetProjectiles();
@@ -16,6 +15,7 @@ namespace Game1
         Vector2 GetBoundary();
         void SetState(IEnemyState state);
 
+        ICollidable GetCollision();
         IEnemyState GetState();
         void MoveHorizontal();
         void MoveDown();

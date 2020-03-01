@@ -124,13 +124,14 @@ namespace Game1
                 enemy = enemies1.Peek();
             }
             enemy.Update();
-
+            border.CheckCollision(player);
             //item
             if(items1.Count > 0)
             {
                 item = items1.Peek();
             }
             item.Update();
+            border.CheckCollision(item);
             base.Update(gameTime);
         }
 

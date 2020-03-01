@@ -15,6 +15,7 @@ namespace Game1
 		List<IProjectile> projectiles;
 		int maxHealth;
 		int health;
+		Texture2d block;
 
 		public EnemyDefault(int x, int y, int health, int maxHealth, GraphicsDevice window)
 		{
@@ -28,11 +29,16 @@ namespace Game1
 			this.Boundary.Y = window.Viewport.Height;
 			this.state = new EStateGelMovingVertical(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
+			this.hitBox = new Rectangle(x, y, 15 * Size, 16 * Size);
+			block = box;
 		}
 
-        public int Speed { get; set; }
+	public int Speed { get; set; }
 		public int Size { get; set; }
-
+		public Rectangle GetHitBox()
+		{
+			return this.hitBox;
+		}
 		public List<IProjectile> GetProjectiles()
 		{
 			return this.projectiles;
@@ -97,6 +103,36 @@ namespace Game1
 		public void Stop()
 		{
 			state.Stop();
+		}
+
+		public void CheckCollisions(ICollidable collidable, Border border)
+		{
+
+		}
+
+		public void PlayerCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void EnemyCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void ProjectileCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void BlockCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void BorderCollision()
+		{
+
 		}
 
 		public void Update()

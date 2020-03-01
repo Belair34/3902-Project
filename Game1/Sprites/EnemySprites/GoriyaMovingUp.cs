@@ -9,17 +9,17 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1.EnemySprites
 {
-    class GoriyaUp : ISprite
+    class GoriyaMovingUp : ISprite
     {
-        Texture2D texture;
-        IEnemy enemy;
-        int srcWidth = 16;
-        int srcHeight = 16;
-        int destWidth = 13;
-        int destHeight = 13;
-        int srcX = 239; /*Change this*/
-        int srcY = 11;  /*and this*/
-
+        private Texture2D texture;
+        private IEnemy enemy;
+        private int srcWidth = 16;
+        private int srcHeight = 16;
+        private int destWidth = 16;
+        private int destHeight = 16;
+        private int srcX = 239; /*Change this*/
+        private int srcY = 11;  /*and this*/
+        private int moveSpeed;
 
         public GoriyaUp(IEnemy enemy, Texture2D texture)
         {
@@ -27,10 +27,21 @@ namespace Game1.EnemySprites
             this.enemy = enemy;
             this.destWidth *= enemy.Size;
             this.destHeight *= enemy.Size;
+            this.moveSpeed = enemy.Speed;
         }
         public void Update()
         {
-
+            delay++;
+            if (delay == 7) /*Delay of frame changes*/
+            {
+                delay = 0;
+                curFrame++;
+                if (curFrame > totalFrames)
+                {
+                    curFrame = 1;
+                }
+            }
+            enemy.SetPosition((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y - moveSpeed); /*Change this*/
         }
 
         public void Draw(SpriteBatch spriteBatch)

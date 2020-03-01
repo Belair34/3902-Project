@@ -21,7 +21,6 @@ namespace Game1.EnemySprites
         private int srcY = 11;  /*and this*/
         private int moveSpeed;
 
-
         public GoriyaMovingDown(IEnemy enemy, Texture2D texture)
         {
             this.texture = texture;
@@ -32,7 +31,17 @@ namespace Game1.EnemySprites
         }
         public void Update()
         {
-            
+            delay++;
+            if (delay == 7) /*Delay of frame changes*/
+            {
+                delay = 0;
+                curFrame++;
+                if (curFrame > totalFrames)
+                {
+                    curFrame = 1;
+                }
+            }
+            enemy.SetPosition((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y + moveSpeed);
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    public interface IItems
+    public interface IItems: ICollidable
     {
         int Size { get; set; }
         void SetPosition(int x, int y);

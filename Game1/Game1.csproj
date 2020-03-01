@@ -85,6 +85,14 @@
     <Compile Include="Projectiles\ProjLinkBombLeft.cs" />
     <Compile Include="Projectiles\ProjLinkBombUp.cs" />
     <Compile Include="Sprites\EnemySprites\Aquamentus.cs" />
+    <Compile Include="Sprites\EnemySprites\AquamentusMovingDown.cs" />
+    <Compile Include="Sprites\EnemySprites\AquamentusMovingLeft.cs" />
+    <Compile Include="Sprites\EnemySprites\AquamentusMovingRight.cs" />
+    <Compile Include="Sprites\EnemySprites\AquamentusMovingUp.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaMovingDown.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaMovingLeft.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaMovingRight.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaMovingUp.cs" />
     <Compile Include="Sprites\ItemSprites\BowSprite.cs" />
     <Compile Include="Sprites\ItemSprites\SwordSprite.cs" />
     <Compile Include="Sprites\ItemSprites\MapSprite.cs" />

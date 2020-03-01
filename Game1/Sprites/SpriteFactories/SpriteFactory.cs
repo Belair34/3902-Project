@@ -13,6 +13,7 @@ namespace Game1
         private Texture2D altLinkSheet;
         private Texture2D enemyLinkSheet;
         private Texture2D explosionSheet;
+        private Texture2D bossLinkSheet;
         private static SpriteFactory instance = new SpriteFactory();
         public static SpriteFactory Instance
         {
@@ -32,7 +33,7 @@ namespace Game1
             linkSheet = content.Load<Texture2D>("ProjectSpriteSheets/LinkSpriteSheet");
             altLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/AltLinkSheet");
             enemyLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/Blade trap, Gel, Goriya, keese, stalfos, wall master");
-            bossLinkSheet = content.Load<Textture2D>("ProjectSpriteSheets/boss");
+            bossLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/boss");
             explosionSheet = content.Load<Texture2D>("ProjectSpriteSheets/ExplosionSheet");
         }
 

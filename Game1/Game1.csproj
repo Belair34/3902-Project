@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BFFF05DD-5386-4489-8029-6728223382CB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Game1</RootNamespace>
+    <AssemblyName>Game1</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Border.cs" />
+    <Compile Include="EnemyStates\EStateAquamentusMovingDown.cs" />
+    <Compile Include="EnemyStates\EStateAquamentusMovingLeft.cs" />
+    <Compile Include="EnemyStates\EStateAquamentusMovingRight.cs" />
+    <Compile Include="EnemyStates\EStateAquamentusMovingUp.cs" />
+    <Compile Include="EnemyStates\EStateGoriyaDown.cs" />
+    <Compile Include="Enemies\Goriya.cs" />
+    <Compile Include="Commands\InventoryCommands\BoomerangCommand.cs" />
+    <Compile Include="Commands\InventoryCommands\WandCommand.cs" />
+    <Compile Include="Commands\InventoryCommands\TakeDamageCommand.cs" />
+    <Compile Include="Commands\InventoryCommands\EmptyCommand.cs" />
+    <Compile Include="EnemyStates\EStateGelMovingVertical.cs" />
+    <Compile Include="EnemyStates\EStateBladeTrap.cs" />
+    <Compile Include="EnemyStates\EStateGoriyaMovingRandom.cs" />
+    <Compile Include="EnemyStates\EStateWallMasterIdleAnimated.cs" />
+    <Compile Include="Enemies\BladeTrap.cs" />
+    <Compile Include="Enemies\WallMaster.cs" />
+    <Compile Include="Enemies\Keese.cs" />
+    <Compile Include="Enemies\Gel.cs" />
+    <Compile Include="EnemyStates\EStateKeeseIdleAnimated.cs" />
+    <Compile Include="EnemyStates\EStateGelMovingHorizontal.cs" />
+    <Compile Include="Interfaces\IItems.cs" />
+    <Compile Include="Interfaces\ICollidable.cs" />
+    <Compile Include="Inventory.cs" />
+    <Compile Include="Commands\InventoryCommands\BlueCandleCommand.cs" />
+    <Compile Include="Interfaces\IEnemy.cs" />
+    <Compile Include="Interfaces\IEnemyState.cs" />
+    <Compile Include="Interfaces\IProjectile.cs" />
+    <Compile Include="Interfaces\IInventory.cs" />
+    <Compile Include="EnemyDefault.cs" />
+    <Compile Include="Items\BombItem.cs" />
+    <Compile Include="Items\BoomerangItem.cs" />
+    <Compile Include="Items\BowItem.cs" />
+    <Compile Include="Items\SwordItem.cs" />
+    <Compile Include="Items\MapItem.cs" />
+    <Compile Include="Items\HeartItem.cs" />
+    <Compile Include="Items\ClockItem.cs" />
+    <Compile Include="Items\KeyItem.cs" />
+    <Compile Include="Items\FlashingRupeeItem.cs" />
+    <Compile Include="Items\RupeeItem.cs" />
+    <Compile Include="Projectiles\ProjLinkBombRight.cs" />
+    <Compile Include="Projectiles\ProjLinkBombLeft.cs" />
+    <Compile Include="Projectiles\ProjLinkBombUp.cs" />
+    <Compile Include="Sprites\EnemySprites\Aquamentus.cs" />
+    <Compile Include="Sprites\ItemSprites\BowSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\SwordSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\MapSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\HeartSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\ClockSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\KeySprite.cs" />
+    <Compile Include="Sprites\ItemSprites\FlashingRupeeSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\RupeeSprite.cs" />
+    <Compile Include="PlayerStates\PStateDamagedDown.cs" />
+    <Compile Include="PlayerStates\PStateDamagedLeft.cs" />
+    <Compile Include="PlayerStates\PStateDamagedRight.cs" />
+    <Compile Include="PlayerStates\PStateDamagedUp.cs" />
+    <Compile Include="PlayerStates\PStateShootingRight.cs" />
+    <Compile Include="PlayerStates\PStateShootingLeft.cs" />
+    <Compile Include="PlayerStates\PStateShootingUp.cs" />
+    <Compile Include="PlayerStates\PStateShootingDown.cs" />
+    <Compile Include="PlayerStates\PStateStabbingRight.cs" />
+    <Compile Include="PlayerStates\PStateStabbingLeft.cs" />
+    <Compile Include="PlayerStates\PStateStabbingDown.cs" />
+    <Compile Include="PlayerStates\PStateStabbingUp.cs" />
+    <Compile Include="Projectiles\ProjLinkBombDown.cs" />
+    <Compile Include="Projectiles\ProjLinkBoomerangeUp.cs" />
+    <Compile Include="Projectiles\ProjLinkBoomerangLeft.cs" />
+    <Compile Include="Projectiles\ProjLinkBoomerangRight.cs" />
+    <Compile Include="Projectiles\ProjLinkBoomerangDown.cs" />
+    <Compile Include="Projectiles\ProjLinkWandRight.cs" />
+    <Compile Include="Projectiles\ProjLinkWandLeft.cs" />
+    <Compile Include="Projectiles\ProjLinkWandUp.cs" />
+    <Compile Include="Projectiles\ProjLinkWandDown.cs" />
+    <Compile Include="Projectiles\ProjLinkSwordRight.cs" />
+    <Compile Include="Projectiles\ProjLinkSwordLeft.cs" />
+    <Compile Include="Projectiles\ProjLinkSwordUp.cs" />
+    <Compile Include="Projectiles\ProjLinkSwordDown.cs" />
+    <Compile Include="Projectiles\ProjLinkArrowRight.cs" />
+    <Compile Include="Projectiles\ProjLinkArrowLeft.cs" />
+    <Compile Include="Projectiles\ProjLinkArrowUp.cs" />
+    <Compile Include="Projectiles\ProjLinkArrowDown.cs" />
+    <Compile Include="Commands\InventoryCommands\BluePotionCommand.cs" />
+    <Compile Include="Commands\InventoryCommands\BombCommand.cs" />
+    <Compile Include="Commands\InventoryCommands\BowCommand.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\InventoryCommands\WoodRangCommand.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Interfaces\IController.cs" />
+    <Compile Include="Interfaces\IPlayerState.cs" />
+    <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="KeyboardController.cs" />
+    <Compile Include="PlayerDefault.cs" />
+    <Compile Include="PlayerStates\PStateIdleRight.cs" />
+    <Compile Include="PlayerStates\PStateIdleLeft.cs" />
+    <Compile Include="PlayerStates\PStateIdleUp.cs" />
+    <Compile Include="PlayerStates\PStateMovingRight.cs" />
+    <Compile Include="PlayerStates\PStateMovingLeft.cs" />
+    <Compile Include="PlayerStates\PStateMovingUp.cs" />
+    <Compile Include="PlayerStates\PStateMovingDown.cs" />
+    <Compile Include="PlayerStates\PStateIdleDown.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sprites\EnemySprites\AnimatedKeese.cs" />
+    <Compile Include="Sprites\EnemySprites\AnimatedWallMaster.cs" />
+    <Compile Include="Sprites\EnemySprites\BladeTrapSprites.cs" />
+    <Compile Include="Sprites\EnemySprites\GelIdleJump.cs" />
+    <Compile Include="Sprites\EnemySprites\GelMovingHorizontal.cs" />
+    <Compile Include="Sprites\EnemySprites\GelMovingVertical.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaThrowRight.cs" />
+    <Compile Include="Sprites\ISprite.cs" />
+    <Compile Include="Sprites\ItemSprites\ArrowSprite.cs" />
+    <Compile Include="Items\ArrowItem.cs" />
+    <Compile Include="Sprites\ItemSprites\BombSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\BoomerangSprite.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkDamagedDown.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkDamagedLeft.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkDamagedRight.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkDamagedUp.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkIdleDown.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkIdleLeft.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkIdleRight.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkIdleUp.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkMovingDown.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkMovingLeft.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkMovingRight.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkMovingUp.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkShootingDown.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkShootingLeft.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkShootingRight.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkShootingUp.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkStabbingDown.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkStabbingLeft.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkStabbingRight.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkStabbingUp.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Arrow\ArrowDown.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Arrow\ArrowExplode.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Arrow\ArrowLeft.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Arrow\ArrowRight.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Arrow\ArrowUp.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Bomb\Bomb.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Bomb\BombExplode.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Boomerang\BoomerangRight.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Boomerang\BoomerangLeft.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Boomerang\BoomerangUp.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Boomerang\BoomerangDown.cs" />
+    <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordExplode.cs" />
+    <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordExplodeBotRight.cs" />
+    <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordExplodeBotLeft.cs" />
+    <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordExplodeTopRight.cs" />
+    <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordExplodeTopLeft.cs" />
+    <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordBeamRight.cs" />
+    <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordBeamLeft.cs" />
+    <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordBeamUp.cs" />
+    <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordBeamDown.cs" />
+    <Compile Include="Sprites\ProjectileSprites\WandWave\WandWaveRight.cs" />
+    <Compile Include="Sprites\ProjectileSprites\WandWave\WandWaveLeft.cs" />
+    <Compile Include="Sprites\ProjectileSprites\WandWave\WandWaveUp.cs" />
+    <Compile Include="Sprites\ProjectileSprites\WandWave\WandWaveDown.cs" />
+    <Compile Include="Sprites\SpriteFactories\SpriteFactory.cs" />
+    <Compile Include="Sprites\SpriteFactories\SpriteFactoryItems.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Commands\CommandPatternDesign.txt" />
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Code Reviews\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

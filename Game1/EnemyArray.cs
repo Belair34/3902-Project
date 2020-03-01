@@ -13,7 +13,7 @@ namespace Game1
 
         public ListofEnemies(int index, string name)
             {
-                enemies = new Enemy[5];
+                enemies = new Enemy[6];
                 
             }        
     }

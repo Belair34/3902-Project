@@ -60,7 +60,7 @@ namespace Game1
             background = Content.Load<Texture2D>("ProjectSpriteSheets/dungeon");
             border = new Border(graphics, background);
             player = new PlayerDefault(100, 100, 6, 6, background);
-            //enemy = new BladeTrap(600, 300, 3, 6, GraphicsDevice);
+            enemy = new EnemyDefault(600, 300, 3, 6, GraphicsDevice);
             this.backgroundSrcRec = new Rectangle(257, 0, 256, 176);
             this.backgroundDestRec = new Rectangle(0, 0, spriteBatch.GraphicsDevice.Viewport.Width, spriteBatch.GraphicsDevice.Viewport.Height);
             controllers = new List<IController>();           /*Controllers*/
@@ -90,7 +90,7 @@ namespace Game1
             enemies1.Push(new Keese(600, 300, 3, 6, GraphicsDevice));
             enemies1.Push(new WallMaster(600, 300, 3, 6, GraphicsDevice));
             enemies1.Push(new Goriya(600, 300, 3, 6, GraphicsDevice));
-
+            enemies1.Push(new Aquamentus(600, 300, 10, 20, GraphicsDevice));
             enemy = enemies1.Peek();
 
             //controllers.Add(new MouseController(this));
@@ -124,7 +124,7 @@ namespace Game1
                 enemy = enemies1.Peek();
             }
             enemy.Update();
-            border.CheckCollision(player);
+            border.CheckCollision(enemy);
             //item
             if(items1.Count > 0)
             {

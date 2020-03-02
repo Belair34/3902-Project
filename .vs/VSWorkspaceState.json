@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Game1",
-    "\\Game1\\Sprites",
-    "\\Game1\\Sprites\\EnemySprites",
-    "\\Game1\\Sprites\\SpriteFactories"
+    "\\Game1"
   ],
   "PreviewInSolutionExplorer": false
 }

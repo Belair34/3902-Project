@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 using System;
 
 namespace Game1
@@ -17,66 +18,136 @@ namespace Game1
         private int doorWidth;
         private Rectangle rightTop;
         private Rectangle rightBot;
+        private Rectangle botRight;
+        private Rectangle botLeft;
+        private Rectangle leftTop;
+        private Rectangle leftBot;
+        private Rectangle topLeft;
+        private Rectangle topRight;
+        private List<Rectangle> rectangles;
         private bool topOpen;
         private bool leftOpen;
         private bool rightOpen;
         private bool botOpen;
         Texture2D block;
 
-        public Border(GraphicsDeviceManager graphics, Texture2D back)
+        public Border(GraphicsDeviceManager graphics, Texture2D back = null)
         {
             topWallDistance = 60;
             doorWidth = 25;
             minX = graphics.GraphicsDevice.Viewport.X + topWallDistance+30;
             minY = graphics.GraphicsDevice.Viewport.Y + topWallDistance;
-            maxX = graphics.GraphicsDevice.Viewport.Width-topWallDistance*2-10;
-            maxY = minY + graphics.GraphicsDevice.Viewport.Height - topWallDistance*3-12;
+            maxX = graphics.GraphicsDevice.Viewport.Width - topWallDistance * 2 + 25;
+            maxY = minY + graphics.GraphicsDevice.Viewport.Height - topWallDistance*2 - 30;
             verticalDoorTopY = graphics.GraphicsDevice.Viewport.Height / 2 - doorWidth / 2 - 20;
-            horizontalDoorLeftX = graphics.GraphicsDevice.Viewport.Width / 2 - doorWidth / 2;
+            horizontalDoorLeftX = graphics.GraphicsDevice.Viewport.Width / 2 - doorWidth*2 + 15;
+            rectangles = new List<Rectangle>();
             rightTop = new Rectangle(maxX, 0, topWallDistance*2, verticalDoorTopY);
-            rightBot = new Rectangle(maxX, verticalDoorTopY + doorWidth, topWallDistance, graphics.GraphicsDevice.Viewport.Y - verticalDoorTopY - doorWidth);
+            rectangles.Add(rightTop);
+            rightBot = new Rectangle(maxX, rightTop.Height+topWallDistance, topWallDistance*2, graphics.GraphicsDevice.Viewport.Y + verticalDoorTopY + doorWidth);
+            rectangles.Add(rightBot);
+            botRight = new Rectangle(horizontalDoorLeftX + doorWidth*2 + 20, maxY, horizontalDoorLeftX, topWallDistance*2);
+            rectangles.Add(botRight);
+            botLeft = new Rectangle(0, maxY, horizontalDoorLeftX, topWallDistance * 2);
+            rectangles.Add(botLeft);
+            leftBot = new Rectangle(0, rightTop.Height + topWallDistance, minX, graphics.GraphicsDevice.Viewport.Y + verticalDoorTopY + doorWidth);
+            rectangles.Add(leftBot);
+            leftTop = new Rectangle(0, 0, minX, verticalDoorTopY);
+            rectangles.Add(leftTop);
+            topLeft = new Rectangle(0, 0, horizontalDoorLeftX, topWallDistance);
+            rectangles.Add(topLeft);
+            topRight = new Rectangle(horizontalDoorLeftX + doorWidth*2 + 20, 0, horizontalDoorLeftX, topWallDistance);
+            rectangles.Add(topRight);
             rightOpen = true;
-            topOpen = false;
-            leftOpen = false;
-            botOpen = false;
+            topOpen = true;
+            leftOpen = true;
+            botOpen = true;
             block = back;
         }
 
         public void CheckCollision(ICollidable collidable)
         {
-            if (collidable.GetHitBox().X > maxX)
+
+            if (!rightOpen && collidable.GetHitBox().X + collidable.GetHitBox().Width > maxX)
             {
-                if (!rightOpen)
-                {
-                    collidable.SetPosition(maxX, collidable.GetHitBox().Y);
-                    collidable.BorderCollision();
-                }
-                else if (rightOpen && rightTop.Intersects(collidable.GetHitBox()))
-                {
-                    Rectangle intersection = Rectangle.Intersect(rightTop, collidable.GetHitBox());
-                   if (intersection.Width > intersection.Height)
-                    {
-                        collidable.SetPosition(collidable.GetHitBox().X, rightTop.Bottom);
-                    }
-                    else if (intersection.Height > intersection.Width)
-                    {
-                        collidable.SetPosition(rightTop.Left, collidable.GetHitBox().Y);
-                    } 
-                    else
-                    {
-                        collidable.SetPosition(rightTop.X, collidable.GetHitBox().Y);
-                    }
-                }
-          
+                collidable.SetPosition(maxX - collidable.GetHitBox().Width, collidable.GetHitBox().Y);
+                collidable.BorderCollision();
             }
- 
+            else if (!botOpen && collidable.GetHitBox().Y + collidable.GetHitBox().Height > maxY)
+            {
+                collidable.SetPosition(collidable.GetHitBox().X, maxY - collidable.GetHitBox().Height);
+                collidable.BorderCollision();
+            }
+            else if (!leftOpen && collidable.GetHitBox().X < minX)
+            {
+                collidable.SetPosition(minX, collidable.GetHitBox().Y);
+                collidable.BorderCollision();
+            }
+            else if (!topOpen && collidable.GetHitBox().Y < minY)
+            {
+                collidable.SetPosition(collidable.GetHitBox().X, minY);
+                collidable.BorderCollision();
+            }
+            else
+            {
+                foreach (Rectangle rec in rectangles)
+                {
+                    if (rec.Intersects(collidable.GetHitBox()))
+                    {
+                        Rectangle intersection = Rectangle.Intersect(rec, collidable.GetHitBox());
+                        if (intersection.Height > intersection.Width && collidable.GetHitBox().X < rec.Left)
+                        {
+                            collidable.SetPosition(rec.Left - collidable.GetHitBox().Width, collidable.GetHitBox().Y);
+                            collidable.BorderCollision();
+                        }
+                        else if (intersection.Width > intersection.Height && collidable.GetHitBox().Y < rec.Top)
+                        {
+                            collidable.SetPosition(collidable.GetHitBox().X, rec.Top - collidable.GetHitBox().Height);
+                            collidable.BorderCollision();
+                        }
+                        else if (intersection.Width > intersection.Height && collidable.GetHitBox().Y > rec.Top)
+                        { 
+                            collidable.SetPosition(collidable.GetHitBox().X, rec.Bottom);
+                            collidable.BorderCollision();
+                        }
+                        else if (intersection.Height > intersection.Width && collidable.GetHitBox().X > rec.Left)
+                        {
+                            collidable.SetPosition(rec.Right, collidable.GetHitBox().Y);
+                            collidable.BorderCollision();
+                        }
+                        else
+                        {
+                            
+                        }
+                    }
+                }
+            }
         }
 
+        public void SetRightOpen(bool isOpen)
+        {
+            rightOpen = isOpen;
+        }
+
+        public void SetLeftOpen(bool isOpen)
+        {
+            leftOpen = isOpen;
+        }
+        public void SetTopOpen(bool isOpen)
+        {
+            topOpen = isOpen;
+        }
+        public void SetBottomOpen(bool isOpen)
+        {
+            botOpen = isOpen;
+        }
+
+        /*For development to display hitboxes*/
         public void DrawBox(SpriteBatch spriteBatch)
         {
             Rectangle src = new Rectangle(900, 0, 1, 1);
             spriteBatch.Begin();
-            spriteBatch.Draw(block, rightTop, src, Color.White);
+            spriteBatch.Draw(block, topRight, src, Color.White);
             spriteBatch.End();
         }
     }

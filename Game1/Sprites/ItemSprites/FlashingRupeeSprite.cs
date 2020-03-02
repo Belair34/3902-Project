@@ -9,7 +9,7 @@ namespace Game1
     class FlashingRupeeSprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int RupeeSrcWidth = 12;
         int RupeeSrcHeight = 20;
         int RupeeDestWidth = 12;
@@ -20,7 +20,7 @@ namespace Game1
         int totalFrames = 2; /*Maybe this*/
         int delay = 0;
 
-        public FlashingRupeeSprite(IItems item, Texture2D texture)
+        public FlashingRupeeSprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

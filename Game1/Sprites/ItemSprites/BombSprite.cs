@@ -9,7 +9,7 @@ namespace Game1
     class BombSprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int bombSrcWidth = 12;
         int bombSrcHeight = 15;
         int bombDestWidth = 12;
@@ -17,7 +17,7 @@ namespace Game1
         int bombSrcX = 360;
         int bombSrcY = 225;
 
-        public BombSprite(IItems item, Texture2D texture)
+        public BombSprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

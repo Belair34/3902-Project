@@ -9,7 +9,7 @@ namespace Game1
     class BowSprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int BowSrcWidth = 11;
         int BowSrcHeight = 20;
         int BowDestWidth = 11;
@@ -17,7 +17,7 @@ namespace Game1
         int BowSrcX = 421;
         int BowSrcY = 253;
 
-        public BowSprite(IItems item, Texture2D texture)
+        public BowSprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

@@ -9,7 +9,7 @@ namespace Game1
     class KeySprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int KeySrcWidth = 11;
         int KeySrcHeight = 20;
         int KeyDestWidth = 11;
@@ -17,7 +17,7 @@ namespace Game1
         int KeySrcX = 422;
         int KeySrcY = 164;
 
-        public KeySprite(IItems item, Texture2D texture)
+        public KeySprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

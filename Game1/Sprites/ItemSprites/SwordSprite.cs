@@ -9,7 +9,7 @@ namespace Game1
     class SwordSprite : ISprite
     {
         Texture2D texture;
-        IItems item;
+        IItem item;
         int SwordSrcWidth = 10;
         int SwordSrcHeight = 20;
         int SwordDestWidth = 10;
@@ -17,7 +17,7 @@ namespace Game1
         int SwordSrcX = 63;
         int SwordSrcY = 195;
 
-        public SwordSprite(IItems item, Texture2D texture)
+        public SwordSprite(IItem item, Texture2D texture)
         {
             this.texture = texture;
             this.item = item;

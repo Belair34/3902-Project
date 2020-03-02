@@ -21,6 +21,7 @@ namespace Game1 {
         int HaveBow { get; set; }
         int HaveBlueRing { get; set; }
         int HaveWand { get; set; }
+        int HaveSword { get; set; }
         ICommand GetSlotBCommand();
         void SetSlotBCommand(ICommand command);
         void Update();

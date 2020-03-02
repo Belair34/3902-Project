@@ -13,12 +13,20 @@ namespace Game1
         internal Vector2 boundary;
         internal ISprite sprite;
 
+
         public int Size { get; set; }
 
         public void SetPosition(int x, int y)
         {
             this.position.X = x;
             this.position.Y = y;
+        }
+
+        /*Not sure how this works with abstract class, we need the item's hitbox rectangle*/
+        public Rectangle GetHitBox()
+        {
+           
+            return new Rectangle();
         }
 
         public Vector2 GetPosition()
@@ -45,7 +53,7 @@ namespace Game1
 
         public void CheckCollisions(ICollidable collidable)
         {
-            throw new System.NotImplementedException();
+
         }
 
         public void EnemyCollision(ICollidable collidable)

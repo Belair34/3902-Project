@@ -109,7 +109,7 @@ namespace Game1
 			damageCommand.Execute();
 		}
 		
-		public void CheckCollisions(ICollidable collidable, Border border)
+		public void CheckCollisions(ICollidable collidable)
 		{
 
 		}
@@ -128,7 +128,10 @@ namespace Game1
 		{
 
 		}
+		public void ItemCollision(ICollidable collidable)
+		{
 
+		}
 		public void BlockCollision(ICollidable collidable)
 		{
 
@@ -158,39 +161,5 @@ namespace Game1
 			state.Draw(spriteBatch);
 		}
 
-		public void CheckCollisions(ICollidable collidable)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public void PlayerCollision(ICollidable collidable)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public void EnemyCollision(ICollidable collidable)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public void ProjectileCollision(ICollidable collidable)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public void ItemCollision(ICollidable collidable)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public void BlockCollision(ICollidable collidable)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public void BorderCollision()
-		{
-			throw new System.NotImplementedException();
-		}
 	}
 }

@@ -6,7 +6,7 @@ namespace Game1
 {
     public interface ICollidable
     {
-        void CheckCollisions(ICollidable collidable, Border border);
+        void CheckCollisions(ICollidable collidable);
         void PlayerCollision(ICollidable collidable);
         void EnemyCollision(ICollidable collidable);
         void ProjectileCollision(ICollidable collidable);

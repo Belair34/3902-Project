@@ -11,6 +11,7 @@ namespace Game1
 	{
 		private Vector2 position;
 		private Vector2 Boundary;
+		public Rectangle hitBox;
 		private IEnemyState state;
 		List<IProjectile> projectiles;
 		int maxHealth;
@@ -28,6 +29,7 @@ namespace Game1
 			this.Boundary.Y = window.Viewport.Height;
 			this.state = new EStateGelMovingVertical(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
+			this.hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
 		}
 
         public int Speed { get; set; }

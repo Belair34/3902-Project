@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Game1"
+    "\\Game1",
+    "\\Game1\\EnemyStates",
+    "\\Game1\\Projectiles"
   ],
+  "SelectedNode": "\\Game1\\EnemyStates",
   "PreviewInSolutionExplorer": false
 }

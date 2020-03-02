@@ -19,12 +19,12 @@ namespace Game1.ProjectileSprites
         int speed;
 
         //start from here
-        public ArrowDown(IProjectile projectile, Texture2D texture)
+        public AquaFireballDown(IProjectile projectile, Texture2D texture)
         {
             this.texture = texture;
             this.projectile = projectile;
-            this.arrowDestWidth *= projectile.Size;
-            this.arrowDestHeight *= projectile.Size;
+            this.fireballDestWidth *= projectile.Size;
+            this.fireballDestHeight *= projectile.Size;
             this.speed = projectile.Speed;
         }
         public void Update()
@@ -38,8 +38,8 @@ namespace Game1.ProjectileSprites
 
         public void Draw(SpriteBatch spriteBatch)
         { 
-            Rectangle arrowSrcRec = new Rectangle(arrowSrcX, arrowSrcY, arrowSrcWidth, arrowSrcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)projectile.GetPosition().X, (int)projectile.GetPosition().Y, arrowDestWidth, arrowDestHeight);
+            Rectangle arrowSrcRec = new Rectangle(fireballSrcX, fireballSrcY, fireballSrcWidth, fireballSrcHeight);
+            Rectangle arrowDestRec = new Rectangle((int)projectile.GetPosition().X, (int)projectile.GetPosition().Y, fireballDestWidth, fireballDestHeight);
             spriteBatch.Begin();
             spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
             spriteBatch.End();

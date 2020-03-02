@@ -89,6 +89,7 @@ namespace Game1
             enemies1.Push(new Keese(600, 300, 3, 6, GraphicsDevice));
             enemies1.Push(new WallMaster(600, 300, 3, 6, GraphicsDevice));
             enemies1.Push(new Goriya(600, 300, 3, 6, GraphicsDevice));
+            enemies1.Push(new Aquamentus(600, 300, 10, 20, GraphicsDevice));
 
             enemy = enemies1.Peek();
 
@@ -123,9 +124,9 @@ namespace Game1
                 enemy = enemies1.Peek();
             }
             enemy.Update();
-
+            //border.CheckCollision(enemy);
             //item
-            if(items1.Count > 0)
+            if (items1.Count > 0)
             {
                 item = items1.Peek();
             }

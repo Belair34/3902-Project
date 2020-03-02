@@ -13,9 +13,9 @@ namespace Game1.EnemySprites
     {
         private Texture2D texture;
         private IEnemy enemy;
-        private int srcWidth = 23;
+        private int srcWidth = 24;
         private int srcHeight = 32;
-        private int destWidth = 23;
+        private int destWidth = 24;
         private int destHeight = 32;
         private int srcX = 1; /*Change this*/
         private int srcY = 11;  /*and this*/

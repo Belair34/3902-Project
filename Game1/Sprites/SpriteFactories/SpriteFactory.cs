@@ -13,6 +13,7 @@ namespace Game1
         private Texture2D altLinkSheet;
         private Texture2D enemyLinkSheet;
         private Texture2D explosionSheet;
+        private Texture2D bossLinkSheet;
         private static SpriteFactory instance = new SpriteFactory();
         public static SpriteFactory Instance
         {
@@ -33,6 +34,7 @@ namespace Game1
             altLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/AltLinkSheet");
             enemyLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/Blade trap, Gel, Goriya, keese, stalfos, wall master");
             explosionSheet = content.Load<Texture2D>("ProjectSpriteSheets/ExplosionSheet");
+            bossLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/boss");
         }
 
         public ISprite GetLinkIdleDown(IPlayer player)
@@ -227,7 +229,30 @@ namespace Game1
         {
             return new BombExplode(projectile, explosionSheet);
         }
+        public ISprite GetAquaFireballExplode(IProjectile projectile)
+        {
+            return new FireballExplode(projectile, bossLinkSheet);
+        }
 
+        public ISprite GetAquaFireballDown(IProjectile projectile)
+        {
+            return new AquaFireballDown(projectile, bossLinkSheet);
+        }
+
+        public ISprite GetAquaFireballUp(IProjectile projectile)
+        {
+            return new AquaFireballUp(projectile, bossLinkSheet);
+        }
+
+        public ISprite GetAquaFireballLeft(IProjectile projectile)
+        {
+            return new AquaFireballLeft(projectile, bossLinkSheet);
+        }
+
+        public ISprite GetAquaFireballRight(IProjectile projectile)
+        {
+            return new AquaFireballRight(projectile, bossLinkSheet);
+        }
         /*Enemy Sprites*/
         public ISprite GetGelIdleJump(IEnemy enemy)
         {
@@ -268,6 +293,22 @@ namespace Game1
         public ISprite GetGoriyaUp(IEnemy enemy)
         {
             return new GoriyaUp(enemy, enemyLinkSheet);
+        }
+        public ISprite GetAquamentusMovingUp(IEnemy enemy)
+        {
+            return new AquamentusMovingUp(enemy, bossLinkSheet);
+        }
+        public ISprite GetAquamentusMovingDown(IEnemy enemy)
+        {
+            return new AquamentusMovingDown(enemy, bossLinkSheet);
+        }
+        public ISprite GetAquamentusMovingLeft(IEnemy enemy)
+        {
+            return new AquamentusMovingLeft(enemy, bossLinkSheet);
+        }
+        public ISprite GetAquamentusMovingRight(IEnemy enemy)
+        {
+            return new AquamentusMovingRight(enemy, bossLinkSheet);
         }
     }
 }

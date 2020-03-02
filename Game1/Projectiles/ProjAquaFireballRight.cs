@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1
 {
-    class ProjAquaFireballDown : IProjectile
+    class ProjAquaFireballRight : IProjectile
     {
         bool shooting;
         bool exploding;
@@ -13,7 +13,7 @@ namespace Game1
         Vector2 position;
         int explodeTimer;
 
-        public ProjAquaFireballDown(IEnemy enemy)
+        public ProjAquaFireballRight(IEnemy enemy)
         {
             this.enemy = enemy;
             shooting = false;
@@ -21,7 +21,7 @@ namespace Game1
             this.Size = enemy.Size;
             this.position = new Vector2(0);
             this.Speed = 6; /*Changeable */
-            sprite = SpriteFactory.Instance.GetAquaFireballDown(this);
+            sprite = SpriteFactory.Instance.GetAquaFireballRight(this);
         }
         public int Size { get; set; }
         public int Speed { get; set; }
@@ -39,7 +39,7 @@ namespace Game1
         { 
             if (!shooting)
             {
-                sprite = SpriteFactory.Instance.GetAquaFireballDown(this);
+                sprite = SpriteFactory.Instance.GetAquaFireballRight(this);
                 this.ShotDistance = 0;
                 this.position = enemy.GetPosition();
             }

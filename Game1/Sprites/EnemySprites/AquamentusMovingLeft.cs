@@ -20,7 +20,7 @@ namespace Game1.EnemySprites
         private int srcX = 1; /*Change this*/
         private int srcY = 11;  /*and this*/
         private int curFrame = 1;
-        private int totalFrames = 2; /*Maybe this*/
+        private int totalFrames = 4; /*Maybe this*/
         private int delay = 0;
         private int moveSpeed;
 
@@ -51,6 +51,26 @@ namespace Game1.EnemySprites
         {
             Rectangle destRec = new Rectangle((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y, destWidth, destHeight);
             Rectangle srcRec;
+            if (curFrame == 1)
+            {
+                srcX = 1;
+                srcY = 11;
+            }
+            else if (curFrame == 2)
+            {
+                srcX = 26;
+                srcY = 11;
+            }
+            else if (curFrame == 3)
+            {
+                srcX = 51;
+                srcY = 11;
+            }
+            else if (curFrame == 4)
+            {
+                srcX = 76;
+                srcY = 11;
+            }
             srcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
             spriteBatch.Begin();
             spriteBatch.Draw(texture, destRec, srcRec, Color.White);

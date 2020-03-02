@@ -29,7 +29,7 @@ namespace Game1.EnemySprites
             moveSpeed = enemy.Speed;
             destWidth *= enemy.Size;
             destHeight *= enemy.Size;
-            s = SpriteEffects.FlipHorizontally;
+            //s = SpriteEffects.FlipHorizontally;
         }
         public void Update()
         {
@@ -54,8 +54,7 @@ namespace Game1.EnemySprites
             position.Y = (int)enemy.GetPosition().Y;
             srcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
             spriteBatch.Begin();
-            spriteBatch.Draw(texture, position, destRec, Color.White, 0.0f, new Vector2(0, 0), 1.0f, this.s, 0.0f);
-
+            spriteBatch.Draw(texture, destRec, srcRec, Color.White, 0.0f, new Vector2(0, 0), s, 0.0f);
             spriteBatch.End();
         }
     }

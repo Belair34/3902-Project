@@ -20,10 +20,10 @@ namespace Game1.EnemySprites
         private int srcX = 1; /*Change this*/
         private int srcY = 11;  /*and this*/
         private int curFrame = 1;
-        private int totalFrames = 2; /*Maybe this*/
+        private int totalFrames = 4; /*Maybe this*/
         private int delay = 0;
         private int moveSpeed;
-
+        SpriteEffects s = SpriteEffects.FlipHorizontally;
         public AquamentusMovingRight(IEnemy enemy, Texture2D texture)
         {
             this.texture = texture;
@@ -31,6 +31,7 @@ namespace Game1.EnemySprites
             moveSpeed = enemy.Speed;
             destWidth *= enemy.Size;
             destHeight *= enemy.Size;
+
         }
         public void Update()
         {
@@ -50,10 +51,30 @@ namespace Game1.EnemySprites
         public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle destRec = new Rectangle((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y, destWidth, destHeight);
+            if (curFrame == 1)
+            {
+                srcX = 1;
+                srcY = 11;
+            }
+            else if (curFrame == 2)
+            {
+                srcX = 26;
+                srcY = 11;
+            }
+            else if (curFrame == 3)
+            {
+                srcX = 51;
+                srcY = 11;
+            }
+            else if (curFrame == 4)
+            {
+                srcX = 76;
+                srcY = 11;
+            }
             Rectangle srcRec;
             srcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
             spriteBatch.Begin();
-            spriteBatch.Draw(texture, destRec, srcRec, Color.White);
+            spriteBatch.Draw(texture, destRec, srcRec, Color.White, 0.0f, new Vector2(0, 0), s, 0.0f);
             spriteBatch.End();
         }
     }

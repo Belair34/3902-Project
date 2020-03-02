@@ -84,7 +84,7 @@
     <Compile Include="Projectiles\ProjLinkBombRight.cs" />
     <Compile Include="Projectiles\ProjLinkBombLeft.cs" />
     <Compile Include="Projectiles\ProjLinkBombUp.cs" />
-    <Compile Include="Sprites\EnemySprites\Aquamentus.cs" />
+    <Compile Include="Enemies\Aquamentus.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingDown.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingLeft.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingRight.cs" />

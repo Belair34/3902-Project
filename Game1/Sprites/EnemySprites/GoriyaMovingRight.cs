@@ -14,6 +14,9 @@ namespace Game1.EnemySprites
         int destHeight = 13;
         int srcX = 256; /*Change this*/
         int srcY = 11;  /*and this*/
+        private int curFrame = 1;
+        private int totalFrames = 2; /*Maybe this*/
+        private int delay = 0;
         private int moveSpeed;
 
         public GoriyaMovingRight(IEnemy enemy, Texture2D texture)
@@ -47,6 +50,45 @@ namespace Game1.EnemySprites
             spriteBatch.Begin();
             spriteBatch.Draw(texture, destRec, srcRec, Color.White);
             spriteBatch.End();
+        }
+        public ICollidable GetCollision()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CheckCollisions(ICollidable collidable, Border border)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PlayerCollision(ICollidable collidable)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void EnemyCollision(ICollidable collidable)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ProjectileCollision(ICollidable collidable)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void BlockCollision(ICollidable collidable)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void BorderCollision()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Rectangle GetHitBox()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

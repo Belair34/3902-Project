@@ -19,6 +19,9 @@ namespace Game1.EnemySprites
         private int destHeight = 32;
         private int srcX = 1; /*Change this*/
         private int srcY = 11;  /*and this*/
+        private int curFrame = 1;
+        private int totalFrames = 2; /*Maybe this*/
+        private int delay = 0;
         private int moveSpeed;
 
         public AquamentusMovingRight(IEnemy enemy, Texture2D texture)

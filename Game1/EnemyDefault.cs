@@ -9,13 +9,13 @@ namespace Game1
 {
 	public class EnemyDefault : IEnemy
 	{
+		public Rectangle hitBox;
 		private Vector2 position;
 		private Vector2 Boundary;
 		private IEnemyState state;
 		List<IProjectile> projectiles;
 		int maxHealth;
 		int health;
-		Texture2d block;
 
 		public EnemyDefault(int x, int y, int health, int maxHealth, GraphicsDevice window)
 		{
@@ -29,8 +29,7 @@ namespace Game1
 			this.Boundary.Y = window.Viewport.Height;
 			this.state = new EStateGelMovingVertical(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
-			this.hitBox = new Rectangle(x, y, 15 * Size, 16 * Size);
-			block = box;
+			this.hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
 		}
 
 	public int Speed { get; set; }
@@ -134,6 +133,10 @@ namespace Game1
 		{
 
 		}
+		public ICollidable GetCollision()
+		{
+			throw new System.NotImplementedException();
+		}
 
 		public void Update()
 		{
@@ -152,7 +155,5 @@ namespace Game1
 			}
 			state.Draw(spriteBatch);
 		}
-
-		
 	}
 }

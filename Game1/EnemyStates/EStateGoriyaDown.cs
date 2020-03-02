@@ -13,7 +13,7 @@ namespace Game1.PlayerStates
         public EStateGoriyaDown(IEnemy enemy, int coolDown = 0)
         {
             this.enemy = enemy;
-            this.sprite = SpriteFactory.Instance.GetGoriyaDown(enemy);
+            this.sprite = SpriteFactory.Instance.GetGoriyaMovingDown(enemy);
             this.coolDown = coolDown;
         }
         public void MoveUp()

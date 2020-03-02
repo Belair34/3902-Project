@@ -119,6 +119,44 @@ namespace Game1
 			state.Draw(spriteBatch);
 		}
 
-		
+		public void CheckCollisions(ICollidable collidable)
+		{
+
+		}
+
+		public void PlayerCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void EnemyCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void ProjectileCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void ItemCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void BlockCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void BorderCollision()
+		{
+
+		}
+
+		public Rectangle GetHitBox()
+		{
+			return this.hitBox;
+		}
 	}
 }

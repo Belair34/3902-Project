@@ -10,8 +10,8 @@ namespace Game1.EnemySprites
         IEnemy enemy;
         int srcWidth = 16;
         int srcHeight = 16;
-        int destWidth = 13;
-        int destHeight = 13;
+        int destWidth = 16;
+        int destHeight = 16;
         int srcX = 256; /*Change this*/
         int srcY = 11;  /*and this*/
         SpriteEffects s = SpriteEffects.FlipHorizontally;

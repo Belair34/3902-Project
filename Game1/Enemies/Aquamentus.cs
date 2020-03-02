@@ -12,15 +12,16 @@ namespace Game1
 		private Vector2 position;
 		private Vector2 Boundary;
 		private IEnemyState state;
+		private Rectangle hitBox;
 		List<IProjectile> projectiles;
 		int maxHealth;
 		int health;
 
 		public Aquamentus(int x, int y, int health, int maxHealth, GraphicsDevice window)
 		{
-			this.Speed = 3;                /*Changeable*/
+			this.Speed = 2;                /*Changeable*/
 			this.Size = 3;                 /************/
-			this.position = new Vector2(); 
+			this.position = new Vector2();
 			this.position.X = x;
 			this.position.Y = y;
 			this.Boundary = new Vector2();
@@ -28,9 +29,10 @@ namespace Game1
 			this.Boundary.Y = window.Viewport.Height;
 			this.state = new EStateAquamentusMovingLeft(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
+			hitBox = new Rectangle(x, y, 24 * Size, 32 * Size);
 		}
 
-        public int Speed { get; set; }
+		public int Speed { get; set; }
 		public int Size { get; set; }
 
 		public List<IProjectile> GetProjectiles()
@@ -117,44 +119,44 @@ namespace Game1
 			state.Draw(spriteBatch);
 		}
 
-		public ICollidable GetCollision()
+		public void CheckCollisions(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
-		}
 
-		public void CheckCollisions(ICollidable collidable, Border border)
-		{
-			throw new System.NotImplementedException();
 		}
 
 		public void PlayerCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void EnemyCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
+		}
+
+		public void ItemCollision(ICollidable collidable)
+		{
+
 		}
 
 		public void BlockCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void BorderCollision()
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public Rectangle GetHitBox()
 		{
-			throw new System.NotImplementedException();
+			return this.hitBox;
 		}
 	}
 }

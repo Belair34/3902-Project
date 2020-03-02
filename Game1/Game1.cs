@@ -124,7 +124,7 @@ namespace Game1
                 enemy = enemies1.Peek();
             }
             enemy.Update();
-            //border.CheckCollision(enemy);
+            border.CheckCollision(enemy);
             //item
             if (items1.Count > 0)
             {

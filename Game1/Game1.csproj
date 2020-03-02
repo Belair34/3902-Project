@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Border.cs" />
+    <Compile Include="Commands\InventoryCommands\CheckAllCollisionsCommand.cs" />
     <Compile Include="EnemyStates\EStateGoriyaDown.cs" />
     <Compile Include="Enemies\Goriya.cs" />
     <Compile Include="Commands\InventoryCommands\BoomerangCommand.cs" />

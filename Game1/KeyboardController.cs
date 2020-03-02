@@ -62,23 +62,6 @@ namespace Game1
                 myGame.GetPlayer().GetInventory().SetSlotBCommand(new EmptyCommand(myGame.GetPlayer()));
                 myGame.GetPlayer().SlotB();
             }
-            else if ((Keyboard.GetState().IsKeyDown(Keys.I)) && delay <= 0)
-            {
-                delay = 20;
-                if(myGame.items1.Count > 1)
-                {
-                    myGame.items2.Push(myGame.items1.Pop());
-                }
-            }
-            else if ((Keyboard.GetState().IsKeyDown(Keys.U)) && delay <= 0)
-            {
-                delay = 20;
-                if (myGame.items2.Count > 0)
-                {
-                    myGame.items1.Push(myGame.items2.Pop());
-                }
-
-            }
             else if ((Keyboard.GetState().IsKeyDown(Keys.W) || Keyboard.GetState().IsKeyDown(Keys.Up)) && !((Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Down))))
             {
                 myGame.GetPlayer().MoveUp();
@@ -94,23 +77,6 @@ namespace Game1
             else if ((Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.Right)) && !((Keyboard.GetState().IsKeyDown(Keys.A) || Keyboard.GetState().IsKeyDown(Keys.Left))))
             {
                 myGame.GetPlayer().MoveRight();
-            }
-            else if ((Keyboard.GetState().IsKeyDown(Keys.O)) && delay <= 0) 
-            {
-                delay = 20;
-                if (myGame.enemies1.Count > 1)
-                {
-                    myGame.enemies2.Push(myGame.enemies1.Pop());
-                }
-
-            }
-            else if ((Keyboard.GetState().IsKeyDown(Keys.P)) && delay <= 0)
-            {
-                delay = 20;
-                if (myGame.enemies2.Count > 0)
-                {
-                    myGame.enemies1.Push(myGame.enemies2.Pop());
-                }
             }
             else
             {

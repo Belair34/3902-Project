@@ -9,7 +9,6 @@ namespace Game1
     public interface IItem: ICollidable
     {
         int Size { get; set; }
-        void SetPosition(int x, int y);
         Vector2 GetPosition();
         Vector2 GetBoundary();
 

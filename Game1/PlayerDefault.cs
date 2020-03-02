@@ -15,7 +15,7 @@ namespace Game1
 		List<IProjectile> projectiles;
 		IInventory inventory;
 
-		public PlayerDefault(int x, int y, int health, int maxHealth)
+		public PlayerDefault(int x, int y)
 		{
 			this.inventory = new Inventory(this);
 			this.Speed = 5;                /*Changeable*/

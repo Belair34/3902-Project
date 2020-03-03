@@ -10,7 +10,6 @@ namespace Game1
     public abstract class AbstractItem : IItem
     {
         internal Vector2 position;
-        internal Vector2 boundary;
         internal ISprite sprite;
 
 
@@ -33,10 +32,6 @@ namespace Game1
         {
             return this.position;
         }
-        public Vector2 GetBoundary()
-        {
-            return boundary;
-        }
         public void Stop()
         {
 
@@ -53,7 +48,29 @@ namespace Game1
 
         public void CheckCollisions(ICollidable collidable)
         {
+            if (collidable.GetHitBox().Intersects(GetHitBox()))
+            {
+                if (collidable is IProjectile)
+                {
+                    ProjectileCollision(collidable);
+                }
+                else if (collidable is IEnemy)
+                {
+                    EnemyCollision(collidable);
+                }
+                else if (collidable is IItem)
+                {
+                    ItemCollision(collidable);
+                }
+                else if (collidable is IPlayer)
+                {
+                    PlayerCollision(collidable);
+                }
+                /*else if (collidable is Block)
+				{
 
+				}*/
+            }
         }
 
         public void EnemyCollision(ICollidable collidable)

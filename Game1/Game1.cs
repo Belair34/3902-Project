@@ -50,9 +50,6 @@ namespace Game1
             border = new Border(graphics);
             player = new PlayerDefault(100, 100);
             collidables.Add(player);
-            IEnemy Aqua = new Aquamentus(600, 200, 10, 10, GraphicsDevice);
-            collidables.Add(Aqua);
-            enemies.Add(Aqua);
             collisionChecker = new CheckAllCollisionsCommand(collidables, border);
             this.backgroundSrcRec = new Rectangle(515, 886, 256, 176);
             this.backgroundDestRec = new Rectangle(0, 0, spriteBatch.GraphicsDevice.Viewport.Width, spriteBatch.GraphicsDevice.Viewport.Height);
@@ -65,6 +62,8 @@ namespace Game1
 
         protected override void LoadContent()
         {
+            ICommand LoadEntities = new L1EntitiesLoadCommand(enemies, items, collidables);
+            LoadEntities.Execute();
             background = Content.Load<Texture2D>("ProjectSpriteSheets/dungeon");
         }
 
@@ -86,6 +85,10 @@ namespace Game1
             {
                 enemy.Update();
             }
+            foreach(IItem item in items)
+            {
+                item.Update();
+            }
             collisionChecker.Execute();
             base.Update(gameTime);
         }
@@ -100,6 +103,10 @@ namespace Game1
             foreach(IEnemy enemy in enemies)
             {
                 enemy.Draw(spriteBatch);
+            }
+            foreach(IItem item in items)
+            {
+                item.Draw(spriteBatch);
             }
             base.Draw(gameTime);
             

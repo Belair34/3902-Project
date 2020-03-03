@@ -20,9 +20,6 @@ namespace Game1
             base.position.Y = y;
             base.sprite = SpriteFactoryItems.Instance.GetBomb(this);
 
-            base.boundary = new Vector2();
-            base.boundary.X = window.Viewport.Width;
-            base.boundary.Y = window.Viewport.Height;          /*Items*/
         }
 
         public override void PlayerCollision(ICollidable collidable)

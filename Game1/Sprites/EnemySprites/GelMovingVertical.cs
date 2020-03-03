@@ -8,9 +8,6 @@ namespace Game1.EnemySprites
     {
         Texture2D texture;
         IEnemy enemy;
-        private int backgroundHeight = 176;
-        private int bottomY = 144;
-        private float backgroundVerticalRatio;
         private int srcWidth = 8;
         private int srcHeight = 16;
         private int destWidth = 8;
@@ -28,23 +25,11 @@ namespace Game1.EnemySprites
 
         public GelMovingVertical(IEnemy enemy, Texture2D texture)
         {
-            backgroundVerticalRatio = (int)enemy.GetBoundary().Y / backgroundHeight;
             this.texture = texture;
             this.enemy = enemy;
             moveSpeed = enemy.Speed;
             destWidth *= enemy.Size;
             destHeight *= enemy.Size;
-            minY = (int)(33 * backgroundVerticalRatio);
-            maxY = (int)(33 * backgroundVerticalRatio + bottomY * backgroundVerticalRatio);
-        }
-        public void calcPosition()
-        {
-            spriteX = (int)enemy.GetPosition().X;
-            spriteY = (int)enemy.GetPosition().Y + moveSpeed;
-            if (spriteY < minY || spriteY > maxY)
-            {
-                moveSpeed = moveSpeed * -1;
-            }
         }
         public void Update()
         {
@@ -58,7 +43,6 @@ namespace Game1.EnemySprites
                     curFrame = 1;
                 }
             }
-            calcPosition();
             enemy.SetPosition(spriteX, spriteY); /*Change this*/
         }
 

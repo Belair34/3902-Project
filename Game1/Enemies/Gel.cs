@@ -10,23 +10,19 @@ namespace Game1
 	public class Gel : IEnemy
 	{
 		private Vector2 position;
-		private Vector2 Boundary;
 		private IEnemyState state;
 		List<IProjectile> projectiles;
 		private Rectangle hitBox;
 		int maxHealth;
 		int health;
 
-		public Gel(int x, int y, int health, int maxHealth, GraphicsDevice window)
+		public Gel(int x, int y, int health, int maxHealth)
 		{
 			this.Speed = 1;                /*Changeable*/
 			this.Size = 3;                 /************/
 			this.position = new Vector2(); 
 			this.position.X = x;
 			this.position.Y = y;
-			this.Boundary = new Vector2();
-			this.Boundary.X = window.Viewport.Width;
-			this.Boundary.Y = window.Viewport.Height;
 			this.state = new EStateGelMovingHorizontal(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 			hitBox = new Rectangle(x, y, 8 * Size, 16 * Size);
@@ -48,10 +44,6 @@ namespace Game1
 		public Vector2 GetPosition()
 		{
 			return this.position;
-		}
-		public Vector2 GetBoundary()
-		{
-			return Boundary;
 		}
 		public void SetState(IEnemyState state)
 		{
@@ -121,37 +113,37 @@ namespace Game1
 
 		public void CheckCollisions(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void PlayerCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void EnemyCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void ItemCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void BlockCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void BorderCollision()
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public Rectangle GetHitBox()

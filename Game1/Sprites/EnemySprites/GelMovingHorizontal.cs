@@ -9,8 +9,6 @@ namespace Game1.EnemySprites
     {
         Texture2D texture;
         IEnemy enemy;
-        private int backgroundWidth = 256;
-        private float backgroundHorizontalRatio;
         private int srcWidth = 8;
         private int srcHeight = 16;
         private int destWidth = 8;
@@ -31,9 +29,6 @@ namespace Game1.EnemySprites
 
         public GelMovingHorizontal(IEnemy enemy, Texture2D texture)
         {
-            backgroundHorizontalRatio = (int)enemy.GetBoundary().X / backgroundWidth;
-            minX = (int)(290 * backgroundHorizontalRatio - backgroundWidth * backgroundHorizontalRatio);
-            maxX = (int)(481 * backgroundHorizontalRatio - backgroundWidth * backgroundHorizontalRatio);
             this.texture = texture;
             this.enemy = enemy;
             moveSpeed = enemy.Speed;

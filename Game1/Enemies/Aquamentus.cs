@@ -10,23 +10,19 @@ namespace Game1
 	public class Aquamentus : IEnemy
 	{
 		private Vector2 position;
-		private Vector2 Boundary;
 		private IEnemyState state;
 		private Rectangle hitBox;
 		List<IProjectile> projectiles;
 		int maxHealth;
 		int health;
 
-		public Aquamentus(int x, int y, int health, int maxHealth, GraphicsDevice window)
+		public Aquamentus(int x, int y, int health, int maxHealth)
 		{
 			this.Speed = 2;                /*Changeable*/
 			this.Size = 3;                 /************/
 			this.position = new Vector2();
 			this.position.X = x;
 			this.position.Y = y;
-			this.Boundary = new Vector2();
-			this.Boundary.X = window.Viewport.Width;
-			this.Boundary.Y = window.Viewport.Height;
 			this.state = new EStateAquamentusMovingLeft(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 			hitBox = new Rectangle(x, y, 24 * Size, 32 * Size);
@@ -48,10 +44,6 @@ namespace Game1
 		public Vector2 GetPosition()
 		{
 			return this.position;
-		}
-		public Vector2 GetBoundary()
-		{
-			return Boundary;
 		}
 		public void SetState(IEnemyState state)
 		{

@@ -10,8 +10,6 @@ namespace Game1
     {
         int Size { get; set; }
         Vector2 GetPosition();
-        Vector2 GetBoundary();
-
         void Stop();
         void Update();
         void Draw(SpriteBatch spriteBatch);

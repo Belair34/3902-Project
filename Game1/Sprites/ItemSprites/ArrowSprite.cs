@@ -18,9 +18,6 @@ namespace Game1
             base.srcY = 195;
         }
 
-        public ArrowSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture)
-        {
-            Initialize();
-        }
+        public ArrowSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }
     }
 }

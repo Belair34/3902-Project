@@ -6,36 +6,20 @@ using System;
 
 namespace Game1
 {
-    class ClockSprite : ISprite
+    class ClockSprite : AbstractSprite, ISprite
     {
-        Texture2D texture;
-        IItem item;
-        int ClockSrcWidth = 12;
-        int ClockSrcHeight = 20;
-        int ClockDestWidth = 12;
-        int ClockDestHeight = 20;
-        int ClockSrcX = 391;
-        int ClockSrcY = 163;
 
-        public ClockSprite(IItem item, Texture2D texture)
+        internal override void Initialize()
         {
-            this.texture = texture;
-            this.item = item;
-            this.ClockDestWidth *= item.Size;
-            this.ClockDestHeight *= item.Size;
-        }
-        public void Update()
-        {
-
+            base.srcWidth = 12;
+            base.srcHeight = 20;
+            base.destWidth = 12;
+            base.destHeight = 20;
+            base.srcX = 391;
+            base.srcY = 163;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            Rectangle arrowSrcRec = new Rectangle(ClockSrcX, ClockSrcY, ClockSrcWidth, ClockSrcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)item.GetPosition().X, (int)item.GetPosition().Y, ClockDestWidth, ClockDestHeight);
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
-            spriteBatch.End();
-        }
+        public ClockSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }
+
     }
 }

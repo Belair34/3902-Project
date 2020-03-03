@@ -6,7 +6,7 @@ using System;
 
 namespace Game1
 {
-    class RupeeSprite : ISprite
+    class RupeeSprite : AbstractSprite, ISprite
     {
         Texture2D texture;
         IItem item;
@@ -16,26 +16,16 @@ namespace Game1
         int RupeeDestHeight = 20;
         int RupeeSrcX = 271;
         int RupeeSrcY = 224;
-
-        public RupeeSprite(IItem item, Texture2D texture)
+        internal override void Initialize()
         {
-            this.texture = texture;
-            this.item = item;
-            this.RupeeDestWidth *= item.Size;
-            this.RupeeDestHeight *= item.Size;
-        }
-        public void Update()
-        {
-
+            base.srcWidth = 12;
+            base.srcHeight = 20;
+            base.destWidth = 12;
+            base.destHeight = 20;
+            base.srcX = 271;
+            base.srcY = 224;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            Rectangle arrowSrcRec = new Rectangle(RupeeSrcX, RupeeSrcY, RupeeSrcWidth, RupeeSrcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)item.GetPosition().X, (int)item.GetPosition().Y, RupeeDestWidth, RupeeDestHeight);
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
-            spriteBatch.End();
-        }
+        public RupeeSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }
     }
 }

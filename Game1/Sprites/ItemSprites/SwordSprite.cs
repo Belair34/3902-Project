@@ -6,7 +6,7 @@ using System;
 
 namespace Game1
 {
-    class SwordSprite : ISprite
+    class SwordSprite : AbstractSprite, ISprite
     {
         Texture2D texture;
         IItem item;
@@ -16,26 +16,17 @@ namespace Game1
         int SwordDestHeight = 20;
         int SwordSrcX = 63;
         int SwordSrcY = 195;
-
-        public SwordSprite(IItem item, Texture2D texture)
+        internal override void Initialize()
         {
-            this.texture = texture;
-            this.item = item;
-            this.SwordDestWidth *= item.Size;
-            this.SwordDestHeight *= item.Size;
-        }
-        public void Update()
-        {
-
+            base.srcWidth = 10;
+            base.srcHeight = 20;
+            base.destWidth = 10;
+            base.destHeight = 20;
+            base.srcX = 63;
+            base.srcY = 195;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            Rectangle arrowSrcRec = new Rectangle(SwordSrcX, SwordSrcY, SwordSrcWidth, SwordSrcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)item.GetPosition().X, (int)item.GetPosition().Y, SwordDestWidth, SwordDestHeight);
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
-            spriteBatch.End();
-        }
+        public SwordSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }
+
     }
 }

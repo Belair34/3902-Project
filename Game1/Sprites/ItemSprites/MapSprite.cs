@@ -6,7 +6,7 @@ using System;
 
 namespace Game1
 {
-    class MapSprite : ISprite
+    class MapSprite : AbstractSprite, ISprite
     {
         Texture2D texture;
         IItem item;
@@ -16,26 +16,16 @@ namespace Game1
         int MapDestHeight = 20;
         int MapSrcX = 272;
         int MapSrcY = 253;
-
-        public MapSprite(IItem item, Texture2D texture)
+        internal override void Initialize()
         {
-            this.texture = texture;
-            this.item = item;
-            this.MapDestWidth *= item.Size;
-            this.MapDestHeight *= item.Size;
-        }
-        public void Update()
-        {
-
+            base.srcWidth = 10;
+            base.srcHeight = 20;
+            base.destWidth = 10;
+            base.destHeight = 20;
+            base.srcX = 272;
+            base.srcY = 253;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            Rectangle arrowSrcRec = new Rectangle(MapSrcX, MapSrcY, MapSrcWidth, MapSrcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)item.GetPosition().X, (int)item.GetPosition().Y, MapDestWidth, MapDestHeight);
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
-            spriteBatch.End();
-        }
+        public MapSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }
     }
 }

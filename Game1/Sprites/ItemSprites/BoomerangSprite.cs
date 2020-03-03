@@ -6,36 +6,18 @@ using System;
 
 namespace Game1
 {
-    class BoomerangSprite : ISprite
+    class BoomerangSprite : AbstractSprite, ISprite
     {
-        Texture2D texture;
-        IItem item;
-        int BoomerangSrcWidth = 5;
-        int BoomerangSrcHeight = 10;
-        int BoomerangDestWidth = 5;
-        int BoomerangDestHeight = 10;
-        int BoomerangSrcX = 0;
-        int BoomerangSrcY = 111;
-
-        public BoomerangSprite(IItem item, Texture2D texture)
+        internal override void Initialize()
         {
-            this.texture = texture;
-            this.item = item;
-            this.BoomerangDestWidth *= item.Size;
-            this.BoomerangDestHeight *= item.Size;
-        }
-        public void Update()
-        {
-
+            base.srcWidth = 5;
+            base.srcHeight = 10;
+            base.destWidth = 5;
+            base.destHeight = 10;
+            base.srcX = 0;
+            base.srcY = 111;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            Rectangle arrowSrcRec = new Rectangle(BoomerangSrcX, BoomerangSrcY, BoomerangSrcWidth, BoomerangSrcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)item.GetPosition().X, (int)item.GetPosition().Y, BoomerangDestWidth, BoomerangDestHeight);
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
-            spriteBatch.End();
-        }
+        public BoomerangSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }
     }
 }

@@ -6,7 +6,7 @@ using System;
 
 namespace Game1
 {
-    class KeySprite : ISprite
+    class KeySprite : AbstractSprite, ISprite
     {
         Texture2D texture;
         IItem item;
@@ -16,26 +16,16 @@ namespace Game1
         int KeyDestHeight = 20;
         int KeySrcX = 422;
         int KeySrcY = 164;
-
-        public KeySprite(IItem item, Texture2D texture)
+        internal override void Initialize()
         {
-            this.texture = texture;
-            this.item = item;
-            this.KeyDestWidth *= item.Size;
-            this.KeyDestHeight *= item.Size;
-        }
-        public void Update()
-        {
-
+            base.srcWidth = 15;
+            base.srcHeight = 15;
+            base.destWidth = 15;
+            base.destHeight = 15;
+            base.srcX = 181;
+            base.srcY = 195;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            Rectangle arrowSrcRec = new Rectangle(KeySrcX, KeySrcY, KeySrcWidth, KeySrcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)item.GetPosition().X, (int)item.GetPosition().Y, KeyDestWidth, KeyDestHeight);
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
-            spriteBatch.End();
-        }
+        public KeySprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }
     }
 }

@@ -6,36 +6,19 @@ using System;
 
 namespace Game1
 {
-    class BombSprite : ISprite
+    class BombSprite : AbstractSprite, ISprite
     {
-        Texture2D texture;
-        IItem item;
-        int bombSrcWidth = 12;
-        int bombSrcHeight = 15;
-        int bombDestWidth = 12;
-        int bombDestHeight = 15;
-        int bombSrcX = 360;
-        int bombSrcY = 225;
-
-        public BombSprite(IItem item, Texture2D texture)
+        internal override void Initialize()
         {
-            this.texture = texture;
-            this.item = item;
-            this.bombDestWidth *= item.Size;
-            this.bombDestHeight *= item.Size;
-        }
-        public void Update()
-        {
-
+            base.srcWidth = 12;
+            base.srcHeight = 15;
+            base.destWidth = 12;
+            base.destHeight = 15;
+            base.srcX = 360;
+            base.srcY = 225;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            Rectangle arrowSrcRec = new Rectangle(bombSrcX, bombSrcY, bombSrcWidth, bombSrcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)item.GetPosition().X, (int)item.GetPosition().Y, bombDestWidth, bombDestHeight);
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
-            spriteBatch.End();
-        }
+        public BombSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }
+
     }
 }

@@ -6,28 +6,27 @@ using System;
 
 namespace Game1
 {
-    class FlashingRupeeSprite : ISprite
+    class FlashingRupeeSprite : AbstractSprite, ISprite
     {
-        Texture2D texture;
-        IItem item;
-        int RupeeSrcWidth = 12;
-        int RupeeSrcHeight = 20;
-        int RupeeDestWidth = 12;
-        int RupeeDestHeight = 20;
-        int RupeeSrcX = 271;
-        int RupeeSrcY = 224;
+
+
         int curFrame = 1;
         int totalFrames = 2; /*Maybe this*/
         int delay = 0;
 
-        public FlashingRupeeSprite(IItem item, Texture2D texture)
+        internal override void Initialize()
         {
-            this.texture = texture;
-            this.item = item;
-            this.RupeeDestWidth *= item.Size;
-            this.RupeeDestHeight *= item.Size;
+            base.srcWidth = 15;
+            base.srcHeight = 15;
+            base.destWidth = 15;
+            base.destHeight = 15;
+            base.srcX = 181;
+            base.srcY = 195;
         }
-        public void Update()
+
+        public FlashingRupeeSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }
+
+        public override void Update()
         {
             delay++;
             if (delay == 7) /*Delay of frame changes*/
@@ -41,22 +40,22 @@ namespace Game1
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             Rectangle RupeeSrcRec;
-            Rectangle RupeeDestRec = new Rectangle((int)item.GetPosition().X, (int)item.GetPosition().Y, RupeeDestWidth, RupeeDestHeight);
+            Rectangle RupeeDestRec = GetDestRect();
 
             if (curFrame == 1) /*Change these to correct frames, might need to add/delete else if*/
             {
-               RupeeSrcX = 271;
-               RupeeSrcY = 224;
+               base.srcX = 271;
+               base.srcY = 224;
             }
             else if (curFrame == 2)
             {
-                RupeeSrcX = 241;
-                RupeeSrcY = 224;
+                base.srcX = 241;
+                base.srcY = 224;
             }
-            RupeeSrcRec = new Rectangle(RupeeSrcX, RupeeSrcY, RupeeSrcWidth, RupeeSrcHeight);
+            RupeeSrcRec = new Rectangle(base.srcX, base.srcY, base.srcWidth, base.srcHeight);
             spriteBatch.Begin();
             spriteBatch.Draw(texture, RupeeDestRec, RupeeSrcRec, Color.White);
             spriteBatch.End();

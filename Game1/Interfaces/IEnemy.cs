@@ -5,13 +5,12 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    public interface IEnemy
+    public interface IEnemy : ICollidable
     {
         
         int Speed { get; set; }
         int Size { get; set; }
         List<IProjectile> GetProjectiles();
-        void SetPosition(int x, int y);
         Vector2 GetPosition();
         Vector2 GetBoundary();
         void SetState(IEnemyState state);

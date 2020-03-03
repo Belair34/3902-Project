@@ -7,33 +7,32 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-	public class WallMaster : IEnemy
+	public class Aquamentus : IEnemy
 	{
 		private Vector2 position;
 		private Vector2 Boundary;
 		private IEnemyState state;
+		private Rectangle hitBox;
 		List<IProjectile> projectiles;
 		int maxHealth;
 		int health;
-		private Rectangle hitBox;
 
-		public WallMaster(int x, int y, int health, int maxHealth, GraphicsDevice window)
+		public Aquamentus(int x, int y, int health, int maxHealth, GraphicsDevice window)
 		{
-			this.Speed = 1;                /*Changeable*/
+			this.Speed = 2;                /*Changeable*/
 			this.Size = 3;                 /************/
-			this.position = new Vector2(); 
+			this.position = new Vector2();
 			this.position.X = x;
 			this.position.Y = y;
 			this.Boundary = new Vector2();
 			this.Boundary.X = window.Viewport.Width;
 			this.Boundary.Y = window.Viewport.Height;
-			this.state = new EStateWallMasterIdleAnimated(this);
+			this.state = new EStateAquamentusMovingLeft(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
-			hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
-			hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
+			hitBox = new Rectangle(x, y, 24 * Size, 32 * Size);
 		}
 
-        public int Speed { get; set; }
+		public int Speed { get; set; }
 		public int Size { get; set; }
 
 		public List<IProjectile> GetProjectiles()
@@ -109,6 +108,7 @@ namespace Game1
 				projectile.Update();
 			}
 			state.Update();
+			this.hitBox.Location = this.position.ToPoint();
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
@@ -122,37 +122,37 @@ namespace Game1
 
 		public void CheckCollisions(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void PlayerCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void EnemyCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void ItemCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void BlockCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void BorderCollision()
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public Rectangle GetHitBox()

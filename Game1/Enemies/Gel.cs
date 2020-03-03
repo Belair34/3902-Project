@@ -13,6 +13,7 @@ namespace Game1
 		private Vector2 Boundary;
 		private IEnemyState state;
 		List<IProjectile> projectiles;
+		private Rectangle hitBox;
 		int maxHealth;
 		int health;
 
@@ -28,6 +29,7 @@ namespace Game1
 			this.Boundary.Y = window.Viewport.Height;
 			this.state = new EStateGelMovingHorizontal(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
+			hitBox = new Rectangle(x, y, 8 * Size, 16 * Size);
 		}
 
         public int Speed { get; set; }
@@ -117,6 +119,44 @@ namespace Game1
 			state.Draw(spriteBatch);
 		}
 
-		
+		public void CheckCollisions(ICollidable collidable)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void PlayerCollision(ICollidable collidable)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void EnemyCollision(ICollidable collidable)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void ProjectileCollision(ICollidable collidable)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void ItemCollision(ICollidable collidable)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void BlockCollision(ICollidable collidable)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void BorderCollision()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public Rectangle GetHitBox()
+		{
+			return this.hitBox;
+		}
 	}
 }

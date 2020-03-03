@@ -25,7 +25,7 @@ namespace Game1
         /*Not sure how this works with abstract class, we need the item's hitbox rectangle*/
         public Rectangle GetHitBox()
         {
-            return new Rectangle(); //delete and replace with actual call once all sprites have been refactored
+            return new Rectangle((int)position.X, (int)position.Y, Size*15, Size*15); //delete and replace with actual call once all sprites have been refactored
             //return sprite.GetDestRect();
         }
 

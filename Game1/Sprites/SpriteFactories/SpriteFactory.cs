@@ -13,6 +13,7 @@ namespace Game1
         private Texture2D altLinkSheet;
         private Texture2D enemyLinkSheet;
         private Texture2D explosionSheet;
+        private Texture2D bossLinkSheet;
         private static SpriteFactory instance = new SpriteFactory();
         public static SpriteFactory Instance
         {
@@ -32,6 +33,7 @@ namespace Game1
             linkSheet = content.Load<Texture2D>("ProjectSpriteSheets/LinkSpriteSheet");
             altLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/AltLinkSheet");
             enemyLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/Blade trap, Gel, Goriya, keese, stalfos, wall master");
+            bossLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/boss");
             explosionSheet = content.Load<Texture2D>("ProjectSpriteSheets/ExplosionSheet");
         }
 
@@ -228,6 +230,25 @@ namespace Game1
             return new BombExplode(projectile, explosionSheet);
         }
 
+        public ISprite GetAquaFireballUp(IProjectile projectile)
+        {
+            return new AquaFireballUp(projectile, bossLinkSheet);
+        }
+
+        public ISprite GetAquaFireballDown(IProjectile projectile)
+        {
+            return new AquaFireballDown(projectile, bossLinkSheet);
+        }
+
+        public ISprite GetAquaFireballLeft(IProjectile projectile)
+        {
+            return new AquaFireballLeft(projectile, bossLinkSheet);
+        }
+
+        public ISprite GetAquaFireballRight(IProjectile projectile)
+        {
+            return new AquaFireballRight(projectile, bossLinkSheet);
+        }
         /*Enemy Sprites*/
         public ISprite GetGelIdleJump(IEnemy enemy)
         {
@@ -253,21 +274,41 @@ namespace Game1
         {
             return new BladeTrapSprites(enemy, enemyLinkSheet);
         }
-        public ISprite GetGoriyaDown(IEnemy enemy)
+        public ISprite GetGoriyaMovingDown(IEnemy enemy)
         {
-            return new GoriyaDown(enemy, enemyLinkSheet);
+            return new GoriyaMovingDown(enemy, enemyLinkSheet);
         }
-        public ISprite GetGoriyaRight(IEnemy enemy)
+        public ISprite GetGoriyaMovingRight(IEnemy enemy)
         {
-            return new GoriyaRight(enemy, enemyLinkSheet);
+            return new GoriyaMovingRight(enemy, enemyLinkSheet);
+        }
+        public ISprite GetGoriyaMovingLeft(IEnemy enemy)
+        {
+            return new GoriyaMovingLeft(enemy, enemyLinkSheet);
         }
         public ISprite GetGoriyaThrowRight(IEnemy enemy)
         {
             return new GoriyaThrowRight(enemy, enemyLinkSheet);
         }
-        public ISprite GetGoriyaUp(IEnemy enemy)
+        public ISprite GetGoriyaMovingUp(IEnemy enemy)
         {
-            return new GoriyaUp(enemy, enemyLinkSheet);
+            return new GoriyaMovingUp(enemy, enemyLinkSheet);
+        }
+        public ISprite GetAquamentusMovingDown(IEnemy enemy)
+        {
+            return new AquamentusMovingDown(enemy, bossLinkSheet);
+        }
+        public ISprite GetAquamentusMovingUp(IEnemy enemy)
+        {
+            return new AquamentusMovingUp(enemy, bossLinkSheet);
+        }
+        public ISprite GetAquamentusMovingLeft(IEnemy enemy)
+        {
+            return new AquamentusMovingLeft(enemy, bossLinkSheet);
+        }
+        public ISprite GetAquamentusMovingRight(IEnemy enemy)
+        {
+            return new AquamentusMovingRight(enemy, bossLinkSheet);
         }
     }
 }

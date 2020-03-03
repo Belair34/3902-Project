@@ -42,6 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Border.cs" />
+    <Compile Include="EnemyStates\EStateAquamentusMovingDown.cs" />
+    <Compile Include="EnemyStates\EStateAquamentusMovingLeft.cs" />
+    <Compile Include="EnemyStates\EStateAquamentusMovingRight.cs" />
+    <Compile Include="EnemyStates\EStateAquamentusMovingUp.cs" />
     <Compile Include="EnemyStates\EStateGoriyaDown.cs" />
     <Compile Include="Enemies\Goriya.cs" />
     <Compile Include="Commands\InventoryCommands\BoomerangCommand.cs" />
@@ -50,6 +54,7 @@
     <Compile Include="Commands\InventoryCommands\EmptyCommand.cs" />
     <Compile Include="EnemyStates\EStateGelMovingVertical.cs" />
     <Compile Include="EnemyStates\EStateBladeTrap.cs" />
+    <Compile Include="EnemyStates\EStateGoriyaMovingRandom.cs" />
     <Compile Include="EnemyStates\EStateWallMasterIdleAnimated.cs" />
     <Compile Include="Enemies\BladeTrap.cs" />
     <Compile Include="Enemies\WallMaster.cs" />
@@ -77,9 +82,19 @@
     <Compile Include="Items\KeyItem.cs" />
     <Compile Include="Items\FlashingRupeeItem.cs" />
     <Compile Include="Items\RupeeItem.cs" />
+    <Compile Include="Projectiles\ProjAquaFireballDown.cs" />
     <Compile Include="Projectiles\ProjLinkBombRight.cs" />
     <Compile Include="Projectiles\ProjLinkBombLeft.cs" />
     <Compile Include="Projectiles\ProjLinkBombUp.cs" />
+    <Compile Include="Enemies\Aquamentus.cs" />
+    <Compile Include="Sprites\EnemySprites\AquamentusMovingDown.cs" />
+    <Compile Include="Sprites\EnemySprites\AquamentusMovingLeft.cs" />
+    <Compile Include="Sprites\EnemySprites\AquamentusMovingRight.cs" />
+    <Compile Include="Sprites\EnemySprites\AquamentusMovingUp.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaMovingDown.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaMovingLeft.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaMovingRight.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaMovingUp.cs" />
     <Compile Include="Sprites\ItemSprites\BowSprite.cs" />
     <Compile Include="Sprites\ItemSprites\SwordSprite.cs" />
     <Compile Include="Sprites\ItemSprites\MapSprite.cs" />
@@ -144,11 +159,7 @@
     <Compile Include="Sprites\EnemySprites\GelIdleJump.cs" />
     <Compile Include="Sprites\EnemySprites\GelMovingHorizontal.cs" />
     <Compile Include="Sprites\EnemySprites\GelMovingVertical.cs" />
-    <Compile Include="Sprites\EnemySprites\GoriyaDown.cs" />
-    <Compile Include="Sprites\EnemySprites\GoriyaLeft.cs" />
-    <Compile Include="Sprites\EnemySprites\GoriyaRight.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaThrowRight.cs" />
-    <Compile Include="Sprites\EnemySprites\GoriyaUp.cs" />
     <Compile Include="Sprites\ISprite.cs" />
     <Compile Include="Sprites\ItemSprites\ArrowSprite.cs" />
     <Compile Include="Items\ArrowItem.cs" />
@@ -185,6 +196,10 @@
     <Compile Include="Sprites\ProjectileSprites\Boomerang\BoomerangLeft.cs" />
     <Compile Include="Sprites\ProjectileSprites\Boomerang\BoomerangUp.cs" />
     <Compile Include="Sprites\ProjectileSprites\Boomerang\BoomerangDown.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Fireball\AquaFireballDown.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Fireball\AquaFireballUp.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Fireball\AquaFireballLeft.cs" />
+    <Compile Include="Sprites\ProjectileSprites\Fireball\AquaFireballRight.cs" />
     <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordExplode.cs" />
     <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordExplodeBotRight.cs" />
     <Compile Include="Sprites\ProjectileSprites\SwordBeam\SwordExplodeBotLeft.cs" />

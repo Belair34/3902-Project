@@ -5,43 +5,42 @@ using Game1.Projectiles;
 
 namespace Game1.PlayerStates
 {
-    class EStateGoriyaDown : IEnemyState
+    class EStateAquamentusMovingUp : IEnemyState
     {
         ISprite sprite;
         IEnemy enemy;
         int coolDown;
-        public EStateGoriyaDown(IEnemy enemy, int coolDown = 0)
+        public EStateAquamentusMovingUp(IEnemy enemy, int coolDown = 0)
         {
             this.enemy = enemy;
-            this.sprite = SpriteFactory.Instance.GetGoriyaMovingDown(enemy);
+            this.sprite = SpriteFactory.Instance.GetAquamentusMovingUp(enemy);
             this.coolDown = coolDown;
         }
         public void MoveUp()
         {
-            //enemy.SetState(new EStateMovingUp(enemy, coolDown));
         }
 
         public void MoveDown()
         {
-            enemy.SetState(new EStateGoriyaDown(enemy, coolDown));
+            enemy.SetState(new EStateAquamentusMovingDown(enemy, coolDown));
         }
         public void MoveLeft()
         {
-            //enemy.SetState(new EStateMovingLeft(enemy, coolDown));
+            enemy.SetState(new EStateAquamentusMovingLeft(enemy, coolDown));
         }
 
         public void MoveRight()
         {
-            //enemy.SetState(new EStateMovingRight(enemy, coolDown));
+            enemy.SetState(new EStateAquamentusMovingRight(enemy, coolDown));
         }
         public void MoveHorizontal()
         {
-            
+
         }
 
         public void MoveVertical()
         {
-            
+            //enemy.SetState(new EStateGelMovingVertical(enemy, coolDown));
         }
         public void MoveToPlayer()
         {
@@ -67,6 +66,6 @@ namespace Game1.PlayerStates
             sprite.Draw(spriteBatch);
         }
 
-
+       
     }
 }

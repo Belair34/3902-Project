@@ -117,6 +117,44 @@ namespace Game1
 			state.Draw(spriteBatch);
 		}
 
-		
+		public ICollidable GetCollision()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void CheckCollisions(ICollidable collidable, Border border)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void PlayerCollision(ICollidable collidable)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void EnemyCollision(ICollidable collidable)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void ProjectileCollision(ICollidable collidable)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void BlockCollision(ICollidable collidable)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void BorderCollision()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public Rectangle GetHitBox()
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

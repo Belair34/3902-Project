@@ -14,12 +14,12 @@ namespace Game1
         Rectangle backgroundSrcRec;
         Rectangle backgroundDestRec;
         //SpriteFont text;
-        public Stack<IItem> items1;
-        public Stack<IItem> items2;
+        public Stack<IItems> items1;
+        public Stack<IItems> items2;
         List<IController> controllers;
         IPlayer player;
         IEnemy enemy;
-        IItem item;
+        IItems item;
         private Texture2D background;
         Border border;
 
@@ -38,7 +38,7 @@ namespace Game1
         {
             return this.player;
         }
-        public IItem GetItem()
+        public IItems GetItem()
         {
             return this.item;
         }
@@ -57,16 +57,17 @@ namespace Game1
             spriteBatch = new SpriteBatch(GraphicsDevice);
             SpriteFactory.Instance.LoadAll(Content);
             SpriteFactoryItems.Instance.LoadAll(Content);
-            border = new Border(graphics);
-            player = new PlayerDefault(100, 100, 6, 6);
-            //enemy = new BladeTrap(600, 300, 3, 6, GraphicsDevice);
-            this.backgroundSrcRec = new Rectangle(515, 886, 256, 176);
+            background = Content.Load<Texture2D>("ProjectSpriteSheets/dungeon");
+            border = new Border(graphics, background);
+            player = new PlayerDefault(100, 100, 6, 6, background);
+            enemy = new EnemyDefault(600, 300, 3, 6, GraphicsDevice);
+            this.backgroundSrcRec = new Rectangle(257, 0, 256, 176);
             this.backgroundDestRec = new Rectangle(0, 0, spriteBatch.GraphicsDevice.Viewport.Width, spriteBatch.GraphicsDevice.Viewport.Height);
             controllers = new List<IController>();           /*Controllers*/
             controllers.Add(new KeyboardController(this));
             //push items onto stack for rotation
-            items1 = new Stack<IItem>();
-            items2 = new Stack<IItem>();
+            items1 = new Stack<IItems>();
+            items2 = new Stack<IItems>();
             items1.Push(new ArrowItem(150,150,GraphicsDevice));
             items1.Push(new BombItem(150, 150, GraphicsDevice));
             items1.Push(new RupeeItem(150, 150, GraphicsDevice));
@@ -89,7 +90,7 @@ namespace Game1
             enemies1.Push(new Keese(600, 300, 3, 6, GraphicsDevice));
             enemies1.Push(new WallMaster(600, 300, 3, 6, GraphicsDevice));
             enemies1.Push(new Goriya(600, 300, 3, 6, GraphicsDevice));
-
+            enemies1.Push(new Aquamentus(600, 300, 10, 20, GraphicsDevice));
             enemy = enemies1.Peek();
 
             //controllers.Add(new MouseController(this));
@@ -99,7 +100,7 @@ namespace Game1
 
         protected override void LoadContent()
         {
-            background = Content.Load<Texture2D>("ProjectSpriteSheets/dungeon");
+            
         }
 
    
@@ -123,13 +124,14 @@ namespace Game1
                 enemy = enemies1.Peek();
             }
             enemy.Update();
-
+            border.CheckCollision(enemy);
             //item
             if(items1.Count > 0)
             {
                 item = items1.Peek();
             }
             item.Update();
+            border.CheckCollision(item);
             base.Update(gameTime);
         }
 
@@ -141,6 +143,7 @@ namespace Game1
             //GraphicsDevice.Clear(Color.CornflowerBlue);
             enemy.Draw(spriteBatch);
             item.Draw(spriteBatch);
+            border.DrawBox(spriteBatch);
             player.Draw(spriteBatch);
             base.Draw(gameTime);
             

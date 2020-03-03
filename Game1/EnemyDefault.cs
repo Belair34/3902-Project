@@ -9,6 +9,7 @@ namespace Game1
 {
 	public class EnemyDefault : IEnemy
 	{
+		public Rectangle hitBox;
 		private Vector2 position;
 		private Vector2 Boundary;
 		private IEnemyState state;
@@ -28,11 +29,15 @@ namespace Game1
 			this.Boundary.Y = window.Viewport.Height;
 			this.state = new EStateGelMovingVertical(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
+			this.hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
 		}
 
-        public int Speed { get; set; }
+	public int Speed { get; set; }
 		public int Size { get; set; }
-
+		public Rectangle GetHitBox()
+		{
+			return this.hitBox;
+		}
 		public List<IProjectile> GetProjectiles()
 		{
 			return this.projectiles;
@@ -99,6 +104,40 @@ namespace Game1
 			state.Stop();
 		}
 
+		public void CheckCollisions(ICollidable collidable, Border border)
+		{
+
+		}
+
+		public void PlayerCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void EnemyCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void ProjectileCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void BlockCollision(ICollidable collidable)
+		{
+
+		}
+
+		public void BorderCollision()
+		{
+
+		}
+		public ICollidable GetCollision()
+		{
+			throw new System.NotImplementedException();
+		}
+
 		public void Update()
 		{
 			foreach (IProjectile projectile in projectiles)
@@ -116,7 +155,5 @@ namespace Game1
 			}
 			state.Draw(spriteBatch);
 		}
-
-		
 	}
 }

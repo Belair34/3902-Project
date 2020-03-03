@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-	public class Goriya : IEnemy
+	public class Aquamentus : IEnemy
 	{
 		private Vector2 position;
 		private Vector2 Boundary;
@@ -16,17 +16,17 @@ namespace Game1
 		int maxHealth;
 		int health;
 
-		public Goriya(int x, int y, int health, int maxHealth, GraphicsDevice window)
+		public Aquamentus(int x, int y, int health, int maxHealth, GraphicsDevice window)
 		{
-			this.Speed = 1;                /*Changeable*/
-			this.Size = 3;                 /************/
+			this.Speed = 3;                /*Changeable*/
+			this.Size = 5;                 /************/
 			this.position = new Vector2(); 
 			this.position.X = x;
 			this.position.Y = y;
 			this.Boundary = new Vector2();
 			this.Boundary.X = window.Viewport.Width;
 			this.Boundary.Y = window.Viewport.Height;
-			this.state = new EStateGoriyaDown(this);
+			this.state = new EStateAquamentusMovingLeft(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 		}
 

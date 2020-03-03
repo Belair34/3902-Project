@@ -29,7 +29,7 @@ namespace Game1.ProjectileSprites
             int projX = (int)drawable.GetPosition().X;
             int projY = (int)drawable.GetPosition().Y;
             projY += speed;
-            drawable.SetPosition(projX, projY);
+            ((IProjectile)drawable).SetPosition(projX, projY);
             ((IProjectile)drawable).ShotDistance += speed;
         }
     }

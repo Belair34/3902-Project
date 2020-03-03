@@ -111,7 +111,29 @@ namespace Game1
 		
 		public void CheckCollisions(ICollidable collidable)
 		{
+			if (collidable.GetHitBox().Intersects(hitBox))
+			{
+				if (collidable is IProjectile)
+				{
+					ProjectileCollision(collidable);
+				}
+				else if (collidable is IEnemy)
+				{
+					EnemyCollision(collidable);
+				}
+				else if (collidable is IItem)
+				{
+					ProjectileCollision(collidable);
+				}
+				else if (collidable is IPlayer)
+				{
+					PlayerCollision(collidable);
+				}
+				/*else if (collidable is Block)
+				{
 
+				}*/
+			}
 		}
 
 		public void PlayerCollision(ICollidable collidable)
@@ -121,12 +143,12 @@ namespace Game1
 
 		public void EnemyCollision(ICollidable collidable)
 		{
-
+			System.Console.WriteLine("Enemy Collision");
 		}
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-
+			System.Console.WriteLine("Projectile Collision");
 		}
 		public void ItemCollision(ICollidable collidable)
 		{

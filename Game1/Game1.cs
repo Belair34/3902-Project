@@ -17,8 +17,11 @@ namespace Game1
         //SpriteFont text;
         List<IController> controllers;
         IPlayer player;
-        ArrayList collidables;
+        List<IEnemy> enemies;
+        List<IItem> items;
+        List<ICollidable> collidables;
         Border border;
+        ICommand collisionChecker;
         private Texture2D background;
 
         public Game1()
@@ -38,18 +41,24 @@ namespace Game1
         }
         protected override void Initialize()
         {
-            collidables = new ArrayList();
+            items = new List<IItem>();
+            enemies = new List<IEnemy>();
+            collidables = new List<ICollidable>();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             SpriteFactory.Instance.LoadAll(Content);
             SpriteFactoryItems.Instance.LoadAll(Content);
             border = new Border(graphics);
             player = new PlayerDefault(100, 100);
+            collidables.Add(player);
+            IEnemy Aqua = new Aquamentus(600, 200, 10, 10, GraphicsDevice);
+            collidables.Add(Aqua);
+            enemies.Add(Aqua);
+            collisionChecker = new CheckAllCollisionsCommand(collidables, border);
             this.backgroundSrcRec = new Rectangle(515, 886, 256, 176);
             this.backgroundDestRec = new Rectangle(0, 0, spriteBatch.GraphicsDevice.Viewport.Width, spriteBatch.GraphicsDevice.Viewport.Height);
             controllers = new List<IController>();           /*Controllers*/
             controllers.Add(new KeyboardController(this));
-
-            //controllers.Add(new MouseController(this));
+             
             this.IsMouseVisible = true;
             base.Initialize();
         }
@@ -73,7 +82,11 @@ namespace Game1
             }
             
             player.Update();
-            border.CheckCollision(player);
+            foreach(IEnemy enemy in enemies)
+            {
+                enemy.Update();
+            }
+            collisionChecker.Execute();
             base.Update(gameTime);
         }
 
@@ -84,6 +97,10 @@ namespace Game1
             spriteBatch.End();
             //GraphicsDevice.Clear(Color.CornflowerBlue);
             player.Draw(spriteBatch);
+            foreach(IEnemy enemy in enemies)
+            {
+                enemy.Draw(spriteBatch);
+            }
             base.Draw(gameTime);
             
         }

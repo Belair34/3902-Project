@@ -49,8 +49,7 @@ namespace Game1
             slotB = new BowCommand(player);
         }
         public ICommand GetSlotBCommand()
-        {
-            slotB.Initialize(player);
+        { 
             return slotB;
         }
         public void SetSlotBCommand(ICommand command)

@@ -2,16 +2,16 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Game1.PlayerStates;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace Game1
 {
     class CheckAllCollisionsCommand : ICommand
     {
 		private Border border;
-		private ArrayList collidables;
+		private List<ICollidable> collidables;
 
-		public CheckAllCollisionsCommand(ArrayList collidables, Border border)
+		public CheckAllCollisionsCommand(List<ICollidable> collidables, Border border)
 		{
 			this.collidables = collidables;
 			this.border = border;
@@ -19,11 +19,16 @@ namespace Game1
 
 		public void Execute()
 		{
-			foreach (ICollidable collidable in collidables)
+			for(int i = 0; i < collidables.Count-1; i++)
 			{
-
+				border.CheckCollision(collidables[i]);
+				for (int j = i + 1; j < collidables.Count; j++)
+				{
+					collidables[i].CheckCollisions(collidables[j]);
+				}
 			}
-			
+			border.CheckCollision(collidables[collidables.Count-1]);
+
 		}
 	}
 }

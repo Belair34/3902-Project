@@ -89,7 +89,7 @@ namespace Game1
             enemies1.Push(new Keese(600, 300, 3, 6, GraphicsDevice));
             enemies1.Push(new WallMaster(600, 300, 3, 6, GraphicsDevice));
             enemies1.Push(new Goriya(600, 300, 3, 6, GraphicsDevice));
-            enemies1.Push(new Aquamentus(600, 300, 10, 20, GraphicsDevice));
+            enemies1.Push(new Aquamentus(600, 200, 10, 20, GraphicsDevice));
 
             enemy = enemies1.Peek();
 

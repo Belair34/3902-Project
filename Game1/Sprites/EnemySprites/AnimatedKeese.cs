@@ -9,29 +9,27 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1.EnemySprites
 {
-    class AnimatedKeese : ISprite
+    class AnimatedKeese : AbstractSprite, ISprite
     {
-        Texture2D texture;
-        IEnemy enemy;
-        int srcWidth = 16;
-        int srcHeight = 16;
-        int destWidth = 13;
-        int destHeight = 13;
-        int srcX = 183; /*Change this*/
-        int srcY = 11;  /*and this*/
+        internal override void Initialize()
+        {
+            base.srcWidth = 16;
+            base.srcHeight = 16;
+            base.destWidth = 13;
+            base.destHeight = 13;
+            base.srcX = 183; /*Change this*/
+            base.srcY = 11;  /*and this*/
+        }
 
         int curFrame = 1;
         int totalFrames = 2;
         int delay = 0;
 
-        public AnimatedKeese(IEnemy enemy, Texture2D texture)
+        public AnimatedKeese(IDrawable drawable, Texture2D texture) : base(drawable, texture)
         {
-            this.texture = texture;
-            this.enemy = enemy;
-            this.destWidth *= enemy.Size;
-            this.destHeight *= enemy.Size;
+            Initialize();
         }
-        public void Update()
+        public override void Update()
         {
             delay++;
             if (delay == 7) /*Delay of frame changes*/
@@ -45,9 +43,9 @@ namespace Game1.EnemySprites
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            Rectangle destRec = new Rectangle((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y, destWidth, destHeight);
+            Rectangle destRec = GetDestRect();
             Rectangle srcRec;
             if (curFrame == 1) /*Change these to correct frames, might need to add/delete else if*/
             {

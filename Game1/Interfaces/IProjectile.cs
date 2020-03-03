@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1
 {
-    public interface IProjectile
+    public interface IProjectile: IDrawable
     {
         int Size { get; set; }
         int Speed { get; set; }

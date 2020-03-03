@@ -6,36 +6,21 @@ using System;
 
 namespace Game1
 {
-    class ArrowSprite : ISprite
+    class ArrowSprite : AbstractSprite, ISprite
     {
-        Texture2D texture;
-        IItem item;
-        int arrowSrcWidth = 15;
-        int arrowSrcHeight = 15;
-        int arrowDestWidth = 15;
-        int arrowDestHeight = 15;
-        int arrowSrcX = 181;
-        int arrowSrcY = 195;
-
-        public ArrowSprite(IItem item, Texture2D texture)
+        internal override void Initialize()
         {
-            this.texture = texture;
-            this.item = item;
-            this.arrowDestWidth *= item.Size;
-            this.arrowDestHeight *= item.Size;
-        }
-        public void Update()
-        {
-
+            base.srcWidth = 15;
+            base.srcHeight = 15;
+            base.destWidth = 15;
+            base.destHeight = 15;
+            base.srcX = 181;
+            base.srcY = 195;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public ArrowSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture)
         {
-            Rectangle arrowSrcRec = new Rectangle(arrowSrcX, arrowSrcY, arrowSrcWidth, arrowSrcHeight);
-            Rectangle arrowDestRec = new Rectangle((int)item.GetPosition().X, (int)item.GetPosition().Y, arrowDestWidth, arrowDestHeight);
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, arrowDestRec, arrowSrcRec, Color.White);
-            spriteBatch.End();
+            Initialize();
         }
     }
 }

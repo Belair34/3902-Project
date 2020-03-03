@@ -63,6 +63,7 @@
     <Compile Include="Enemies\Gel.cs" />
     <Compile Include="EnemyStates\EStateKeeseIdleAnimated.cs" />
     <Compile Include="EnemyStates\EStateGelMovingHorizontal.cs" />
+    <Compile Include="Interfaces\IDrawable.cs" />
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
     <Compile Include="Inventory.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Sprites\EnemySprites\AquamentusMovingLeft.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingRight.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingUp.cs" />
+    <Compile Include="Sprites\AbstractSprite.cs" />
     <Compile Include="Sprites\ItemSprites\BowSprite.cs" />
     <Compile Include="Sprites\ItemSprites\SwordSprite.cs" />
     <Compile Include="Sprites\ItemSprites\MapSprite.cs" />
@@ -163,7 +165,7 @@
     <Compile Include="Sprites\EnemySprites\GoriyaRight.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaThrowRight.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaUp.cs" />
-    <Compile Include="Sprites\ISprite.cs" />
+    <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Sprites\ItemSprites\ArrowSprite.cs" />
     <Compile Include="Items\ArrowItem.cs" />
     <Compile Include="Sprites\ItemSprites\BombSprite.cs" />

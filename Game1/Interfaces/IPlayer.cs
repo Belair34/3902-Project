@@ -4,13 +4,13 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 namespace Game1 {
-    public interface IPlayer : ICollidable
+    public interface IPlayer : ICollidable, IDrawable
     {
         int Speed { get; set; }
-        int Size{ get; set;}
+        new int Size{ get; set;}
         List<IProjectile> GetProjectiles();
-        
-        Vector2 GetPosition();
+        new void SetPosition(int x, int y);
+        new Vector2 GetPosition();
         void SetState(IPlayerState state);
         IInventory GetInventory();
         IPlayerState GetState();
@@ -22,8 +22,5 @@ namespace Game1 {
         void SlotB();
         void Stop();
         void TakeDamage(int damage);
-        void Update();
-        void Draw(SpriteBatch spriteBatch);
-
     }
 }

@@ -13,7 +13,7 @@ namespace Game1
         void ItemCollision(ICollidable collidable);
         void BlockCollision(ICollidable collidable);
         void BorderCollision();
-        void SetPosition(int x, int y);
+        void SetPosition(int x, int y); 
         Rectangle GetHitBox();
     }
 }

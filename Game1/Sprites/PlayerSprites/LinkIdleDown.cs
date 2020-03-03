@@ -4,37 +4,22 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1.PlayerSprites
 {
-    class LinkIdleDown :ISprite
+    class LinkIdleDown : AbstractSprite, ISprite
     {
-        Texture2D texture;
-        IPlayer player;
-        int srcWidth = 15;
-        int srcHeight = 16;
-        int destWidth = 15;
-        int destHeight = 16;
-        int srcX = 0; /*Change this*/
-        int srcY = 0;  /*and this*/   
-
-        public LinkIdleDown(IPlayer player, Texture2D texture)
+        internal override void Initialize()
         {
-            this.texture = texture;
-            this.player = player;
-            this.destWidth *= player.Size;
-            this.destHeight *= player.Size;
-        }
-        public void Update()
-        {
-            
+            base.srcWidth = 15;
+            base.srcHeight = 16;
+            base.destWidth = 15;
+            base.destHeight = 16;
+            base.srcX = 0; /*Change this*/
+            base.srcY = 0;  /*and this*/
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+
+        public LinkIdleDown(IDrawable drawable, Texture2D texture) : base(drawable, texture)
         {
-            Rectangle destRec = new Rectangle((int)player.GetPosition().X, (int)player.GetPosition().Y, destWidth, destHeight);
-            Rectangle srcRec;
-            srcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, destRec, srcRec, Color.White);
-            spriteBatch.End();
+
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    public interface IEnemy : ICollidable
+    public interface IEnemy : ICollidable, IDrawable
     {
         
         int Speed { get; set; }

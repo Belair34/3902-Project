@@ -108,6 +108,7 @@ namespace Game1
 				projectile.Update();
 			}
 			state.Update();
+			this.hitBox.Location = this.position.ToPoint();
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

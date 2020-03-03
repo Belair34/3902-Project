@@ -230,6 +230,25 @@ namespace Game1
             return new BombExplode(projectile, explosionSheet);
         }
 
+        public ISprite GetAquaFireballUp(IProjectile projectile)
+        {
+            return new AquaFireballUp(projectile, bossLinkSheet);
+        }
+
+        public ISprite GetAquaFireballDown(IProjectile projectile)
+        {
+            return new AquaFireballDown(projectile, bossLinkSheet);
+        }
+
+        public ISprite GetAquaFireballLeft(IProjectile projectile)
+        {
+            return new AquaFireballLeft(projectile, bossLinkSheet);
+        }
+
+        public ISprite GetAquaFireballRight(IProjectile projectile)
+        {
+            return new AquaFireballRight(projectile, bossLinkSheet);
+        }
         /*Enemy Sprites*/
         public ISprite GetGelIdleJump(IEnemy enemy)
         {

@@ -9,7 +9,7 @@ namespace Game1
 {
     public class ArrowItem : AbstractItem, IItem
     {
-        public ArrowItem(int x, int y, GraphicsDevice window)
+        public ArrowItem(int x, int y)
         {           
             /*Changeable*/
             base.Size = 3;      
@@ -19,9 +19,6 @@ namespace Game1
             base.position.Y = y;
             base.sprite = SpriteFactoryItems.Instance.GetArrow(this);
 
-            base.boundary = new Vector2();
-            base.boundary.X = window.Viewport.Width;
-            base.boundary.Y = window.Viewport.Height;
              /*Items*/
         }
 

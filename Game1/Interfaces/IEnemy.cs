@@ -12,9 +12,7 @@ namespace Game1
         int Size { get; set; }
         List<IProjectile> GetProjectiles();
         Vector2 GetPosition();
-        Vector2 GetBoundary();
         void SetState(IEnemyState state);
-
         IEnemyState GetState();
         void MoveHorizontal();
         void MoveDown();

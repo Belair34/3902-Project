@@ -5,14 +5,8 @@ using System;
 
 namespace Game1
 {
-    class ProjLinkBombDown : IProjectile
+    class ProjLinkBombDown : AbstractProjectile, IProjectile
     {
-        bool shooting;
-        bool exploding;
-        ISprite sprite;
-        IPlayer player;
-        Vector2 position;
-        int explodeTimer;
 
         public ProjLinkBombDown(IPlayer player)
         {
@@ -24,19 +18,8 @@ namespace Game1
             this.Speed = 0; /*Changeable */
             sprite = SpriteFactory.Instance.GetLinkBomb(this);
         }
-        public int Size { get; set; }
-        public int Speed { get; set; }
-        public int ShotDistance { get; set; }
-        public void SetPosition(int x, int y)
-        {
-            this.position.X = x;
-            this.position.Y = y;
-        }
-        public Vector2 GetPosition()
-        {
-            return this.position;
-        }
-        public void Shoot()
+       
+        public override void Shoot()
         { 
             if (!shooting)
             { 
@@ -47,7 +30,7 @@ namespace Game1
             shooting = true;
         }
 
-        public void Explode()
+        public override void Explode()
         {
             explodeTimer = 30;
             shooting = false;
@@ -55,7 +38,7 @@ namespace Game1
             this.sprite = SpriteFactory.Instance.GetLinkBombExplode(this);
         }
 
-        public void Update()
+        public override void Update()
         {
             if(exploding && explodeTimer > 0)
             {
@@ -71,7 +54,7 @@ namespace Game1
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             if (shooting || exploding)
             {

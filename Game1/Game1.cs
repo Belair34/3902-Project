@@ -48,7 +48,7 @@ namespace Game1
             SpriteFactory.Instance.LoadAll(Content);
             SpriteFactoryItems.Instance.LoadAll(Content);
             border = new Border(graphics);
-            player = new PlayerDefault(100, 100);
+            player = new PlayerDefault(100, 100, this);
             collidables.Add(player);
             collisionChecker = new CheckAllCollisionsCommand(collidables, border);
             this.backgroundSrcRec = new Rectangle(515, 886, 256, 176);
@@ -79,7 +79,13 @@ namespace Game1
             {
                 controller.Update();
             }
-            
+            foreach(IProjectile projectile in player.GetProjectiles())
+            {
+                if (!collidables.Contains(projectile))
+                {
+                    collidables.Add(projectile);
+                }
+            }
             player.Update();
             foreach(IEnemy enemy in enemies)
             {

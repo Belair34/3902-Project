@@ -17,11 +17,18 @@ namespace Game1
         internal int srcX;
         internal int srcY;
 
+        public AbstractSprite(IDrawable drawable, Texture2D texture)
+        {
+            Initialize();
+            this.texture = texture;
+            this.drawable = drawable;
+            this.destWidth *= drawable.Size;
+            this.destHeight *= drawable.Size;
+        }
         public virtual void Update()
         {
             //default: do nothing
         }
-
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             Rectangle arrowSrcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
@@ -37,13 +44,6 @@ namespace Game1
         {
             return new Rectangle((int)drawable.GetPosition().X, (int)drawable.GetPosition().Y, destWidth, destHeight);
         }
-        public AbstractSprite(IDrawable drawable, Texture2D texture)
-        {
-            Initialize();
-            this.texture = texture;
-            this.drawable = drawable;
-            this.destWidth *= drawable.Size;
-            this.destHeight *= drawable.Size;
-        }
+
     }
 }

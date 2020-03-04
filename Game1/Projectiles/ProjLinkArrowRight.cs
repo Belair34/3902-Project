@@ -4,60 +4,46 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1.Projectiles
 {
-    class ProjLinkArrowRight : IProjectile
+    class ProjLinkArrowRight : AbstractProjectile, IProjectile
     {
-        bool shooting;
-        bool exploding;
-        ISprite sprite;
-        IPlayer player;
-        Vector2 position;
-        int explodeTimer;
+
 
         public ProjLinkArrowRight(IPlayer player)
         {
-            shooting = false;
-            exploding = false;
-            this.player = player;
-            this.Size = player.Size;
-            this.position = new Vector2(0);
-            this.Speed = 10; /*Changeable */
-            sprite = SpriteFactory.Instance.GetLinkArrowRight(this);
+            base.shooting = false;
+            base.exploding = false;
+            base.player = player;
+            base.Size = player.Size;
+            base.position = new Vector2(0);
+            base.Speed = 10; /*Changeable */
+            base.sprite = SpriteFactory.Instance.GetLinkArrowRight(this);
+            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);
         }
-        public int Size { get; set; }
-        public int Speed { get; set; }
-        public int ShotDistance { get; set; }
-        public void SetPosition(int x, int y)
-        {
-            this.position.X = x;
-            this.position.Y = y;
-        }
-        public Vector2 GetPosition()
-        {
-            return this.position;
-        }
-        public void Shoot()
+        
+        public override void Shoot()
         { 
             if (!shooting)
             {
-                sprite = SpriteFactory.Instance.GetLinkArrowRight(this);
-                this.ShotDistance = 0;
-                this.position = player.GetPosition();
-                this.position.X += 8;
+                base.sprite = SpriteFactory.Instance.GetLinkArrowRight(this);
+                base.ShotDistance = 0;
+                base.position = player.GetPosition();
+                base.position.X += 8;
             }
-            shooting = true;
+            base.shooting = true;
         }
 
-        public void Explode()
+        public override void Explode()
         {
-            explodeTimer = 5;
-            shooting = false;
-            exploding = true;
-            this.sprite = SpriteFactory.Instance.GetLinkArrowExplode(this);
+            base.explodeTimer = 5;
+            base.shooting = false;
+            base.exploding = true;
+            base.sprite = SpriteFactory.Instance.GetLinkArrowExplode(this);
         }
 
-        public void Update()
+        public override void Update()
         {
-            if (shooting && ShotDistance >= 300)
+            this.hitBox.Location = this.position.ToPoint();
+            if (shooting && ShotDistance >= 2000)
             {
                 Explode();
             }
@@ -75,7 +61,7 @@ namespace Game1.Projectiles
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             if (shooting || exploding)
             {

@@ -4,14 +4,8 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1
 {
-    class ProjAquaFireballRight : IProjectile
+    class ProjAquaFireballRight : AbstractProjectile, IProjectile
     {
-        bool shooting;
-        bool exploding;
-        ISprite sprite;
-        IEnemy enemy;
-        Vector2 position;
-        int explodeTimer;
 
         public ProjAquaFireballRight(IEnemy enemy)
         {
@@ -23,19 +17,8 @@ namespace Game1
             this.Speed = 6; /*Changeable */
             sprite = SpriteFactory.Instance.GetAquaFireballRight(this);
         }
-        public int Size { get; set; }
-        public int Speed { get; set; }
-        public int ShotDistance { get; set; }
-        public void SetPosition(int x, int y)
-        {
-            this.position.X = x;
-            this.position.Y = y;
-        }
-        public Vector2 GetPosition()
-        {
-            return this.position;
-        }
-        public void Shoot()
+        
+        public override void Shoot()
         { 
             if (!shooting)
             {
@@ -46,7 +29,7 @@ namespace Game1
             shooting = true;
         }
 
-        public void Explode()
+        public override void Explode()
         {
             explodeTimer = 5;
             shooting = false;
@@ -54,7 +37,7 @@ namespace Game1
             sprite = SpriteFactory.Instance.GetAquaFireballExplode(this);
         }
 
-        public void Update()
+        public override void Update()
         {
             if(shooting && ShotDistance >= 300)
             {
@@ -74,7 +57,7 @@ namespace Game1
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             if (shooting || exploding)
             {

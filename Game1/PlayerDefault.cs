@@ -14,8 +14,9 @@ namespace Game1
 		private IPlayerState state;
 		List<IProjectile> projectiles;
 		IInventory inventory;
+		Game game;
 
-		public PlayerDefault(int x, int y)
+		public PlayerDefault(int x, int y, Game game)
 		{
 			this.inventory = new Inventory(this);
 			this.Speed = 5;                /*Changeable*/
@@ -26,6 +27,7 @@ namespace Game1
 			this.state = new PStateIdleDown(this);
 			projectiles = new List<IProjectile>();
 			this.hitBox = new Rectangle(x, y, 15 * Size, 16 * Size);
+			this.game = game;
 		}
 
 		public int Speed { get; set; }

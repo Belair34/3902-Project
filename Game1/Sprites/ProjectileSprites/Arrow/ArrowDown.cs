@@ -8,6 +8,14 @@ namespace Game1.ProjectileSprites
 {
     class ArrowDown : AbstractSprite, ISprite
     {
+        int speed;
+        //branching test
+
+        public ArrowDown(IProjectile projectile, Texture2D texture) : base((IDrawable)projectile, texture)
+        {
+            Initialize();
+            this.speed = projectile.Speed;
+        }
         internal override void Initialize()
         {
             base.srcWidth = 15;
@@ -16,14 +24,6 @@ namespace Game1.ProjectileSprites
             base.destHeight = 15;
             base.srcX = 119;
             base.srcY = 195;
-        }
-        int speed;
-        //branching test
-
-        public ArrowDown(IProjectile projectile, Texture2D texture) : base((IDrawable)projectile, texture)
-        {
-            Initialize();
-            this.speed = projectile.Speed;
         }
         public override void Update()
         {

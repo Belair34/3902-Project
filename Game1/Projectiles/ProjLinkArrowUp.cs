@@ -4,15 +4,8 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1.Projectiles
 {
-    class ProjLinkArrowUp : IProjectile
+    class ProjLinkArrowUp : AbstractProjectile, IProjectile
     {
-        bool shooting;
-        bool exploding;
-        ISprite sprite;
-        IPlayer player;
-        Vector2 position;
-        int explodeTimer;
-
         public ProjLinkArrowUp(IPlayer player)
         {
             shooting = false;
@@ -22,20 +15,10 @@ namespace Game1.Projectiles
             this.position = new Vector2(0);
             this.Speed = 10; /*Changeable */
             sprite = SpriteFactory.Instance.GetLinkArrowUp(this);
+            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);
         }
-        public int Size { get; set; }
-        public int Speed { get; set; }
-        public int ShotDistance { get; set; }
-        public void SetPosition(int x, int y)
-        {
-            this.position.X = x;
-            this.position.Y = y;
-        }
-        public Vector2 GetPosition()
-        {
-            return this.position;
-        }
-        public void Shoot()
+     
+        public override void Shoot()
         { 
             if (!shooting)
             {
@@ -47,7 +30,7 @@ namespace Game1.Projectiles
             shooting = true;
         }
 
-        public void Explode()
+        public override void Explode()
         {
             explodeTimer = 5;
             shooting = false;
@@ -55,9 +38,10 @@ namespace Game1.Projectiles
             this.sprite = SpriteFactory.Instance.GetLinkArrowExplode(this);
         }
 
-        public void Update()
+        public override void Update()
         {
-            if (shooting && ShotDistance >= 300)
+            this.hitBox.Location = this.position.ToPoint();
+            if (shooting && ShotDistance >= 2000)
             {
                 Explode();
             }
@@ -75,7 +59,7 @@ namespace Game1.Projectiles
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             if (shooting || exploding)
             {

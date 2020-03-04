@@ -4,14 +4,8 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1
 {
-    class ProjLinkSwordRight : IProjectile
+    class ProjLinkSwordRight : AbstractProjectile, IProjectile
     {
-        bool exploding;
-        bool shooting;
-        ISprite sprite;
-        IPlayer player;
-        Vector2 position;
-        int explodeTimer;
 
         public ProjLinkSwordRight(IPlayer player)
         {
@@ -22,19 +16,8 @@ namespace Game1
             this.Speed = 10; /*Changeable */
             sprite = SpriteFactory.Instance.GetLinkSwordBeamRight(this);
         }
-        public int Size { get; set; }
-        public int Speed { get; set; }
-        public int ShotDistance { get; set; }
-        public void SetPosition(int x, int y)
-        {
-            this.position.X = x;
-            this.position.Y = y;
-        }
-        public Vector2 GetPosition()
-        {
-            return this.position;
-        }
-        public void Shoot()
+        
+        public override void Shoot()
         { 
             if (!shooting)
             {
@@ -44,7 +27,7 @@ namespace Game1
             shooting = true;
         }
 
-        public void Explode()
+        public override void Explode()
         {
             explodeTimer = 15;
             exploding = true;
@@ -52,9 +35,9 @@ namespace Game1
             sprite = SpriteFactory.Instance.GetLinkSwordExplode(this);
         }
 
-        public void Update()
+        public override void Update()
         {
-            if (shooting && ShotDistance >= 300)
+            if (shooting && ShotDistance >= 2000)
             {
                 Explode();
             }
@@ -73,7 +56,7 @@ namespace Game1
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             if (shooting || exploding)
             {

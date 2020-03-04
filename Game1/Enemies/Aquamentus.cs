@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Game1.PlayerStates;
 using Game1.Projectiles;
 using System.Collections.Generic;
+using System;
 
 namespace Game1
 {
@@ -15,6 +16,9 @@ namespace Game1
 		List<IProjectile> projectiles;
 		int maxHealth;
 		int health;
+		Random numberGenerator;
+		double movementTimer;
+		int maxTimer;
 
 		public Aquamentus(int x, int y, int health, int maxHealth)
 		{
@@ -26,6 +30,9 @@ namespace Game1
 			this.state = new EStateAquamentusMovingLeft(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 			hitBox = new Rectangle(x, y, 24 * Size, 32 * Size);
+			numberGenerator = new Random();
+			maxTimer = 100;
+			movementTimer = numberGenerator.NextDouble()*maxTimer;
 		}
 
 		public int Speed { get; set; }
@@ -95,6 +102,12 @@ namespace Game1
 
 		public void Update()
 		{
+			movementTimer--;
+			if(movementTimer < 0)
+			{
+				BorderCollision();
+				movementTimer = numberGenerator.NextDouble() * maxTimer; 
+			}
 			foreach (IProjectile projectile in projectiles)
 			{
 				projectile.Update();
@@ -144,8 +157,25 @@ namespace Game1
 
 		public void BorderCollision()
 		{
-
+			int randomNumber = numberGenerator.Next();
+			if(randomNumber % 4 == 0)
+			{
+				MoveUp();
+			}
+			else if(randomNumber % 4 == 1)
+			{
+				MoveDown();
+			}
+			else if(randomNumber % 4 == 2)
+			{
+				MoveLeft();
+			}
+			else if(randomNumber % 4 == 3)
+			{
+				MoveRight();
+			}
 		}
+
 
 		public Rectangle GetHitBox()
 		{

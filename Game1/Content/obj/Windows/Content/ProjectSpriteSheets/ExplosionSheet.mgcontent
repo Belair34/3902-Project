@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/chase/source/repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/ExplosionSheet.png</SourceFile>
-  <SourceTime>2020-02-26T23:47:05.0302672-05:00</SourceTime>
-  <DestFile>C:/Users/chase/source/repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/ProjectSpriteSheets/ExplosionSheet.xnb</DestFile>
-  <DestTime>2020-03-03T19:41:30.7584129-05:00</DestTime>
+  <SourceFile>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/ExplosionSheet.png</SourceFile>
+  <SourceTime>2020-02-29T17:06:12.8401431-05:00</SourceTime>
+  <DestFile>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/ProjectSpriteSheets/ExplosionSheet.xnb</DestFile>
+  <DestTime>2020-03-03T23:00:35.8675189-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

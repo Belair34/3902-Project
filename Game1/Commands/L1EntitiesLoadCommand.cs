@@ -26,7 +26,7 @@ namespace Game1
 			enemies.Add(new Gel(300, 350, 5, 5));
 			
 			/*Items*/
-			items.Add(new ArrowItem(150, 150));
+			items.Add(new ArrowItem(200, 150));
 
 			/*Add all to collidables*/
 			foreach(IEnemy enemy in enemies)

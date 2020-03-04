@@ -37,7 +37,7 @@ namespace Game1
             doorWidth = 25;
             minX = graphics.GraphicsDevice.Viewport.X + topWallDistance+30;
             minY = graphics.GraphicsDevice.Viewport.Y + topWallDistance;
-            maxX = graphics.GraphicsDevice.Viewport.Width - topWallDistance * 2 + 25;
+            maxX = graphics.GraphicsDevice.Viewport.Width - topWallDistance * 2 + 30;
             maxY = minY + graphics.GraphicsDevice.Viewport.Height - topWallDistance*2 - 30;
             verticalDoorTopY = graphics.GraphicsDevice.Viewport.Height / 2 - doorWidth / 2 - 20;
             horizontalDoorLeftX = graphics.GraphicsDevice.Viewport.Width / 2 - doorWidth*2 + 15;

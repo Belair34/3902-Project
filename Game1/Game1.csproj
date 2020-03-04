@@ -42,8 +42,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Border.cs" />
-    <Compile Include="Commands\InventoryCommands\L1EntitiesLoadCommand.cs" />
-    <Compile Include="Commands\InventoryCommands\CheckAllCollisionsCommand.cs" />
+    <Compile Include="Commands\L1EntitiesLoadCommand.cs" />
+    <Compile Include="Commands\CheckAllCollisionsCommand.cs" />
     <Compile Include="Enemies\Aquamentus.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingDown.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingLeft.cs" />
@@ -53,7 +53,7 @@
     <Compile Include="Enemies\Goriya.cs" />
     <Compile Include="Commands\InventoryCommands\BoomerangCommand.cs" />
     <Compile Include="Commands\InventoryCommands\WandCommand.cs" />
-    <Compile Include="Commands\InventoryCommands\TakeDamageCommand.cs" />
+    <Compile Include="Commands\TakeDamageCommand.cs" />
     <Compile Include="Commands\InventoryCommands\EmptyCommand.cs" />
     <Compile Include="EnemyStates\EStateGelMovingVertical.cs" />
     <Compile Include="EnemyStates\EStateBladeTrap.cs" />

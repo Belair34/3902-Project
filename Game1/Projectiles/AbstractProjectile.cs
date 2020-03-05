@@ -18,6 +18,7 @@ namespace Game1
         internal IPlayer player;
         internal Rectangle hitBox;
 
+        public bool IsDone { get; set; }
         public int Size { get; set; }
         public int Speed { get; set; }
         public int ShotDistance { get; set; }
@@ -52,7 +53,6 @@ namespace Game1
                 }
                 else if (collidable is IEnemy)
                 {
-                    System.Console.WriteLine("Here");
                     EnemyCollision(collidable);
                 }
                 else if (collidable is IItem)
@@ -61,7 +61,7 @@ namespace Game1
                 }
                 else if (collidable is IPlayer)
                 {
-                    PlayerCollision(collidable);
+
                 }
                 /*else if (collidable is Block)
 				{
@@ -75,7 +75,10 @@ namespace Game1
         public abstract void Shoot();
         public void EnemyCollision(ICollidable collidable)
         {
-            Explode();
+            if (!exploding)
+            {
+                Explode();
+            }
         }
 
         public void ProjectileCollision(ICollidable collidable)

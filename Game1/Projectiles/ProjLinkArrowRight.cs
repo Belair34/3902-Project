@@ -51,9 +51,10 @@ namespace Game1.Projectiles
             {
                 explodeTimer--;
             }
-            if (explodeTimer <= 0)
+            if (exploding && explodeTimer <= 0)
             {
                 exploding = false;
+                this.IsDone = true;
             }
             if (shooting || exploding)
             {

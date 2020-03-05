@@ -15,6 +15,8 @@ namespace Game1
             this.position = new Vector2(0);
             this.Speed = 10; /*Changeable */
             sprite = SpriteFactory.Instance.GetLinkSwordBeamUp(this);
+            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);
+            IsDone = false;
         }
        
         public override void Shoot()
@@ -38,6 +40,7 @@ namespace Game1
 
         public override void Update()
         {
+            this.hitBox.Location = this.position.ToPoint();
             if (shooting && ShotDistance >= 2000)
             {
                 Explode();
@@ -48,10 +51,11 @@ namespace Game1
                 if (explodeTimer <= 0)
                 {
                     exploding = false;
+                    IsDone = true;
                 }
             }
 
-            if (shooting || exploding)
+            if ((shooting || exploding) && !IsDone)
             {
                 sprite.Update();
             }
@@ -59,7 +63,7 @@ namespace Game1
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (shooting || exploding)
+            if ((shooting || exploding) && !IsDone)
             {
                 sprite.Draw(spriteBatch);
             }

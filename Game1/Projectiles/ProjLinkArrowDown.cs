@@ -17,6 +17,7 @@ namespace Game1
             this.Speed = 10; /*Changeable */
             sprite = SpriteFactory.Instance.GetLinkArrowDown(this);
             hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);
+            IsDone = false;
         }
       
         public override void Shoot()
@@ -49,9 +50,10 @@ namespace Game1
             {
                 explodeTimer--;
             }
-            if(explodeTimer <= 0)
+            if(exploding && explodeTimer <= 0)
             {
                 exploding = false;
+                this.IsDone = true;
             }
             if (shooting || exploding)
             {

@@ -18,6 +18,8 @@ namespace Game1
             this.Speed = 7; /*Changeable */
             this.tolerance = 5;
             sprite = SpriteFactory.Instance.GetBoomerangDown(this);
+            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);
+            IsDone = false;
         }
       
         public override void Shoot()
@@ -39,6 +41,7 @@ namespace Game1
 
         public override void Update()
         {
+            this.hitBox.Location = this.position.ToPoint();
             if (shooting && ShotDistance >= 300)
             {
 
@@ -51,9 +54,10 @@ namespace Game1
                 position.X += movementVector.X * Speed;
                 position.Y += movementVector.Y * Speed;
             }
-            else if (position.X >= player.GetPosition().X - tolerance && position.X <= player.GetPosition().X + tolerance && position.Y >= player.GetPosition().Y - tolerance && position.Y <= player.GetPosition().Y + tolerance)
+            else if (exploding && position.X >= player.GetPosition().X - tolerance && position.X <= player.GetPosition().X + tolerance && position.Y >= player.GetPosition().Y - tolerance && position.Y <= player.GetPosition().Y + tolerance)
             {
                 exploding = false;
+                IsDone = true;
             }
 
             if (shooting)

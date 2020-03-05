@@ -25,6 +25,7 @@ namespace Game1
 				for (int j = i + 1; j < collidables.Count; j++)
 				{
 					collidables[i].CheckCollisions(collidables[j]);
+					collidables[j].CheckCollisions(collidables[i]);
 				}
 			}
 			border.CheckCollision(collidables[collidables.Count-1]);

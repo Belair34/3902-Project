@@ -22,6 +22,7 @@ namespace Game1
         List<ICollidable> collidables;
         Border border;
         ICommand collisionChecker;
+        ICommand projectileClearer;
         private Texture2D background;
 
         public Game1()
@@ -51,6 +52,7 @@ namespace Game1
             player = new PlayerDefault(100, 100, this);
             collidables.Add(player);
             collisionChecker = new CheckAllCollisionsCommand(collidables, border);
+            projectileClearer = new ClearProjectilesCommand(collidables, player.GetProjectiles());
             this.backgroundSrcRec = new Rectangle(515, 886, 256, 176);
             this.backgroundDestRec = new Rectangle(0, 0, spriteBatch.GraphicsDevice.Viewport.Width, spriteBatch.GraphicsDevice.Viewport.Height);
             controllers = new List<IController>();           /*Controllers*/
@@ -86,6 +88,7 @@ namespace Game1
                     collidables.Add(projectile);
                 }
             }
+            projectileClearer.Execute();
             player.Update();
             foreach(IEnemy enemy in enemies)
             {

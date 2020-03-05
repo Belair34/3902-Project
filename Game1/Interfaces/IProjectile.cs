@@ -6,6 +6,7 @@ namespace Game1
 {
     public interface IProjectile: ICollidable, IDrawable
     {
+        bool IsDone { get; set; }
         int Speed { get; set; }
         int ShotDistance { get; set; }
         void Shoot();

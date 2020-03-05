@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Border.cs" />
+    <Compile Include="Commands\ClearProjectilesCommand.cs" />
     <Compile Include="Commands\L1EntitiesLoadCommand.cs" />
     <Compile Include="Commands\CheckAllCollisionsCommand.cs" />
     <Compile Include="Enemies\Aquamentus.cs" />

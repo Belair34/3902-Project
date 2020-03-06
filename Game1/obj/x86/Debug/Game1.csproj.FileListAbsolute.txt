@@ -209,3 +209,4 @@ C:\Users\ggams\source\repos\Belair34\3902-Project\Game1\obj\x86\Debug\Game1.cspr
 C:\Users\ggams\source\repos\Belair34\3902-Project\Game1\obj\x86\Debug\Game1.exe
 C:\Users\ggams\source\repos\Belair34\3902-Project\Game1\obj\x86\Debug\Game1.pdb
 C:\Users\chase\source\repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\ProjectSpriteSheets\ExplosionSheet.xnb
+C:\Users\crazy\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\ProjectSpriteSheets\ExplosionSheet.xnb

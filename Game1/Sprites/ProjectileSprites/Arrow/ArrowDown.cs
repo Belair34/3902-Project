@@ -13,7 +13,6 @@ namespace Game1.ProjectileSprites
 
         public ArrowDown(IProjectile projectile, Texture2D texture) : base((IDrawable)projectile, texture)
         {
-            Initialize();
             this.speed = projectile.Speed;
         }
         internal override void Initialize()

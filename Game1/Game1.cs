@@ -24,7 +24,6 @@ namespace Game1
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            switchingRooms = false;
         }
 
         public IPlayer GetPlayer()
@@ -45,6 +44,7 @@ namespace Game1
         }
         protected override void Initialize()
         {
+            switchingRooms = false;
             spriteBatch = new SpriteBatch(GraphicsDevice);
             SpriteFactory.Instance.LoadAll(Content);
             SpriteFactoryItems.Instance.LoadAll(Content);

@@ -31,6 +31,7 @@ namespace Game1
 
         public override void Explode()
         {
+            position.Y += 12;
             explodeTimer = 15;
             exploding = true;
             shooting = false;

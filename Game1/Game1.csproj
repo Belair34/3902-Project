@@ -46,6 +46,7 @@
     <Compile Include="Commands\HelperCommands\ClearProjectilesCommand.cs" />
     <Compile Include="Commands\RoomLoadCommands\Room1EntitiesLoadCommand.cs" />
     <Compile Include="Commands\HelperCommands\CheckAllCollisionsCommand.cs" />
+    <Compile Include="Controllers\GamepadController.cs" />
     <Compile Include="Enemies\Aquamentus.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingDown.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingLeft.cs" />
@@ -149,7 +150,7 @@
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\IPlayerState.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
-    <Compile Include="KeyboardController.cs" />
+    <Compile Include="Controllers\KeyboardController.cs" />
     <Compile Include="PlayerDefault.cs" />
     <Compile Include="PlayerStates\PStateIdleRight.cs" />
     <Compile Include="PlayerStates\PStateIdleLeft.cs" />

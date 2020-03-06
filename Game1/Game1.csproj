@@ -42,9 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Border.cs" />
-    <Compile Include="Commands\ClearProjectilesCommand.cs" />
-    <Compile Include="Commands\L1EntitiesLoadCommand.cs" />
-    <Compile Include="Commands\CheckAllCollisionsCommand.cs" />
+    <Compile Include="Commands\HelperCommands\RoomTransitionCommand.cs" />
+    <Compile Include="Commands\HelperCommands\ClearProjectilesCommand.cs" />
+    <Compile Include="Commands\RoomLoadCommands\Room1EntitiesLoadCommand.cs" />
+    <Compile Include="Commands\HelperCommands\CheckAllCollisionsCommand.cs" />
     <Compile Include="Enemies\Aquamentus.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingDown.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingLeft.cs" />
@@ -54,7 +55,7 @@
     <Compile Include="Enemies\Goriya.cs" />
     <Compile Include="Commands\InventoryCommands\BoomerangCommand.cs" />
     <Compile Include="Commands\InventoryCommands\WandCommand.cs" />
-    <Compile Include="Commands\TakeDamageCommand.cs" />
+    <Compile Include="Commands\HelperCommands\TakeDamageCommand.cs" />
     <Compile Include="Commands\InventoryCommands\EmptyCommand.cs" />
     <Compile Include="EnemyStates\EStateGelMovingVertical.cs" />
     <Compile Include="EnemyStates\EStateBladeTrap.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Interfaces\IDrawable.cs" />
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
+    <Compile Include="Interfaces\IRoom.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Commands\InventoryCommands\BlueCandleCommand.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
@@ -94,6 +96,8 @@
     <Compile Include="Projectiles\ProjLinkBombRight.cs" />
     <Compile Include="Projectiles\ProjLinkBombLeft.cs" />
     <Compile Include="Projectiles\ProjLinkBombUp.cs" />
+    <Compile Include="Rooms\AbstractRoom.cs" />
+    <Compile Include="Rooms\Room1.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingDown.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingLeft.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingRight.cs" />

@@ -14,6 +14,7 @@ namespace Game1
         private Texture2D enemyLinkSheet;
         private Texture2D explosionSheet;
         private Texture2D bossLinkSheet;
+        private Texture2D rooms;
         private static SpriteFactory instance = new SpriteFactory();
         public static SpriteFactory Instance
         {
@@ -35,6 +36,7 @@ namespace Game1
             enemyLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/Blade trap, Gel, Goriya, keese, stalfos, wall master");
             explosionSheet = content.Load<Texture2D>("ProjectSpriteSheets/ExplosionSheet");
             bossLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/boss");
+            rooms = content.Load<Texture2D>("ProjectSpriteSheets/dungeon");
         }
 
         public ISprite GetLinkIdleDown(IPlayer player)
@@ -309,6 +311,12 @@ namespace Game1
         public ISprite GetAquamentusMovingRight(IEnemy enemy)
         {
             return new AquamentusMovingRight(enemy, bossLinkSheet);
+        }
+
+        /*Room texture*/
+        public Texture2D GetBackgroundTexture()
+        {
+            return rooms;
         }
     }
 }

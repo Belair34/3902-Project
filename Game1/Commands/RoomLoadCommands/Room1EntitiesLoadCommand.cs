@@ -6,13 +6,13 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    class L1EntitiesLoadCommand : ICommand
+    class Room1EntitiesLoadCommand : ICommand
     {
 		private List<IEnemy> enemies;
 		private List<IItem> items;
 		private List<ICollidable> collidables;
 
-		public L1EntitiesLoadCommand(List<IEnemy> enemies, List<IItem> items, List<ICollidable> collidables)
+		public Room1EntitiesLoadCommand(List<IEnemy> enemies, List<IItem> items, List<ICollidable> collidables)
 		{
 			this.enemies = enemies;
 			this.items = items;

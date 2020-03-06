@@ -54,7 +54,7 @@ namespace Game1
             
             controllers = new List<IController>();           /*Controllers*/
             controllers.Add(new KeyboardController(this));
-            controllers.Add(new GamepadController(this));
+            //controllers.Add(new GamepadController(this));
              
             this.IsMouseVisible = true;
             base.Initialize();

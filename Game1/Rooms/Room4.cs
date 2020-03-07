@@ -22,13 +22,13 @@ namespace Game1
         public override void TransitionUp()
         {
             Transitioning = true;
-            transitionHandler = new RoomTransitionCommand(this, new Room4(game, border, graphics, 1), 0, border, graphics, game);
+            transitionHandler = new RoomTransitionCommand(this, new Room4(game, border, graphics, 1), 0, game, border, graphics);
         }
 
         public override void TransitionDown()
         {
             Transitioning = true;
-            transitionHandler = new RoomTransitionCommand(this, new Room1(game, border, graphics, 0), 1, border, graphics, game);
+            transitionHandler = new RoomTransitionCommand(this, new Room1(game, border, graphics, 0), 1, game, border, graphics);
         }
 
         public override void TransitionLeft()

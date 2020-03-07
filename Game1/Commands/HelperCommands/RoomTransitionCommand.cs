@@ -17,7 +17,7 @@ namespace Game1
         private int counter;
 		
         //First three parameters are important, other three are just to pass
-		public RoomTransitionCommand(IRoom startRoom, IRoom endRoom, int direction, Border border, GraphicsDeviceManager graphics, Game1 game)
+		public RoomTransitionCommand(IRoom startRoom, IRoom endRoom, int direction, Game1 game, Border border, GraphicsDeviceManager graphics)
 		{
 			this.startRoom = startRoom;
 			this.endRoom = endRoom;
@@ -60,12 +60,20 @@ namespace Game1
                         startRoom.IncrementSourcePosition(-2, false);
                         counter++;
                     }
+                    else
+                    {
+                        game.SetRoom(endRoom);
+                    }
                     break;
                 case 3: //right
                     if (counter < 256 / 2)
                     {
                         startRoom.IncrementSourcePosition(2, false);
                         counter++;
+                    }
+                    else
+                    {
+                        game.SetRoom(endRoom);
                     }
                     break;
                 default:

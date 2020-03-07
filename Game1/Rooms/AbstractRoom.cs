@@ -52,7 +52,7 @@ namespace Game1
                     game.GetPlayer().SetState(new PStateIdleRight(game.GetPlayer()));
                     break;
                 case 3: // 3 = right
-                    game.GetPlayer().SetPosition(0, graphics.GraphicsDevice.Viewport.Height / 2);
+                    game.GetPlayer().SetPosition(graphics.GraphicsDevice.Viewport.Width-game.GetPlayer().GetHitBox().Width, graphics.GraphicsDevice.Viewport.Height / 2);
                     game.GetPlayer().SetState(new PStateIdleLeft(game.GetPlayer()));
                     break;
                 default:

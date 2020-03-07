@@ -23,7 +23,7 @@ namespace Game1
         {
             Transitioning = true;
             //Second parameter is should be replaced by the room above Room1 when it's made. This is just for demonstration.
-            transitionHandler = new RoomTransitionCommand(this, new Room4(game, border, graphics, 1), 0, border, graphics, game);
+            transitionHandler = new RoomTransitionCommand(this, new Room4(game, border, graphics, 1), 0, game, border, graphics);
         }
 
         public override void TransitionDown()
@@ -33,12 +33,16 @@ namespace Game1
 
         public override void TransitionLeft()
         {
-           //Fill in once left room is made
+            Transitioning = true;
+            //Replace second parameter when room is made
+            transitionHandler = new RoomTransitionCommand(this, new Room1(game, border, graphics, 3), 2, game, border, graphics);
         }
 
         public override void TransitionRight()
         {
-            //Fill in once right room is made
+            Transitioning = true;
+            //Replace second parameter when room is made
+            transitionHandler = new RoomTransitionCommand(this, new Room1(game, border, graphics, 2), 3, game, border, graphics);
         }
 
     }

@@ -17,6 +17,7 @@ namespace Game1
         internal List<IEnemy> enemies;
         internal List<IItem> items;
         internal List<ICollidable> collidables;
+        internal List<Block> blocks;
         internal Texture2D background;
         internal Rectangle backgroundSrcRec;
         internal Rectangle backgroundDestRec;
@@ -30,6 +31,7 @@ namespace Game1
             this.enemies = new List<IEnemy>();
             this.items = new List<IItem>();
             this.collidables = new List<ICollidable>();
+            this.blocks = new List<Block>();
             this.background = SpriteFactory.Instance.GetBackgroundTexture();
             this.Transitioning = false;
             collidables.Add(game.GetPlayer());
@@ -135,6 +137,10 @@ namespace Game1
                 foreach (IItem item in items)
                 {
                     item.Draw(spriteBatch);
+                }
+                foreach(Block block in blocks)
+                {
+                    block.Draw(spriteBatch);
                 }
                 game.GetPlayer().Draw(spriteBatch);
                 foreach (IEnemy enemy in enemies)

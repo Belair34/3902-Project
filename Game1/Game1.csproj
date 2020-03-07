@@ -42,8 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Border.cs" />
+    <Compile Include="Block.cs" />
     <Compile Include="Commands\HelperCommands\RoomTransitionCommand.cs" />
     <Compile Include="Commands\HelperCommands\ClearProjectilesCommand.cs" />
+    <Compile Include="Commands\RoomLoadCommands\Room4EntitiesLoadCommand.cs" />
     <Compile Include="Commands\RoomLoadCommands\Room1EntitiesLoadCommand.cs" />
     <Compile Include="Commands\HelperCommands\CheckAllCollisionsCommand.cs" />
     <Compile Include="Controllers\GamepadController.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Projectiles\ProjLinkBombLeft.cs" />
     <Compile Include="Projectiles\ProjLinkBombUp.cs" />
     <Compile Include="Rooms\AbstractRoom.cs" />
+    <Compile Include="Rooms\Room4.cs" />
     <Compile Include="Rooms\Room1.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingDown.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingLeft.cs" />

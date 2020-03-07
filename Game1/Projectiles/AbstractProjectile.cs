@@ -28,7 +28,6 @@ namespace Game1
             this.position.Y = y;
         }
 
-        /*Not sure how this works with abstract class, we need the item's hitbox rectangle*/
         public Rectangle GetHitBox()
         {
             return hitBox;
@@ -63,10 +62,10 @@ namespace Game1
                 {
 
                 }
-                /*else if (collidable is Block)
+                else if (collidable is Block)
 				{
-
-				}*/
+                    BlockCollision(collidable);
+				}
             }
         }
 
@@ -93,7 +92,27 @@ namespace Game1
 
         public void BlockCollision(ICollidable collidable)
         {
-            Explode();
+            Rectangle intersection = Rectangle.Intersect(hitBox, collidable.GetHitBox());
+            if (intersection.Height > intersection.Width && hitBox.X < collidable.GetHitBox().Left)
+            {
+                SetPosition(collidable.GetHitBox().Left - hitBox.Width, hitBox.Y);
+                Explode();
+            }
+            else if (intersection.Width > intersection.Height && hitBox.Y < collidable.GetHitBox().Top)
+            {
+                SetPosition(hitBox.X, collidable.GetHitBox().Top - hitBox.Height);
+                Explode();
+            }
+            else if (intersection.Width > intersection.Height && hitBox.Y > collidable.GetHitBox().Top)
+            {
+                SetPosition(hitBox.X, collidable.GetHitBox().Bottom);
+                Explode();
+            }
+            else if (intersection.Height > intersection.Width && hitBox.X > collidable.GetHitBox().Left)
+            {
+                SetPosition(collidable.GetHitBox().Right, hitBox.Y);
+                Explode();
+            }
         }
 
         public void BorderCollision()

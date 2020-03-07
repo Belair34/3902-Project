@@ -5,17 +5,17 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    public class Room1 : AbstractRoom
+    public class Room4 : AbstractRoom
     {
-        public Room1(Game1 game, Border border, GraphicsDeviceManager graphics, int spawnDoor) : base(game, border, graphics, spawnDoor)
+        public Room4(Game1 game, Border border, GraphicsDeviceManager graphics, int spawnDoor) : base(game, border, graphics, spawnDoor)
         {
-            entityLoader = new Room1EntitiesLoadCommand(enemies, items, collidables, blocks);
-            this.backgroundSrcRec = new Rectangle(515, 886, 256, 176);
+            entityLoader = new Room4EntitiesLoadCommand(enemies, items, collidables, blocks);
+            this.backgroundSrcRec = new Rectangle(515, 709, 256, 176);
             this.backgroundDestRec = new Rectangle(0, 0, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height);
-            border.SetLeftOpen(true);
-            border.SetRightOpen(true);
+            border.SetLeftOpen(false);
+            border.SetRightOpen(false);
             border.SetTopOpen(true);
-            border.SetBottomOpen(true);
+            border.SetTopOpen(true);
             entityLoader.Execute();
         }
 
@@ -28,7 +28,8 @@ namespace Game1
 
         public override void TransitionDown()
         {
-            //Nothing here, this would exit dungeon
+            Transitioning = true;
+            transitionHandler = new RoomTransitionCommand(this, new Room1(game, border, graphics, 0), 1, border, graphics, game);
         }
 
         public override void TransitionLeft()

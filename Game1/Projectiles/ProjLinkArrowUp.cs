@@ -12,7 +12,7 @@ namespace Game1.Projectiles
             exploding = false;
             this.player = player;
             this.Size = player.Size;
-            this.position = new Vector2(0);
+            this.position = new Vector2(100, 100);
             this.Speed = 10; /*Changeable */
             sprite = SpriteFactory.Instance.GetLinkArrowUp(this);
             hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);

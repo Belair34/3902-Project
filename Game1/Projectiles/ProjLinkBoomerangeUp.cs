@@ -14,7 +14,7 @@ namespace Game1
             exploding = false;
             this.player = player;
             this.Size = player.Size;
-            this.position = new Vector2(0);
+            this.position = new Vector2(100, 100);
             this.Speed = 7; /*Changeable */
             this.tolerance = 5;
             sprite = SpriteFactory.Instance.GetBoomerangDown(this);

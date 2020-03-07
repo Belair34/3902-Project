@@ -58,10 +58,6 @@ namespace Game1
                 {
                     ItemCollision(collidable);
                 }
-                else if (collidable is IPlayer)
-                {
-
-                }
                 else if (collidable is Block)
 				{
                     BlockCollision(collidable);
@@ -117,12 +113,15 @@ namespace Game1
 
         public void BorderCollision()
         {
-            Explode();
+            if (!exploding)
+            {
+                Explode();
+            }
         }
 
         public void PlayerCollision(ICollidable collidable)
         {
-            Explode();
+            
         }
 
         public abstract void Update();

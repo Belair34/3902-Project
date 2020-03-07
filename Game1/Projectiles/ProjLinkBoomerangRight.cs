@@ -15,7 +15,7 @@ namespace Game1
             exploding = false;
             this.player = player;
             this.Size = player.Size;
-            this.position = new Vector2(0);
+            this.position = new Vector2(100, 100);
             this.Speed = 7; /*Changeable */
             this.tolerance = 5;
             sprite = SpriteFactory.Instance.GetBoomerangRight(this);
@@ -45,7 +45,6 @@ namespace Game1
             this.hitBox.Location = this.position.ToPoint();
             if (shooting && ShotDistance >= 300)
             {
-
                 Explode();
             }
             else if (exploding && (position.X >= player.GetPosition().X + tolerance || position.X <= player.GetPosition().X - tolerance || position.Y >= player.GetPosition().Y + tolerance || position.Y <= player.GetPosition().Y - tolerance))

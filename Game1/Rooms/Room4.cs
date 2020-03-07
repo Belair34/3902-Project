@@ -22,7 +22,6 @@ namespace Game1
         public override void TransitionUp()
         {
             Transitioning = true;
-            //Second parameter is should be replaced by the room above Room1 when it's made. This is just for demonstration.
             transitionHandler = new RoomTransitionCommand(this, new Room4(game, border, graphics, 1), 0, border, graphics, game);
         }
 

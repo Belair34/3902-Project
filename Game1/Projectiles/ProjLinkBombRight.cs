@@ -14,9 +14,11 @@ namespace Game1
             exploding = false;
             this.player = player;
             this.Size = player.Size;
-            this.position = new Vector2(0);
+            this.position = new Vector2(100, 100);
             this.Speed = 0; /*Changeable */
             sprite = SpriteFactory.Instance.GetLinkBomb(this);
+            IsDone = false;
+            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);
         }
         public override void Shoot()
         { 
@@ -43,9 +45,10 @@ namespace Game1
             {
                 explodeTimer--;
             }
-            else if(explodeTimer <= 0)
+            else if(exploding && explodeTimer <= 0)
             {
                 exploding = false;
+                IsDone = true;
             }
             if (shooting || exploding)
             {

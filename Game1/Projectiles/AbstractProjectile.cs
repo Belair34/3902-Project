@@ -111,9 +111,9 @@ namespace Game1
             }
         }
 
-        public void BorderCollision()
+        public virtual void BorderCollision()
         {
-            if (!exploding)
+            if (!exploding && shooting)
             {
                 Explode();
             }

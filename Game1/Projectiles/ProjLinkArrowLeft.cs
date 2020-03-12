@@ -13,7 +13,7 @@ namespace Game1.Projectiles
             base.exploding = false;
             base.player = player;
             base.Size = player.Size;
-            base.position = new Vector2(100, 100);
+            this.position = new Vector2(0);
             base.Speed = 10; /*Changeable */
             base.sprite = SpriteFactory.Instance.GetLinkArrowLeft(this);
             hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);

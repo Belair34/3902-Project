@@ -19,6 +19,7 @@ namespace Game1
 		Random numberGenerator;
 		double movementTimer;
 		int maxTimer;
+		int minTimer;
 
 		public Aquamentus(int x, int y, int health, int maxHealth)
 		{
@@ -32,7 +33,8 @@ namespace Game1
 			hitBox = new Rectangle(x, y, 24 * Size, 32 * Size);
 			numberGenerator = new Random();
 			maxTimer = 100;
-			movementTimer = numberGenerator.NextDouble()*maxTimer;
+			minTimer = 20;
+			movementTimer = numberGenerator.NextDouble()*maxTimer+minTimer;
 		}
 
 		public int Speed { get; set; }

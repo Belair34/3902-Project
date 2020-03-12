@@ -14,7 +14,7 @@ namespace Game1
             exploding = false;
             this.player = player;
             this.Size = player.Size;
-            this.position = new Vector2(100, 100);
+            this.position = player.GetPosition();
             this.Speed = 0; /*Changeable */
             sprite = SpriteFactory.Instance.GetLinkBomb(this);
             IsDone = false;
@@ -34,10 +34,13 @@ namespace Game1
 
         public override void Explode()
         {
-            explodeTimer = 30;
-            shooting = false;
-            exploding = true;
-            this.sprite = SpriteFactory.Instance.GetLinkBombExplode(this);
+            if (shooting)
+            {
+                explodeTimer = 30;
+                shooting = false;
+                exploding = true;
+                this.sprite = SpriteFactory.Instance.GetLinkBombExplode(this);
+            }
         }
 
         public override void Update()
@@ -64,6 +67,11 @@ namespace Game1
                 sprite.Draw(spriteBatch);
             }
         }
+        public override void BorderCollision()
+        {
+
+        }
+
 
     }
 }

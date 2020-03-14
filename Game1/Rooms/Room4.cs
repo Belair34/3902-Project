@@ -22,7 +22,7 @@ namespace Game1
         public override void TransitionUp()
         {
             Transitioning = true;
-            transitionHandler = new RoomTransitionCommand(this, new Room4(game, border, graphics, 1), 0, game, border, graphics);
+            transitionHandler = new RoomTransitionCommand(this, new Room5(game, border, graphics, 1), 0, game, border, graphics);
         }
 
         public override void TransitionDown()

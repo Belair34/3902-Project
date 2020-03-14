@@ -28,7 +28,7 @@ namespace Game1
 
         public override void TransitionDown()
         {
-            //Nothing here, this would exit dungeon
+            game.Exit();
         }
 
         public override void TransitionLeft()

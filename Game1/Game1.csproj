@@ -212,6 +212,10 @@
     <Compile Include="Items\ArrowItem.cs" />
     <Compile Include="Sprites\ItemSprites\BombSprite.cs" />
     <Compile Include="Sprites\ItemSprites\BoomerangSprite.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkDamagedMovingRight.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkDamagedMovingLeft.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkDamagedMovingUp.cs" />
+    <Compile Include="Sprites\PlayerSprites\LinkDamagedMovingDown.cs" />
     <Compile Include="Sprites\PlayerSprites\LinkDamagedDown.cs" />
     <Compile Include="Sprites\PlayerSprites\LinkDamagedLeft.cs" />
     <Compile Include="Sprites\PlayerSprites\LinkDamagedRight.cs" />

@@ -7,58 +7,49 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-	public class PlayerDamage : IPlayer
+	public class DamagedLink : IPlayer
 	{
-		public Rectangle hitBox;
-		private Vector2 position;
-		private IPlayerState state;
-		private IPlayer player;
-		List<IProjectile> projectiles;
-		IInventory inventory;
-		Game game;
-
-		public PlayerDamage(IPlayer player)
+		Game1 game;
+		private IPlayer decoratedLink;
+		int timer = 1000;
+		
+		public DamagedLink(IPlayer decoratedLink, Game1 game)
 		{
-			this.player = player;
-			this.inventory = new Inventory(this);
-			this.Speed = 5;                /*Changeable*/
-			this.Size = 3;                 /************/
-			this.position = new Vector2();
-			this.position.X = x;
-			this.position.Y = y;
-			this.state = new PStateIdleDown(this);
-			projectiles = new List<IProjectile>();
-			this.hitBox = new Rectangle(x, y, 15 * Size, 16 * Size);
+			this.decoratedLink = decoratedLink;
 			this.game = game;
+			game.SetPlayer(this);
 		}
-
+		public void TakeDamage()
+		{
+			// no damage taken
+		}
+		public void Update()
+		{
+			timer--;
+			if(timer == 0)
+			{
+				RemoveDecorator();
+			}
+			decoratedLink.Update();
+		}
+		public void RemoveDecorator()
+		{
+			game.SetPlayer(decoratedLink);
+		}
 		public int Speed { get; set; }
 		public int Size { get; set; }
-		public void takeEnemyDamage()
-		{
-			this.player.TakeDamage(1);
-		}
-		public void takeBossDamage()
-		{
-			player.TakeDamage(2);
-		}
-		public int getHealth(IInventory inventory)
-		{
-			int health = inventory.Health;
-			return health;
-		}
 		public Rectangle GetHitBox()
 		{
-			return this.hitBox;
+			return decoratedLink.GetHitBox();
 		}
 
 		public List<IProjectile> GetProjectiles()
 		{
-			return this.projectiles;
+			return decoratedLink.GetProjectiles();
 		}
 		public IInventory GetInventory()
 		{
-			return inventory;
+			return decoratedLink.GetInventory();
 		}
 		
 		public void SetPosition(int x, int y)
@@ -68,7 +59,7 @@ namespace Game1
 
 		public Vector2 GetPosition()
 		{
-			return this.position;
+			return decoratedLink.GetPosition();
 		}
 		public void SetState(IPlayerState state)
 		{
@@ -76,7 +67,7 @@ namespace Game1
 
 		public IPlayerState GetState()
 		{
-			return this.state;
+			return decoratedLink.GetState();
 		}
 
 		public void MoveUp()
@@ -177,24 +168,10 @@ namespace Game1
 		{
 
 		}
-		public void Update()
-		{
-			foreach (IProjectile projectile in projectiles)
-			{
-				projectile.Update();
-			}
-			state.Update();
-			this.hitBox.Location = this.position.ToPoint();
-			inventory.Update();
-		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			foreach (IProjectile projectile in projectiles)
-			{
-				projectile.Draw(spriteBatch);
-			}
-			state.Draw(spriteBatch);
+			decoratedLink.Draw(spriteBatch);
 		}
 
 	}

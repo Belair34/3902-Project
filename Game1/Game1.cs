@@ -31,6 +31,10 @@ namespace Game1
             return this.player;
         }
 
+        public void SetPlayer(IPlayer player)
+        {
+            this.player = player;
+        }
 
         public void SetRoom(IRoom room)
         {

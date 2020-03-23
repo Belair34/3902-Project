@@ -24,14 +24,22 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-			
-			
+
+
 			/*Items*/
-			
+
 			/*Blocks*/
+			blocks.Add(new Block(500, 217, false));
+			blocks.Add(new Block(450, 174, false));
+			blocks.Add(new Block(400, 131, false));
+			blocks.Add(new Block(350, 174, false));
+			blocks.Add(new Block(300, 217, false));
+			blocks.Add(new Block(350, 260, false));
+			blocks.Add(new Block(400, 303, false));
+			blocks.Add(new Block(450, 260, false));
 
 			/*Add all to collidables*/
-			foreach(IEnemy enemy in enemies)
+			foreach (IEnemy enemy in enemies)
 			{
 				collidables.Add(enemy);
 			}

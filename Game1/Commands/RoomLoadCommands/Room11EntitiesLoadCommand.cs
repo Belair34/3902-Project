@@ -24,14 +24,70 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-			
-			
+
+
 			/*Items*/
-			
+
 			/*Blocks*/
+			blocks.Add(new Block(100, 346, false));
+			blocks.Add(new Block(150, 346, false));
+			blocks.Add(new Block(200, 346, false));
+			blocks.Add(new Block(250, 346, false));
+			blocks.Add(new Block(300, 346, false));
+			blocks.Add(new Block(450, 346, false));
+			blocks.Add(new Block(500, 346, false));
+			blocks.Add(new Block(550, 346, false));
+			blocks.Add(new Block(600, 346, false));
+			blocks.Add(new Block(650, 346, false));
+
+			blocks.Add(new Block(650, 303, false));
+			blocks.Add(new Block(650, 260, false));
+
+			blocks.Add(new Block(450, 303, false));
+			blocks.Add(new Block(450, 260, false));
+			blocks.Add(new Block(450, 217, false));
+			blocks.Add(new Block(450, 174, false));
+			blocks.Add(new Block(400, 174, false));
+
+			blocks.Add(new Block(200, 303, false));
+			blocks.Add(new Block(200, 260, false));
+			blocks.Add(new Block(200, 217, false));
+			blocks.Add(new Block(200, 174, false));
+
+			blocks.Add(new Block(100, 303, false));
+			blocks.Add(new Block(100, 260, false));
+
+			blocks.Add(new Block(100, 88, false));
+			blocks.Add(new Block(150, 88, false));
+			blocks.Add(new Block(200, 88, false));
+			blocks.Add(new Block(250, 88, false));
+			blocks.Add(new Block(300, 88, false));
+			blocks.Add(new Block(450, 88, false));
+			blocks.Add(new Block(500, 88, false));
+			blocks.Add(new Block(550, 88, false));
+			blocks.Add(new Block(600, 88, false));
+			blocks.Add(new Block(650, 88, false));
+
+			blocks.Add(new Block(650, 131, false));
+			blocks.Add(new Block(650, 174, false));
+
+			blocks.Add(new Block(550, 131, false));
+			blocks.Add(new Block(550, 174, false));
+			blocks.Add(new Block(550, 217, false));
+			blocks.Add(new Block(550, 260, false));
+
+			blocks.Add(new Block(300, 131, false));
+			blocks.Add(new Block(300, 174, false));
+			blocks.Add(new Block(300, 217, false));
+			blocks.Add(new Block(300, 260, false));
+			blocks.Add(new Block(350, 260, false));
+
+			blocks.Add(new Block(100, 174, false));
+			blocks.Add(new Block(100, 131, false));
+
 
 			/*Add all to collidables*/
-			foreach(IEnemy enemy in enemies)
+			foreach (IEnemy enemy in enemies)
 			{
 				collidables.Add(enemy);
 			}

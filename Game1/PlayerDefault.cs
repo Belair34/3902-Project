@@ -145,7 +145,7 @@ namespace Game1
 
 		public void EnemyCollision(ICollidable collidable)
 		{
-			if (!(state is PStateDamagedDown || state is PStateDamagedLeft || state is PStateDamagedRight || state is PStateDamagedUp))
+			/*if (!(state is PStateDamagedDown || state is PStateDamagedLeft || state is PStateDamagedRight || state is PStateDamagedUp))
 			{
 				Rectangle intersection = Rectangle.Intersect(hitBox, collidable.GetHitBox());
 				if (intersection.Width > intersection.Height)
@@ -171,7 +171,7 @@ namespace Game1
 					}
 				}
 				TakeDamage(2);
-			}
+			}*/
 		}
 
 		public void ProjectileCollision(ICollidable collidable)

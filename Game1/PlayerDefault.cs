@@ -145,33 +145,33 @@ namespace Game1
 
 		public void EnemyCollision(ICollidable collidable)
 		{
-			/*if (!(state is PStateDamagedDown || state is PStateDamagedLeft || state is PStateDamagedRight || state is PStateDamagedUp))
+			if (!(state is PStateDamagedDown || state is PStateDamagedLeft || state is PStateDamagedRight || state is PStateDamagedUp))
 			{
 				Rectangle intersection = Rectangle.Intersect(hitBox, collidable.GetHitBox());
 				if (intersection.Width > intersection.Height)
 				{
 					if (position.Y < collidable.GetHitBox().Top)
 					{
-						SetPosition((int)position.X, (int)position.Y - 100);
+						SetPosition((int)position.X, (int)position.Y - 50);
 					}
 					else
 					{
-						SetPosition((int)position.X, (int)position.Y + 100);
+						SetPosition((int)position.X, (int)position.Y + 50);
 					}
 				}
 				else
 				{
 					if (position.X < collidable.GetHitBox().Left)
 					{
-						SetPosition((int)position.X - 100, (int)position.Y);
+						SetPosition((int)position.X - 50, (int)position.Y);
 					}
 					else
 					{
-						SetPosition((int)position.X + 100, (int)position.Y);
+						SetPosition((int)position.X + 50, (int)position.Y);
 					}
 				}
 				TakeDamage(2);
-			}*/
+			}
 		}
 
 		public void ProjectileCollision(ICollidable collidable)

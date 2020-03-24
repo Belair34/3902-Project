@@ -31,6 +31,15 @@ namespace Game1.EnemySprites
             destWidth *= enemy.Size;
             destHeight *= enemy.Size;
         }
+        public void calcPosition()
+        {
+            spriteX = (int)enemy.GetPosition().X;
+            spriteY = (int)enemy.GetPosition().Y + moveSpeed;
+            if (spriteX > minY && spriteX < maxY)
+            {
+                moveSpeed = moveSpeed * -1;
+            }
+        }
         public void Update()
         {
             delay++;
@@ -48,7 +57,7 @@ namespace Game1.EnemySprites
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            Rectangle destRec = new Rectangle((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y, destWidth, destHeight);
+            Rectangle destRec = new Rectangle(spriteX, spriteY, destWidth, destHeight);
             Rectangle srcRec;
             if (curFrame == 1) /*Change these to correct frames, might need to add/delete else if*/
             {

@@ -15,14 +15,14 @@ namespace Game1.EnemySprites
         private int destHeight = 16;
         private int srcX = 1; /*Change this*/
         private int srcY = 11;  /*and this*/
-        private int spriteX;
-        private int spriteY;
+        int spriteX = 0;
+        int spriteY = 0;
         private int curFrame = 1;
         private int totalFrames = 2; /*Maybe this*/
         private int delay = 0;
         private int moveSpeed;
-        private int minX;
-        private int maxX;
+        private int minX = 200;
+        private int maxX = 600;
 
         //public int Speed { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
         //public int Size { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
@@ -37,11 +37,11 @@ namespace Game1.EnemySprites
         }
         public void calcPosition()
         {
-            spriteX = (int)enemy.GetPosition().X - moveSpeed;
+            spriteX = (int)enemy.GetPosition().X + moveSpeed;
             spriteY = (int)enemy.GetPosition().Y;
             if(spriteX < minX || spriteX > maxX)
             {
-                this.moveSpeed = moveSpeed * -1;
+                moveSpeed = moveSpeed * -1;
             }
         }
         public void Update()
@@ -62,7 +62,7 @@ namespace Game1.EnemySprites
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            Rectangle destRec = new Rectangle((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y, destWidth, destHeight);
+            Rectangle destRec = new Rectangle(spriteX, spriteY, destWidth, destHeight);
             Rectangle srcRec;
             if (curFrame == 1) /*Change these to correct frames, might need to add/delete else if*/
             {

@@ -24,14 +24,41 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-			
-			
+
+
 			/*Items*/
-			
+
 			/*Blocks*/
+			blocks.Add(new Block(250, 131, false));
+			blocks.Add(new Block(200, 131, false));
+			blocks.Add(new Block(150, 131, false));
+			blocks.Add(new Block(150, 174, false));
+			blocks.Add(new Block(150, 217, false));
+			blocks.Add(new Block(150, 260, false));
+			blocks.Add(new Block(150, 303, false));
+			blocks.Add(new Block(200, 303, false));
+			blocks.Add(new Block(250, 303, false));
+
+			blocks.Add(new Block(250, 217, false));
+			blocks.Add(new Block(300, 217, false));
+			blocks.Add(new Block(350, 217, false));
+			blocks.Add(new Block(400, 217, false));
+			blocks.Add(new Block(450, 217, false));
+			blocks.Add(new Block(500, 217, false));
+
+			blocks.Add(new Block(500, 131, false));
+			blocks.Add(new Block(550, 131, false));
+			blocks.Add(new Block(600, 131, false));
+			blocks.Add(new Block(600, 174, false));
+			blocks.Add(new Block(600, 217, false));
+			blocks.Add(new Block(600, 260, false));
+			blocks.Add(new Block(600, 303, false));
+			blocks.Add(new Block(550, 303, false));
+			blocks.Add(new Block(500, 303, false));
+
 
 			/*Add all to collidables*/
-			foreach(IEnemy enemy in enemies)
+			foreach (IEnemy enemy in enemies)
 			{
 				collidables.Add(enemy);
 			}

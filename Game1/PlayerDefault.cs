@@ -152,25 +152,25 @@ namespace Game1
 				{
 					if (position.Y < collidable.GetHitBox().Top)
 					{
-						SetPosition((int)position.X, (int)position.Y - 20);
+						SetPosition((int)position.X, (int)position.Y - 50);
 					}
 					else
 					{
-						SetPosition((int)position.X, (int)position.Y + 20);
+						SetPosition((int)position.X, (int)position.Y + 50);
 					}
 				}
 				else
 				{
 					if (position.X < collidable.GetHitBox().Left)
 					{
-						SetPosition((int)position.X - 20, (int)position.Y);
+						SetPosition((int)position.X - 50, (int)position.Y);
 					}
 					else
 					{
-						SetPosition((int)position.X + 20, (int)position.Y);
+						SetPosition((int)position.X + 50, (int)position.Y);
 					}
 				}
-				TakeDamage(1);
+				TakeDamage(2);
 			}
 		}
 

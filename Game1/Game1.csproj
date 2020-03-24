@@ -106,7 +106,7 @@
     <Compile Include="Items\KeyItem.cs" />
     <Compile Include="Items\FlashingRupeeItem.cs" />
     <Compile Include="Items\RupeeItem.cs" />
-    <Compile Include="PlayerEmemyDamage.cs" />
+    <Compile Include="PlayerDamaged.cs" />
     <Compile Include="Projectiles\AbstractProjectile.cs" />
     <Compile Include="Projectiles\ProjAquaFireballRight.cs" />
     <Compile Include="Projectiles\ProjAquaFireballLeft.cs" />

@@ -69,13 +69,15 @@
     <Compile Include="EnemyStates\EStateAquamentusMovingLeft.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingRight.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingUp.cs" />
+    <Compile Include="EnemyStates\EStateGelMovingDown.cs" />
+    <Compile Include="EnemyStates\EStateGelMovingUp.cs" />
+    <Compile Include="EnemyStates\EStateGelMovingRght.cs" />
     <Compile Include="EnemyStates\EStateGoriyaDown.cs" />
     <Compile Include="Enemies\Goriya.cs" />
     <Compile Include="Commands\InventoryCommands\BoomerangCommand.cs" />
     <Compile Include="Commands\InventoryCommands\WandCommand.cs" />
     <Compile Include="Commands\HelperCommands\TakeDamageCommand.cs" />
     <Compile Include="Commands\InventoryCommands\EmptyCommand.cs" />
-    <Compile Include="EnemyStates\EStateGelMovingVertical.cs" />
     <Compile Include="EnemyStates\EStateBladeTrap.cs" />
     <Compile Include="EnemyStates\EStateWallMasterIdleAnimated.cs" />
     <Compile Include="Enemies\BladeTrap.cs" />
@@ -83,7 +85,7 @@
     <Compile Include="Enemies\Keese.cs" />
     <Compile Include="Enemies\Gel.cs" />
     <Compile Include="EnemyStates\EStateKeeseIdleAnimated.cs" />
-    <Compile Include="EnemyStates\EStateGelMovingHorizontal.cs" />
+    <Compile Include="EnemyStates\EStateGelMovingLeft.cs" />
     <Compile Include="Interfaces\IDrawable.cs" />
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
@@ -138,6 +140,9 @@
     <Compile Include="Sprites\EnemySprites\AquamentusMovingRight.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingUp.cs" />
     <Compile Include="Sprites\AbstractSprite.cs" />
+    <Compile Include="Sprites\EnemySprites\GelMovingRight.cs" />
+    <Compile Include="Sprites\EnemySprites\GelMovingLeft.cs" />
+    <Compile Include="Sprites\EnemySprites\GelMovingUp.cs" />
     <Compile Include="Sprites\ItemSprites\BowSprite.cs" />
     <Compile Include="Sprites\ItemSprites\SwordSprite.cs" />
     <Compile Include="Sprites\ItemSprites\MapSprite.cs" />
@@ -201,7 +206,7 @@
     <Compile Include="Sprites\EnemySprites\BladeTrapSprites.cs" />
     <Compile Include="Sprites\EnemySprites\GelIdleJump.cs" />
     <Compile Include="Sprites\EnemySprites\GelMovingHorizontal.cs" />
-    <Compile Include="Sprites\EnemySprites\GelMovingVertical.cs" />
+    <Compile Include="Sprites\EnemySprites\GelMovingDown.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaDown.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaLeft.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaRight.cs" />

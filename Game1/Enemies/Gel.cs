@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Game1.PlayerStates;
 using Game1.Projectiles;
 using System.Collections.Generic;
+using System;
 
 namespace Game1
 {
@@ -15,7 +16,10 @@ namespace Game1
 		private Rectangle hitBox;
 		int maxHealth;
 		int health;
-
+		Random numberGenerator;
+		double movementTimer;
+		int maxTimer;
+		int minTimer;
 		public Gel(int x, int y, int health, int maxHealth)
 		{
 			this.Speed = 1;                /*Changeable*/
@@ -23,9 +27,13 @@ namespace Game1
 			this.position = new Vector2(); 
 			this.position.X = x;
 			this.position.Y = y;
-			this.state = new EStateGelMovingHorizontal(this);
+			this.state = new EStateGelMovingRight(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 			hitBox = new Rectangle(x, y, 8 * Size, 16 * Size);
+			numberGenerator = new Random();
+			maxTimer = 100;
+			minTimer = 20;
+			movementTimer = numberGenerator.NextDouble() * maxTimer + minTimer;
 		}
 
         public int Speed { get; set; }
@@ -95,6 +103,12 @@ namespace Game1
 
 		public void Update()
 		{
+			movementTimer--;
+			if (movementTimer < 0)
+			{
+				BorderCollision();
+				movementTimer = numberGenerator.NextDouble() * maxTimer;
+			}
 			foreach (IProjectile projectile in projectiles)
 			{
 				projectile.Update();
@@ -165,24 +179,44 @@ namespace Game1
 			if (intersection.Height > intersection.Width && hitBox.X < collidable.GetHitBox().Left)
 			{
 				SetPosition(collidable.GetHitBox().Left - hitBox.Width, hitBox.Y);
+				BorderCollision();
 			}
 			else if (intersection.Width > intersection.Height && hitBox.Y < collidable.GetHitBox().Top)
 			{
 				SetPosition(hitBox.X, collidable.GetHitBox().Top - hitBox.Height);
+				BorderCollision();
 			}
 			else if (intersection.Width > intersection.Height && hitBox.Y > collidable.GetHitBox().Top)
 			{
 				SetPosition(hitBox.X, collidable.GetHitBox().Bottom);
+				BorderCollision();
 			}
 			else if (intersection.Height > intersection.Width && hitBox.X > collidable.GetHitBox().Left)
 			{
 				SetPosition(collidable.GetHitBox().Right, hitBox.Y);
+				BorderCollision();
 			}
 		}
 
 		public void BorderCollision()
 		{
-
+			int randomNumber = numberGenerator.Next();
+			if (randomNumber % 4 == 0)
+			{
+				MoveUp();
+			}
+			else if (randomNumber % 4 == 1)
+			{
+				MoveDown();
+			}
+			else if (randomNumber % 4 == 2)
+			{
+				MoveLeft();
+			}
+			else if (randomNumber % 4 == 3)
+			{
+				MoveRight();
+			}
 		}
 
 		public Rectangle GetHitBox()

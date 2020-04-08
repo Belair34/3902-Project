@@ -5,47 +5,44 @@ using Game1.Projectiles;
 
 namespace Game1.PlayerStates
 {
-    class EStateGelMovingVertical : IEnemyState
+    class EStateGelMovingDown : IEnemyState
     {
         ISprite sprite;
         IEnemy enemy;
         int coolDown;
-        public EStateGelMovingVertical(IEnemy enemy, int coolDown = 0)
+        public EStateGelMovingDown(IEnemy enemy, int coolDown = 0)
         {
             this.enemy = enemy;
-            this.sprite = SpriteFactory.Instance.GetGelMovingVertical(enemy);
+            this.sprite = SpriteFactory.Instance.GetGelMovingDown(enemy);
             this.coolDown = coolDown;
         }
         public void MoveUp()
         {
-            //enemy.SetState(new EStateMovingUp(enemy, coolDown));
+            enemy.SetState(new EStateGelMovingUp(enemy, coolDown));
         }
 
         public void MoveDown()
         {
-            //enemy.SetState(new EStateMovingDown(enemy, coolDown));
         }
         public void MoveLeft()
         {
-            //enemy.SetState(new EStateMovingLeft(enemy, coolDown));
+            enemy.SetState(new EStateGelMovingLeft(enemy, coolDown));
         }
 
         public void MoveRight()
         {
-            //enemy.SetState(new EStateMovingRight(enemy, coolDown));
+            enemy.SetState(new EStateGelMovingRight(enemy, coolDown));
         }
         public void MoveHorizontal()
         {
-            enemy.SetState(new EStateGelMovingHorizontal(enemy, coolDown));
         }
 
         public void MoveVertical()
         {
-            //enemy.SetState(new EStateGelMovingVertical(enemy, coolDown));
+        
         }
         public void MoveToPlayer()
         {
-            //enemy.SetState(new EStateMovingToPlayer(enemy, coolDown));
         }
 
         public void Stop()
@@ -67,6 +64,6 @@ namespace Game1.PlayerStates
             sprite.Draw(spriteBatch);
         }
 
-
+       
     }
 }

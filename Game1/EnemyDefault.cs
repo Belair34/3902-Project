@@ -27,7 +27,7 @@ namespace Game1
 			this.Boundary = new Vector2();
 			this.Boundary.X = window.Viewport.Width;
 			this.Boundary.Y = window.Viewport.Height;
-			this.state = new EStateGelMovingVertical(this);
+			this.state = new EStateGelMovingRight(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 			this.hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
 		}

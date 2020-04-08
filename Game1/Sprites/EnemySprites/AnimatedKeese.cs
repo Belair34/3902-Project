@@ -15,8 +15,8 @@ namespace Game1.EnemySprites
         {
             base.srcWidth = 16;
             base.srcHeight = 16;
-            base.destWidth = 13;
-            base.destHeight = 13;
+            base.destWidth = 32;
+            base.destHeight = 32;
             base.srcX = 183; /*Change this*/
             base.srcY = 11;  /*and this*/
         }

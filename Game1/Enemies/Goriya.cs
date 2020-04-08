@@ -149,14 +149,17 @@ namespace Game1
 
 		public void PlayerCollision(ICollidable collidable)
 		{
+			BlockCollision(collidable);
 		}
 
 		public void EnemyCollision(ICollidable collidable)
 		{
+			BlockCollision(collidable);
 		}
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
+			BlockCollision(collidable);
 		}
 
 		public void ItemCollision(ICollidable collidable)

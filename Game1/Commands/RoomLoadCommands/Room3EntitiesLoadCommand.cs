@@ -28,7 +28,7 @@ namespace Game1
 			enemies.Add(new Stalfos(350, 150, 5, 5));
 			enemies.Add(new Stalfos(400, 400, 5, 5));
 			enemies.Add(new Stalfos(500, 130, 5, 5));
-			enemies.Add(new Stalfos(600, 500, 5, 5));
+			enemies.Add(new Stalfos(600, 450, 5, 5));
 			/*Items*/
 
 			/*Blocks*/

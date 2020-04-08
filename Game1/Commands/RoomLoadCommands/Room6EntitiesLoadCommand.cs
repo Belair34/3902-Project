@@ -24,8 +24,12 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-
-
+			enemies.Add(new Keese(500, 100, 5, 5));
+			enemies.Add(new Keese(200, 150, 5, 5));
+			enemies.Add(new Keese(120, 220, 5, 5));
+			enemies.Add(new Keese(250, 300, 5, 5));
+			enemies.Add(new Keese(160, 400, 5, 5));
+			enemies.Add(new Keese(500, 500, 5, 5));
 			/*Items*/
 
 			/*Blocks*/

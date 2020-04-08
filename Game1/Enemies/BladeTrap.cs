@@ -113,37 +113,77 @@ namespace Game1
 
 		public void CheckCollisions(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+			if (collidable.GetHitBox().Intersects(hitBox))
+			{
+				if (collidable is IProjectile)
+				{
+					ProjectileCollision(collidable);
+				}
+				else if (collidable is IEnemy)
+				{
+					EnemyCollision(collidable);
+				}
+				else if (collidable is IItem)
+				{
+					ItemCollision(collidable);
+				}
+				else if (collidable is IPlayer)
+				{
+					PlayerCollision(collidable);
+				}
+				else if (collidable is Block)
+				{
+					BlockCollision(collidable);
+				}
+			}
 		}
 
 		public void PlayerCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
 		}
 
 		public void EnemyCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
 		}
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void ItemCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public void BlockCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+			Rectangle intersection = Rectangle.Intersect(hitBox, collidable.GetHitBox());
+			if (intersection.Height > intersection.Width && hitBox.X < collidable.GetHitBox().Left)
+			{
+				SetPosition(collidable.GetHitBox().Left - hitBox.Width, hitBox.Y);
+				BorderCollision();
+			}
+			else if (intersection.Width > intersection.Height && hitBox.Y < collidable.GetHitBox().Top)
+			{
+				SetPosition(hitBox.X, collidable.GetHitBox().Top - hitBox.Height);
+				BorderCollision();
+			}
+			else if (intersection.Width > intersection.Height && hitBox.Y > collidable.GetHitBox().Top)
+			{
+				SetPosition(hitBox.X, collidable.GetHitBox().Bottom);
+				BorderCollision();
+			}
+			else if (intersection.Height > intersection.Width && hitBox.X > collidable.GetHitBox().Left)
+			{
+				SetPosition(collidable.GetHitBox().Right, hitBox.Y);
+				BorderCollision();
+			}
 		}
 
 		public void BorderCollision()
 		{
-			throw new System.NotImplementedException();
+
 		}
 
 		public Rectangle GetHitBox()

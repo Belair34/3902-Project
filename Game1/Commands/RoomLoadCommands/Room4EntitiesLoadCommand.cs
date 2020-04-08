@@ -24,8 +24,8 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-			enemies.Add(new Aquamentus(600, 200, 10, 10));
-			enemies.Add(new Gel(300, 350, 5, 5));
+			//enemies.Add(new Aquamentus(600, 200, 10, 10));
+			//enemies.Add(new Gel(300, 350, 5, 5));
 
 			/*Items*/
 			items.Add(new ArrowItem(200, 150));

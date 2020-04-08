@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework.Input;
 using Game1.PlayerStates;
 using Game1.Projectiles;
 using System.Collections.Generic;
+using System;
+
 
 namespace Game1
 {
@@ -15,7 +17,10 @@ namespace Game1
 		private Rectangle hitBox;
 		int maxHealth;
 		int health;
-
+		Random numberGenerator;
+		double movementTimer;
+		int maxTimer;
+		int minTimer;
 		public Goriya(int x, int y, int health, int maxHealth)
 		{
 			this.Speed = 1;                /*Changeable*/
@@ -26,6 +31,10 @@ namespace Game1
 			this.state = new EStateGoriyaDown(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 			hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
+			numberGenerator = new Random();
+			maxTimer = 100;
+			minTimer = 20;
+			movementTimer = numberGenerator.NextDouble() * maxTimer + minTimer;
 		}
 
         public int Speed { get; set; }
@@ -113,37 +122,91 @@ namespace Game1
 
 		public void CheckCollisions(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+			if (collidable.GetHitBox().Intersects(hitBox))
+			{
+				if (collidable is IProjectile)
+				{
+					ProjectileCollision(collidable);
+				}
+				else if (collidable is IEnemy)
+				{
+					EnemyCollision(collidable);
+				}
+				else if (collidable is IItem)
+				{
+					ItemCollision(collidable);
+				}
+				else if (collidable is IPlayer)
+				{
+					PlayerCollision(collidable);
+				}
+				else if (collidable is Block)
+				{
+					BlockCollision(collidable);
+				}
+			}
 		}
 
 		public void PlayerCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
 		}
 
 		public void EnemyCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
 		}
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
 		}
 
 		public void ItemCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
 		}
 
 		public void BlockCollision(ICollidable collidable)
 		{
-			throw new System.NotImplementedException();
+			Rectangle intersection = Rectangle.Intersect(hitBox, collidable.GetHitBox());
+			if (intersection.Height > intersection.Width && hitBox.X < collidable.GetHitBox().Left)
+			{
+				SetPosition(collidable.GetHitBox().Left - hitBox.Width, hitBox.Y);
+				BorderCollision();
+			}
+			else if (intersection.Width > intersection.Height && hitBox.Y < collidable.GetHitBox().Top)
+			{
+				SetPosition(hitBox.X, collidable.GetHitBox().Top - hitBox.Height);
+				BorderCollision();
+			}
+			else if (intersection.Width > intersection.Height && hitBox.Y > collidable.GetHitBox().Top)
+			{
+				SetPosition(hitBox.X, collidable.GetHitBox().Bottom);
+				BorderCollision();
+			}
+			else if (intersection.Height > intersection.Width && hitBox.X > collidable.GetHitBox().Left)
+			{
+				SetPosition(collidable.GetHitBox().Right, hitBox.Y);
+				BorderCollision();
+			}
 		}
 
 		public void BorderCollision()
 		{
-			throw new System.NotImplementedException();
+			int randomNumber = numberGenerator.Next();
+			if (randomNumber % 4 == 0)
+			{
+				MoveUp();
+			}
+			else if (randomNumber % 4 == 1)
+			{
+				MoveDown();
+			}
+			else if (randomNumber % 4 == 2)
+			{
+				MoveLeft();
+			}
+			else if (randomNumber % 4 == 3)
+			{
+				MoveRight();
+			}
 		}
 
 		public Rectangle GetHitBox()

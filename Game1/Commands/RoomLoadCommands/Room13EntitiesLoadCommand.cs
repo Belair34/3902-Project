@@ -24,7 +24,10 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-
+			enemies.Add(new BladeTrap(80, 80, 5, 5));
+			enemies.Add(new BladeTrap(650, 80, 5, 5));
+			enemies.Add(new BladeTrap(80, 360, 5, 5));
+			enemies.Add(new BladeTrap(660, 360, 5, 5));
 
 			/*Items*/
 

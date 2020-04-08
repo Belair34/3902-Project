@@ -24,7 +24,9 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-
+			enemies.Add(new Goriya(500, 100, 5, 5));
+			enemies.Add(new Goriya(400, 180, 5, 5));
+			enemies.Add(new Goriya(550, 260, 5, 5));
 
 			/*Items*/
 

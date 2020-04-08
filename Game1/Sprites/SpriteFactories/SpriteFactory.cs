@@ -260,13 +260,21 @@ namespace Game1
         {
             return new GelIdleJump(enemy, enemyLinkSheet);
         }
-        public ISprite GetGelMovingVertical(IEnemy enemy)
+        public ISprite GetGelMovingLeft(IEnemy enemy)
         {
-            return new GelMovingVertical(enemy, enemyLinkSheet);
+            return new GelMovingLeft(enemy, enemyLinkSheet);
         }
-        public ISprite GetGelMovingHorizontal(IEnemy enemy)
+        public ISprite GetGelMovingRight(IEnemy enemy)
         {
-            return new GelMovingHorizontal(enemy, enemyLinkSheet);
+            return new GelMovingRight(enemy, enemyLinkSheet);
+        }
+        public ISprite GetGelMovingUp(IEnemy enemy)
+        {
+            return new GelMovingUp(enemy, enemyLinkSheet);
+        }
+        public ISprite GetGelMovingDown(IEnemy enemy)
+        {
+            return new GelMovingDown(enemy, enemyLinkSheet);
         }
         public ISprite GetAnimatedKeese(IEnemy enemy)
         {

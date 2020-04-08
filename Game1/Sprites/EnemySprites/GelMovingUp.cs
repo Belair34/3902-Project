@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1.EnemySprites
 {
-    class GelMovingVertical :ISprite
+    class GelMovingUp :ISprite
     {
         Texture2D texture;
         IEnemy enemy;
@@ -12,33 +12,19 @@ namespace Game1.EnemySprites
         private int srcHeight = 16;
         private int destWidth = 8;
         private int destHeight = 16;
-        private int spriteX;
-        private int spriteY;
         private int srcX = 90; /*Change this*/
         private int srcY = 0;  /*and this*/
         private int curFrame = 1;
         private int totalFrames = 2; /*Maybe this*/
         private int delay = 0;
         private int moveSpeed;
-        private int minY;
-        private int maxY;
-
-        public GelMovingVertical(IEnemy enemy, Texture2D texture)
+        public GelMovingUp(IEnemy enemy, Texture2D texture)
         {
             this.texture = texture;
             this.enemy = enemy;
             moveSpeed = enemy.Speed;
             destWidth *= enemy.Size;
             destHeight *= enemy.Size;
-        }
-        public void calcPosition()
-        {
-            spriteX = (int)enemy.GetPosition().X;
-            spriteY = (int)enemy.GetPosition().Y + moveSpeed;
-            if (spriteX > minY && spriteX < maxY)
-            {
-                moveSpeed = moveSpeed * -1;
-            }
         }
         public void Update()
         {
@@ -52,12 +38,12 @@ namespace Game1.EnemySprites
                     curFrame = 1;
                 }
             }
-            enemy.SetPosition(spriteX, spriteY); /*Change this*/
+            enemy.SetPosition((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y + moveSpeed); /*Change this*/
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            Rectangle destRec = new Rectangle(spriteX, spriteY, destWidth, destHeight);
+            Rectangle destRec = new Rectangle((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y, destWidth, destHeight);
             Rectangle srcRec;
             if (curFrame == 1) /*Change these to correct frames, might need to add/delete else if*/
             {

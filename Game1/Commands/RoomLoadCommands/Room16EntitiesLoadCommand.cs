@@ -24,7 +24,14 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-
+			enemies.Add(new WallMaster(200, 80, 5, 5));
+			enemies.Add(new WallMaster(260, 80, 5, 5));
+			enemies.Add(new WallMaster(600, 80, 5, 5));
+			enemies.Add(new WallMaster(660, 80, 5, 5));
+			enemies.Add(new WallMaster(100, 270, 5, 5));
+			enemies.Add(new WallMaster(100, 330, 5, 5));
+			enemies.Add(new WallMaster(650, 270, 5, 5));
+			enemies.Add(new WallMaster(650, 360, 5, 5));
 
 			/*Items*/
 

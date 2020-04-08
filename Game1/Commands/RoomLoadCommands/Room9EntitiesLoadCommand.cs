@@ -24,7 +24,9 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-
+			enemies.Add(new Gel(350, 120, 5, 5));
+			enemies.Add(new Gel(200, 240, 5, 5));
+			enemies.Add(new Gel(350, 300, 5, 5));
 
 			/*Items*/
 

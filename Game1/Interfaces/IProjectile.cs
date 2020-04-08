@@ -11,8 +11,6 @@ namespace Game1
         int ShotDistance { get; set; }
         void Shoot();
         void Explode();
-        void Update();
-        void Draw(SpriteBatch spriteBatch);
 
     }
 }

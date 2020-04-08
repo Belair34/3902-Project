@@ -8,7 +8,6 @@ namespace Game1
 {
     class SwordSprite : AbstractSprite, ISprite
     {
-        Texture2D texture;
         IItem item;
         int SwordSrcWidth = 10;
         int SwordSrcHeight = 20;

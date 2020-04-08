@@ -8,7 +8,6 @@ namespace Game1
 {
     class RupeeSprite : AbstractSprite, ISprite
     {
-        Texture2D texture;
         IItem item;
         int RupeeSrcWidth = 12;
         int RupeeSrcHeight = 20;

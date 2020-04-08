@@ -8,7 +8,6 @@ namespace Game1
 {
     class MapSprite : AbstractSprite, ISprite
     {
-        Texture2D texture;
         IItem item;
         int MapSrcWidth = 10;
         int MapSrcHeight = 20;

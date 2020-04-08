@@ -9,16 +9,12 @@ namespace Game1
     {
         
         int Speed { get; set; }
-        int Size { get; set; }
         List<IProjectile> GetProjectiles();
-        Vector2 GetPosition();
         void SetState(IEnemyState state);
         IEnemyState GetState();
         void MoveHorizontal();
         void MoveDown();
         void MoveVertical();
         void Stop();
-        void Update();
-        void Draw(SpriteBatch spriteBatch);
     }
 }

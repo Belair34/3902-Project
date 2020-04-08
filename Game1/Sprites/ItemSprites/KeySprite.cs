@@ -8,7 +8,6 @@ namespace Game1
 {
     class KeySprite : AbstractSprite, ISprite
     {
-        Texture2D texture;
         IItem item;
         int KeySrcWidth = 11;
         int KeySrcHeight = 20;

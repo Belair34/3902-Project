@@ -24,8 +24,11 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-
-
+			enemies.Add(new Stalfos(200, 500, 5, 5));
+			enemies.Add(new Stalfos(350, 150, 5, 5));
+			enemies.Add(new Stalfos(400, 400, 5, 5));
+			enemies.Add(new Stalfos(500, 130, 5, 5));
+			enemies.Add(new Stalfos(600, 500, 5, 5));
 			/*Items*/
 
 			/*Blocks*/

@@ -320,7 +320,22 @@ namespace Game1
         {
             return new AquamentusMovingRight(enemy, bossLinkSheet);
         }
-
+        public ISprite GetStalfosMovingUp(IEnemy enemy)
+        {
+            return new StalfosMovingUp(enemy, enemyLinkSheet);
+        }
+        public ISprite GetStalfosMovingDown(IEnemy enemy)
+        {
+            return new StalfosMovingDown(enemy, enemyLinkSheet);
+        }
+        public ISprite GetStalfosMovingLeft(IEnemy enemy)
+        {
+            return new StalfosMovingLeft(enemy, enemyLinkSheet);
+        }
+        public ISprite GetStalfosMovingRight(IEnemy enemy)
+        {
+            return new StalfosMovingRight(enemy, enemyLinkSheet);
+        }
         /*Room texture*/
         public Texture2D GetBackgroundTexture()
         {

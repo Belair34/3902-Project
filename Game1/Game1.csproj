@@ -64,10 +64,15 @@
     <Compile Include="Commands\RoomLoadCommands\Room1EntitiesLoadCommand.cs" />
     <Compile Include="Commands\HelperCommands\CheckAllCollisionsCommand.cs" />
     <Compile Include="Controllers\GamepadController.cs" />
+    <Compile Include="Enemies\Stalfos.cs" />
     <Compile Include="Enemies\Aquamentus.cs" />
+    <Compile Include="EnemyStates\EStateStalfosMovingDown.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingDown.cs" />
+    <Compile Include="EnemyStates\EStateStaflosMovingLeft.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingLeft.cs" />
+    <Compile Include="EnemyStates\EStateStalfosMovingRight.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingRight.cs" />
+    <Compile Include="EnemyStates\EStateStalfosMovingUp.cs" />
     <Compile Include="EnemyStates\EStateAquamentusMovingUp.cs" />
     <Compile Include="EnemyStates\EStateGelMovingDown.cs" />
     <Compile Include="EnemyStates\EStateGelMovingUp.cs" />
@@ -135,9 +140,13 @@
     <Compile Include="Rooms\Room2.cs" />
     <Compile Include="Rooms\Room4.cs" />
     <Compile Include="Rooms\Room1.cs" />
+    <Compile Include="Sprites\EnemySprites\StalfosMovingDown .cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingDown.cs" />
+    <Compile Include="Sprites\EnemySprites\StalfosMovingLeft.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingLeft.cs" />
+    <Compile Include="Sprites\EnemySprites\StalfosMovingRight.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingRight.cs" />
+    <Compile Include="Sprites\EnemySprites\StalfosMovingUp.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingUp.cs" />
     <Compile Include="Sprites\AbstractSprite.cs" />
     <Compile Include="Sprites\EnemySprites\GelMovingRight.cs" />
@@ -205,7 +214,6 @@
     <Compile Include="Sprites\EnemySprites\AnimatedWallMaster.cs" />
     <Compile Include="Sprites\EnemySprites\BladeTrapSprites.cs" />
     <Compile Include="Sprites\EnemySprites\GelIdleJump.cs" />
-    <Compile Include="Sprites\EnemySprites\GelMovingHorizontal.cs" />
     <Compile Include="Sprites\EnemySprites\GelMovingDown.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaDown.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaLeft.cs" />

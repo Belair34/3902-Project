@@ -12,13 +12,15 @@ namespace Game1
 		private List<IItem> items;
 		private List<ICollidable> collidables;
 		private List<Block> blocks;
+		private int hudOffset;
 
-		public Room10EntitiesLoadCommand(List<IEnemy> enemies, List<IItem> items, List<ICollidable> collidables, List<Block> blocks)
+		public Room10EntitiesLoadCommand(List<IEnemy> enemies, List<IItem> items, List<ICollidable> collidables, List<Block> blocks, int hudOffset)
 		{
 			this.enemies = enemies;
 			this.items = items;
 			this.collidables = collidables;
 			this.blocks = blocks;
+			this.hudOffset = hudOffset;
 		}
 
 		public void Execute()

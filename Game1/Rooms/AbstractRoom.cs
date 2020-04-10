@@ -33,6 +33,7 @@ namespace Game1
             this.collidables = new List<ICollidable>();
             this.blocks = new List<Block>();
             this.background = SpriteFactory.Instance.GetBackgroundTexture();
+            this.backgroundDestRec = new Rectangle(0, game.GetHUD().GetHeight(), graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height-game.GetHUD().GetHeight());
             this.Transitioning = false;
             collidables.Add(game.GetPlayer());
             collisionChecker = new CheckAllCollisionsCommand(collidables, border);
@@ -40,7 +41,7 @@ namespace Game1
             switch (spawnDoor)
             {
                 case 0: // 0 = top 
-                    game.GetPlayer().SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, 0);
+                    game.GetPlayer().SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, game.GetHUD().GetHeight());
                     game.GetPlayer().SetState(new PStateIdleDown(game.GetPlayer()));
                     break;
                 case 1: // 1 = bottom
@@ -48,11 +49,11 @@ namespace Game1
                     game.GetPlayer().SetState(new PStateIdleUp(game.GetPlayer()));
                     break;
                 case 2: // 2 = left
-                    game.GetPlayer().SetPosition(0, graphics.GraphicsDevice.Viewport.Height / 2);
+                    game.GetPlayer().SetPosition(0, ((graphics.GraphicsDevice.Viewport.Height - game.GetHUD().GetHeight()) / 2) + game.GetHUD().GetHeight());
                     game.GetPlayer().SetState(new PStateIdleRight(game.GetPlayer()));
                     break;
                 case 3: // 3 = right
-                    game.GetPlayer().SetPosition(graphics.GraphicsDevice.Viewport.Width-game.GetPlayer().GetHitBox().Width, graphics.GraphicsDevice.Viewport.Height / 2);
+                    game.GetPlayer().SetPosition(graphics.GraphicsDevice.Viewport.Width-game.GetPlayer().GetHitBox().Width, ((graphics.GraphicsDevice.Viewport.Height - game.GetHUD().GetHeight()) / 2) + game.GetHUD().GetHeight());
                     game.GetPlayer().SetState(new PStateIdleLeft(game.GetPlayer()));
                     break;
                 default:
@@ -119,7 +120,7 @@ namespace Game1
                 {
                     TransitionDown();
                 }
-                else if (game.GetPlayer().GetPosition().Y < 0)
+                else if (game.GetPlayer().GetPosition().Y < game.GetHUD().GetHeight())
                 {
                     TransitionUp();
                 }

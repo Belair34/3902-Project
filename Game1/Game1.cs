@@ -16,6 +16,7 @@ namespace Game1
         List<IController> controllers;
         IPlayer player;
         Border border;
+        HUD hud;
         IRoom room;
         IRoom nextRoom;
         bool switchingRooms;
@@ -24,6 +25,11 @@ namespace Game1
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+        }
+
+        public HUD GetHUD()
+        {
+            return this.hud;
         }
 
         public IPlayer GetPlayer()
@@ -48,14 +54,18 @@ namespace Game1
         }
         protected override void Initialize()
         {
+            
             switchingRooms = false;
             spriteBatch = new SpriteBatch(GraphicsDevice);
             SpriteFactory.Instance.LoadAll(Content);
             SpriteFactoryItems.Instance.LoadAll(Content);
-            border = new Border(graphics);
+            hud = new HUD(graphics, this);
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 480 + hud.GetHeight();
+            graphics.ApplyChanges();
+            border = new Border(graphics, hud, SpriteFactory.Instance.GetBackgroundTexture());
             player = new PlayerDefault(100, 100, this);
             room = new Room1(this, border, graphics, 1);
-            
             controllers = new List<IController>();           /*Controllers*/
             controllers.Add(new KeyboardController(this));
             //controllers.Add(new GamepadController(this));

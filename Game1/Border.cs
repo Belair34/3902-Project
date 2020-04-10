@@ -29,34 +29,36 @@ namespace Game1
         private bool leftOpen;
         private bool rightOpen;
         private bool botOpen;
-        Texture2D block;
+        private Texture2D block;
+        private HUD hud;
 
-        public Border(GraphicsDeviceManager graphics, Texture2D back = null)
+        public Border(GraphicsDeviceManager graphics, HUD hud, Texture2D back = null)
         {
+            this.hud = hud;
             topWallDistance = 60;
             doorWidth = 25;
             minX = graphics.GraphicsDevice.Viewport.X + topWallDistance+30;
-            minY = graphics.GraphicsDevice.Viewport.Y + topWallDistance;
+            minY = hud.GetHeight() + topWallDistance;
             maxX = graphics.GraphicsDevice.Viewport.Width - topWallDistance * 2 + 30;
-            maxY = minY + graphics.GraphicsDevice.Viewport.Height - topWallDistance*2 - 30;
-            verticalDoorTopY = graphics.GraphicsDevice.Viewport.Height / 2 - doorWidth / 2 - 20;
+            maxY = minY + graphics.GraphicsDevice.Viewport.Height - hud.GetHeight()- topWallDistance*2 - 30;
+            verticalDoorTopY = (graphics.GraphicsDevice.Viewport.Height - hud.GetHeight()) / 2 + hud.GetHeight() - doorWidth / 2 - 20;
             horizontalDoorLeftX = graphics.GraphicsDevice.Viewport.Width / 2 - doorWidth*2 + 15;
             rectangles = new List<Rectangle>();
             rightTop = new Rectangle(maxX, 0, topWallDistance*2, verticalDoorTopY);
             rectangles.Add(rightTop);
-            rightBot = new Rectangle(maxX, rightTop.Height+topWallDistance, topWallDistance*2, graphics.GraphicsDevice.Viewport.Y + verticalDoorTopY + doorWidth);
+            rightBot = new Rectangle(maxX, rightTop.Height+topWallDistance, topWallDistance*2, verticalDoorTopY + doorWidth);
             rectangles.Add(rightBot);
             botRight = new Rectangle(horizontalDoorLeftX + doorWidth*2 + 20, maxY, horizontalDoorLeftX, topWallDistance*2);
             rectangles.Add(botRight);
             botLeft = new Rectangle(0, maxY, horizontalDoorLeftX, topWallDistance * 2);
             rectangles.Add(botLeft);
-            leftBot = new Rectangle(0, rightTop.Height + topWallDistance, minX, graphics.GraphicsDevice.Viewport.Y + verticalDoorTopY + doorWidth);
+            leftBot = new Rectangle(0, rightTop.Height + topWallDistance, minX, hud.GetHeight() + verticalDoorTopY + doorWidth);
             rectangles.Add(leftBot);
             leftTop = new Rectangle(0, 0, minX, verticalDoorTopY);
             rectangles.Add(leftTop);
-            topLeft = new Rectangle(0, 0, horizontalDoorLeftX, topWallDistance);
+            topLeft = new Rectangle(0, hud.GetHeight(), horizontalDoorLeftX, topWallDistance);
             rectangles.Add(topLeft);
-            topRight = new Rectangle(horizontalDoorLeftX + doorWidth*2 + 20, 0, horizontalDoorLeftX, topWallDistance);
+            topRight = new Rectangle(horizontalDoorLeftX + doorWidth*2 + 20, hud.GetHeight(), horizontalDoorLeftX, topWallDistance);
             rectangles.Add(topRight);
             rightOpen = true;
             topOpen = true;
@@ -147,7 +149,7 @@ namespace Game1
         {
             Rectangle src = new Rectangle(900, 0, 1, 1);
             spriteBatch.Begin();
-            spriteBatch.Draw(block, topRight, src, Color.White);
+            spriteBatch.Draw(block, rightBot, src, Color.White);
             spriteBatch.End();
         }
     }

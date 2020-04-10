@@ -12,13 +12,15 @@ namespace Game1
 		private List<IItem> items;
 		private List<ICollidable> collidables;
 		private List<Block> blocks;
+		private int hudOffset;
 
-		public Room17EntitiesLoadCommand(List<IEnemy> enemies, List<IItem> items, List<ICollidable> collidables, List<Block> blocks)
+		public Room17EntitiesLoadCommand(List<IEnemy> enemies, List<IItem> items, List<ICollidable> collidables, List<Block> blocks, int hudOffset)
 		{
 			this.enemies = enemies;
 			this.items = items;
 			this.collidables = collidables;
 			this.blocks = blocks;
+			this.hudOffset = hudOffset;
 		}
 
 		public void Execute()
@@ -29,31 +31,31 @@ namespace Game1
 			/*Items*/
 
 			/*Blocks*/
-			blocks.Add(new Block(450, 88, false));
-			blocks.Add(new Block(500, 88, false));
-			blocks.Add(new Block(550, 88, false));
-			blocks.Add(new Block(600, 88, false));
-			blocks.Add(new Block(650, 88, false));
+			blocks.Add(new Block(450, hudOffset + 88, false));
+			blocks.Add(new Block(500, hudOffset + 88, false));
+			blocks.Add(new Block(550, hudOffset + 88, false));
+			blocks.Add(new Block(600, hudOffset + 88, false));
+			blocks.Add(new Block(650, hudOffset + 88, false));
 
-			blocks.Add(new Block(550, 131, false));
-			blocks.Add(new Block(600, 131, false));
-			blocks.Add(new Block(650, 131, false));
+			blocks.Add(new Block(550, hudOffset + 131, false));
+			blocks.Add(new Block(600, hudOffset + 131, false));
+			blocks.Add(new Block(650, hudOffset + 131, false));
 
-			blocks.Add(new Block(600, 174, false));
-			blocks.Add(new Block(650, 174, false));
+			blocks.Add(new Block(600, hudOffset + 174, false));
+			blocks.Add(new Block(650, hudOffset + 174, false));
 
-			blocks.Add(new Block(600, 260, false));
-			blocks.Add(new Block(650, 260, false));
+			blocks.Add(new Block(600, hudOffset + 260, false));
+			blocks.Add(new Block(650, hudOffset + 260, false));
 
-			blocks.Add(new Block(550, 303, false));
-			blocks.Add(new Block(600, 303, false));
-			blocks.Add(new Block(650, 303, false));
+			blocks.Add(new Block(550, hudOffset + 303, false));
+			blocks.Add(new Block(600, hudOffset + 303, false));
+			blocks.Add(new Block(650, hudOffset + 303, false));
 
-			blocks.Add(new Block(450, 346, false));
-			blocks.Add(new Block(500, 346, false));
-			blocks.Add(new Block(550, 346, false));
-			blocks.Add(new Block(600, 346, false));
-			blocks.Add(new Block(650, 346, false));
+			blocks.Add(new Block(450, hudOffset + 346, false));
+			blocks.Add(new Block(500, hudOffset + 346, false));
+			blocks.Add(new Block(550, hudOffset + 346, false));
+			blocks.Add(new Block(600, hudOffset + 346, false));
+			blocks.Add(new Block(650, hudOffset + 346, false));
 
 			/*Add all to collidables*/
 			foreach (IEnemy enemy in enemies)

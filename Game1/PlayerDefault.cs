@@ -170,7 +170,7 @@ namespace Game1
 						SetPosition((int)position.X + 50, (int)position.Y);
 					}
 				}
-				TakeDamage(2);
+				TakeDamage(1);
 			}
 		}
 

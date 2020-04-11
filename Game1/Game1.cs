@@ -12,7 +12,7 @@ namespace Game1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        //SpriteFont text;
+        SpriteFont hudFont;
         List<IController> controllers;
         IPlayer player;
         Border border;
@@ -59,7 +59,8 @@ namespace Game1
             spriteBatch = new SpriteBatch(GraphicsDevice);
             SpriteFactory.Instance.LoadAll(Content);
             SpriteFactoryItems.Instance.LoadAll(Content);
-            hud = new HUD(graphics, this);
+            hudFont = Content.Load<SpriteFont>("HUDfont");
+            hud = new HUD(graphics, this, hudFont);
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 480 + hud.GetHeight();
             graphics.ApplyChanges();
@@ -102,9 +103,9 @@ namespace Game1
 
         protected override void Draw(GameTime gameTime)
         {
+            hud.Draw(spriteBatch);
             room.Draw(spriteBatch);
             base.Draw(gameTime);
-            
         }
     }
 }

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace Game1
 {
@@ -25,6 +23,7 @@ namespace Game1
         public int HaveBlueRing { get; set; }
         public int HaveWand { get; set; }
         public int HaveSword { get; set; }
+        public Vector2 SlotBCoordinates { get; set; }
         IPlayer player;
         ICommand slotB;
 
@@ -36,7 +35,7 @@ namespace Game1
             Rupees = 0;
             Keys = 0;
             Bombs = 10;
-            Arrows = 10; //set to 4 for testing purposes. will be 0 eventually
+            Arrows = 10; //set for testing purposes. will be 0 eventually
             TriforceShards = 0;
             CandleUsed = 0;
             HaveMap = 0;
@@ -46,14 +45,17 @@ namespace Game1
             HaveBow = 0;
             HaveBlueRing = 0;
             HaveWand = 0;
-            slotB = new BowCommand(player);
+            slotB = new EmptyCommand(player);
+            SlotBCoordinates = new Vector2(350, 0);
         }
         public ICommand GetSlotBCommand()
         { 
             return slotB;
         }
-        public void SetSlotBCommand(ICommand command)
+        public void SetSlotBCommand(ICommand command, int textureX, int textureY)
         {
+            Vector2 newCoords = new Vector2(textureX, textureY);
+            SlotBCoordinates = newCoords;
             slotB = command;
         }
 

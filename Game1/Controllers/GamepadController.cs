@@ -17,7 +17,7 @@ namespace Game1
         }
 
         public void Update()
-        {
+        {/*
             state = GamePad.GetState(PlayerIndex.One);
             if (state.Buttons.LeftShoulder.Equals(ButtonState.Pressed))
             {
@@ -90,7 +90,7 @@ namespace Game1
                 delay--;
             }
 
-        }
+       */}
        
     }
 }

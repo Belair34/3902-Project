@@ -13,6 +13,13 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin HUDfont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:HUDfont.spritefont
+
 #begin ProjectSpriteSheets/AltLinkSheet.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -72,6 +79,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:ProjectSpriteSheets/ExplosionSheet.png
+
+#begin ProjectSpriteSheets/HUDbackground.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:ProjectSpriteSheets/HUDbackground.jpg
 
 #begin ProjectSpriteSheets/LinkSpriteSheet.png
 /importer:TextureImporter

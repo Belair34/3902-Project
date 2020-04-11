@@ -15,6 +15,7 @@ namespace Game1
         private Texture2D explosionSheet;
         private Texture2D bossLinkSheet;
         private Texture2D rooms;
+        private Texture2D HUDbackground;
         private static SpriteFactory instance = new SpriteFactory();
         public static SpriteFactory Instance
         {
@@ -37,6 +38,7 @@ namespace Game1
             explosionSheet = content.Load<Texture2D>("ProjectSpriteSheets/ExplosionSheet");
             bossLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/boss");
             rooms = content.Load<Texture2D>("ProjectSpriteSheets/dungeon");
+            HUDbackground = content.Load<Texture2D>("ProjectSpriteSheets/HUDbackground");
         }
 
         public ISprite GetLinkIdleDown(IPlayer player)
@@ -336,10 +338,20 @@ namespace Game1
         {
             return new StalfosMovingRight(enemy, enemyLinkSheet);
         }
-        /*Room texture*/
+        /*Textures*/
         public Texture2D GetBackgroundTexture()
         {
             return rooms;
+        }
+
+        public Texture2D GetHUDBackground()
+        {
+            return HUDbackground;
+        }
+
+        public Texture2D GetLinkSheet()
+        {
+            return linkSheet;
         }
     }
 }

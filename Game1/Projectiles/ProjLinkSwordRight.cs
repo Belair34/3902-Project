@@ -15,7 +15,7 @@ namespace Game1
             this.position = new Vector2(0);
             this.Speed = 10; /*Changeable */
             sprite = SpriteFactory.Instance.GetLinkSwordBeamRight(this);
-            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);
+            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 16, Size * 12);
             IsDone = false;
         }
         
@@ -33,6 +33,8 @@ namespace Game1
         {
             position.Y += 12;
             explodeTimer = 15;
+            this.hitBox.Height = 0;
+            this.hitBox.Width = 0;
             exploding = true;
             shooting = false;
             sprite = SpriteFactory.Instance.GetLinkSwordExplode(this);

@@ -17,11 +17,11 @@ namespace Game1.ProjectileSprites
         }
         internal override void Initialize()
         {
-            base.srcWidth = 15;
+            base.srcWidth = 7;
             base.srcHeight = 15;
-            base.destWidth = 15;
+            base.destWidth = 7;
             base.destHeight = 15;
-            base.srcX = 119;
+            base.srcX = 124;
             base.srcY = 195;
         }
         public override void Update()

@@ -10,11 +10,11 @@ namespace Game1.ProjectileSprites
     {
         Texture2D texture;
         IProjectile projectile;
-        int arrowSrcWidth = 15;
+        int arrowSrcWidth = 7;
         int arrowSrcHeight = 15;
-        int arrowDestWidth = 15;
+        int arrowDestWidth = 7;
         int arrowDestHeight = 15;
-        int arrowSrcX = 181;
+        int arrowSrcX = 184;
         int arrowSrcY = 195;
         int speed;
 

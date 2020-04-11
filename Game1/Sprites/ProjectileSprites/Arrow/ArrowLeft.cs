@@ -11,11 +11,11 @@ namespace Game1.ProjectileSprites
         Texture2D texture;
         IProjectile projectile;
         int arrowSrcWidth = 15;
-        int arrowSrcHeight = 15;
+        int arrowSrcHeight = 7;
         int arrowDestWidth = 15;
-        int arrowDestHeight = 15;
+        int arrowDestHeight = 7;
         int arrowSrcX = 150;
-        int arrowSrcY = 194;
+        int arrowSrcY = 199;
         int speed;
 
         public ArrowLeft(IProjectile projectile, Texture2D texture)

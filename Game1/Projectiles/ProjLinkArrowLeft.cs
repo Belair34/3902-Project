@@ -13,10 +13,10 @@ namespace Game1.Projectiles
             base.exploding = false;
             base.player = player;
             base.Size = player.Size;
-            this.position = new Vector2(0);
+            this.position = player.GetPosition();
             base.Speed = 10; /*Changeable */
             base.sprite = SpriteFactory.Instance.GetLinkArrowLeft(this);
-            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);
+            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 7);
         }
         public override void Shoot()
         { 
@@ -26,6 +26,7 @@ namespace Game1.Projectiles
                 base.ShotDistance = 0;
                 base.position = player.GetPosition();
                 base.position.X -= 8;
+                base.position.Y += 15;
             }
             base.shooting = true;
         }
@@ -33,6 +34,10 @@ namespace Game1.Projectiles
         public override void Explode()
         {
             base.explodeTimer = 5;
+            this.hitBox.Height = 0;
+            this.hitBox.Width = 0;
+            this.position.X -= 8;
+            this.position.Y -= 8;
             base.shooting = false;
             base.exploding = true;
             base.sprite = SpriteFactory.Instance.GetLinkArrowExplode(this);

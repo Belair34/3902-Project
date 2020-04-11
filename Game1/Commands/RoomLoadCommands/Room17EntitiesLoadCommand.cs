@@ -26,7 +26,7 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-			enemies.Add(new Aquamentus(500, 250, 10, 10));
+			enemies.Add(new Aquamentus(500, hudOffset + 200, 10, 10));
 
 			/*Items*/
 

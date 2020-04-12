@@ -16,7 +16,7 @@ namespace Game1.PlayerSprites
         int srcX = 90; /*Change this*/
         int srcY = 30;  /*and this*/
         int curFrame = 1;
-        int totalFrame = 10;
+        int totalFrame = 2;
         int coolDown = 20;
         int tick = 0;
 
@@ -33,21 +33,20 @@ namespace Game1.PlayerSprites
             if (tick == 7)
             {
                 tick = 0;
-                srcX += 120;
                 curFrame++;
-                if (curFrame <= totalFrame)
+                if (curFrame > totalFrame)
                 {
-                    if (srcX == 450)
-                    {
-                        srcX = 90;
-                    }
+                    curFrame = 1;
+                }
+                if (curFrame == 1)
+                {
+                    srcX -= 230;
                 }
                 else
                 {
-                    player.SetState(new PStateIdleRight(player, coolDown));
+                    srcX += 230;
                 }
             }
-
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -107,8 +107,8 @@ namespace Game1
 
 		public void TakeDamage(int damage)
 		{
-			inventory.Health -= damage;
-			game.SetPlayer(new PlayerDamaged(this, game));
+			ICommand damageCommand = new TakeDamageCommand(this, damage);
+			damageCommand.Execute();
 		}
 		
 		public void CheckCollisions(ICollidable collidable)

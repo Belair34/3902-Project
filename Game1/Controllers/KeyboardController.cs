@@ -19,7 +19,11 @@ namespace Game1
         {
             if (Keyboard.GetState().IsKeyDown(Keys.E))
             {
-                myGame.GetPlayer().TakeDamage(2);
+                if (delay <= 0)
+                {
+                    myGame.GetPlayer().TakeDamage(1);
+                }
+                delay = 10;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Q))
             {

@@ -8,23 +8,45 @@ namespace Game1
 {
     class TakeDamageCommand : ICommand
     {
-        private Game1 game;
+        private IPlayer player;
         private IInventory inventory;
         int damage;
 
-        public TakeDamageCommand(Game1 game, int damage)
+        public TakeDamageCommand(IPlayer player, int damage)
         {
-            this.game = game;
-            inventory = game.GetPlayer().GetInventory();
+            Initialize(player);
+            this.damage = damage;
         }
 
+        public void Initialize(IPlayer player)
+        {
+            this.player = player;
+            inventory = player.GetInventory();
+        }
 
         public void Execute()
         {
-            
-            
+            IPlayerState pState;
+            switch (inventory.Direction)
+            {
+                case 0:
+                    pState = new PStateDamagedUp(player, 50);
+                    break; //up
+                case 1:
+                    pState = new PStateDamagedDown(player, 50);
+                    break; //down
+                case 2:
+                    pState = new PStateDamagedLeft(player, 50);
+                    break; //left
+                case 3:
+                    pState = new PStateDamagedRight(player, 50);
+                    break; //right
+                default:
+                    pState = new PStateDamagedDown(player, 50);
+                    break;
+            }
+            player.SetState(pState);
             inventory.Health -= damage;
         }
     }
 }
-

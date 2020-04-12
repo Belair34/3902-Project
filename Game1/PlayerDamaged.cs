@@ -7,26 +7,27 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-	public class DamagedLink : IPlayer
+	public class PlayerDamaged : IPlayer
 	{
 		Game1 game;
 		private IPlayer decoratedLink;
-		int timer = 1000;
+		int timer;
 		
-		public DamagedLink(IPlayer decoratedLink, Game1 game)
+		public PlayerDamaged(IPlayer decoratedLink, Game1 game)
 		{
 			this.decoratedLink = decoratedLink;
 			this.game = game;
+			this.timer = 1000;
 			game.SetPlayer(this);
 		}
-		public void TakeDamage()
+		public void TakeDamage(int damage)
 		{
 			// no damage taken
 		}
 		public void Update()
 		{
 			timer--;
-			if(timer == 0)
+			if(timer < 0)
 			{
 				RemoveDecorator();
 			}
@@ -54,7 +55,7 @@ namespace Game1
 		
 		public void SetPosition(int x, int y)
 		{
-			
+			decoratedLink.SetPosition(x, y);
 		}
 
 		public Vector2 GetPosition()
@@ -63,6 +64,7 @@ namespace Game1
 		}
 		public void SetState(IPlayerState state)
 		{
+			decoratedLink.SetState(state);
 		}
 
 		public IPlayerState GetState()
@@ -72,75 +74,70 @@ namespace Game1
 
 		public void MoveUp()
 		{
-
+			decoratedLink.GetState().MoveUp();
 		}
 
 		public void MoveDown()
 		{
-
+			decoratedLink.GetState().MoveDown();
 		}
 
 		public void MoveLeft()
 		{
-
+			decoratedLink.GetState().MoveLeft();
 		}
 
 		public void MoveRight()
 		{
-
+			decoratedLink.GetState().MoveRight();
 		}
 
 		public void SlotA()
 		{
-
+			decoratedLink.GetState().SlotA();
 		}
 
 		public void SlotB()
 		{
-
+			decoratedLink.GetState().SlotB();
 		}
 
 		public void Stop()
 		{
-
-		}
-
-		public void TakeDamage(int damage)
-		{
-			
+			decoratedLink.GetState().Stop();
 		}
 		
 		public void CheckCollisions(ICollidable collidable)
 		{
-			
+			decoratedLink.CheckCollisions(collidable);
 		}
 
 		public void PlayerCollision(ICollidable collidable)
 		{
-
+			decoratedLink.PlayerCollision(collidable);
 		}
 
 		public void EnemyCollision(ICollidable collidable)
 		{
-			
+			decoratedLink.EnemyCollision(collidable);
 		}
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-
+			decoratedLink.PlayerCollision(collidable);
 		}
 		public void ItemCollision(ICollidable collidable)
 		{
-
+			decoratedLink.ItemCollision(collidable);
 		}
 		public void BlockCollision(ICollidable collidable)
 		{
-			
+			decoratedLink.BlockCollision(collidable);
 		}
 
 		public void BorderCollision()
 		{
-
+			decoratedLink.BorderCollision();
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

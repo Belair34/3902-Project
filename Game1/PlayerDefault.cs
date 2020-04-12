@@ -14,9 +14,9 @@ namespace Game1
 		private IPlayerState state;
 		List<IProjectile> projectiles;
 		IInventory inventory;
-		Game game;
+		Game1 game;
 
-		public PlayerDefault(int x, int y, Game game)
+		public PlayerDefault(int x, int y, Game1 game)
 		{
 			this.inventory = new Inventory(this);
 			this.Speed = 5;                /*Changeable*/
@@ -107,8 +107,8 @@ namespace Game1
 
 		public void TakeDamage(int damage)
 		{
-			ICommand damageCommand = new TakeDamageCommand(this, damage);
-			damageCommand.Execute();
+			inventory.Health -= damage;
+			game.SetPlayer(new PlayerDamaged(this, game));
 		}
 		
 		public void CheckCollisions(ICollidable collidable)

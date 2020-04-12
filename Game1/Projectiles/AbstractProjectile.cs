@@ -86,7 +86,7 @@ namespace Game1
             //default implentation: do nothing
         }
 
-        public void BlockCollision(ICollidable collidable)
+        public virtual void BlockCollision(ICollidable collidable)
         {
             Rectangle intersection = Rectangle.Intersect(hitBox, collidable.GetHitBox());
             if (intersection.Height > intersection.Width && hitBox.X < collidable.GetHitBox().Left)

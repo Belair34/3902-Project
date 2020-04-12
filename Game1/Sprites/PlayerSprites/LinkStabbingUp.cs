@@ -9,6 +9,7 @@ namespace Game1.PlayerSprites
     {
         Texture2D texture;
         IPlayer player;
+        IProjectile sword;
         int linkSrcWidth = 15;
         int linkSrcHeight = 16;
         int swordSrcWidth = 12;
@@ -36,6 +37,8 @@ namespace Game1.PlayerSprites
             this.swordDestWidth *= player.Size;
             this.swordDestHeight *= player.Size;
             this.swordOffset *= player.Size;
+            this.sword = new ProjLinkStabUp(player);
+            this.player.GetProjectiles().Add(sword);
         }
         public void Update()
         {
@@ -74,6 +77,7 @@ namespace Game1.PlayerSprites
             }
             else if(curFrame == 3 || curFrame == 4)
             {
+                sword.Shoot();
                 swordDestRec = new Rectangle((int)player.GetPosition().X, (int)player.GetPosition().Y-swordOffset, swordDestWidth, swordDestHeight);
             }
             else

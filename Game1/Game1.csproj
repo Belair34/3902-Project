@@ -123,6 +123,10 @@
     <Compile Include="Projectiles\ProjLinkBombRight.cs" />
     <Compile Include="Projectiles\ProjLinkBombLeft.cs" />
     <Compile Include="Projectiles\ProjLinkBombUp.cs" />
+    <Compile Include="Projectiles\ProjLinkStabRight.cs" />
+    <Compile Include="Projectiles\ProjLinkStabLeft.cs" />
+    <Compile Include="Projectiles\ProjLinkStabUp.cs" />
+    <Compile Include="Projectiles\ProjLinkStabDown.cs" />
     <Compile Include="Rooms\AbstractRoom.cs" />
     <Compile Include="Rooms\Room13.cs" />
     <Compile Include="Rooms\Room12.cs" />

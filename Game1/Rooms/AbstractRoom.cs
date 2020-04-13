@@ -132,7 +132,6 @@ namespace Game1
             spriteBatch.Begin();
             spriteBatch.Draw(background, backgroundDestRec, backgroundSrcRec, Color.White);
             spriteBatch.End();
-            //GraphicsDevice.Clear(Color.CornflowerBlue);
             if (!Transitioning)
             {
                 foreach (IItem item in items)
@@ -148,7 +147,14 @@ namespace Game1
                 {
                     enemy.Draw(spriteBatch);
                 }
+                DrawDoorTops(spriteBatch);
             }
+        }
+
+        private void DrawDoorTops(SpriteBatch spriteBatch)
+        {
+            ICommand DoorsCommand = new DrawDoorTopsCommand(game, spriteBatch, background, border, graphics);
+            DoorsCommand.Execute();
         }
 
     }

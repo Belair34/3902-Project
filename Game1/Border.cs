@@ -144,6 +144,26 @@ namespace Game1
             botOpen = isOpen;
         }
 
+        public bool BottomIsOpen()
+        {
+            return botOpen;
+        }
+
+        public bool TopIsOpen()
+        {
+            return topOpen;
+        }
+
+        public bool LeftIsOpen()
+        {
+            return leftOpen;
+        }
+
+        public bool RightIsOpen()
+        {
+            return rightOpen;
+        }
+
         /*For development to display hitboxes*/
         public void DrawBox(SpriteBatch spriteBatch)
         {

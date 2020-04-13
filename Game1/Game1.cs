@@ -103,8 +103,8 @@ namespace Game1
 
         protected override void Draw(GameTime gameTime)
         {
-            hud.Draw(spriteBatch);
             room.Draw(spriteBatch);
+            hud.Draw(spriteBatch);
             base.Draw(gameTime);
         }
     }

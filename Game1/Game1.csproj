@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Border.cs" />
     <Compile Include="Block.cs" />
+    <Compile Include="Commands\HelperCommands\DrawDoorTopsCommand.cs" />
     <Compile Include="HUD.cs" />
     <Compile Include="Commands\HelperCommands\RoomTransitionCommand.cs" />
     <Compile Include="Commands\HelperCommands\ClearProjectilesCommand.cs" />

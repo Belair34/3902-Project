@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/User/source/repos/Belair34/3902-Project/Game1/Content/Sound/ShootSword.wav</SourceFile>
-  <SourceTime>2020-04-13T17:32:05.6064334-04:00</SourceTime>
-  <DestFile>C:/Users/User/source/repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/ShootSword.xnb</DestFile>
-  <DestTime>2020-04-13T17:39:11.4630857-04:00</DestTime>
+  <SourceFile>C:/Users/User/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/ShootSword.wav</SourceFile>
+  <SourceTime>2020-04-13T18:41:24.8346642-04:00</SourceTime>
+  <DestFile>C:/Users/User/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/ShootSword.xnb</DestFile>
+  <DestTime>2020-04-13T18:52:34.7746669-04:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

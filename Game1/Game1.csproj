@@ -43,7 +43,13 @@
   <ItemGroup>
     <Compile Include="Border.cs" />
     <Compile Include="Block.cs" />
+    <Compile Include="Commands\GameStateCommands\NothingCommand.cs" />
+    <Compile Include="Commands\GameStateCommands\PauseCommand.cs" />
+    <Compile Include="Commands\GameStateCommands\QuitCommand.cs" />
     <Compile Include="Commands\HelperCommands\DrawDoorTopsCommand.cs" />
+    <Compile Include="Controllers\PauseController.cs" />
+    <Compile Include="GameStates\PauseState.cs" />
+    <Compile Include="GameStates\ZeldaGameState.cs" />
     <Compile Include="HUD.cs" />
     <Compile Include="Commands\HelperCommands\RoomTransitionCommand.cs" />
     <Compile Include="Commands\HelperCommands\ClearProjectilesCommand.cs" />
@@ -96,6 +102,7 @@
     <Compile Include="Interfaces\IDrawable.cs" />
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
+    <Compile Include="Interfaces\IGameState.cs" />
     <Compile Include="Interfaces\IRoom.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Commands\InventoryCommands\BlueCandleCommand.cs" />

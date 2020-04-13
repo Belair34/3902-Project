@@ -4,9 +4,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1
 {
-    public interface IController
+    public interface IGameState
     {
-        void Update();
-
+        void Update(GameTime gameTime);
+        void Draw(SpriteBatch spriteBatch);
     }
 }

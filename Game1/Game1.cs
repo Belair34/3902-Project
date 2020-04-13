@@ -13,6 +13,7 @@ namespace Game1
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont hudFont;
+        KeyboardState key, prevKey;
         public List<IController> controllers;
         IPlayer player;
         Border border;
@@ -92,26 +93,37 @@ namespace Game1
 
         protected override void Update(GameTime gameTime)
         {
-            if (switchingRooms)
+            prevKey = key;
+            key = Keyboard.GetState();
+            if (!paused)
             {
-                room = nextRoom;
-                switchingRooms = false;
+                if (switchingRooms)
+                {
+                    room = nextRoom;
+                    switchingRooms = false;
+                }
+                foreach (IController controller in controllers)
+                {
+                    controller.Update();
+                }
+                room.Update();
+                base.Update(gameTime);
+                //gameState.Update(gameTime);
             }
-            foreach(IController controller in controllers)
+            if (key.IsKeyDown(Keys.Space) && prevKey.IsKeyUp(Keys.Space))
             {
-                controller.Update();
+                paused = !paused;
             }
-            room.Update();
-            base.Update(gameTime);
-            //gameState.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            room.Draw(spriteBatch);
-            hud.Draw(spriteBatch);
-            base.Draw(gameTime);
-            //gameState.Draw(spriteBatch);
+            {
+                room.Draw(spriteBatch);
+                hud.Draw(spriteBatch);
+                base.Draw(gameTime);
+                //gameState.Draw(spriteBatch);
+            }
         }
         public static Game1 getInstance()
         {

@@ -104,6 +104,78 @@
 /processorParam:TextureFormat=Color
 /build:ProjectSpriteSheets/LinkSpriteSheet.png
 
+#begin Sound/BombBlowup.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/BombBlowup.wav
+
+#begin Sound/Boomerang.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/Boomerang.wav
+
+#begin Sound/DropBomb.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/DropBomb.wav
+
+#begin Sound/EnemyDie.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/EnemyDie.wav
+
+#begin Sound/HitBoss.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/HitBoss.wav
+
+#begin Sound/LinkDie.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/LinkDie.wav
+
+#begin Sound/music.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sound/music.mp3
+
+#begin Sound/PickupHeart.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/PickupHeart.wav
+
+#begin Sound/PickupRupee.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/PickupRupee.wav
+
+#begin Sound/ShootSword.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/ShootSword.wav
+
+#begin Sound/SwordSlash.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/SwordSlash.wav
+
+#begin Sound/TakeDamage.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/TakeDamage.wav
+
 #begin Text.png
 /importer:TextureImporter
 /processor:TextureProcessor

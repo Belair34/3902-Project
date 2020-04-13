@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Collections;
 using Game1.PlayerStates;
 using Game1.Projectiles;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
+using Game1.Sound;
 /*Authors: Mike Belair, Chase Armstrong, Zhiren Xu, Xian Zhang, Simon Manning, Yunseong Lee */
 namespace Game1
 {
@@ -15,8 +18,10 @@ namespace Game1
         SpriteFont hudFont;
         KeyboardState key, prevKey;
         public List<IController> controllers;
-        IPlayer player;
+        IPlayer player; 
         Border border;
+        Song song;
+        public List<SoundEffect> soundEffects;
         public HUD hud;
         public IGameState gameState;
         public IRoom room;
@@ -65,6 +70,9 @@ namespace Game1
             SpriteFactoryItems.Instance.LoadAll(Content);
             hudFont = Content.Load<SpriteFont>("HUDfont");
             hud = new HUD(graphics, this, hudFont);
+            ZeldaSound.Instance.LoadSound(Content);
+            ZeldaSound.Instance.PlayMusic();
+            ZeldaSound.Instance.ChangeVolume(-0.5f);
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 480 + hud.GetHeight();
             graphics.ApplyChanges();

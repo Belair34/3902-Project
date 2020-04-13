@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.Sound;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -26,6 +27,7 @@ namespace Game1
         { 
             if (!shooting)
             {
+                ZeldaSound.Instance.BoomerangThrow();
                 sprite = SpriteFactory.Instance.GetBoomerangDown(this);
                 this.ShotDistance = 0;
                 this.position = player.GetPosition();

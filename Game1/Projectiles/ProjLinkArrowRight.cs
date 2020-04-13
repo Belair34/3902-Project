@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.Sound;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -24,6 +25,7 @@ namespace Game1.Projectiles
         { 
             if (!shooting)
             {
+                ZeldaSound.Instance.ShootArrow();
                 base.sprite = SpriteFactory.Instance.GetLinkArrowRight(this);
                 base.ShotDistance = 0;
                 base.position = player.GetPosition();

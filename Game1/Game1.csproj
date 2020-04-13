@@ -141,6 +141,7 @@
     <Compile Include="Rooms\Room2.cs" />
     <Compile Include="Rooms\Room4.cs" />
     <Compile Include="Rooms\Room1.cs" />
+    <Compile Include="Sound\ZeldaSound.cs" />
     <Compile Include="Sprites\EnemySprites\StalfosMovingDown .cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingDown.cs" />
     <Compile Include="Sprites\EnemySprites\StalfosMovingLeft.cs" />

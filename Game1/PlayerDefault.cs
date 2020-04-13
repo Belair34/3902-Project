@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Game1.PlayerStates;
 using Game1.Projectiles;
 using System.Collections.Generic;
+using Game1.Sound;
 
 namespace Game1
 {
@@ -14,9 +15,9 @@ namespace Game1
 		private IPlayerState state;
 		List<IProjectile> projectiles;
 		IInventory inventory;
-		Game game;
+		Game1 game;
 
-		public PlayerDefault(int x, int y, Game game)
+		public PlayerDefault(int x, int y, Game1 game)
 		{
 			this.inventory = new Inventory(this);
 			this.Speed = 5;                /*Changeable*/
@@ -107,8 +108,10 @@ namespace Game1
 
 		public void TakeDamage(int damage)
 		{
+            ZeldaSound.Instance.TakeDamage();
 			ICommand damageCommand = new TakeDamageCommand(this, damage);
 			damageCommand.Execute();
+
 		}
 		
 		public void CheckCollisions(ICollidable collidable)

@@ -5,6 +5,11 @@ using System.Collections.Generic;
 using System.Collections;
 using Game1.PlayerStates;
 using Game1.Projectiles;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
+using Game1.Sound;
+
+
 /*Authors: Mike Belair, Chase Armstrong, Zhiren Xu, Xian Zhang, Simon Manning, Yunseong Lee */
 namespace Game1
 {
@@ -17,6 +22,8 @@ namespace Game1
         IPlayer player;
         Border border;
         HUD hud;
+        Song music;
+        public List<SoundEffect> soundEffects;
         IRoom room;
         IRoom nextRoom;
         bool switchingRooms;
@@ -61,6 +68,9 @@ namespace Game1
             SpriteFactoryItems.Instance.LoadAll(Content);
             hudFont = Content.Load<SpriteFont>("HUDfont");
             hud = new HUD(graphics, this, hudFont);
+            ZeldaSound.Instance.LoadSound(Content);
+            ZeldaSound.Instance.PlayMusic();
+            ZeldaSound.Instance.ChangeVolume(-0.5f);
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 480 + hud.GetHeight();
             graphics.ApplyChanges();

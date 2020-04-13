@@ -9,24 +9,22 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1.EnemySprites
 {
-    class GoriyaMovingLeft : ISprite
+    class KeeseMovingUp : ISprite
     {
         private Texture2D texture;
         private IEnemy enemy;
         private int srcWidth = 16;
         private int srcHeight = 16;
-        private int destWidth = 13;
-        private int destHeight = 13;
-        private int srcX = 256; /*Change this*/
+        private int destWidth = 16;
+        private int destHeight = 16;
+        private int srcX = 183; /*Change this*/
         private int srcY = 11;  /*and this*/
         private int curFrame = 1;
         private int totalFrames = 2; /*Maybe this*/
         private int delay = 0;
         private int moveSpeed;
-        SpriteEffects s = SpriteEffects.FlipHorizontally;
 
-
-        public GoriyaMovingLeft(IEnemy enemy, Texture2D texture)
+        public KeeseMovingUp(IEnemy enemy, Texture2D texture)
         {
             this.texture = texture;
             this.enemy = enemy;
@@ -46,7 +44,7 @@ namespace Game1.EnemySprites
                     curFrame = 1;
                 }
             }
-            enemy.SetPosition((int)enemy.GetPosition().X - moveSpeed, (int)enemy.GetPosition().Y);
+            enemy.SetPosition((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y - moveSpeed);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -55,17 +53,17 @@ namespace Game1.EnemySprites
             Rectangle srcRec;
             if (curFrame == 1) /*Change these to correct frames, might need to add/delete else if*/
             {
-                srcX = 256;
+                srcX = 183;
                 srcY = 11;
             }
             else if (curFrame == 2)
             {
-                srcX = 273;
+                srcX = 200;
                 srcY = 11;
             }
             srcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
             spriteBatch.Begin();
-            spriteBatch.Draw(texture, destRec, srcRec, Color.White, 0.0f, new Vector2(0, 0), s, 0.0f);
+            spriteBatch.Draw(texture, destRec, srcRec, Color.White);
             spriteBatch.End();
         }
     }

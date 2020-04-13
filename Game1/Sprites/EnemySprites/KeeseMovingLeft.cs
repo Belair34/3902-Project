@@ -9,15 +9,15 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1.EnemySprites
 {
-    class GoriyaMovingLeft : ISprite
+    class KeeseMovingLeft : ISprite
     {
         private Texture2D texture;
         private IEnemy enemy;
         private int srcWidth = 16;
         private int srcHeight = 16;
-        private int destWidth = 13;
-        private int destHeight = 13;
-        private int srcX = 256; /*Change this*/
+        private int destWidth = 16;
+        private int destHeight = 16;
+        private int srcX = 183; /*Change this*/
         private int srcY = 11;  /*and this*/
         private int curFrame = 1;
         private int totalFrames = 2; /*Maybe this*/
@@ -25,8 +25,7 @@ namespace Game1.EnemySprites
         private int moveSpeed;
         SpriteEffects s = SpriteEffects.FlipHorizontally;
 
-
-        public GoriyaMovingLeft(IEnemy enemy, Texture2D texture)
+        public KeeseMovingLeft(IEnemy enemy, Texture2D texture)
         {
             this.texture = texture;
             this.enemy = enemy;
@@ -55,12 +54,12 @@ namespace Game1.EnemySprites
             Rectangle srcRec;
             if (curFrame == 1) /*Change these to correct frames, might need to add/delete else if*/
             {
-                srcX = 256;
+                srcX = 183;
                 srcY = 11;
             }
             else if (curFrame == 2)
             {
-                srcX = 273;
+                srcX = 200;
                 srcY = 11;
             }
             srcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);

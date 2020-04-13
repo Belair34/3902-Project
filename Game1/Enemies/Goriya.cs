@@ -6,7 +6,6 @@ using Game1.Projectiles;
 using System.Collections.Generic;
 using System;
 
-
 namespace Game1
 {
 	public class Goriya : IEnemy
@@ -21,6 +20,7 @@ namespace Game1
 		double movementTimer;
 		int maxTimer;
 		int minTimer;
+
 		public Goriya(int x, int y, int health, int maxHealth)
 		{
 			this.Speed = 1;                /*Changeable*/
@@ -28,7 +28,7 @@ namespace Game1
 			this.position = new Vector2(); 
 			this.position.X = x;
 			this.position.Y = y;
-			this.state = new EStateGoriyaDown(this);
+			this.state = new EStateGoriyaMovingDown(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 			hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
 			numberGenerator = new Random();
@@ -104,11 +104,18 @@ namespace Game1
 
 		public void Update()
 		{
+			movementTimer--;
+			if (movementTimer < 0)
+			{
+				BorderCollision();
+				movementTimer = numberGenerator.NextDouble() * maxTimer;
+			}
 			foreach (IProjectile projectile in projectiles)
 			{
 				projectile.Update();
 			}
 			state.Update();
+			this.hitBox.Location = this.position.ToPoint();
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

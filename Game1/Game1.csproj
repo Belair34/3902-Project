@@ -47,6 +47,7 @@
     <Compile Include="Commands\GameStateCommands\PauseCommand.cs" />
     <Compile Include="Commands\GameStateCommands\QuitCommand.cs" />
     <Compile Include="Commands\HelperCommands\DrawDoorTopsCommand.cs" />
+    <Compile Include="Commands\HelperCommands\EnemyDamageCommand.cs" />
     <Compile Include="Controllers\PauseController.cs" />
     <Compile Include="GameStates\PauseState.cs" />
     <Compile Include="GameStates\ZeldaGameState.cs" />

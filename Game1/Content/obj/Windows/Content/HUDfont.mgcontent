@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/crazy/Source/Repos/Belair34/3902-Project/Game1/Content/HUDfont.spritefont</SourceFile>
-  <SourceTime>2020-04-13T07:14:30.0325574-04:00</SourceTime>
-  <DestFile>C:/Users/crazy/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/HUDfont.xnb</DestFile>
-  <DestTime>2020-04-13T16:49:29.3776036-04:00</DestTime>
+  <SourceFile>C:/Users/User/Source/Repos/Belair34/3902-Project/Game1/Content/HUDfont.spritefont</SourceFile>
+  <SourceTime>2020-04-13T02:46:11.9058622-04:00</SourceTime>
+  <DestFile>C:/Users/User/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/HUDfont.xnb</DestFile>
+  <DestTime>2020-04-13T18:52:33.4664111-04:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

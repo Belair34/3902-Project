@@ -240,5 +240,5 @@ C:\Users\Zhiren Xu\Source\Repos\Belair34\3902-Project\Game1\obj\x86\Debug\Game1.
 C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\ProjectSpriteSheets\HUDbackground.xnb
 C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\obj\x86\Debug\Game1.csprojAssemblyReference.cache
 C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\HUDfont.xnb
-C:\Users\ggams\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\ProjectSpriteSheets\HUDbackground.xnb
-C:\Users\ggams\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\HUDfont.xnb
+C:\Users\crazy\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\ProjectSpriteSheets\HUDbackground.xnb
+C:\Users\crazy\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\HUDfont.xnb

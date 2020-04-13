@@ -13,13 +13,17 @@ namespace Game1
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont hudFont;
-        List<IController> controllers;
+        KeyboardState key, prevKey;
+        public List<IController> controllers;
         IPlayer player;
         Border border;
-        HUD hud;
-        IRoom room;
+        public HUD hud;
+        public IGameState gameState;
+        public IRoom room;
         IRoom nextRoom;
         bool switchingRooms;
+        public bool paused = false;
+
 
         public Game1()
         {
@@ -69,6 +73,7 @@ namespace Game1
             room = new Room1(this, border, graphics, 1);
             controllers = new List<IController>();           /*Controllers*/
             controllers.Add(new KeyboardController(this));
+
             //controllers.Add(new GamepadController(this));
              
             this.IsMouseVisible = true;
@@ -88,24 +93,41 @@ namespace Game1
 
         protected override void Update(GameTime gameTime)
         {
-            if (switchingRooms)
+            prevKey = key;
+            key = Keyboard.GetState();
+            if (!paused)
             {
-                room = nextRoom;
-                switchingRooms = false;
+                if (switchingRooms)
+                {
+                    room = nextRoom;
+                    switchingRooms = false;
+                }
+                foreach (IController controller in controllers)
+                {
+                    controller.Update();
+                }
+                room.Update();
+                base.Update(gameTime);
+                //gameState.Update(gameTime);
             }
-            foreach(IController controller in controllers)
+            if (key.IsKeyDown(Keys.Space) && prevKey.IsKeyUp(Keys.Space))
             {
-                controller.Update();
+                paused = !paused;
             }
-            room.Update();
-            base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            room.Draw(spriteBatch);
-            hud.Draw(spriteBatch);
-            base.Draw(gameTime);
+            {
+                room.Draw(spriteBatch);
+                hud.Draw(spriteBatch);
+                base.Draw(gameTime);
+                //gameState.Draw(spriteBatch);
+            }
+        }
+        public static Game1 getInstance()
+        {
+            return new Game1();
         }
     }
 }

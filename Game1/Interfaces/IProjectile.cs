@@ -11,6 +11,7 @@ namespace Game1
         int ShotDistance { get; set; }
         void Shoot();
         void Explode();
+        int GetDamage();
 
     }
 }

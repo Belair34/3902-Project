@@ -10,6 +10,7 @@ namespace Game1.Projectiles
 
         public ProjLinkArrowRight(IPlayer player)
         {
+            this.damage = 2;
             base.shooting = false;
             base.exploding = false;
             base.player = player;

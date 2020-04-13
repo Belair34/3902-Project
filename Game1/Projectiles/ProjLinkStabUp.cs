@@ -9,6 +9,7 @@ namespace Game1
 
         public ProjLinkStabUp(IPlayer player)
         {
+            this.damage = 2;
             exploding = false;
             shooting = false;
             this.player = player;

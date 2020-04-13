@@ -10,6 +10,7 @@ namespace Game1
 
         public ProjLinkBoomerangUp(IPlayer player)
         {
+            this.damage = 1;
             shooting = false;
             exploding = false;
             this.player = player;

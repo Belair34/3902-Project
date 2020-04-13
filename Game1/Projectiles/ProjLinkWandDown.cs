@@ -9,6 +9,7 @@ namespace Game1
 
         public ProjLinkWandDown(IPlayer player)
         {
+            this.damage = 2;
             shooting = false;
             exploding = false;
             this.player = player;

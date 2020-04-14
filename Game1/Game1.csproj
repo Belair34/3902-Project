@@ -116,6 +116,8 @@
     <Compile Include="Items\BombItem.cs" />
     <Compile Include="Items\BoomerangItem.cs" />
     <Compile Include="Items\BowItem.cs" />
+    <Compile Include="Items\TriangleItem.cs" />
+    <Compile Include="Items\CompassItem.cs" />
     <Compile Include="Items\SwordItem.cs" />
     <Compile Include="Items\MapItem.cs" />
     <Compile Include="Items\HeartItem.cs" />
@@ -176,6 +178,8 @@
     <Compile Include="Sprites\EnemySprites\GelMovingLeft.cs" />
     <Compile Include="Sprites\EnemySprites\GelMovingUp.cs" />
     <Compile Include="Sprites\ItemSprites\BowSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\CompassSprite.cs" />
+    <Compile Include="Sprites\ItemSprites\TriangleSprite.cs" />
     <Compile Include="Sprites\ItemSprites\SwordSprite.cs" />
     <Compile Include="Sprites\ItemSprites\MapSprite.cs" />
     <Compile Include="Sprites\ItemSprites\HeartSprite.cs" />

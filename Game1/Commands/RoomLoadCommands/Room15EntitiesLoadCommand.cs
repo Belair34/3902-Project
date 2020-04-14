@@ -31,7 +31,7 @@ namespace Game1
 			enemies.Add(new Goriya(100, hudOffset + 250, 5, 5));
 
 			/*Items*/
-
+			items.Add(new BoomerangItem(400, hudOffset + 150));
 			/*Blocks*/
 			blocks.Add(new Block(200, hudOffset + 174, false));
 

@@ -36,7 +36,7 @@ namespace Game1
 			enemies.Add(new WallMaster(650, hudOffset + 360, 5, 5));
 
 			/*Items*/
-
+			items.Add(new KeyItem(500, hudOffset + 400));
 			/*Blocks*/
 			blocks.Add(new Block(150, hudOffset + 131, false));
 			blocks.Add(new Block(250, hudOffset + 131, false));

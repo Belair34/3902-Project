@@ -1,16 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Game1.PlayerStates;
-using Game1.Projectiles;
-using System.Collections.Generic;
 
 namespace Game1
 {
     public class HeartItem : AbstractItem, IItem
     {
 
-        public HeartItem(int x, int y, GraphicsDevice window)
+        public HeartItem(int x, int y)
         {
             /*Changeable*/
             this.Size = 3;

@@ -11,11 +11,11 @@ namespace Game1
         internal override void Initialize()
         {
             base.srcWidth = 5;
-            base.srcHeight = 10;
+            base.srcHeight = 8;
             base.destWidth = 5;
-            base.destHeight = 10;
-            base.srcX = 0;
-            base.srcY = 111;
+            base.destHeight = 8;
+            base.srcX = 362;
+            base.srcY = 148;
         }
 
         public BoomerangSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }

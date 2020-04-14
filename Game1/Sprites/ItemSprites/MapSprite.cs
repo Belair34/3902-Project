@@ -9,20 +9,18 @@ namespace Game1
     class MapSprite : AbstractSprite, ISprite
     {
         IItem item;
-        int MapSrcWidth = 10;
-        int MapSrcHeight = 20;
-        int MapDestWidth = 10;
-        int MapDestHeight = 20;
-        int MapSrcX = 272;
+        int MapSrcWidth = 8;
+        int MapSrcHeight = 16;
+        int MapSrcX = 274;
         int MapSrcY = 253;
         internal override void Initialize()
         {
-            base.srcWidth = 10;
-            base.srcHeight = 20;
-            base.destWidth = 10;
-            base.destHeight = 20;
-            base.srcX = 272;
-            base.srcY = 253;
+            base.srcWidth = MapSrcWidth;
+            base.srcHeight = MapSrcHeight;
+            base.destWidth = srcWidth;
+            base.destHeight = srcHeight;
+            base.srcX = MapSrcX;
+            base.srcY = MapSrcY;
         }
 
         public MapSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }

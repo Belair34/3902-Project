@@ -40,7 +40,7 @@ namespace Game1
         
         public ISprite GetBoomerang(IItem item)
         {
-            return new BoomerangSprite(item,altLinkSheet);
+            return new BoomerangSprite(item,linkSheet);
         }
 
         public ISprite GetBow(IItem item)
@@ -73,6 +73,14 @@ namespace Game1
         public ISprite GetMap(IItem item)
         {
             return new MapSprite(item, linkSheet);
+        }
+        public ISprite GetCompass(IItem item)
+        {
+            return new CompassSprite(item, linkSheet);
+        }
+        public ISprite GetTriangle(IItem item)
+        {
+            return new TriangleSprite(item, linkSheet);
         }
         public ISprite GetSword(IItem item)
         {

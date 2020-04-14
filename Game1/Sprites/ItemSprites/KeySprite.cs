@@ -17,12 +17,12 @@ namespace Game1
         int KeySrcY = 164;
         internal override void Initialize()
         {
-            base.srcWidth = 15;
-            base.srcHeight = 15;
-            base.destWidth = 15;
-            base.destHeight = 15;
-            base.srcX = 181;
-            base.srcY = 195;
+            base.srcWidth = 8;
+            base.srcHeight = 16;
+            base.destWidth = 8;
+            base.destHeight = 16;
+            base.srcX = 364;
+            base.srcY = 255;
         }
 
         public KeySprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }

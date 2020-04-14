@@ -29,7 +29,7 @@ namespace Game1
 			enemies.Add(new Aquamentus(500, hudOffset + 200, 10, 10));
 
 			/*Items*/
-
+			items.Add(new HeartItem(600, hudOffset + 220));
 			/*Blocks*/
 			blocks.Add(new Block(450, hudOffset + 88, false));
 			blocks.Add(new Block(500, hudOffset + 88, false));

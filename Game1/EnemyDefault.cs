@@ -16,20 +16,18 @@ namespace Game1
 		List<IProjectile> projectiles;
 		int maxHealth;
 		int health;
-
-		public EnemyDefault(int x, int y, int health, int maxHealth, GraphicsDevice window)
+		Game1 game;
+		public EnemyDefault(int x, int y, int health, int maxHealth, Game1 game)
 		{
 			this.Speed = 1;                /*Changeable*/
 			this.Size = 3;                 /************/
 			this.position = new Vector2(); 
 			this.position.X = x;
 			this.position.Y = y;
-			this.Boundary = new Vector2();
-			this.Boundary.X = window.Viewport.Width;
-			this.Boundary.Y = window.Viewport.Height;
 			this.state = new EStateGelMovingRight(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 			this.hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
+			this.game = game;
 		}
 
         public int Speed { get; set; }
@@ -48,10 +46,6 @@ namespace Game1
 		public Vector2 GetPosition()
 		{
 			return this.position;
-		}
-		public Vector2 GetBoundary()
-		{
-			return Boundary;
 		}
 		public void SetState(IEnemyState state)
 		{
@@ -100,7 +94,10 @@ namespace Game1
 		{
 			state.Stop();
 		}
-
+		public void TakeDamage(int damage)
+		{
+			
+		}
 		public void Update()
 		{
 			foreach (IProjectile projectile in projectiles)
@@ -126,7 +123,30 @@ namespace Game1
 
 		public void PlayerCollision(ICollidable collidable)
 		{
-
+			Rectangle intersection = Rectangle.Intersect(hitBox, collidable.GetHitBox());
+			if (intersection.Width > intersection.Height)
+			{
+				if (position.Y < collidable.GetHitBox().Top)
+				{
+					SetPosition((int)position.X, (int)position.Y - 50);
+				}
+				else
+				{
+					SetPosition((int)position.X, (int)position.Y + 50);
+				}
+			}
+			else
+			{
+				if (position.X < collidable.GetHitBox().Left)
+				{
+					SetPosition((int)position.X - 50, (int)position.Y);
+				}
+				else
+				{
+					SetPosition((int)position.X + 50, (int)position.Y);
+				}
+			}
+			TakeDamage(1);
 		}
 
 		public void EnemyCollision(ICollidable collidable)
@@ -136,7 +156,30 @@ namespace Game1
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-
+			Rectangle intersection = Rectangle.Intersect(hitBox, collidable.GetHitBox());
+			if (intersection.Width > intersection.Height)
+			{
+				if (position.Y < collidable.GetHitBox().Top)
+				{
+					SetPosition((int)position.X, (int)position.Y - 50);
+				}
+				else
+				{
+					SetPosition((int)position.X, (int)position.Y + 50);
+				}
+			}
+			else
+			{
+				if (position.X < collidable.GetHitBox().Left)
+				{
+					SetPosition((int)position.X - 50, (int)position.Y);
+				}
+				else
+				{
+					SetPosition((int)position.X + 50, (int)position.Y);
+				}
+			}
+			TakeDamage(1);
 		}
 
 		public void ItemCollision(ICollidable collidable)

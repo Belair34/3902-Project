@@ -1,15 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Game1.PlayerStates;
-using Game1.Projectiles;
-using System.Collections.Generic;
 
 namespace Game1
 {
     public class MapItem : AbstractItem, IItem
     {
-        public MapItem(int x, int y, GraphicsDevice window)
+        public MapItem(int x, int y)
         {
             /*Changeable*/
             base.Size = 3;

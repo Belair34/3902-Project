@@ -31,7 +31,7 @@ namespace Game1
 			enemies.Add(new Goriya(550, hudOffset + 260, 5, 5));
 
 			/*Items*/
-
+			items.Add(new KeyItem(400, hudOffset + 120));
 			/*Blocks*/
 			blocks.Add(new Block(250, hudOffset + 131, false));
 			blocks.Add(new Block(200, hudOffset + 131, false));

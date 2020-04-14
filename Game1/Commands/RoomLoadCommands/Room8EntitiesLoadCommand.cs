@@ -32,7 +32,7 @@ namespace Game1
 			enemies.Add(new Gel(500, hudOffset + 130, 5, 5));
 
 			/*Items*/
-
+			items.Add(new MapItem(600, hudOffset + 200));
 			/*Blocks*/
 			blocks.Add(new Block(150, hudOffset + 131, false));
 			blocks.Add(new Block(200, hudOffset + 131, false));

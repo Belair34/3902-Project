@@ -35,7 +35,7 @@ namespace Game1
 			enemies.Add(new Keese(600, hudOffset + 450, 5, 5));
 
 			/*Items*/
-
+			items.Add(new CompassItem(600, hudOffset + 250));
 			/*Blocks*/
 			blocks.Add(new Block(200, hudOffset + 131, false));
 			blocks.Add(new Block(200, hudOffset + 303, false));

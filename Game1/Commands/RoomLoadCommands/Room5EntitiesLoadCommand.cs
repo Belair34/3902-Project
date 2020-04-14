@@ -31,7 +31,7 @@ namespace Game1
 			enemies.Add(new Stalfos(350, hudOffset + 230, 5, 5));
 			enemies.Add(new Stalfos(400, hudOffset + 100, 5, 5));
 			/*Items*/
-
+			items.Add(new KeyItem(400, hudOffset + 200));
 			/*Blocks*/
 			blocks.Add(new Block(200, hudOffset + 174, false));
 			blocks.Add(new Block(200, hudOffset + 260, false));

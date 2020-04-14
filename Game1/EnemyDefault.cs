@@ -96,8 +96,7 @@ namespace Game1
 		}
 		public void TakeDamage(int damage)
 		{
-			ICommand damageCommand = new TakeDamageCommand(this, damage);
-			damageCommand.Execute();
+			
 		}
 		public void Update()
 		{

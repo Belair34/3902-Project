@@ -31,6 +31,7 @@ namespace Game1
 
 			/*Items*/
 			items.Add(new KeyItem(500, hudOffset + 400));
+
 			/*Blocks*/
 
 			/*Add all to collidables*/

@@ -22,7 +22,7 @@ namespace Game1
 		}
 		public void TakeDamage(int damage)
 		{
-			// no damage taken
+            // no damage taken
 		}
 		public void Update()
 		{
@@ -32,6 +32,7 @@ namespace Game1
 				RemoveDecorator();
 			}
 			decoratedLink.Update();
+
 		}
 		public void RemoveDecorator()
 		{

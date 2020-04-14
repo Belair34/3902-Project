@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.Sound;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -25,6 +26,7 @@ namespace Game1
         { 
             if (!shooting)
             {
+                ZeldaSound.Instance.DropBomb();
                 this.ShotDistance = 0;
                 this.position = player.GetPosition();
                 this.position.Y -= 15 * Size;
@@ -36,6 +38,7 @@ namespace Game1
         {
             if (shooting)
             {
+                ZeldaSound.Instance.BombExplode();
                 explodeTimer = 30;
                 shooting = false;
                 exploding = true;

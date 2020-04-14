@@ -15,14 +15,16 @@ namespace Game1.EnemySprites
         private IEnemy enemy;
         private int srcWidth = 16;
         private int srcHeight = 16;
-        private int destWidth = 16;
-        private int destHeight = 16;
+        private int destWidth = 13;
+        private int destHeight = 13;
         private int srcX = 222; /*Change this*/
         private int srcY = 11;  /*and this*/
         private int curFrame = 1;
         private int totalFrames = 2; /*Maybe this*/
         private int delay = 0;
         private int moveSpeed;
+        SpriteEffects s = SpriteEffects.FlipHorizontally;
+
 
         public GoriyaMovingDown(IEnemy enemy, Texture2D texture)
         {
@@ -35,7 +37,7 @@ namespace Game1.EnemySprites
         public void Update()
         {
             delay++;
-            if (delay == 7) /*Delay of frame changes*/
+            if (delay == 5) /*Delay of frame changes*/
             {
                 delay = 0;
                 curFrame++;
@@ -53,7 +55,14 @@ namespace Game1.EnemySprites
             Rectangle srcRec;
             srcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
             spriteBatch.Begin();
-            spriteBatch.Draw(texture, destRec, srcRec, Color.White);
+            if (curFrame <= 1) /*Change these to correct frames, might need to add/delete else if*/
+            {
+                spriteBatch.Draw(texture, destRec, srcRec, Color.White, 0.0f, new Vector2(0, 0), s, 0.0f);
+            }
+            else if (curFrame == 2)
+            {
+                spriteBatch.Draw(texture, destRec, srcRec, Color.White);
+            }
             spriteBatch.End();
         }
     }

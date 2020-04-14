@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.Sound;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -25,6 +26,7 @@ namespace Game1
         { 
             if (!shooting)
             {
+                ZeldaSound.Instance.SwordBeam();
                 sprite = SpriteFactory.Instance.GetWandWaveUp(this);
                 this.ShotDistance = 0;
                 this.position = player.GetPosition();

@@ -5,47 +5,43 @@ using Game1.Projectiles;
 
 namespace Game1.PlayerStates
 {
-    class EStateKeeseIdleAnimated : IEnemyState
+    class EStateKeeseMovingDown : IEnemyState
     {
         ISprite sprite;
         IEnemy enemy;
         int coolDown;
-        public EStateKeeseIdleAnimated(IEnemy enemy, int coolDown = 0)
+        public EStateKeeseMovingDown(IEnemy enemy, int coolDown = 0)
         {
             this.enemy = enemy;
-            this.sprite = SpriteFactory.Instance.GetAnimatedKeese(enemy);
+            this.sprite = SpriteFactory.Instance.GetKeeseMovingDown(enemy);
             this.coolDown = coolDown;
         }
         public void MoveUp()
         {
-            //enemy.SetState(new EStateMovingUp(enemy, coolDown));
+            enemy.SetState(new EStateKeeseMovingUp(enemy, coolDown));
         }
 
         public void MoveDown()
         {
-            //enemy.SetState(new EStateMovingDown(enemy, coolDown));
         }
         public void MoveLeft()
         {
-            //enemy.SetState(new EStateMovingLeft(enemy, coolDown));
+            enemy.SetState(new EStateKeeseMovingLeft(enemy, coolDown));
         }
 
         public void MoveRight()
         {
-            //enemy.SetState(new EStateMovingRight(enemy, coolDown));
+            enemy.SetState(new EStateKeeseMovingRight(enemy, coolDown));
         }
         public void MoveHorizontal()
         {
-            //enemy.SetState(new EStateKeeseIdleAnimated(enemy, coolDown));
         }
 
         public void MoveVertical()
         {
-            
         }
         public void MoveToPlayer()
         {
-            //enemy.SetState(new EStateMovingToPlayer(enemy, coolDown));
         }
 
         public void Stop()

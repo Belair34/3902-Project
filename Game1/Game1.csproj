@@ -43,9 +43,6 @@
   <ItemGroup>
     <Compile Include="Border.cs" />
     <Compile Include="Block.cs" />
-    <Compile Include="Commands\GameStateCommands\NothingCommand.cs" />
-    <Compile Include="Commands\GameStateCommands\PauseCommand.cs" />
-    <Compile Include="Commands\GameStateCommands\QuitCommand.cs" />
     <Compile Include="Commands\HelperCommands\DrawDoorTopsCommand.cs" />
     <Compile Include="EnemyStates\EStateGoriyaMovingLeft.cs" />
     <Compile Include="EnemyStates\EStateGoriyaMovingRight.cs" />
@@ -54,9 +51,7 @@
     <Compile Include="EnemyStates\EStateKeeseMovingLeft.cs" />
     <Compile Include="EnemyStates\EStateKeeseMovingRight.cs" />
     <Compile Include="EnemyStates\EStateKeeseMovingUp.cs" />
-    <Compile Include="Controllers\PauseController.cs" />
-    <Compile Include="GameStates\PauseState.cs" />
-    <Compile Include="GameStates\ZeldaGameState.cs" />
+    <Compile Include="GameStates\InGameState.cs" />
     <Compile Include="HUD.cs" />
     <Compile Include="Commands\HelperCommands\RoomTransitionCommand.cs" />
     <Compile Include="Commands\HelperCommands\ClearProjectilesCommand.cs" />

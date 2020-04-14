@@ -64,7 +64,7 @@ namespace Game1.Sound
         }
         public void ChangeVolume(float vol)
         {
-            MediaPlayer.Volume += vol;
+            MediaPlayer.Volume = vol;
         }
 
         public void TakeDamage()

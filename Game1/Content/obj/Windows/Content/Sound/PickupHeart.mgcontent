@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Sound/PickupHeart.wav</SourceFile>
-  <SourceTime>2020-04-13T19:05:24.2201852-04:00</SourceTime>
+  <SourceTime>2020-04-13T20:02:07.5728792-04:00</SourceTime>
   <DestFile>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/PickupHeart.xnb</DestFile>
-  <DestTime>2020-04-13T19:14:06.194403-04:00</DestTime>
+  <DestTime>2020-04-13T20:13:00.8650814-04:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

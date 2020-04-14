@@ -16,74 +16,55 @@ namespace Game1
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont hudFont;
-        KeyboardState key, prevKey;
-        public List<IController> controllers;
-        IPlayer player; 
-        Border border;
-        Song song;
-        public List<SoundEffect> soundEffects;
-        public HUD hud;
-        public IGameState gameState;
-        public IRoom room;
-        IRoom nextRoom;
-        bool switchingRooms;
-        public bool paused = false;
-
+        IGameState gameState;
+        IGameState nextState;
+        bool changingState;
 
         public Game1()
         {
+            this.changingState = false;
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
 
         public HUD GetHUD()
         {
-            return this.hud;
+            return gameState.GetHUD();
         }
 
         public IPlayer GetPlayer()
         {
-            return this.player;
+            return gameState.GetPlayer();
         }
 
         public void SetPlayer(IPlayer player)
         {
-            this.player = player;
+            gameState.SetPlayer(player);
         }
 
         public void SetRoom(IRoom room)
         {
-            this.nextRoom = room;
-            switchingRooms = true;
+            gameState.SetRoom(room);
+        }
+
+        public void SetState(IGameState state)
+        {
+            changingState = true;
+            nextState = state;
         }
 
         public void Reset()
         {
-            Initialize();
+            SetState(new InGameState(this, graphics, hudFont));
         }
         protected override void Initialize()
         {
-            
-            switchingRooms = false;
+            hudFont = Content.Load<SpriteFont>("HUDfont");
             spriteBatch = new SpriteBatch(GraphicsDevice);
             SpriteFactory.Instance.LoadAll(Content);
             SpriteFactoryItems.Instance.LoadAll(Content);
-            hudFont = Content.Load<SpriteFont>("HUDfont");
-            hud = new HUD(graphics, this, hudFont);
             ZeldaSound.Instance.LoadSound(Content);
-            ZeldaSound.Instance.PlayMusic();
-            ZeldaSound.Instance.ChangeVolume(-0.5f);
-            graphics.PreferredBackBufferWidth = 800;
-            graphics.PreferredBackBufferHeight = 480 + hud.GetHeight();
-            graphics.ApplyChanges();
-            border = new Border(graphics, hud, SpriteFactory.Instance.GetBackgroundTexture());
-            player = new PlayerDefault(100, 100, this);
-            room = new Room1(this, border, graphics, 1);
-            controllers = new List<IController>();           /*Controllers*/
-            controllers.Add(new KeyboardController(this));
-
-            //controllers.Add(new GamepadController(this));
-             
+            gameState = new InGameState(this, graphics, hudFont);
             this.IsMouseVisible = true;
             base.Initialize();
         }
@@ -93,49 +74,25 @@ namespace Game1
 
         }
 
-   
+
         protected override void UnloadContent()
         {
-            
+
         }
 
         protected override void Update(GameTime gameTime)
         {
-            prevKey = key;
-            key = Keyboard.GetState();
-            if (!paused)
+            if (changingState)
             {
-                if (switchingRooms)
-                {
-                    room = nextRoom;
-                    switchingRooms = false;
-                }
-                foreach (IController controller in controllers)
-                {
-                    controller.Update();
-                }
-                room.Update();
-                base.Update(gameTime);
-                //gameState.Update(gameTime);
+                gameState = nextState;
+                changingState = false;
             }
-            if (key.IsKeyDown(Keys.Space) && prevKey.IsKeyUp(Keys.Space))
-            {
-                paused = !paused;
-            }
+            gameState.Update();
         }
 
         protected override void Draw(GameTime gameTime)
-        {
-            {
-                room.Draw(spriteBatch);
-                hud.Draw(spriteBatch);
-                base.Draw(gameTime);
-                //gameState.Draw(spriteBatch);
-            }
-        }
-        public static Game1 getInstance()
-        {
-            return new Game1();
+        { 
+            gameState.Draw(spriteBatch);
         }
     }
 }

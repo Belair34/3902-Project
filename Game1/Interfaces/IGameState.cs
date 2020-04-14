@@ -6,7 +6,13 @@ namespace Game1
 {
     public interface IGameState
     {
-        void Update(GameTime gameTime);
+        HUD GetHUD();
+        IPlayer GetPlayer();
+        void SetPlayer(IPlayer player);
+        void SetRoom(IRoom room);
+        void Initialize();
+
+        void Update();
         void Draw(SpriteBatch spriteBatch);
     }
 }

@@ -13,24 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin ../../../../../../Desktop/SoundEffects/PickupHeart.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:../../../../../../Desktop/SoundEffects/PickupHeart.wav;Sound/PickupHeart.wav
-
-#begin ../../../../../../Desktop/SoundEffects/PickupRupee.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:../../../../../../Desktop/SoundEffects/PickupRupee.wav;Sound/PickupRupee.wav
-
-#begin ../../../../../../Desktop/SoundEffects/TakeDamage.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:../../../../../../Desktop/SoundEffects/TakeDamage.wav;Sound/TakeDamage.wav
-
 #begin HUDfont.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
@@ -164,6 +146,18 @@
 /processorParam:Quality=Best
 /build:Sound/music.mp3
 
+#begin Sound/PickupHeart.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/PickupHeart.wav
+
+#begin Sound/PickupRupee.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/PickupRupee.wav
+
 #begin Sound/ShootSword.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -175,6 +169,12 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:Sound/SwordSlash.wav
+
+#begin Sound/TakeDamage.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/TakeDamage.wav
 
 #begin Text.png
 /importer:TextureImporter

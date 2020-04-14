@@ -278,9 +278,21 @@ namespace Game1
         {
             return new GelMovingDown(enemy, enemyLinkSheet);
         }
-        public ISprite GetAnimatedKeese(IEnemy enemy)
+        public ISprite GetKeeseMovingUp(IEnemy enemy)
         {
-            return new AnimatedKeese(enemy, enemyLinkSheet);
+            return new KeeseMovingUp(enemy, enemyLinkSheet);
+        }
+        public ISprite GetKeeseMovingDown(IEnemy enemy)
+        {
+            return new KeeseMovingDown(enemy, enemyLinkSheet);
+        }
+        public ISprite GetKeeseMovingRight(IEnemy enemy)
+        {
+            return new KeeseMovingRight(enemy, enemyLinkSheet);
+        }
+        public ISprite GetKeeseMovingLeft(IEnemy enemy)
+        {
+            return new KeeseMovingLeft(enemy, enemyLinkSheet);
         }
         public ISprite GetAnimatedWallMaster(IEnemy enemy)
         {
@@ -290,21 +302,21 @@ namespace Game1
         {
             return new BladeTrapSprites(enemy, enemyLinkSheet);
         }
-        public ISprite GetGoriyaDown(IEnemy enemy)
+        public ISprite GetGoriyaMovingDown(IEnemy enemy)
         {
-            return new GoriyaDown(enemy, enemyLinkSheet);
+            return new GoriyaMovingDown(enemy, enemyLinkSheet);
         }
-        public ISprite GetGoriyaRight(IEnemy enemy)
+        public ISprite GetGoriyaMovingRight(IEnemy enemy)
         {
-            return new GoriyaRight(enemy, enemyLinkSheet);
+            return new GoriyaMovingRight(enemy, enemyLinkSheet);
         }
-        public ISprite GetGoriyaThrowRight(IEnemy enemy)
+        public ISprite GetGoriyaMovingLeft(IEnemy enemy)
         {
-            return new GoriyaThrowRight(enemy, enemyLinkSheet);
+            return new GoriyaMovingLeft(enemy, enemyLinkSheet);
         }
-        public ISprite GetGoriyaUp(IEnemy enemy)
+        public ISprite GetGoriyaMovingUp(IEnemy enemy)
         {
-            return new GoriyaUp(enemy, enemyLinkSheet);
+            return new GoriyaMovingUp(enemy, enemyLinkSheet);
         }
         public ISprite GetAquamentusMovingUp(IEnemy enemy)
         {

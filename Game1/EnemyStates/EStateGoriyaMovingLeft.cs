@@ -5,47 +5,43 @@ using Game1.Projectiles;
 
 namespace Game1.PlayerStates
 {
-    class EStateGoriyaDown : IEnemyState
+    class EStateGoriyaMovingLeft : IEnemyState
     {
         ISprite sprite;
         IEnemy enemy;
         int coolDown;
-        public EStateGoriyaDown(IEnemy enemy, int coolDown = 0)
+        public EStateGoriyaMovingLeft(IEnemy enemy, int coolDown = 0)
         {
             this.enemy = enemy;
-            this.sprite = SpriteFactory.Instance.GetGoriyaDown(enemy);
+            this.sprite = SpriteFactory.Instance.GetGoriyaMovingLeft(enemy);
             this.coolDown = coolDown;
         }
         public void MoveUp()
         {
-            //enemy.SetState(new EStateMovingUp(enemy, coolDown));
+            enemy.SetState(new EStateGoriyaMovingUp(enemy, coolDown));
         }
 
         public void MoveDown()
         {
-            enemy.SetState(new EStateGoriyaDown(enemy, coolDown));
+            enemy.SetState(new EStateGoriyaMovingDown(enemy, coolDown));
         }
         public void MoveLeft()
         {
-            //enemy.SetState(new EStateMovingLeft(enemy, coolDown));
         }
 
         public void MoveRight()
         {
-            //enemy.SetState(new EStateMovingRight(enemy, coolDown));
+            enemy.SetState(new EStateGoriyaMovingRight(enemy, coolDown));
         }
         public void MoveHorizontal()
         {
-            
         }
 
         public void MoveVertical()
         {
-            
         }
         public void MoveToPlayer()
         {
-            //enemy.SetState(new EStateMovingToPlayer(enemy, coolDown));
         }
 
         public void Stop()

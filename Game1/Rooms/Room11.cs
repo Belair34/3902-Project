@@ -9,7 +9,7 @@ namespace Game1
     {
         public Room11(Game1 game, Border border, GraphicsDeviceManager graphics, int spawnDoor) : base(game, border, graphics, spawnDoor)
         {
-            entityLoader = new Room11EntitiesLoadCommand(enemies, items, collidables, blocks, game.GetHUD().GetHeight());
+            entityLoader = new Room11EntitiesLoadCommand(enemies, items, collidables, waters, game.GetHUD().GetHeight());
             this.backgroundSrcRec = new Rectangle(515, 178, 256, 176);
             border.SetLeftOpen(false);
             border.SetRightOpen(false);

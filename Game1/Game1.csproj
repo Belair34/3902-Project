@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Water.cs" />
     <Compile Include="Border.cs" />
     <Compile Include="Block.cs" />
     <Compile Include="Commands\HelperCommands\DrawDoorTopsCommand.cs" />

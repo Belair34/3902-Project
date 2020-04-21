@@ -4,27 +4,27 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/HUDfont.spritefont</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/AltLinkSheet.png</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/Blade trap, Gel, Goriya, keese, stalfos, wall master.png</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/boss.png</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/dungeon.png</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/ExplosionSheet.png</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/HUDbackground.jpg</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/LinkSpriteSheet.png</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/BombBlowup.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/Boomerang.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/DropBomb.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/EnemyDie.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/HitBoss.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/LinkDie.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/music.mp3</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/PickupHeart.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/PickupRupee.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/ShootSword.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/SwordSlash.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/TakeDamage.wav</File>
-    <File>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Text.png</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/HUDfont.spritefont</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/AltLinkSheet.png</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/Blade trap, Gel, Goriya, keese, stalfos, wall master.png</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/boss.png</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/dungeon.png</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/ExplosionSheet.png</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/HUDbackground.jpg</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/LinkSpriteSheet.png</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/BombBlowup.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/Boomerang.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/DropBomb.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/EnemyDie.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/HitBoss.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/LinkDie.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/music.mp3</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/PickupHeart.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/PickupRupee.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/ShootSword.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/SwordSlash.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/TakeDamage.wav</File>
+    <File>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Text.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

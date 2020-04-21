@@ -112,6 +112,11 @@ namespace Game1
             }
         }
 
+        public void WaterCollision(ICollidable collidable)
+        {
+            //do nothing since water don't stop projectile
+        }
+
         public virtual void BorderCollision()
         {
             if (!exploding && shooting)

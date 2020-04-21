@@ -18,6 +18,7 @@ namespace Game1
         internal List<IItem> items;
         internal List<ICollidable> collidables;
         internal List<Block> blocks;
+        internal List<Water> waters;
         internal Texture2D background;
         internal Rectangle backgroundSrcRec;
         internal Rectangle backgroundDestRec;
@@ -32,6 +33,7 @@ namespace Game1
             this.items = new List<IItem>();
             this.collidables = new List<ICollidable>();
             this.blocks = new List<Block>();
+            this.waters = new List<Water>();
             this.background = SpriteFactory.Instance.GetBackgroundTexture();
             this.backgroundDestRec = new Rectangle(0, game.GetHUD().GetHeight(), graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height-game.GetHUD().GetHeight());
             this.Transitioning = false;

@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1
 {
-    public class Block : ICollidable
+    public class Water : ICollidable
     {
         private bool visible;
         private Vector2 position;
@@ -12,7 +12,7 @@ namespace Game1
         private Rectangle srcRec;
         private Rectangle destRec;
         private Texture2D texture;
-        public Block(int x, int y, bool visible)
+        public Water(int x, int y, bool visible)
         {
             this.visible = visible;
             this.position = new Vector2(0);
@@ -82,7 +82,7 @@ namespace Game1
 
         public void WaterCollision(ICollidable collidable)
         {
-            //not applicable
+            //not applocable
         }
     }
 }

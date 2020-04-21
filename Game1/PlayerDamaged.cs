@@ -135,7 +135,10 @@ namespace Game1
 		{
 			decoratedLink.BlockCollision(collidable);
 		}
-
+		public void WaterCollision(ICollidable collidable)
+		{
+			decoratedLink.WaterCollision(collidable);
+		}
 		public void BorderCollision()
 		{
 			decoratedLink.BorderCollision();
@@ -146,5 +149,6 @@ namespace Game1
 			decoratedLink.Draw(spriteBatch);
 		}
 
+		
 	}
 }

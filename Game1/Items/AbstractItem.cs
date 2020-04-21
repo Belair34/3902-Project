@@ -99,5 +99,10 @@ namespace Game1
         }
 
         public abstract void PlayerCollision(ICollidable collidable);
+
+        public void WaterCollision(ICollidable collidable)
+        {
+            //do nothing, item won't spawn on water
+        }
     }
 }

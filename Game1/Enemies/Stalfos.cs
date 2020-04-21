@@ -151,6 +151,10 @@ namespace Game1
 				{
 					BlockCollision(collidable);
 				}
+				else if (collidable is Water)
+				{
+					WaterCollision(collidable);
+				}
 			}
 		}
 
@@ -175,6 +179,31 @@ namespace Game1
 		}
 
 		public void BlockCollision(ICollidable collidable)
+		{
+			Rectangle intersection = Rectangle.Intersect(hitBox, collidable.GetHitBox());
+			if (intersection.Height > intersection.Width && hitBox.X < collidable.GetHitBox().Left)
+			{
+				SetPosition(collidable.GetHitBox().Left - hitBox.Width, hitBox.Y);
+				BorderCollision();
+			}
+			else if (intersection.Width > intersection.Height && hitBox.Y < collidable.GetHitBox().Top)
+			{
+				SetPosition(hitBox.X, collidable.GetHitBox().Top - hitBox.Height);
+				BorderCollision();
+			}
+			else if (intersection.Width > intersection.Height && hitBox.Y > collidable.GetHitBox().Top)
+			{
+				SetPosition(hitBox.X, collidable.GetHitBox().Bottom);
+				BorderCollision();
+			}
+			else if (intersection.Height > intersection.Width && hitBox.X > collidable.GetHitBox().Left)
+			{
+				SetPosition(collidable.GetHitBox().Right, hitBox.Y);
+				BorderCollision();
+			}
+		}
+
+		public void WaterCollision(ICollidable collidable)
 		{
 			Rectangle intersection = Rectangle.Intersect(hitBox, collidable.GetHitBox());
 			if (intersection.Height > intersection.Width && hitBox.X < collidable.GetHitBox().Left)

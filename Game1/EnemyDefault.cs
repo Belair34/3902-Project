@@ -201,5 +201,10 @@ namespace Game1
 		{
 			return this.hitBox;
 		}
+
+		public void WaterCollision(ICollidable collidable)
+		{
+			
+		}
 	}
 }

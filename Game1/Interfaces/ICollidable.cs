@@ -12,6 +12,7 @@ namespace Game1
         void ProjectileCollision(ICollidable collidable);
         void ItemCollision(ICollidable collidable);
         void BlockCollision(ICollidable collidable);
+        void WaterCollision(ICollidable collidable);
         void BorderCollision();
         void SetPosition(int x, int y); 
         Rectangle GetHitBox();

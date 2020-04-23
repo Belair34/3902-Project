@@ -40,6 +40,7 @@ namespace Game1
 		}
 		public int Speed { get; set; }
 		public int Size { get; set; }
+		public bool IsRangActive { get; set; }
 		public Rectangle GetHitBox()
 		{
 			return decoratedLink.GetHitBox();

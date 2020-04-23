@@ -29,10 +29,12 @@ namespace Game1
 			projectiles = new List<IProjectile>();
 			this.hitBox = new Rectangle(x, y, 15 * Size, 16 * Size);
 			this.game = game;
+			this.IsRangActive = false;
 		}
 
 		public int Speed { get; set; }
 		public int Size { get; set; }
+		public bool IsRangActive { get; set; }
 		public Rectangle GetHitBox()
 		{
 			return this.hitBox;

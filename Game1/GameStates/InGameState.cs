@@ -15,7 +15,6 @@ namespace Game1
         List<IController> controllers;
         IPlayer player;
         Border border;
-        List<SoundEffect> soundEffects;
         HUD hud;
         IRoom room;
         IRoom nextRoom;

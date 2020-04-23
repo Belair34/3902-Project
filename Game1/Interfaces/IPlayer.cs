@@ -8,6 +8,7 @@ namespace Game1 {
     {
         int Speed { get; set; }
         new int Size{ get; set;}
+        bool IsRangActive { get; set; }
         List<IProjectile> GetProjectiles();
         new void SetPosition(int x, int y);
         new Vector2 GetPosition();

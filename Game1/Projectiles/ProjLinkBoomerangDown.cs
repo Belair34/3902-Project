@@ -25,15 +25,20 @@ namespace Game1
         }
       
         public override void Shoot()
-        { 
-            if (!shooting)
+        {
+            if (!shooting && !player.IsRangActive)
             {
+                player.IsRangActive = true;
                 ZeldaSound.Instance.BoomerangThrow();
                 sprite = SpriteFactory.Instance.GetBoomerangDown(this);
                 this.ShotDistance = 0;
                 this.position = player.GetPosition();
+                shooting = true;
             }
-            shooting = true;
+            else
+            {
+                IsDone = true;
+            }
         }
 
         public override void Explode()
@@ -61,6 +66,7 @@ namespace Game1
             {
                 exploding = false;
                 IsDone = true;
+                player.IsRangActive = false;
             }
 
             if (shooting)

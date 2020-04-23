@@ -30,23 +30,33 @@ namespace Game1
             switch (inventory.Direction)
             {
                 case 0:
-                    pState = new PStateDamagedUp(player, 50);
+                    pState = new PStateDamagedUp(player, 80);
                     break; //up
                 case 1:
-                    pState = new PStateDamagedDown(player, 50);
+                    pState = new PStateDamagedDown(player, 80);
                     break; //down
                 case 2:
-                    pState = new PStateDamagedLeft(player, 50);
+                    pState = new PStateDamagedLeft(player, 80);
                     break; //left
                 case 3:
-                    pState = new PStateDamagedRight(player, 50);
+                    pState = new PStateDamagedRight(player, 80);
                     break; //right
                 default:
-                    pState = new PStateDamagedDown(player, 50);
+                    pState = new PStateDamagedDown(player, 80);
                     break;
             }
             player.SetState(pState);
             inventory.Health -= damage;
+            checkPlayer(pState, inventory.Health);
+        }
+
+        public void checkPlayer(IPlayerState pState, int playerHealth)
+        {
+            if(playerHealth <= 0)
+            {
+                pState = new PStateDead(player, 1000000000);
+                player.SetState(pState);
+            }
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Game1
         private Texture2D bossLinkSheet;
         private Texture2D rooms;
         private Texture2D HUDbackground;
+        private Texture2D gameOverSheet;
         private static SpriteFactory instance = new SpriteFactory();
         public static SpriteFactory Instance
         {
@@ -39,6 +40,7 @@ namespace Game1
             bossLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/boss");
             rooms = content.Load<Texture2D>("ProjectSpriteSheets/dungeon");
             HUDbackground = content.Load<Texture2D>("ProjectSpriteSheets/HUDbackground");
+            gameOverSheet = content.Load<Texture2D>("ProjectSpriteSheets/game over");
         }
 
         public ISprite GetLinkIdleDown(IPlayer player)
@@ -132,7 +134,11 @@ namespace Game1
         {
             return new LinkDamagedLeft(player, linkSheet);
         }
-
+        public ISprite GetLinkDead(IPlayer player)
+        {
+            return new LinkDead(player, linkSheet);
+        }
+        
         /*Projectile Sprites*/
         public ISprite GetLinkArrowDown(IProjectile projectile)
         {
@@ -365,5 +371,10 @@ namespace Game1
         {
             return linkSheet;
         }
+        public Texture2D GetGameOver()
+        {
+            return gameOverSheet;
+        }
+
     }
 }

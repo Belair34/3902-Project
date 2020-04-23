@@ -9,10 +9,12 @@ namespace Game1.PlayerStates
         ISprite sprite;
         IPlayer player;
         int coolDown;
+        private int moveSpeed;
         public PStateDamagedDown(IPlayer player, int coolDown = 0)
         {
             this.player = player;
-            this.sprite = SpriteFactory.Instance.GetLinkDamagedDown(player);
+            moveSpeed = player.Speed;
+            sprite = SpriteFactory.Instance.GetLinkDamagedDown(player);
             this.coolDown = coolDown;
         }
         public void MoveUp()

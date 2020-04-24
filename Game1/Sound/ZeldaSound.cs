@@ -37,20 +37,20 @@ namespace Game1.Sound
 
         public void LoadSound(ContentManager content)
         {
-            music = content.Load<Song>("Sound/music");
+            music = content.Load<Song>(Stringholder.music);
             soundEffects = new List<SoundEffect>();
-            soundEffects.Add(content.Load<SoundEffect>("Sound/EnemyDie"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/HitBoss"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/LinkDie"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/Boomerang"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/BombBlowup"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/DropBomb"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/PickupHeart"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/PickupRupee"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/ShootSword"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/SwordSlash"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/TakeDamage"));
-            soundEffects.Add(content.Load<SoundEffect>("Sound/DeathSound"));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.EnemyDie));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.HitBoss));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.LinkDie));
+            soundEffects.Add(content.Load<SoundEffect> (Stringholder.Boomerang));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.BombBlowup));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.DropBomb));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.PickupHeart));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.PickupRupee));
+            soundEffects.Add(content.Load<SoundEffect> (Stringholder.ShootSword));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.SwordSlash));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.TakeDamage));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.DeathSound));
         }
 
         public void PlayMusic()

@@ -16,6 +16,7 @@ namespace Game1
         private Texture2D bossLinkSheet;
         private Texture2D rooms;
         private Texture2D HUDbackground;
+        private Texture2D menuBackground;
         private Texture2D gameOverSheet;
         private static SpriteFactory instance = new SpriteFactory();
         public static SpriteFactory Instance
@@ -33,14 +34,15 @@ namespace Game1
         /*Player Sprites*/
         public void LoadAll(ContentManager content)
         {
-            linkSheet = content.Load<Texture2D>("ProjectSpriteSheets/LinkSpriteSheet");
-            altLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/AltLinkSheet");
-            enemyLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/Blade trap, Gel, Goriya, keese, stalfos, wall master");
-            explosionSheet = content.Load<Texture2D>("ProjectSpriteSheets/ExplosionSheet");
-            bossLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/boss");
-            rooms = content.Load<Texture2D>("ProjectSpriteSheets/dungeon");
-            HUDbackground = content.Load<Texture2D>("ProjectSpriteSheets/HUDbackground");
-            gameOverSheet = content.Load<Texture2D>("ProjectSpriteSheets/game over");
+            menuBackground = content.Load<Texture2D>(Stringholder.menuBackground);
+            linkSheet = content.Load<Texture2D>(Stringholder.linkSheet);
+            altLinkSheet = content.Load<Texture2D>(Stringholder.altLinkSheet);
+            enemyLinkSheet = content.Load<Texture2D>(Stringholder.enemyLinkSheet);
+            explosionSheet = content.Load<Texture2D>(Stringholder.explosionSheet);
+            bossLinkSheet = content.Load<Texture2D>(Stringholder.bossLinkSheet);
+            rooms = content.Load<Texture2D>(Stringholder.rooms);
+            HUDbackground = content.Load<Texture2D>(Stringholder.HUDbackground);
+            gameOverSheet = content.Load<Texture2D>(Stringholder.gameOverSheet);
         }
 
         public ISprite GetLinkIdleDown(IPlayer player)
@@ -365,6 +367,11 @@ namespace Game1
         public Texture2D GetHUDBackground()
         {
             return HUDbackground;
+        }
+
+        public Texture2D GetMenu()
+        {
+            return menuBackground;
         }
 
         public Texture2D GetLinkSheet()

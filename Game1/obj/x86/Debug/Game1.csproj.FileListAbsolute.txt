@@ -287,3 +287,4 @@ C:\Users\crazy\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Co
 C:\Users\crazy\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\Sound\SwordSlash.xnb
 C:\Users\crazy\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\Sound\TakeDamage.xnb
 C:\Users\crazy\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\ProjectSpriteSheets\game over.xnb
+C:\Users\crazy\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\ProjectSpriteSheets\hud and pause screen.xnb

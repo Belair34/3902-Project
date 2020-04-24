@@ -24,8 +24,8 @@ namespace Game1
 
         public void LoadAll(ContentManager content)
         {
-            linkSheet = content.Load<Texture2D>("ProjectSpriteSheets/LinkSpriteSheet");
-            altLinkSheet = content.Load<Texture2D>("ProjectSpriteSheets/AltLinkSheet");
+            linkSheet = content.Load<Texture2D>(Stringholder.linkSheet);
+            altLinkSheet = content.Load<Texture2D>(Stringholder.altLinkSheet);
         }
 
         public ISprite GetArrow(IItem item)

@@ -62,7 +62,7 @@ namespace Game1
             {
                 MediaPlayer.Stop();
                 ZeldaSound.Instance.LinkDeath();
-                pState = new PStateDead(game, player, 50);
+                pState = new PStateDead(game, player, 100);
                 player.SetState(pState);
             }
         }

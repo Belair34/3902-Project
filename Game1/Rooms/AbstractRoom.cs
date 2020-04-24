@@ -24,7 +24,7 @@ namespace Game1
         internal Rectangle backgroundDestRec;
         internal GraphicsDeviceManager graphics;
 
-        public AbstractRoom(Game1 game, Border border, GraphicsDeviceManager graphics, int spawnDoor)
+        public AbstractRoom(Game1 game, Border border, GraphicsDeviceManager graphics)
         {
             this.game = game;
             this.border = border;
@@ -40,6 +40,14 @@ namespace Game1
             collidables.Add(game.GetPlayer());
             collisionChecker = new CheckAllCollisionsCommand(collidables, border);
             projectileClearer = new ClearProjectilesCommand(collidables, game.GetPlayer().GetProjectiles());
+        }
+        public bool Transitioning { get; set; }
+
+        public abstract void ResetCamera();
+        public abstract void SetBorders();
+
+        public void SpawnLink(int spawnDoor)
+        {
             switch (spawnDoor)
             {
                 case 0: // 0 = top 
@@ -55,15 +63,13 @@ namespace Game1
                     game.GetPlayer().SetState(new PStateIdleRight(game.GetPlayer()));
                     break;
                 case 3: // 3 = right
-                    game.GetPlayer().SetPosition(graphics.GraphicsDevice.Viewport.Width-game.GetPlayer().GetHitBox().Width, ((graphics.GraphicsDevice.Viewport.Height - game.GetHUD().GetHeight()) / 2) + game.GetHUD().GetHeight());
+                    game.GetPlayer().SetPosition(graphics.GraphicsDevice.Viewport.Width - game.GetPlayer().GetHitBox().Width, ((graphics.GraphicsDevice.Viewport.Height - game.GetHUD().GetHeight()) / 2) + game.GetHUD().GetHeight());
                     game.GetPlayer().SetState(new PStateIdleLeft(game.GetPlayer()));
                     break;
                 default:
-
                     break;
             }
         }
-        public bool Transitioning { get; set; }
         public abstract void TransitionUp();
 
         public abstract void TransitionDown();

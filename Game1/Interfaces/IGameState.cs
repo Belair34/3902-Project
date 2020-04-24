@@ -6,7 +6,7 @@ namespace Game1
 {
     public interface IGameState
     {
-        void SetRoom(IRoom room);
+        void SetRoom(int room, int spawnDoor);
         void Update();
         void Draw(SpriteBatch spriteBatch);
     }

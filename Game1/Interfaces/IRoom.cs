@@ -7,6 +7,9 @@ namespace Game1
     public interface IRoom
     {
         bool Transitioning { get; set; }
+        void ResetCamera();
+        void SetBorders();
+        void SpawnLink(int spawnDoor);
         void TransitionLeft();
         void TransitionRight();
         void TransitionUp();

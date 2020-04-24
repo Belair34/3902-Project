@@ -11,12 +11,12 @@ namespace Game1
     {
         Game1 game;
         GraphicsDeviceManager graphics;
-        SpriteFont hudFont;
         List<IController> controllers;
-        
         Border border;
-        IRoom room;
-        IRoom nextRoom;
+        List<IRoom> rooms;
+        IRoom currentRoom;
+        int nextRoom;
+        int nextSpawnDoor;
         bool switchingRooms;
         bool creating;
 
@@ -27,9 +27,10 @@ namespace Game1
             this.creating = true;
         }
 
-        public void SetRoom(IRoom room)
+        public void SetRoom(int room, int spawnDoor)
         {
             this.nextRoom = room;
+            this.nextSpawnDoor = spawnDoor;
             switchingRooms = true;
         }
         public void Initialize()
@@ -38,7 +39,28 @@ namespace Game1
             ZeldaSound.Instance.PlayMusic();
             ZeldaSound.Instance.ChangeVolume(0.5f);
             border = new Border(graphics, game.GetHUD(), SpriteFactory.Instance.GetBackgroundTexture());
-            room = new Room1(game, border, graphics, 1);
+            this.rooms = new List<IRoom>();
+            rooms.Add(null); //this is to make the index match up with the assigned room numbers
+            rooms.Add(new Room1(game, border, graphics));
+            rooms.Add(new Room2(game, border, graphics));
+            rooms.Add(new Room3(game, border, graphics));
+            rooms.Add(new Room4(game, border, graphics));
+            rooms.Add(new Room5(game, border, graphics));
+            rooms.Add(new Room6(game, border, graphics));
+            rooms.Add(new Room7(game, border, graphics));
+            rooms.Add(new Room8(game, border, graphics));
+            rooms.Add(new Room9(game, border, graphics));
+            rooms.Add(new Room10(game, border, graphics));
+            rooms.Add(new Room11(game, border, graphics));
+            rooms.Add(new Room12(game, border, graphics));
+            rooms.Add(new Room13(game, border, graphics));
+            rooms.Add(null);
+            rooms.Add(new Room15(game, border, graphics));
+            rooms.Add(new Room16(game, border, graphics));
+            rooms.Add(new Room17(game, border, graphics));
+            rooms.Add(new Room18(game, border, graphics));
+            currentRoom = rooms[1];
+            currentRoom.SetBorders();
             controllers = new List<IController>();           /*Controllers*/
             controllers.Add(new KeyboardController(game));
         }
@@ -51,14 +73,18 @@ namespace Game1
             }
             if (switchingRooms)
             {
-                room = nextRoom;
+                currentRoom.Transitioning = false;
+                currentRoom.ResetCamera();
+                currentRoom = rooms[nextRoom];
+                currentRoom.SetBorders();
+                currentRoom.SpawnLink(nextSpawnDoor);
                 switchingRooms = false;
             }
             foreach (IController controller in controllers)
             {
                 controller.Update();
             }
-            room.Update();
+            currentRoom.Update();
 
         }
 
@@ -66,7 +92,7 @@ namespace Game1
         {
             if (!creating)
             {
-                room.Draw(spriteBatch);
+                currentRoom.Draw(spriteBatch);
                 game.GetHUD().Draw(spriteBatch);
             }
         }

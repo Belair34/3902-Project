@@ -28,7 +28,7 @@ namespace Game1
             controllers.Add(new KeyboardController(game));
         }
 
-        public void SetRoom(IRoom room)
+        public void SetRoom(int room, int spawnDoor)
         {
             //not applicable
         }

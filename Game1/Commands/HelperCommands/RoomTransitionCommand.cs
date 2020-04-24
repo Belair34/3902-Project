@@ -10,14 +10,14 @@ namespace Game1
 	{
         private Game1 game;
 		private IRoom startRoom;
-		private IRoom endRoom;
+		private int endRoom;
         private Border border;
         private GraphicsDeviceManager graphics;
 		private int direction;
         private int counter;
 		
         //First three parameters are important, other three are just to pass
-		public RoomTransitionCommand(IRoom startRoom, IRoom endRoom, int direction, Game1 game, Border border, GraphicsDeviceManager graphics)
+		public RoomTransitionCommand(IRoom startRoom, int endRoom, int direction, Game1 game, Border border, GraphicsDeviceManager graphics)
 		{
 			this.startRoom = startRoom;
 			this.endRoom = endRoom;
@@ -40,7 +40,7 @@ namespace Game1
                     }
                     else
                     {
-                        game.SetRoom(endRoom);
+                        game.SetRoom(endRoom, 1);
                     }
                     break;
                 case 1: //down
@@ -51,7 +51,7 @@ namespace Game1
                     }
                     else
                     {
-                        game.SetRoom(endRoom);
+                        game.SetRoom(endRoom, 0);
                     }
                     break;
                 case 2: //left
@@ -62,7 +62,7 @@ namespace Game1
                     }
                     else
                     {
-                        game.SetRoom(endRoom);
+                        game.SetRoom(endRoom, 3);
                     }
                     break;
                 case 3: //right
@@ -73,7 +73,7 @@ namespace Game1
                     }
                     else
                     {
-                        game.SetRoom(endRoom);
+                        game.SetRoom(endRoom, 2);
                     }
                     break;
                 default:

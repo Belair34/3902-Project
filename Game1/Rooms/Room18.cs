@@ -7,17 +7,25 @@ namespace Game1
 {
     public class Room18 : AbstractRoom
     {
-        public Room18(Game1 game, Border border, GraphicsDeviceManager graphics, int spawnDoor) : base(game, border, graphics, spawnDoor)
+        public Room18(Game1 game, Border border, GraphicsDeviceManager graphics) : base(game, border, graphics)
         {
             entityLoader = new Room18EntitiesLoadCommand(enemies, items, collidables, blocks, game.GetHUD().GetHeight());
             this.backgroundSrcRec = new Rectangle(1286, 178, 256, 176);
+            entityLoader.Execute();
+        }
+
+        public override void ResetCamera()
+        {
+            this.backgroundSrcRec = new Rectangle(1286, 178, 256, 176);
+        }
+
+        public override void SetBorders()
+        {
             border.SetLeftOpen(true);
             border.SetRightOpen(false);
             border.SetTopOpen(false);
             border.SetBottomOpen(false);
-            entityLoader.Execute();
         }
-
         public override void TransitionUp()
         {
            //nothing
@@ -32,7 +40,7 @@ namespace Game1
         {
             Transitioning = true;
             //Replace second parameter when room is made
-            transitionHandler = new RoomTransitionCommand(this, new Room17(game, border, graphics, 3), 2, game, border, graphics);
+            transitionHandler = new RoomTransitionCommand(this, 17, 2, game, border, graphics);
         }
 
         public override void TransitionRight()

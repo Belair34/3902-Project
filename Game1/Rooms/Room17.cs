@@ -7,17 +7,25 @@ namespace Game1
 {
     public class Room17 : AbstractRoom
     {
-        public Room17(Game1 game, Border border, GraphicsDeviceManager graphics, int spawnDoor) : base(game, border, graphics, spawnDoor)
+        public Room17(Game1 game, Border border, GraphicsDeviceManager graphics) : base(game, border, graphics)
         {
             entityLoader = new Room17EntitiesLoadCommand(enemies, items, collidables, blocks, game.GetHUD().GetHeight());
             this.backgroundSrcRec = new Rectangle(1029, 178, 256, 176);
+            entityLoader.Execute();
+        }
+
+        public override void ResetCamera()
+        {
+            this.backgroundSrcRec = new Rectangle(1029, 178, 256, 176);
+        }
+
+        public override void SetBorders()
+        {
             border.SetLeftOpen(false);
             border.SetRightOpen(true);
             border.SetTopOpen(false);
             border.SetBottomOpen(true);
-            entityLoader.Execute();
         }
-
         public override void TransitionUp()
         {
            //nothing
@@ -27,7 +35,7 @@ namespace Game1
         {
             Transitioning = true;
             //Second parameter is should be replaced by the room above Room1 when it's made. This is just for demonstration.
-            transitionHandler = new RoomTransitionCommand(this, new Room16(game, border, graphics, 0), 1, game, border, graphics);
+            transitionHandler = new RoomTransitionCommand(this, 16, 1, game, border, graphics);
         }
 
         public override void TransitionLeft()
@@ -39,7 +47,7 @@ namespace Game1
         {
             Transitioning = true;
             //Replace second parameter when room is made
-            transitionHandler = new RoomTransitionCommand(this, new Room18(game, border, graphics, 2), 3, game, border, graphics);
+            transitionHandler = new RoomTransitionCommand(this, 18, 3, game, border, graphics);
         }
 
     }

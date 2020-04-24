@@ -7,17 +7,25 @@ namespace Game1
 {
     public class Room9 : AbstractRoom
     {
-        public Room9(Game1 game, Border border, GraphicsDeviceManager graphics, int spawnDoor) : base(game, border, graphics, spawnDoor)
+        public Room9(Game1 game, Border border, GraphicsDeviceManager graphics) : base(game, border, graphics)
         {
             entityLoader = new Room9EntitiesLoadCommand(enemies, items, collidables, blocks, game.GetHUD().GetHeight());
             this.backgroundSrcRec = new Rectangle(258, 355, 256, 176);
+            entityLoader.Execute();
+        }
+
+        public override void ResetCamera()
+        {
+            this.backgroundSrcRec = new Rectangle(258, 355, 256, 176);
+        }
+
+        public override void SetBorders()
+        {
             border.SetLeftOpen(true);
             border.SetRightOpen(true);
             border.SetTopOpen(false);
             border.SetBottomOpen(true);
-            entityLoader.Execute();
         }
-
         public override void TransitionUp()
         {
            //nothing
@@ -27,21 +35,21 @@ namespace Game1
         {
             Transitioning = true;
             //Second parameter is should be replaced by the room above Room1 when it's made. This is just for demonstration.
-            transitionHandler = new RoomTransitionCommand(this, new Room6(game, border, graphics, 0), 1, game, border, graphics);
+            transitionHandler = new RoomTransitionCommand(this, 6, 1, game, border, graphics);
         }
 
         public override void TransitionLeft()
         {
             Transitioning = true;
             //Replace second parameter when room is made
-            transitionHandler = new RoomTransitionCommand(this, new Room10(game, border, graphics, 3), 2, game, border, graphics);
+            transitionHandler = new RoomTransitionCommand(this, 10, 2, game, border, graphics);
         }
 
         public override void TransitionRight()
         {
             Transitioning = true;
             //Replace second parameter when room is made
-            transitionHandler = new RoomTransitionCommand(this, new Room8(game, border, graphics, 2), 3, game, border, graphics);
+            transitionHandler = new RoomTransitionCommand(this, 8, 3, game, border, graphics);
         }
 
     }

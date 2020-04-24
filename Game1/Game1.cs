@@ -47,9 +47,9 @@ namespace Game1
             this.player = player;
         }
 
-        public void SetRoom(IRoom room)
+        public void SetRoom(int room, int spawnDoor)
         {
-            currentState.SetRoom(room);
+            currentState.SetRoom(room, spawnDoor);
         }
 
         public void SetState(int stateNum)
@@ -69,11 +69,11 @@ namespace Game1
             SpriteFactoryItems.Instance.LoadAll(Content);
             ZeldaSound.Instance.LoadSound(Content);
             hudFont = Content.Load<SpriteFont>("HUDfont");
-            this.player = new PlayerDefault(100, 100, this);
             this.hud = new HUD(graphics, this, hudFont);
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 480 + GetHUD().GetHeight();
             graphics.ApplyChanges();
+            this.player = new PlayerDefault(240, graphics.PreferredBackBufferHeight-50, this);
             gameStates = new List<IGameState>();
             gameStates.Add(new InGameState(this, graphics));
             gameStates.Add(new DeathScreenState(this, graphics));

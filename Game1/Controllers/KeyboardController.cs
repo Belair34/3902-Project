@@ -82,6 +82,7 @@ namespace Game1
             {
                 myGame.GetPlayer().MoveRight();
             }
+          
             else
             {
                 myGame.GetPlayer().Stop();

@@ -19,6 +19,7 @@ namespace Game1
         int nextSpawnDoor;
         bool switchingRooms;
         bool creating;
+        public static bool paused = false;
 
         public InGameState(Game1 game, GraphicsDeviceManager graphics)
         {
@@ -80,12 +81,19 @@ namespace Game1
                 currentRoom.SpawnLink(nextSpawnDoor);
                 switchingRooms = false;
             }
-            foreach (IController controller in controllers)
+            if ((Keyboard.GetState().IsKeyDown(Keys.Space)))
             {
-                controller.Update();
+                paused = !paused;
             }
-            currentRoom.Update();
-
+            if (!paused)
+                {
+                    foreach (IController controller in controllers)
+                    {
+                        controller.Update();
+                    }
+                    currentRoom.Update();
+                }
+           
         }
 
         public void Draw(SpriteBatch spriteBatch)

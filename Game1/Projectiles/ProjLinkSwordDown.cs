@@ -10,7 +10,7 @@ namespace Game1
 
         public ProjLinkSwordDown(IPlayer player)
         {
-            this.Damage = 2;
+            this.damage = 2;
             shooting = false;
             this.player = player;
             this.Size = player.Size;

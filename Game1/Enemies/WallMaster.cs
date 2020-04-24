@@ -16,10 +16,10 @@ namespace Game1
 		int health;
 		private Rectangle hitBox;
 
-		public WallMaster(int x, int y, int health, int maxHealth)
+		public WallMaster(int x, int y)
 		{
-			this.health = health;
-			this.maxHealth = maxHealth;
+			this.health = 6;
+			this.maxHealth = 6;
 			this.Speed = 1;                /*Changeable*/
 			this.Size = 3;                 /************/
 			this.position = new Vector2(); 
@@ -173,7 +173,7 @@ namespace Game1
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-			TakeDamage(((IProjectile)collidable).Damage);
+			TakeDamage(((IProjectile)collidable).GetDamage());
 		}
 
 		public void ItemCollision(ICollidable collidable)

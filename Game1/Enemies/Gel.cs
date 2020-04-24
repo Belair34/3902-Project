@@ -20,10 +20,10 @@ namespace Game1
 		double movementTimer;
 		int maxTimer;
 		int minTimer;
-		public Gel(int x, int y, int health, int maxHealth)
+		public Gel(int x, int y)
 		{
-			this.health = health;
-			this.maxHealth = maxHealth;
+			this.health = 2;
+			this.maxHealth = 2;
 			this.Speed = 1;                /*Changeable*/
 			this.Size = 3;                 /************/
 			this.position = new Vector2(); 
@@ -187,7 +187,7 @@ namespace Game1
 		public void ProjectileCollision(ICollidable collidable)
 		{
 			BlockCollision(collidable);
-			TakeDamage(((IProjectile)collidable).Damage);
+			TakeDamage(((IProjectile)collidable).GetDamage());
 		}
 
 		public void ItemCollision(ICollidable collidable)

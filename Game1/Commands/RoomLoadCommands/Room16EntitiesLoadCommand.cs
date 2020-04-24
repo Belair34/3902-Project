@@ -26,14 +26,14 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-			enemies.Add(new WallMaster(200, hudOffset + 80, 5, 5));
-			enemies.Add(new WallMaster(260, hudOffset + 80, 5, 5));
-			enemies.Add(new WallMaster(600, hudOffset + 80, 5, 5));
-			enemies.Add(new WallMaster(660, hudOffset + 80, 5, 5));
-			enemies.Add(new WallMaster(100, hudOffset + 270, 5, 5));
-			enemies.Add(new WallMaster(100, hudOffset + 330, 5, 5));
-			enemies.Add(new WallMaster(650, hudOffset + 270, 5, 5));
-			enemies.Add(new WallMaster(650, hudOffset + 360, 5, 5));
+			enemies.Add(new WallMaster(200, hudOffset + 80));
+			enemies.Add(new WallMaster(260, hudOffset + 80));
+			enemies.Add(new WallMaster(600, hudOffset + 80));
+			enemies.Add(new WallMaster(660, hudOffset + 80));
+			enemies.Add(new WallMaster(100, hudOffset + 270));
+			enemies.Add(new WallMaster(100, hudOffset + 330));
+			enemies.Add(new WallMaster(650, hudOffset + 270));
+			enemies.Add(new WallMaster(650, hudOffset + 360));
 
 			/*Items*/
 			items.Add(new KeyItem(500, hudOffset + 400));

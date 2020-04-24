@@ -21,10 +21,10 @@ namespace Game1
 		int maxTimer;
 		int minTimer;
 
-		public Keese(int x, int y, int health, int maxHealth)
+		public Keese(int x, int y)
 		{
-			this.health = health;
-			this.maxHealth = maxHealth;
+			this.health = 3;
+			this.maxHealth = 3;
 			this.Speed = 1;                /*Changeable*/
 			this.Size = 3;                 /************/
 			this.position = new Vector2(); 
@@ -188,7 +188,7 @@ namespace Game1
 		public void ProjectileCollision(ICollidable collidable)
 		{
 			BlockCollision(collidable);
-			TakeDamage(((IProjectile)collidable).Damage);
+			TakeDamage(((IProjectile)collidable).GetDamage());
 		}
 
 		public void ItemCollision(ICollidable collidable)

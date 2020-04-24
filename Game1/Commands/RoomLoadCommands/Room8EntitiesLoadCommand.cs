@@ -25,11 +25,11 @@ namespace Game1
 		public void Execute()
 		{
 			/*Enemies*/
-			enemies.Add(new Gel(200, hudOffset + 80, 5, 5));
-			enemies.Add(new Gel(250, hudOffset + 130, 5, 5));
-			enemies.Add(new Gel(240, hudOffset + 300, 5, 5));
-			enemies.Add(new Gel(500, hudOffset + 80, 5, 5));
-			enemies.Add(new Gel(500, hudOffset + 130, 5, 5));
+			enemies.Add(new Gel(200, hudOffset + 80));
+			enemies.Add(new Gel(250, hudOffset + 130));
+			enemies.Add(new Gel(240, hudOffset + 300));
+			enemies.Add(new Gel(500, hudOffset + 80));
+			enemies.Add(new Gel(500, hudOffset + 130));
 
 			/*Items*/
 			items.Add(new MapItem(600, hudOffset + 200));

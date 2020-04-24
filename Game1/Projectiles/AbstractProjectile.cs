@@ -17,8 +17,8 @@ namespace Game1
         internal int explodeTimer;
         internal IPlayer player;
         internal Rectangle hitBox;
+        internal int damage;
 
-        public int Damage { get; set; }
         public bool IsDone { get; set; }
         public int Size { get; set; }
         public int Speed { get; set; }
@@ -29,6 +29,12 @@ namespace Game1
             this.position.Y = y;
         }
 
+        public int GetDamage()
+        {
+            int damage = this.damage;
+            this.damage = 0;
+            return damage;
+        }
         public Rectangle GetHitBox()
         {
             return hitBox;

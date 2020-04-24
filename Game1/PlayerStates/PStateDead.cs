@@ -7,14 +7,14 @@ namespace Game1.PlayerStates
     class PStateDead : IPlayerState
     {
         ISprite playerSprite;
-        //ISprite TextSprite;
+        Game1 game;
         IPlayer player;
         int coolDown;
-        public PStateDead(IPlayer player, int coolDown = 0)
+        public PStateDead(Game1 game, IPlayer player, int coolDown = 0)
         {
+            this.game = game;
             this.player = player;
             playerSprite = SpriteFactory.Instance.GetLinkDead(player);
-            //TextSprite = SpriteFactory.Instance.GetGameOver();
             this.coolDown = coolDown;
         }
         public void MoveUp()
@@ -57,6 +57,10 @@ namespace Game1.PlayerStates
             if (coolDown > 0)
             {
                 coolDown--;
+            }
+            else if(coolDown <= 0)
+            {
+                game.SetState(1);
             }
             playerSprite.Update();
         }

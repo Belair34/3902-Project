@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Sound/HitBoss.wav</SourceFile>
-  <SourceTime>2020-04-13T19:05:24.2081532-04:00</SourceTime>
+  <SourceTime>2020-04-13T20:02:07.5668625-04:00</SourceTime>
   <DestFile>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/bin/Windows/Sound/HitBoss.xnb</DestFile>
-  <DestTime>2020-04-13T19:13:43.1220087-04:00</DestTime>
+  <DestTime>2020-04-23T20:17:39.0010254-04:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

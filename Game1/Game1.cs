@@ -15,58 +15,72 @@ namespace Game1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        HUD hud;
         SpriteFont hudFont;
-        IGameState gameState;
-        IGameState nextState;
+        List<IGameState> gameStates;
+        IGameState currentState;
+        IPlayer player;
+        int nextState;
         bool changingState;
+        bool initializing;
 
         public Game1()
         {
-            this.changingState = false;
-            graphics = new GraphicsDeviceManager(this);
+            this.graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            this.changingState = false;
+            this.initializing = true;
         }
 
         public HUD GetHUD()
         {
-            return gameState.GetHUD();
+            return this.hud;
         }
 
         public IPlayer GetPlayer()
         {
-            return gameState.GetPlayer();
+            return player;
         }
 
         public void SetPlayer(IPlayer player)
         {
-            gameState.SetPlayer(player);
+            this.player = player;
         }
 
         public void SetRoom(IRoom room)
         {
-            gameState.SetRoom(room);
+            currentState.SetRoom(room);
         }
 
-        public void SetState(IGameState state)
+        public void SetState(int stateNum)
         {
             changingState = true;
-            nextState = state;
+            nextState = stateNum;
         }
 
         public void Reset()
         {
-            SetState(new InGameState(this, graphics, hudFont));
+            Initialize();
         }
         protected override void Initialize()
         {
-            hudFont = Content.Load<SpriteFont>("HUDfont");
             spriteBatch = new SpriteBatch(GraphicsDevice);
             SpriteFactory.Instance.LoadAll(Content);
             SpriteFactoryItems.Instance.LoadAll(Content);
             ZeldaSound.Instance.LoadSound(Content);
-            gameState = new InGameState(this, graphics, hudFont);
+            hudFont = Content.Load<SpriteFont>("HUDfont");
+            this.player = new PlayerDefault(100, 100, this);
+            this.hud = new HUD(graphics, this, hudFont);
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 480 + GetHUD().GetHeight();
+            graphics.ApplyChanges();
+            gameStates = new List<IGameState>();
+            gameStates.Add(new InGameState(this, graphics));
+            gameStates.Add(new DeathScreenState(this, graphics));
+            currentState = gameStates[0];
             this.IsMouseVisible = true;
             base.Initialize();
+            this.initializing = false;
         }
 
         protected override void LoadContent()
@@ -84,15 +98,21 @@ namespace Game1
         {
             if (changingState)
             {
-                gameState = nextState;
+                currentState = gameStates[nextState];
                 changingState = false;
             }
-            gameState.Update();
+            if (!initializing)
+            {
+                currentState.Update();
+            }
         }
 
         protected override void Draw(GameTime gameTime)
-        { 
-            gameState.Draw(spriteBatch);
+        {
+            if (!initializing)
+            {
+                currentState.Draw(spriteBatch);
+            }
         }
     }
 }

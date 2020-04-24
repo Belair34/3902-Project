@@ -1,21 +1,27 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Content;
 using Game1.PlayerStates;
 using Game1.Projectiles;
+using Game1.Sound;
 
 namespace Game1
 {
     class TakeDamageCommand : ICommand
     {
+        private Game1 game;
         private IPlayer player;
         private IInventory inventory;
         int damage;
 
-        public TakeDamageCommand(IPlayer player, int damage)
+        public TakeDamageCommand(Game1 game, IPlayer player, int damage)
         {
             Initialize(player);
             this.damage = damage;
+            this.game = game;
         }
 
         public void Initialize(IPlayer player)
@@ -54,7 +60,9 @@ namespace Game1
         {
             if(playerHealth <= 0)
             {
-                pState = new PStateDead(player, 1000000000);
+                MediaPlayer.Stop();
+                ZeldaSound.Instance.LinkDeath();
+                pState = new PStateDead(game, player, 50);
                 player.SetState(pState);
             }
         }

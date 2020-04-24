@@ -15,6 +15,7 @@
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/LinkSpriteSheet.png</File>
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Sound/BombBlowup.wav</File>
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Sound/Boomerang.wav</File>
+    <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Sound/DeathSound.wav</File>
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Sound/DropBomb.wav</File>
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Sound/EnemyDie.wav</File>
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Sound/HitBoss.wav</File>
@@ -28,6 +29,7 @@
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Text.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

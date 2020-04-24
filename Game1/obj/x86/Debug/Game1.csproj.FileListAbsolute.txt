@@ -270,3 +270,5 @@ C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\bin\Windows\x86
 C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\Sound\SwordSlash.xnb
 C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\Sound\TakeDamage.xnb
 C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\ProjectSpriteSheets\game over.xnb
+C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\obj\x86\Debug\Game1.csprojAssemblyReference.cache
+C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\Sound\DeathSound.xnb

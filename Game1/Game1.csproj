@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GameStates\DeathScreenState.cs" />
     <Compile Include="PlayerStates\PStateDead.cs" />
     <Compile Include="Sprites\PlayerSprites\LinkDead.cs" />
     <Compile Include="Water.cs" />

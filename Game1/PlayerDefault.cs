@@ -111,7 +111,7 @@ namespace Game1
 		public void TakeDamage(int damage)
 		{
             ZeldaSound.Instance.TakeDamage();
-			ICommand damageCommand = new TakeDamageCommand(this, damage);
+			ICommand damageCommand = new TakeDamageCommand(game, this, damage);
 			damageCommand.Execute();
 
 		}

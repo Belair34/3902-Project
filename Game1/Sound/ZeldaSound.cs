@@ -50,7 +50,7 @@ namespace Game1.Sound
             soundEffects.Add(content.Load<SoundEffect>("Sound/ShootSword"));
             soundEffects.Add(content.Load<SoundEffect>("Sound/SwordSlash"));
             soundEffects.Add(content.Load<SoundEffect>("Sound/TakeDamage"));
-
+            soundEffects.Add(content.Load<SoundEffect>("Sound/DeathSound"));
         }
 
         public void PlayMusic()
@@ -72,6 +72,14 @@ namespace Game1.Sound
             if(!Mute)
             {
                 soundEffects[10].Play();
+            }
+        }
+
+        public void LinkDeath()
+        {
+            if (!Mute)
+            {
+                soundEffects[11].Play();
             }
         }
         public void DropBomb()

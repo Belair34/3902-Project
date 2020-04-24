@@ -5,7 +5,7 @@ namespace Game1
     public class HeartItem : AbstractItem, IItem
     {
 
-        public HeartItem(int x, int y)
+        public HeartItem(int x, int y) : base(x, y)
         {
             /*Changeable*/
             this.Size = 3;
@@ -23,6 +23,11 @@ namespace Game1
             if (inventory.Health < inventory.MaxHealth)
             {
                 inventory.Health += 2;
+                if(inventory.Health > inventory.MaxHealth)
+                {
+                    inventory.Health = inventory.MaxHealth;
+                }
+                Consume();
             }
         }
     }

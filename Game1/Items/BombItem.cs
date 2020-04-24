@@ -10,7 +10,7 @@ namespace Game1
     public class BombItem : AbstractItem, IItem
     {
 
-        public BombItem(int x, int y, GraphicsDevice window)
+        public BombItem(int x, int y, GraphicsDevice window) : base(x, y)
         {
             /*Changeable*/
             base.Size = 3;
@@ -25,6 +25,7 @@ namespace Game1
         public override void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().Bombs++;
+            Consume();
         }
     }
 }

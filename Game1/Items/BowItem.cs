@@ -10,7 +10,7 @@ namespace Game1
     public class BowItem : AbstractItem, IItem
     {
 
-        public BowItem(int x, int y, GraphicsDevice window)
+        public BowItem(int x, int y, GraphicsDevice window) : base(x, y)
         {
             /*Changeable*/
             base.Size = 3;
@@ -24,6 +24,7 @@ namespace Game1
         public override void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().HaveBow = 1;
+            Consume();
         }
     }
 }

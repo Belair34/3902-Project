@@ -22,6 +22,8 @@ namespace Game1
 		int minTimer;
 		public Gel(int x, int y, int health, int maxHealth)
 		{
+			this.health = health;
+			this.maxHealth = maxHealth;
 			this.Speed = 1;                /*Changeable*/
 			this.Size = 3;                 /************/
 			this.position = new Vector2(); 
@@ -34,9 +36,11 @@ namespace Game1
 			maxTimer = 100;
 			minTimer = 20;
 			movementTimer = numberGenerator.NextDouble() * maxTimer + minTimer;
+			this.IsDone = false;
 		}
 
-        public int Speed { get; set; }
+		public bool IsDone { get; set; }
+		public int Speed { get; set; }
 		public int Size { get; set; }
 
 		public List<IProjectile> GetProjectiles()
@@ -63,6 +67,19 @@ namespace Game1
 			return this.state;
 		}
 
+		public void TakeDamage(int damage)
+		{
+			health -= damage;
+			if (health <= 0)
+			{
+				Die();
+			}
+		}
+		public void Die()
+		{
+			//any death details here
+			IsDone = true;
+		}
 		public void MoveUp()
 		{
 			state.MoveUp();
@@ -170,6 +187,7 @@ namespace Game1
 		public void ProjectileCollision(ICollidable collidable)
 		{
 			BlockCollision(collidable);
+			TakeDamage(((IProjectile)collidable).Damage);
 		}
 
 		public void ItemCollision(ICollidable collidable)

@@ -8,6 +8,7 @@ namespace Game1
 {
     public interface IItem: ICollidable, IDrawable
     {
-        void Stop();
+        void Consume();
+        bool IsDone { get; set; }
     }
 }

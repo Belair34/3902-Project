@@ -5,7 +5,7 @@ using Game1.PlayerStates;
 using Game1.Projectiles;
 using System.Collections.Generic;
 
-namespace Game1
+/*namespace Game1
 {
 	public class EnemyDefault : IEnemy
 	{
@@ -19,14 +19,14 @@ namespace Game1
 		Game1 game;
 		public EnemyDefault(int x, int y, int health, int maxHealth, Game1 game)
 		{
-			this.Speed = 1;                /*Changeable*/
-			this.Size = 3;                 /************/
+			this.Speed = 1;                
+			this.Size = 3;                 
 			this.position = new Vector2(); 
 			this.position.X = x;
 			this.position.Y = y;
 			this.state = new EStateGelMovingRight(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
-			this.hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
+		/*	this.hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
 			this.game = game;
 		}
 
@@ -207,4 +207,4 @@ namespace Game1
 			
 		}
 	}
-}
+} */

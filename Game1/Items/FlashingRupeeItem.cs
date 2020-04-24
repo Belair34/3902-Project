@@ -10,7 +10,7 @@ namespace Game1
     public class FlashingRupeeItem : AbstractItem, IItem
     {
 
-        public FlashingRupeeItem(int x, int y, GraphicsDevice window)
+        public FlashingRupeeItem(int x, int y, GraphicsDevice window) : base(x, y)
         {
             /*Changeable*/
             base.Size = 3;
@@ -24,6 +24,7 @@ namespace Game1
         public override void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().Rupees++;
+            Consume();
         }
     }
 }

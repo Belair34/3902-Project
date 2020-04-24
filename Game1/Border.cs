@@ -69,57 +69,59 @@ namespace Game1
 
         public void CheckCollision(ICollidable collidable)
         {
-
-            if (!rightOpen && collidable.GetHitBox().X + collidable.GetHitBox().Width > maxX)
+            if (!(collidable is ProjLinkBombDown || collidable is ProjLinkBombLeft || collidable is ProjLinkBombRight || collidable is ProjLinkBombUp))
             {
-                collidable.SetPosition(maxX - collidable.GetHitBox().Width, collidable.GetHitBox().Y);
-                collidable.BorderCollision();
-            }
-            else if (!botOpen && collidable.GetHitBox().Y + collidable.GetHitBox().Height > maxY)
-            {
-                collidable.SetPosition(collidable.GetHitBox().X, maxY - collidable.GetHitBox().Height);
-                collidable.BorderCollision();
-            }
-            else if (!leftOpen && collidable.GetHitBox().X < minX)
-            {
-                collidable.SetPosition(minX, collidable.GetHitBox().Y);
-                collidable.BorderCollision();
-            }
-            else if (!topOpen && collidable.GetHitBox().Y < minY)
-            {
-                collidable.SetPosition(collidable.GetHitBox().X, minY);
-                collidable.BorderCollision();
-            }
-            else
-            {
-                foreach (Rectangle rec in rectangles)
+                if (!rightOpen && collidable.GetHitBox().X + collidable.GetHitBox().Width > maxX)
                 {
-                    if (rec.Intersects(collidable.GetHitBox()))
+                    collidable.SetPosition(maxX - collidable.GetHitBox().Width, collidable.GetHitBox().Y);
+                    collidable.BorderCollision();
+                }
+                else if (!botOpen && collidable.GetHitBox().Y + collidable.GetHitBox().Height > maxY)
+                {
+                    collidable.SetPosition(collidable.GetHitBox().X, maxY - collidable.GetHitBox().Height);
+                    collidable.BorderCollision();
+                }
+                else if (!leftOpen && collidable.GetHitBox().X < minX)
+                {
+                    collidable.SetPosition(minX, collidable.GetHitBox().Y);
+                    collidable.BorderCollision();
+                }
+                else if (!topOpen && collidable.GetHitBox().Y < minY)
+                {
+                    collidable.SetPosition(collidable.GetHitBox().X, minY);
+                    collidable.BorderCollision();
+                }
+                else
+                {
+                    foreach (Rectangle rec in rectangles)
                     {
-                        Rectangle intersection = Rectangle.Intersect(rec, collidable.GetHitBox());
-                        if (intersection.Height > intersection.Width && collidable.GetHitBox().X < rec.Left)
+                        if (rec.Intersects(collidable.GetHitBox()))
                         {
-                            collidable.SetPosition(rec.Left - collidable.GetHitBox().Width, collidable.GetHitBox().Y);
-                            collidable.BorderCollision();
-                        }
-                        else if (intersection.Width > intersection.Height && collidable.GetHitBox().Y < rec.Top)
-                        {
-                            collidable.SetPosition(collidable.GetHitBox().X, rec.Top - collidable.GetHitBox().Height);
-                            collidable.BorderCollision();
-                        }
-                        else if (intersection.Width > intersection.Height && collidable.GetHitBox().Y > rec.Top)
-                        { 
-                            collidable.SetPosition(collidable.GetHitBox().X, rec.Bottom);
-                            collidable.BorderCollision();
-                        }
-                        else if (intersection.Height > intersection.Width && collidable.GetHitBox().X > rec.Left)
-                        {
-                            collidable.SetPosition(rec.Right, collidable.GetHitBox().Y);
-                            collidable.BorderCollision();
-                        }
-                        else
-                        {
-                            
+                            Rectangle intersection = Rectangle.Intersect(rec, collidable.GetHitBox());
+                            if (intersection.Height > intersection.Width && collidable.GetHitBox().X < rec.Left)
+                            {
+                                collidable.SetPosition(rec.Left - collidable.GetHitBox().Width, collidable.GetHitBox().Y);
+                                collidable.BorderCollision();
+                            }
+                            else if (intersection.Width > intersection.Height && collidable.GetHitBox().Y < rec.Top)
+                            {
+                                collidable.SetPosition(collidable.GetHitBox().X, rec.Top - collidable.GetHitBox().Height);
+                                collidable.BorderCollision();
+                            }
+                            else if (intersection.Width > intersection.Height && collidable.GetHitBox().Y > rec.Top)
+                            {
+                                collidable.SetPosition(collidable.GetHitBox().X, rec.Bottom);
+                                collidable.BorderCollision();
+                            }
+                            else if (intersection.Height > intersection.Width && collidable.GetHitBox().X > rec.Left)
+                            {
+                                collidable.SetPosition(rec.Right, collidable.GetHitBox().Y);
+                                collidable.BorderCollision();
+                            }
+                            else
+                            {
+
+                            }
                         }
                     }
                 }

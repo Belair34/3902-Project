@@ -23,6 +23,8 @@ namespace Game1
 
 		public Aquamentus(int x, int y, int health, int maxHealth)
 		{
+			this.health = health;
+			this.maxHealth = maxHealth;
 			this.Speed = 2;                /*Changeable*/
 			this.Size = 3;                 /************/
 			this.position = new Vector2();
@@ -35,8 +37,10 @@ namespace Game1
 			maxTimer = 100;
 			minTimer = 20;
 			movementTimer = numberGenerator.NextDouble()*maxTimer+minTimer;
+			this.IsDone = false;
 		}
 
+		public bool IsDone { get; set; }
 		public int Speed { get; set; }
 		public int Size { get; set; }
 
@@ -62,6 +66,20 @@ namespace Game1
 		public IEnemyState GetState()
 		{
 			return this.state;
+		}
+
+		public void TakeDamage(int damage)
+		{
+			health -= damage;
+			if(health <= 0)
+			{
+				Die();
+			}
+		}
+		public void Die()
+		{
+			//any death details here
+			IsDone = true;
 		}
 
 		public void MoveUp()
@@ -171,6 +189,7 @@ namespace Game1
 		public void ProjectileCollision(ICollidable collidable)
 		{
 			BlockCollision(collidable);
+			TakeDamage(((IProjectile)collidable).Damage);
 		}
 
 		public void ItemCollision(ICollidable collidable)

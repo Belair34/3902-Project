@@ -7,7 +7,7 @@ namespace Game1
 {
     public interface IEnemy : ICollidable, IDrawable
     {
-        
+        bool IsDone { get; set; }
         int Speed { get; set; }
         List<IProjectile> GetProjectiles();
         void SetState(IEnemyState state);
@@ -16,5 +16,7 @@ namespace Game1
         void MoveDown();
         void MoveVertical();
         void Stop();
+        void TakeDamage(int damage);
+        void Die();
     }
 }

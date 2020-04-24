@@ -8,7 +8,7 @@ namespace Game1
 {
     public class KeyItem : AbstractItem, IItem
     {
-        public KeyItem(int x, int y)
+        public KeyItem(int x, int y) : base(x, y)
         {
             /*Changeable*/
             base.Size = 3;
@@ -22,6 +22,7 @@ namespace Game1
         public override void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().Keys++;
+            Consume();
         }
     }
 }

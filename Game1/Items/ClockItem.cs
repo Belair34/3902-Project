@@ -9,7 +9,7 @@ namespace Game1
 {
     public class ClockItem : AbstractItem, IItem
     {
-        public ClockItem(int x, int y, GraphicsDevice window)
+        public ClockItem(int x, int y, GraphicsDevice window) : base(x, y)
         {
             /*Changeable*/
             base.Size = 3;
@@ -23,6 +23,7 @@ namespace Game1
         public override void PlayerCollision(ICollidable collidable)
         {
             //freeze all enemies on a cooldown timer. How to do this?
+            Consume();
         }
     }
 }

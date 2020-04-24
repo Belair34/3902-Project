@@ -10,7 +10,7 @@ namespace Game1
     public class SwordItem : AbstractItem, IItem
     {
 
-        public SwordItem(int x, int y, GraphicsDevice window)
+        public SwordItem(int x, int y, GraphicsDevice window) : base(x, y)
         {
             /*Changeable*/
             base.Size = 3;
@@ -24,6 +24,7 @@ namespace Game1
         public override void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().HaveSword = 1;
+            Consume();
         }
     }
 }

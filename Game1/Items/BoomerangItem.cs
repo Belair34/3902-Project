@@ -5,7 +5,7 @@ namespace Game1
     public class BoomerangItem : AbstractItem, IItem
     {
 
-        public BoomerangItem(int x, int y)
+        public BoomerangItem(int x, int y) : base(x, y)
         {
             /*Changeable*/
             base.Size = 4;
@@ -19,6 +19,7 @@ namespace Game1
         public override void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().HaveWoodRang = 1;
+            Consume();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Game1
 
         public ProjLinkWandRight(IPlayer player)
         {
-            this.damage = 2;
+            this.Damage = 2;
             shooting = false;
             exploding = false;
             this.player = player;

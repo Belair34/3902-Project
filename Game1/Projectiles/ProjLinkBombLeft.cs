@@ -11,7 +11,7 @@ namespace Game1
 
         public ProjLinkBombLeft(IPlayer player)
         {
-            this.damage = 4;
+            this.Damage = 4;
             shooting = false;
             exploding = false;
             this.player = player;
@@ -20,7 +20,7 @@ namespace Game1
             this.Speed = 0; /*Changeable */
             sprite = SpriteFactory.Instance.GetLinkBomb(this);
             IsDone = false;
-            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);
+            hitBox = new Rectangle((int)position.X-75, (int)position.Y-45, 0, 0);
         }
 
         public override void Shoot()
@@ -44,6 +44,8 @@ namespace Game1
                 shooting = false;
                 exploding = true;
                 this.sprite = SpriteFactory.Instance.GetLinkBombExplode(this);
+                hitBox.Width = 120;
+                hitBox.Height = 135;
             }
         }
 
@@ -70,12 +72,17 @@ namespace Game1
             {
                 sprite.Draw(spriteBatch);
             }
+
         }
         public override void BorderCollision()
         {
 
         }
 
+        public override void BlockCollision(ICollidable collidable)
+        {
+            
+        }
 
     }
 }

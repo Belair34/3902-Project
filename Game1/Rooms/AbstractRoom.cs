@@ -12,7 +12,7 @@ namespace Game1
         internal Border border;
         internal ICommand entityLoader;
         internal ICommand collisionChecker;
-        internal ICommand projectileClearer;
+        internal ICommand entityClearer;
         internal ICommand transitionHandler;
         internal List<IEnemy> enemies;
         internal List<IItem> items;
@@ -39,7 +39,7 @@ namespace Game1
             this.Transitioning = false;
             collidables.Add(game.GetPlayer());
             collisionChecker = new CheckAllCollisionsCommand(collidables, border);
-            projectileClearer = new ClearProjectilesCommand(collidables, game.GetPlayer().GetProjectiles());
+            entityClearer = new ClearEntitiesCommand(collidables, game.GetPlayer().GetProjectiles(), items, enemies);
         }
         public bool Transitioning { get; set; }
 
@@ -105,7 +105,7 @@ namespace Game1
                         collidables.Add(projectile);
                     }
                 }
-                projectileClearer.Execute();
+                entityClearer.Execute();
                 foreach (IItem item in items)
                 {
                     item.Update();

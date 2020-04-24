@@ -12,7 +12,11 @@ namespace Game1
         internal Vector2 position;
         internal ISprite sprite;
 
-
+        public AbstractItem(int x, int y)
+        {
+            this.IsDone = false;
+        }
+        public bool IsDone { get; set; }
         public int Size { get; set; }
 
         public void SetPosition(int x, int y)
@@ -24,7 +28,7 @@ namespace Game1
         /*Not sure how this works with abstract class, we need the item's hitbox rectangle*/
         public Rectangle GetHitBox()
         {
-            return new Rectangle((int)position.X, (int)position.Y, Size*15, Size*15); //delete and replace with actual call once all sprites have been refactored
+            return new Rectangle((int)position.X, (int)position.Y, Size*10, Size*12); //delete and replace with actual call once all sprites have been refactored
             //return sprite.GetDestRect();
         }
 
@@ -32,9 +36,9 @@ namespace Game1
         {
             return this.position;
         }
-        public void Stop()
+        public void Consume()
         {
-
+            this.IsDone = true;
         }
         public void Update()
         {

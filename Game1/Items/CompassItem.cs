@@ -3,7 +3,7 @@ namespace Game1
 {
     public class CompassItem : AbstractItem, IItem
     {
-        public CompassItem(int x, int y)
+        public CompassItem(int x, int y) : base(x, y)
         {
             /*Changeable*/
             base.Size = 3;
@@ -17,6 +17,7 @@ namespace Game1
         public override void PlayerCollision(ICollidable collidable)
         {
             //((IPlayer)collidable).GetInventory().Keys++;
+            Consume();
         }
     }
 }

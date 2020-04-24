@@ -9,7 +9,7 @@ namespace Game1
 {
     public class RupeeItem : AbstractItem, IItem
     {
-        public RupeeItem(int x, int y, GraphicsDevice window)
+        public RupeeItem(int x, int y, GraphicsDevice window) : base(x, y)
         {
             /*Changeable*/
             base.Size = 3;
@@ -23,6 +23,7 @@ namespace Game1
         public override void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().Rupees += 5;
+            Consume();
         }
     }
 }

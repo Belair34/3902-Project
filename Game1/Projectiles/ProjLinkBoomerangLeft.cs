@@ -11,7 +11,7 @@ namespace Game1
 
         public ProjLinkBoomerangLeft(IPlayer player)
         {
-            this.damage = 1;
+            this.Damage = 1;
             shooting = false;
             exploding = false;
             this.player = player;

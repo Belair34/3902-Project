@@ -58,7 +58,7 @@
     <Compile Include="GameStates\InGameState.cs" />
     <Compile Include="HUD.cs" />
     <Compile Include="Commands\HelperCommands\RoomTransitionCommand.cs" />
-    <Compile Include="Commands\HelperCommands\ClearProjectilesCommand.cs" />
+    <Compile Include="Commands\HelperCommands\ClearEntitiesCommand.cs" />
     <Compile Include="Commands\RoomLoadCommands\Room18EntitiesLoadCommand.cs" />
     <Compile Include="Commands\RoomLoadCommands\Room17EntitiesLoadCommand.cs" />
     <Compile Include="Commands\RoomLoadCommands\Room16EntitiesLoadCommand.cs" />

@@ -18,6 +18,8 @@ namespace Game1
 
 		public BladeTrap(int x, int y, int health, int maxHealth)
 		{
+			this.health = health;
+			this.maxHealth = maxHealth;
 			this.Speed = 1;                /*Changeable*/
 			this.Size = 3;                 /************/
 			this.position = new Vector2(); 
@@ -26,9 +28,11 @@ namespace Game1
 			this.state = new EStateBladeTrap(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 			hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
+			this.IsDone = false;
 		}
 
-        public int Speed { get; set; }
+		public bool IsDone { get; set; }
+		public int Speed { get; set; }
 		public int Size { get; set; }
 
 		public List<IProjectile> GetProjectiles()
@@ -53,6 +57,20 @@ namespace Game1
 		public IEnemyState GetState()
 		{
 			return this.state;
+		}
+
+		public void TakeDamage(int damage)
+		{
+			health -= damage;
+			if (health <= 0)
+			{
+				Die();
+			}
+		}
+		public void Die()
+		{
+			//any death details here
+			IsDone = true;
 		}
 
 		public void MoveUp()

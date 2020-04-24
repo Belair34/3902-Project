@@ -4,7 +4,7 @@ namespace Game1
 {
     public class TriangleItem : AbstractItem, IItem
     {
-        public TriangleItem(int x, int y)
+        public TriangleItem(int x, int y) : base(x, y)
         {
             /*Changeable*/
             base.Size = 3;
@@ -17,7 +17,8 @@ namespace Game1
 
         public override void PlayerCollision(ICollidable collidable)
         {
-            ((IPlayer)collidable).GetInventory().Keys++;
+            //((IPlayer)collidable).GetInventory().Keys++;
+            Consume();
         }
     }
 }

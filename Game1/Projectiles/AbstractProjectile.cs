@@ -17,8 +17,8 @@ namespace Game1
         internal int explodeTimer;
         internal IPlayer player;
         internal Rectangle hitBox;
-        internal int damage;
 
+        public int Damage { get; set; }
         public bool IsDone { get; set; }
         public int Size { get; set; }
         public int Speed { get; set; }
@@ -134,9 +134,5 @@ namespace Game1
 
         public abstract void Draw(SpriteBatch spriteBatch);
 
-        public int GetDamage()
-        {
-            return damage;
-        }
     }
 }

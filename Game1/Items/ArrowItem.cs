@@ -9,7 +9,7 @@ namespace Game1
 {
     public class ArrowItem : AbstractItem, IItem
     {
-        public ArrowItem(int x, int y)
+        public ArrowItem(int x, int y) : base(x, y)
         {           
             /*Changeable*/
             base.Size = 3;      
@@ -25,6 +25,7 @@ namespace Game1
         public override void PlayerCollision(ICollidable collidable)
         {
             ((IPlayer)collidable).GetInventory().Arrows++;
+            Consume();
         }
     }
 }

@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/DeathSound.wav</SourceFile>
   <SourceTime>2020-04-23T22:50:20.2343526-04:00</SourceTime>
   <DestFile>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/DeathSound.xnb</DestFile>
-  <DestTime>2020-04-25T00:15:18.0704043-04:00</DestTime>
+  <DestTime>2020-04-25T01:20:55.1362284-04:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

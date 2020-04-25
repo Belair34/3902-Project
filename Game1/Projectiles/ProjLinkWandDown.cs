@@ -21,7 +21,7 @@ namespace Game1
             hitBox = new Rectangle((int)position.X, (int)position.Y+35, 0, 0);
             IsDone = false;
         }
-
+        
         public override void Shoot()
         { 
             if (!shooting)

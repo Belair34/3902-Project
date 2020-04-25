@@ -92,7 +92,7 @@ namespace Game1
 		{
 			state.MoveUp();
 		}
-
+		
 		public void MoveDown()
 		{
 			state.MoveDown();

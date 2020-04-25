@@ -307,3 +307,4 @@ C:\Users\ggams\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Co
 C:\Users\ggams\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\Sound\TakeDamage.xnb
 C:\Users\ggams\Source\Repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\HUDfont.xnb
 C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\ProjectSpriteSheets\hud and pause screen.xnb
+C:\Users\MichaelWindows\source\repos\Belair34\3902-Project\Game1\bin\Windows\x86\Debug\Content\Sound\AquaScream.xnb

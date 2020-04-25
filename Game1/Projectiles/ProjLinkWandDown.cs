@@ -15,10 +15,10 @@ namespace Game1
             exploding = false;
             this.player = player;
             this.Size = player.Size;
-            this.position = new Vector2(0);
+            this.position = player.GetPosition();
             this.Speed = 5; /*Changeable */
             sprite = SpriteFactory.Instance.GetWandWaveDown(this);
-            hitBox = new Rectangle((int)position.X, (int)position.Y, Size * 15, Size * 15);
+            hitBox = new Rectangle((int)position.X, (int)position.Y+35, 0, 0);
             IsDone = false;
         }
 
@@ -30,31 +30,29 @@ namespace Game1
                 sprite = SpriteFactory.Instance.GetWandWaveDown(this);
                 this.ShotDistance = 0;
                 this.position = player.GetPosition();
+                this.hitBox.Width = Size*15;
+                this.hitBox.Height = Size*15;
             }
             shooting = true;
         }
 
         public override void Explode()
         {
+            IsDone = true;
             shooting = false;
+            hitBox.Width = 0;
+            hitBox.Height = 0;
         }
 
         public override void Update()
         {
             this.hitBox.Location = this.position.ToPoint();
+            this.hitBox.Y += 35;
             if (shooting && ShotDistance >= 300)
             {
                 Explode();
             }
-            else if(exploding && explodeTimer > 0)
-            {
-                explodeTimer--;
-            }
-            if(exploding && explodeTimer <= 0)
-            {
-                exploding = false;
-                IsDone = true;
-            }
+
             if (shooting || exploding)
             {
                 sprite.Update();
@@ -67,6 +65,7 @@ namespace Game1
             {
                 sprite.Draw(spriteBatch);
             }
+           
         }
 
     }

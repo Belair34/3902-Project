@@ -22,8 +22,9 @@ namespace Game1
 		int minTimer;
 		Game1 game;
 
-		public Aquamentus(int x, int y)
+		public Aquamentus(int x, int y, Game1 game)
 		{
+			this.game = game;
 			this.health = 20;
 			this.maxHealth = 20;
 			this.Speed = 2;                /*Changeable*/

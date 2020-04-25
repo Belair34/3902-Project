@@ -11,6 +11,7 @@
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/dungeon.png</File>
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/ExplosionSheet.png</File>
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/game over.png</File>
+    <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/hud and pause screen.png</File>
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/HUDbackground.jpg</File>
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/LinkSpriteSheet.png</File>
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Sound/BombBlowup.wav</File>
@@ -29,6 +30,7 @@
     <File>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Text.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -11,7 +11,7 @@ namespace Game1
 
         public ProjLinkBombDown(IPlayer player)
         {
-            this.damage = 4;
+            this.damage = 5;
             shooting = false;
             exploding = false;
             this.player = player;
@@ -46,6 +46,11 @@ namespace Game1
                 hitBox.Width = 120;
                 hitBox.Height = 135;
             }
+        }
+
+        public override int GetDamage()
+        {
+            return damage;
         }
 
         public override void Update()

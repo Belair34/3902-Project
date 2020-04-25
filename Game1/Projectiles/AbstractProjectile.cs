@@ -29,7 +29,7 @@ namespace Game1
             this.position.Y = y;
         }
 
-        public int GetDamage()
+        public virtual int GetDamage()
         {
             int damage = this.damage;
             this.damage = 0;

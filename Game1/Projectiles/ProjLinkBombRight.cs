@@ -11,7 +11,7 @@ namespace Game1
 
         public ProjLinkBombRight(IPlayer player)
         {
-            this.damage = 4;
+            this.damage = 5;
             shooting = false;
             exploding = false;
             this.player = player;
@@ -47,6 +47,10 @@ namespace Game1
             }
         }
 
+        public override int GetDamage()
+        {
+            return damage;
+        }
         public override void Update()
         {
             if(exploding && explodeTimer > 0)

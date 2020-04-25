@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Game1.Sound;
 
 namespace Game1
 {
@@ -22,6 +23,7 @@ namespace Game1
             IInventory inventory = player.GetInventory();
             if (inventory.Health < inventory.MaxHealth)
             {
+                ZeldaSound.Instance.PickupHeart();
                 inventory.Health += 2;
                 if(inventory.Health > inventory.MaxHealth)
                 {

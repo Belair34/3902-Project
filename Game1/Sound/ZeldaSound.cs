@@ -51,6 +51,7 @@ namespace Game1.Sound
             soundEffects.Add(content.Load<SoundEffect>(Stringholder.SwordSlash));
             soundEffects.Add(content.Load<SoundEffect>(Stringholder.TakeDamage));
             soundEffects.Add(content.Load<SoundEffect>(Stringholder.DeathSound));
+            soundEffects.Add(content.Load<SoundEffect>(Stringholder.BossScream));
         }
 
         public void PlayMusic()
@@ -122,6 +123,38 @@ namespace Game1.Sound
             if (!Mute)
             {
                 soundEffects[3].Play();
+            }
+        }
+
+        public void PickupHeart()
+        {
+            if (!Mute)
+            {
+                soundEffects[6].Play();
+            }
+        }
+
+        public void HitBoss()
+        {
+            if (!Mute)
+            {
+                soundEffects[1].Play();
+            }
+        }
+
+        public void BossScream()
+        {
+            if (!Mute)
+            {
+                soundEffects[12].Play();
+            }
+        }
+
+        public void EnemyDie()
+        {
+            if (!Mute)
+            {
+                soundEffects[0].Play();
             }
         }
 

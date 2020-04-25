@@ -128,6 +128,12 @@
 /processorParam:TextureFormat=Color
 /build:ProjectSpriteSheets/LinkSpriteSheet.png
 
+#begin Sound/AquaScream.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sound/AquaScream.wav
+
 #begin Sound/BombBlowup.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor

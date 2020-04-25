@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Game1.PlayerStates;
 using Game1.Projectiles;
+using Game1.Sound;
 using System.Collections.Generic;
 using System;
 
@@ -72,6 +73,7 @@ namespace Game1
 		{
 			if (!(state is EStateKeeseDamaged))
 			{
+				ZeldaSound.Instance.TakeDamage();
 				health -= damage;
 				SetState(new EStateKeeseDamaged(this, 50));
 				if (health <= 0)
@@ -83,6 +85,7 @@ namespace Game1
 		public void Die()
 		{
 			//any death details here
+			ZeldaSound.Instance.EnemyDie();
 			double randDouble = numberGenerator.NextDouble()*100;
 			if(randDouble <= 20)
 			{

@@ -31,6 +31,7 @@ namespace Game1
         public static String TakeDamage = "Sound/TakeDamage";
         public static String DeathSound = "Sound/DeathSound";
         public static String music = "Sound/music";
+        public static String BossScream = "Sound/AquaScream";
         //fonts
         public static String HUDFont = "HUDfont";
         //file related

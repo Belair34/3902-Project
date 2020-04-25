@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Game1.PlayerStates;
 using Game1.Projectiles;
+using Game1.Sound;
 using System.Collections.Generic;
 using System;
 
@@ -72,6 +73,7 @@ namespace Game1
 		{
 			if (!(state is EStateStalfosDamaged))
 			{
+				ZeldaSound.Instance.TakeDamage();
 				health -= damage;
 				SetState(new EStateStalfosDamaged(this, 50));
 				if (health <= 0)
@@ -82,6 +84,7 @@ namespace Game1
 		}
 		public void Die()
 		{
+			ZeldaSound.Instance.EnemyDie();
 			//any death details here
 			IsDone = true;
 		}

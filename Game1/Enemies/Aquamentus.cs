@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Game1.PlayerStates;
 using Game1.Projectiles;
+using Game1.Sound;
 using System.Collections.Generic;
 using System;
 
@@ -74,10 +75,13 @@ namespace Game1
 		{
 			if (!(state is EStateAquamentusDamaged))
 			{
+				ZeldaSound.Instance.HitBoss();
 				health -= damage;
 				SetState(new EStateAquamentusDamaged(this, game, 50));
 				if (health <= 0)
 				{
+					ZeldaSound.Instance.EnemyDie();
+					ZeldaSound.Instance.BossScream();
 					Die();
 				}
 			}
@@ -128,6 +132,11 @@ namespace Game1
 
 		public void Update()
 		{
+			double randDouble = numberGenerator.NextDouble() * 100;
+			if(randDouble <= 10)
+			{
+				ZeldaSound.Instance.BossScream();
+			}
 			movementTimer--;
 			if(movementTimer < 0)
 			{

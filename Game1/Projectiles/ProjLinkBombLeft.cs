@@ -11,7 +11,7 @@ namespace Game1
 
         public ProjLinkBombLeft(IPlayer player)
         {
-            this.damage = 5;
+            this.damage = 0;
             shooting = false;
             exploding = false;
             this.player = player;
@@ -31,14 +31,15 @@ namespace Game1
                 this.ShotDistance = 0;
                 this.position = player.GetPosition();
                 this.position.X -= 15 * Size;
+                shooting = true;
             }
-            shooting = true;
         }
 
         public override void Explode()
         {
             if (shooting)
             {
+                this.damage = 5;
                 ZeldaSound.Instance.BombExplode();
                 explodeTimer = 30;
                 shooting = false;

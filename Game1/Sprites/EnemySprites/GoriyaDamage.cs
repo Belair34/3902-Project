@@ -46,7 +46,6 @@ namespace Game1.EnemySprites
                     curFrame = 1;
                 }
             }
-            enemy.SetPosition((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y + moveSpeed);
         }
 
         public void Draw(SpriteBatch spriteBatch)

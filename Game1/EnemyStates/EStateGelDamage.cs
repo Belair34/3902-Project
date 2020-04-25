@@ -18,7 +18,7 @@ namespace Game1.PlayerStates
         }
         public void MoveUp()
         {
-            enemy.SetState(new EStateGelMovingUp(enemy, coolDown));
+
         }
 
         public void MoveDown()
@@ -26,12 +26,12 @@ namespace Game1.PlayerStates
         }
         public void MoveLeft()
         {
-            enemy.SetState(new EStateGelMovingLeft(enemy, coolDown));
+
         }
 
         public void MoveRight()
         {
-            enemy.SetState(new EStateGelMovingRight(enemy, coolDown));
+
         }
         public void MoveHorizontal()
         {
@@ -55,6 +55,10 @@ namespace Game1.PlayerStates
             if (coolDown > 0)
             {
                 coolDown--;
+            }
+            if(coolDown <= 0)
+            {
+                enemy.SetState(new EStateGoriyaMovingLeft(enemy));
             }
             sprite.Update();
         }

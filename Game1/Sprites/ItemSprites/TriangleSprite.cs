@@ -8,21 +8,16 @@ namespace Game1
 {
     class TriangleSprite : AbstractSprite, ISprite
     {
-        IItem item;
-        int SrcWidth = 10;
-        int SrcHeight = 10;
-        int SrcX = 363;
-        int SrcY = 288;
         internal override void Initialize()
         {
-            base.srcWidth = SrcWidth;
-            base.srcHeight = SrcHeight;
-            base.destWidth = srcWidth;
-            base.destHeight = destHeight;
-            base.srcX = SrcX;
-            base.srcY = SrcY;
+            base.srcWidth = 10;
+            base.srcHeight = 10;
+            base.destWidth = 10;
+            base.destHeight = 10;
+            base.srcX = 333;
+            base.srcY = 288;
         }
 
-        public TriangleSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) { }
+        public TriangleSprite(IDrawable drawable, Texture2D texture) : base(drawable, texture) {    }
     }
 }

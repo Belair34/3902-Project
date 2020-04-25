@@ -70,12 +70,15 @@ namespace Game1
 
 		public void TakeDamage(int damage)
 		{
-			health -= damage;
-			state = new EStateGoriyaDamage(this);
-			SetState(state);
-			if (health <= 0)
+			if (!(state is EStateGelDamage))
 			{
-				Die();
+				health -= damage;
+				state = new EStateGoriyaDamage(this, 50);
+				SetState(state);
+				if (health <= 0)
+				{
+					Die();
+				}
 			}
 		}
 		public void Die()
@@ -189,7 +192,6 @@ namespace Game1
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-			BlockCollision(collidable);
 			TakeDamage(((IProjectile)collidable).GetDamage());
 		}
 

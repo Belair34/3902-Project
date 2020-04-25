@@ -200,7 +200,6 @@ namespace Game1
 
 		public void ProjectileCollision(ICollidable collidable)
 		{
-			BlockCollision(collidable);
 			TakeDamage(((IProjectile)collidable).GetDamage());
 		}
 

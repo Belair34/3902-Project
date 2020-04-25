@@ -29,7 +29,7 @@ namespace Game1
 
 
 			/*Items*/
-			items.Add(new TriangleItem(400, hudOffset + 300));
+			items.Add(new TriangleItem(385, hudOffset + 250));
 			/*Blocks*/
 			blocks.Add(new Block(150, hudOffset + 131, false));
 			blocks.Add(new Block(200, hudOffset + 131, false));

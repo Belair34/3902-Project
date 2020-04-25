@@ -41,8 +41,10 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EnemyStates\EstateAquamentusMovingToPlayer.cs" />
     <Compile Include="GameStates\DeathScreenState.cs" />
     <Compile Include="PlayerStates\PStateDead.cs" />
+    <Compile Include="Sprites\EnemySprites\AquamentusMovingToPlayer.cs" />
     <Compile Include="Sprites\PlayerSprites\LinkDead.cs" />
     <Compile Include="Utility Classes\Stringholder.cs" />
     <Compile Include="Water.cs" />

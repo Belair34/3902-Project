@@ -60,7 +60,7 @@ namespace Game1
             rooms.Add(new Room16(game, border, graphics));
             rooms.Add(new Room17(game, border, graphics));
             rooms.Add(new Room18(game, border, graphics));
-            currentRoom = rooms[1];
+            currentRoom = rooms[17];
             currentRoom.SetBorders();
             controllers = new List<IController>();           /*Controllers*/
             controllers.Add(new KeyboardController(game));

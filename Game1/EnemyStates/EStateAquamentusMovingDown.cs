@@ -10,15 +10,17 @@ namespace Game1.PlayerStates
         ISprite sprite;
         IEnemy enemy;
         int coolDown;
-        public EStateAquamentusMovingDown(IEnemy enemy, int coolDown = 0)
+        Game1 game;
+        public EStateAquamentusMovingDown(IEnemy enemy, Game1 game, int coolDown = 0)
         {
+            this.game = game;
             this.enemy = enemy;
             this.sprite = SpriteFactory.Instance.GetAquamentusMovingDown(enemy);
             this.coolDown = coolDown;
         }
         public void MoveUp()
         {
-            enemy.SetState(new EStateAquamentusMovingUp(enemy, coolDown));
+            enemy.SetState(new EStateAquamentusMovingUp(enemy, game, coolDown));
         }
 
         public void MoveDown()
@@ -26,12 +28,12 @@ namespace Game1.PlayerStates
         }
         public void MoveLeft()
         {
-            enemy.SetState(new EStateAquamentusMovingLeft(enemy, coolDown));
+            enemy.SetState(new EStateAquamentusMovingLeft(enemy, game, coolDown));
         }
 
         public void MoveRight()
         {
-            enemy.SetState(new EStateAquamentusMovingRight(enemy, coolDown));
+            enemy.SetState(new EStateAquamentusMovingRight(enemy, game, coolDown));
         }
         public void MoveHorizontal()
         {
@@ -44,7 +46,7 @@ namespace Game1.PlayerStates
         }
         public void MoveToPlayer()
         {
-            //enemy.SetState(new EStateMovingToPlayer(enemy, coolDown));
+            enemy.SetState(new EStateAquamentusMovingToPlayer(enemy, game, coolDown));
         }
 
         public void Stop()

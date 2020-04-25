@@ -326,6 +326,10 @@ namespace Game1
         {
             return new GoriyaMovingUp(enemy, enemyLinkSheet);
         }
+        public ISprite GetAquamentusMovingToPlayer(IEnemy enemy, Game1 game)
+        {
+            return new AquamentusMovingToPlayer(enemy, bossLinkSheet, game);
+        }
         public ISprite GetAquamentusMovingUp(IEnemy enemy)
         {
             return new AquamentusMovingUp(enemy, bossLinkSheet);

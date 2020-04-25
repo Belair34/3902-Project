@@ -31,7 +31,7 @@ namespace Game1
 			this.position.Y = y;
 			this.state = new EStateGelMovingRight(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
-			hitBox = new Rectangle(x, y, 8 * Size, 16 * Size);
+			hitBox = new Rectangle(x, y, 8 * Size, 12 * Size);
 			numberGenerator = new Random();
 			maxTimer = 100;
 			minTimer = 20;

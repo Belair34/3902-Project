@@ -32,7 +32,7 @@ namespace Game1
 			this.position.Y = y;
 			this.state = new EStateStalfosMovingLeft(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
-			hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
+			hitBox = new Rectangle(x, y, 15 * Size, 15 * Size);
 			numberGenerator = new Random();
 			maxTimer = 100;
 			minTimer = 20;
@@ -70,10 +70,14 @@ namespace Game1
 
 		public void TakeDamage(int damage)
 		{
-			health -= damage;
-			if (health <= 0)
+			if (!(state is EStateStalfosDamaged))
 			{
-				Die();
+				health -= damage;
+				SetState(new EStateStalfosDamaged(this, 50));
+				if (health <= 0)
+				{
+					Die();
+				}
 			}
 		}
 		public void Die()

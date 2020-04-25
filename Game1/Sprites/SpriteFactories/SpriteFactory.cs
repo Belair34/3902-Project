@@ -302,6 +302,11 @@ namespace Game1
         {
             return new KeeseMovingLeft(enemy, enemyLinkSheet);
         }
+
+        public ISprite GetKeeseDamaged(IEnemy enemy)
+        {
+            return new KeeseDamaged(enemy, enemyLinkSheet);
+        }
         public ISprite GetAnimatedWallMaster(IEnemy enemy)
         {
             return new AnimatedWallMaster(enemy, enemyLinkSheet);
@@ -346,6 +351,11 @@ namespace Game1
         {
             return new AquamentusMovingRight(enemy, bossLinkSheet);
         }
+
+        public ISprite GetAquamentusDamaged(IEnemy enemy)
+        {
+            return new AquamentusDamaged(enemy, bossLinkSheet);
+        }
         public ISprite GetStalfosMovingUp(IEnemy enemy)
         {
             return new StalfosMovingUp(enemy, enemyLinkSheet);
@@ -361,6 +371,10 @@ namespace Game1
         public ISprite GetStalfosMovingRight(IEnemy enemy)
         {
             return new StalfosMovingRight(enemy, enemyLinkSheet);
+        }
+        public ISprite GetStalfosDamaged(IEnemy enemy)
+        {
+            return new StalfosDamaged(enemy, enemyLinkSheet);
         }
         /*Textures*/
         public Texture2D GetBackgroundTexture()

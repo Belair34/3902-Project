@@ -32,7 +32,7 @@ namespace Game1
 			this.position.Y = y;
 			this.state = new EStateGoriyaMovingDown(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
-			hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
+			hitBox = new Rectangle(x, y, 12 * Size, 12 * Size);
 			numberGenerator = new Random();
 			maxTimer = 100;
 			minTimer = 20;

@@ -32,7 +32,7 @@ namespace Game1
 			this.position.Y = y;
 			this.state = new EStateKeeseMovingUp(this);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
-			hitBox = new Rectangle(x, y, 16 * Size, 16 * Size);
+			hitBox = new Rectangle(x, y, 15 * Size, 13 * Size);
 			numberGenerator = new Random();
 			maxTimer = 100;
 			minTimer = 20;
@@ -70,15 +70,24 @@ namespace Game1
 
 		public void TakeDamage(int damage)
 		{
-			health -= damage;
-			if (health <= 0)
+			if (!(state is EStateKeeseDamaged))
 			{
-				Die();
+				health -= damage;
+				SetState(new EStateKeeseDamaged(this, 50));
+				if (health <= 0)
+				{
+					Die();
+				}
 			}
 		}
 		public void Die()
 		{
 			//any death details here
+			double randDouble = numberGenerator.NextDouble()*100;
+			if(randDouble <= 20)
+			{
+				//Spawn rupee... but we need to connect to the room somehow and have no time
+			}
 			IsDone = true;
 		}
 		public void MoveUp()
@@ -142,6 +151,7 @@ namespace Game1
 				projectile.Draw(spriteBatch);
 			}
 			state.Draw(spriteBatch);
+
 		}
 
 		public void CheckCollisions(ICollidable collidable)

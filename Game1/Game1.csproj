@@ -41,9 +41,15 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EnemyStates\EstateStalfosDamaged.cs" />
+    <Compile Include="EnemyStates\EstateKeeseDamaged.cs" />
+    <Compile Include="EnemyStates\EstateAquamentusDamaged.cs" />
     <Compile Include="EnemyStates\EstateAquamentusMovingToPlayer.cs" />
     <Compile Include="GameStates\DeathScreenState.cs" />
     <Compile Include="PlayerStates\PStateDead.cs" />
+    <Compile Include="Sprites\EnemySprites\StalfosDamaged.cs" />
+    <Compile Include="Sprites\EnemySprites\KeeseDamaged.cs" />
+    <Compile Include="Sprites\EnemySprites\AquamentusDamaged.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingToPlayer.cs" />
     <Compile Include="Sprites\PlayerSprites\LinkDead.cs" />
     <Compile Include="Utility Classes\Stringholder.cs" />

@@ -72,10 +72,14 @@ namespace Game1
 
 		public void TakeDamage(int damage)
 		{
-			health -= damage;
-			if(health <= 0)
+			if (!(state is EStateAquamentusDamaged))
 			{
-				Die();
+				health -= damage;
+				SetState(new EStateAquamentusDamaged(this, game, 50));
+				if (health <= 0)
+				{
+					Die();
+				}
 			}
 		}
 		public void Die()

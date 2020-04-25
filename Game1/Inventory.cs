@@ -23,6 +23,7 @@ namespace Game1
         public int HaveBlueRing { get; set; }
         public int HaveWand { get; set; }
         public int HaveSword { get; set; }
+        public int CurrentRoom { get; set; }
         public Vector2 SlotBCoordinates { get; set; }
         IPlayer player;
         ICommand slotB;
@@ -45,6 +46,7 @@ namespace Game1
             HaveBow = 0;
             HaveBlueRing = 0;
             HaveWand = 0;
+            CurrentRoom = 1;
             slotB = new EmptyCommand(player);
             SlotBCoordinates = new Vector2(350, 0);
         }

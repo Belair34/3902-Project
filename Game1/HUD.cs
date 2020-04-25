@@ -89,6 +89,73 @@ namespace Game1
             spriteBatch.Draw(heartSheet, ASlotDest, ASlotSrc, Color.White);
             spriteBatch.Draw(heartSheet, BSlotDest, BSlotSrc, Color.White);
         }
+
+        private void DrawMapLocation(SpriteBatch spriteBatch)
+        {
+            Rectangle srcRec = new Rectangle(1000, 0, 10, 10);
+            Rectangle destRec = new Rectangle();
+            switch (game.GetPlayer().GetInventory().CurrentRoom)
+            {
+                case 1:
+                    destRec = new Rectangle(130, 145, 15, 5);
+                    break;
+                case 2:
+                    destRec = new Rectangle(105, 145, 15, 5);
+                    break;
+                case 3:
+                    destRec = new Rectangle(155, 145, 15, 5);
+                    break;
+                case 4:
+                    destRec = new Rectangle(130, 136, 15, 5);
+                    break;
+                case 5:
+                    destRec = new Rectangle(130, 127, 15, 5);
+                    break;
+                case 6:
+                    destRec = new Rectangle(105, 127, 15, 5);
+                    break;
+                case 7:
+                    destRec = new Rectangle(155, 127, 15, 5);
+                    break;
+                case 8:
+                    destRec = new Rectangle(130, 117, 15, 5);
+                    break;
+                case 9:
+                    destRec = new Rectangle(105, 117, 15, 5);
+                    break;
+                case 10:
+                    destRec = new Rectangle(80, 117, 15, 5);
+                    break;
+                case 11:
+                    destRec = new Rectangle(130, 108, 15, 5);
+                    break;
+                case 12:
+                    destRec = new Rectangle(130, 99, 15, 5);
+                    break;
+                case 13:
+                    destRec = new Rectangle(105, 99, 15, 5);
+                    break;
+                case 15:
+                    destRec = new Rectangle(155, 117, 15, 5);
+                    break;
+                case 16:
+                    destRec = new Rectangle(180, 117, 15, 5);
+                    break;
+                case 17:
+                    destRec = new Rectangle(180, 108, 15, 5);
+                    break;
+                case 18:
+                    destRec = new Rectangle(205, 108, 15, 5);
+                    break;
+                case 0:
+                    destRec = new Rectangle(130, 145, 15, 5);
+                    break;
+
+            }
+            
+            spriteBatch.Draw(SpriteFactory.Instance.GetBackgroundTexture(), destRec, srcRec, Color.White);
+
+        }
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
@@ -96,6 +163,10 @@ namespace Game1
             DrawHearts(spriteBatch);
             DrawValues(spriteBatch);
             DrawABSlots(spriteBatch);
+            if (game.GetPlayer().GetInventory().HaveCompass == 1)
+            {
+                DrawMapLocation(spriteBatch);
+            }
             spriteBatch.End();
         }
 

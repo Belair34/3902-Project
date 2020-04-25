@@ -22,6 +22,7 @@ namespace Game1 {
         int HaveBlueRing { get; set; }
         int HaveWand { get; set; }
         int HaveSword { get; set; }
+        int CurrentRoom { get; set; }
         Vector2 SlotBCoordinates { get; set; }
         ICommand GetSlotBCommand();
         void SetSlotBCommand(ICommand command, int textureX, int textureY);

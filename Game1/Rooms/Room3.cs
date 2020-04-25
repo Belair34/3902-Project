@@ -40,6 +40,7 @@ namespace Game1
             Transitioning = true;
             //Replace second parameter when room is made
             transitionHandler = new RoomTransitionCommand(this, 1, 2, game, border, graphics);
+            game.GetPlayer().GetInventory().CurrentRoom = 1;
         }
 
         public override void TransitionRight()

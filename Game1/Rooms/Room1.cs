@@ -31,6 +31,7 @@ namespace Game1
         {
             Transitioning = true;
             transitionHandler = new RoomTransitionCommand(this, 4, 0, game, border, graphics);
+            game.GetPlayer().GetInventory().CurrentRoom = 4;
         }
 
         public override void TransitionDown()
@@ -42,12 +43,14 @@ namespace Game1
         {
             Transitioning = true;
             transitionHandler = new RoomTransitionCommand(this, 2, 2, game, border, graphics);
+            game.GetPlayer().GetInventory().CurrentRoom = 2;
         }
 
         public override void TransitionRight()
         {
             Transitioning = true;
             transitionHandler = new RoomTransitionCommand(this, 3, 3, game, border, graphics);
+            game.GetPlayer().GetInventory().CurrentRoom = 3;
         }
 
     }

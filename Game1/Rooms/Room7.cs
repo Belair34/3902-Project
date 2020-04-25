@@ -30,6 +30,7 @@ namespace Game1
             Transitioning = true;
             //Second parameter is should be replaced by the room above Room1 when it's made. This is just for demonstration.
             transitionHandler = new RoomTransitionCommand(this, 15, 0, game, border, graphics);
+            game.GetPlayer().GetInventory().CurrentRoom = 15;
         }
 
         public override void TransitionDown()
@@ -42,6 +43,7 @@ namespace Game1
             Transitioning = true;
             //Replace second parameter when room is made
             transitionHandler = new RoomTransitionCommand(this, 5, 2, game, border, graphics);
+            game.GetPlayer().GetInventory().CurrentRoom = 5;
         }
 
         public override void TransitionRight()

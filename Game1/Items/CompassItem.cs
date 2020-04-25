@@ -16,7 +16,7 @@ namespace Game1
 
         public override void PlayerCollision(ICollidable collidable)
         {
-            //((IPlayer)collidable).GetInventory().Keys++;
+            ((IPlayer)collidable).GetInventory().HaveCompass = 1;
             Consume();
         }
     }

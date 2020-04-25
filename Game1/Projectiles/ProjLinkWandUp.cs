@@ -15,7 +15,7 @@ namespace Game1
             exploding = false;
             this.player = player;
             this.Size = player.Size;
-            this.position = new Vector2(0);
+            this.position = player.GetPosition();
             this.Speed = 5; /*Changeable */
             sprite = SpriteFactory.Instance.GetWandWaveUp(this);
             hitBox = new Rectangle((int)position.X, (int)position.Y-50, 0, 0);

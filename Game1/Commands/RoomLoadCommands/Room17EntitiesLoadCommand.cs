@@ -13,20 +13,22 @@ namespace Game1
 		private List<ICollidable> collidables;
 		private List<Block> blocks;
 		private int hudOffset;
+		Game1 game;
 
-		public Room17EntitiesLoadCommand(List<IEnemy> enemies, List<IItem> items, List<ICollidable> collidables, List<Block> blocks, int hudOffset)
+		public Room17EntitiesLoadCommand(List<IEnemy> enemies, List<IItem> items, List<ICollidable> collidables, List<Block> blocks, Game1 game, int hudOffset)
 		{
 			this.enemies = enemies;
 			this.items = items;
 			this.collidables = collidables;
 			this.blocks = blocks;
+			this.game = game;
 			this.hudOffset = hudOffset;
 		}
 
 		public void Execute()
 		{
 			/*Enemies*/
-			enemies.Add(new Aquamentus(500, hudOffset + 200));
+			enemies.Add(new Aquamentus(game, 500, hudOffset + 200, 10, 10));
 
 			/*Items*/
 			items.Add(new HeartItem(600, hudOffset + 220));

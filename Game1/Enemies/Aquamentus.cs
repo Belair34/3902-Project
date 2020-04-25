@@ -20,6 +20,7 @@ namespace Game1
 		double movementTimer;
 		int maxTimer;
 		int minTimer;
+		Game1 game;
 
 		public Aquamentus(int x, int y)
 		{
@@ -30,7 +31,7 @@ namespace Game1
 			this.position = new Vector2();
 			this.position.X = x;
 			this.position.Y = y;
-			this.state = new EStateAquamentusMovingLeft(this);
+			this.state = new EStateAquamentusMovingUp(this, game);
 			projectiles = new List<IProjectile>();           /*Projectiles*/
 			hitBox = new Rectangle(x, y, 24 * Size, 32 * Size);
 			numberGenerator = new Random();
@@ -250,21 +251,27 @@ namespace Game1
 		public void BorderCollision()
 		{
 			int randomNumber = numberGenerator.Next();
-			if(randomNumber % 4 == 0)
+			if(randomNumber % 6 == 0)
 			{
 				MoveUp();
 			}
-			else if(randomNumber % 4 == 1)
+			else if(randomNumber % 6 == 1)
 			{
 				MoveDown();
 			}
-			else if(randomNumber % 4 == 2)
+			else if(randomNumber % 6 == 2)
 			{
 				MoveLeft();
 			}
-			else if(randomNumber % 4 == 3)
+			else if(randomNumber % 6 == 3)
 			{
 				MoveRight();
+				Console.WriteLine("move right case inside the aquamentus.cs ");
+			}
+			else if(randomNumber % 6 == 4 || randomNumber % 6 == 5)
+			{
+				Console.WriteLine("move to player case inside the aquamentus.cs ");
+				MoveToPlayer();				
 			}
 		}
 

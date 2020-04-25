@@ -27,7 +27,7 @@ namespace Game1
         public Game1()
         {
             this.graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+            Content.RootDirectory = Stringholder.Content;
             this.changingState = false;
             this.initializing = true;
         }
@@ -68,7 +68,7 @@ namespace Game1
             SpriteFactory.Instance.LoadAll(Content);
             SpriteFactoryItems.Instance.LoadAll(Content);
             ZeldaSound.Instance.LoadSound(Content);
-            hudFont = Content.Load<SpriteFont>("HUDfont");
+            hudFont = Content.Load<SpriteFont>(Stringholder.HUDFont);
             this.hud = new HUD(graphics, this, hudFont);
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 480 + GetHUD().GetHeight();

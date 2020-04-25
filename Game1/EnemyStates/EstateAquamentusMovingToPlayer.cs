@@ -5,17 +5,18 @@ using Game1.Projectiles;
 
 namespace Game1.PlayerStates
 {
-    class EStateAquamentusMovingLeft : IEnemyState
+    class EStateAquamentusMovingToPlayer: IEnemyState
     {
         ISprite sprite;
         IEnemy enemy;
         int coolDown;
         Game1 game;
-        public EStateAquamentusMovingLeft(IEnemy enemy, Game1 game, int coolDown = 0)
+
+        public EStateAquamentusMovingToPlayer(IEnemy enemy, Game1 game, int coolDown = 0)
         {
             this.enemy = enemy;
             this.game = game;
-            this.sprite = SpriteFactory.Instance.GetAquamentusMovingLeft(enemy);
+            this.sprite = SpriteFactory.Instance.GetAquamentusMovingToPlayer(enemy, game);
             this.coolDown = coolDown;
         }
         public void MoveUp()
@@ -29,6 +30,7 @@ namespace Game1.PlayerStates
         }
         public void MoveLeft()
         {
+            enemy.SetState(new EStateAquamentusMovingLeft(enemy, game, coolDown));
         }
 
         public void MoveRight()

@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Game1",
-    "\\Game1\\EnemyStates",
-    "\\Game1\\Projectiles"
+    "\\Game1"
   ],
-  "SelectedNode": "\\Game1\\Border.cs",
+  "SelectedNode": "\\Game1\\Enemies",
   "PreviewInSolutionExplorer": false
 }

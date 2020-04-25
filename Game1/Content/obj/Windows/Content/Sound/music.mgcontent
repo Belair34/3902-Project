@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/Sound/music.mp3</SourceFile>
+  <SourceFile>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/music.mp3</SourceFile>
   <SourceTime>2020-04-13T20:02:07.5829065-04:00</SourceTime>
-  <DestFile>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/music.xnb</DestFile>
-  <DestTime>2020-04-24T23:48:56.814967-04:00</DestTime>
+  <DestFile>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/music.xnb</DestFile>
+  <DestTime>2020-04-25T01:20:56.2011013-04:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/MichaelWindows/source/repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/music.wma</string>
+    <string>C:/Users/MichaelWindows/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/music.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

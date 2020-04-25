@@ -53,7 +53,6 @@ namespace Game1.EnemySprites
         {
             Rectangle destRec = new Rectangle((int)enemy.GetPosition().X, (int)enemy.GetPosition().Y, destWidth, destHeight);
             Rectangle srcRec;
-            spriteBatch.Begin();
             if (curFrame <= 1) /*Change these to correct frames, might need to add/delete else if*/
             {
                 srcX = 222;
@@ -64,6 +63,7 @@ namespace Game1.EnemySprites
                 srcX = 222;
                 srcY = 28;
             }
+            spriteBatch.Begin();
             srcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
             spriteBatch.Draw(texture, destRec, srcRec, Color.White, 0.0f, new Vector2(0, 0), s, 0.0f);
             spriteBatch.End();

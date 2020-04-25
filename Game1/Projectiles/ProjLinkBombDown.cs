@@ -8,7 +8,6 @@ namespace Game1
 {
     class ProjLinkBombDown : AbstractProjectile, IProjectile
     {
-
         public ProjLinkBombDown(IPlayer player)
         {
             this.damage = 0;
@@ -32,12 +31,13 @@ namespace Game1
                 this.position = player.GetPosition();
                 this.position.Y += 15 * Size;
                 shooting = true;
+                explodeTimer = 30;
             }
         }
 
         public override void Explode()
         {
-            if (shooting) {
+            if (shooting && explodeTimer <= 0) {
                 this.damage = 5;
                 ZeldaSound.Instance.BombExplode();
                 explodeTimer = 30;
@@ -56,7 +56,7 @@ namespace Game1
 
         public override void Update()
         {
-            if(exploding && explodeTimer > 0)
+            if(explodeTimer > 0)
             {
                 explodeTimer--;
             }

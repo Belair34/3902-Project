@@ -32,12 +32,13 @@ namespace Game1
                 this.position = player.GetPosition();
                 this.position.X -= 15 * Size;
                 shooting = true;
+                explodeTimer = 30;
             }
         }
 
         public override void Explode()
         {
-            if (shooting)
+            if (shooting && explodeTimer <= 0)
             {
                 this.damage = 5;
                 ZeldaSound.Instance.BombExplode();
@@ -57,7 +58,7 @@ namespace Game1
 
         public override void Update()
         {
-            if(exploding && explodeTimer > 0)
+            if(explodeTimer > 0)
             {
                 explodeTimer--;
             }

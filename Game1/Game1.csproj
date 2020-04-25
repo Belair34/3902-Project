@@ -45,12 +45,15 @@
     <Compile Include="EnemyStates\EstateKeeseDamaged.cs" />
     <Compile Include="EnemyStates\EstateAquamentusDamaged.cs" />
     <Compile Include="EnemyStates\EstateAquamentusMovingToPlayer.cs" />
+    <Compile Include="EnemyStates\EStateGelDamage.cs" />
+    <Compile Include="EnemyStates\EStateGoriyaDamage.cs" />
     <Compile Include="GameStates\DeathScreenState.cs" />
     <Compile Include="PlayerStates\PStateDead.cs" />
     <Compile Include="Sprites\EnemySprites\StalfosDamaged.cs" />
     <Compile Include="Sprites\EnemySprites\KeeseDamaged.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusDamaged.cs" />
     <Compile Include="Sprites\EnemySprites\AquamentusMovingToPlayer.cs" />
+    <Compile Include="Sprites\EnemySprites\GoriyaDamage.cs" />
     <Compile Include="Sprites\PlayerSprites\LinkDead.cs" />
     <Compile Include="Utility Classes\Stringholder.cs" />
     <Compile Include="Water.cs" />
@@ -253,7 +256,7 @@
     <Compile Include="Sprites\EnemySprites\AnimatedKeese.cs" />
     <Compile Include="Sprites\EnemySprites\AnimatedWallMaster.cs" />
     <Compile Include="Sprites\EnemySprites\BladeTrapSprites.cs" />
-    <Compile Include="Sprites\EnemySprites\GelIdleJump.cs" />
+    <Compile Include="Sprites\EnemySprites\GelDamage.cs" />
     <Compile Include="Sprites\EnemySprites\GelMovingDown.cs" />
     <Compile Include="Sprites\EnemySprites\GoriyaThrowRight.cs" />
     <Compile Include="Interfaces\ISprite.cs" />

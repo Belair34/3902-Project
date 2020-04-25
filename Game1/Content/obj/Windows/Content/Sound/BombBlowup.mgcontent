@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/ggams/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/BombBlowup.wav</SourceFile>
-  <SourceTime>2020-04-24T19:38:46.3721984-04:00</SourceTime>
-  <DestFile>C:/Users/ggams/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/BombBlowup.xnb</DestFile>
-  <DestTime>2020-04-24T20:15:20.8269896-04:00</DestTime>
+  <SourceFile>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/BombBlowup.wav</SourceFile>
+  <SourceTime>2020-04-13T19:05:06.6169796-04:00</SourceTime>
+  <DestFile>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/BombBlowup.xnb</DestFile>
+  <DestTime>2020-04-24T23:05:02.3337037-04:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

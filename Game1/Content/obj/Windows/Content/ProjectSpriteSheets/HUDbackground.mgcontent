@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/ggams/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/HUDbackground.jpg</SourceFile>
-  <SourceTime>2020-04-24T19:38:46.3661968-04:00</SourceTime>
-  <DestFile>C:/Users/ggams/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/ProjectSpriteSheets/HUDbackground.xnb</DestFile>
-  <DestTime>2020-04-24T20:15:20.4999668-04:00</DestTime>
+  <SourceFile>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/ProjectSpriteSheets/HUDbackground.jpg</SourceFile>
+  <SourceTime>2020-04-13T16:50:47.4594074-04:00</SourceTime>
+  <DestFile>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/ProjectSpriteSheets/HUDbackground.xnb</DestFile>
+  <DestTime>2020-04-24T23:05:02.0926182-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

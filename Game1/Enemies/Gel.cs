@@ -70,6 +70,8 @@ namespace Game1
 		public void TakeDamage(int damage)
 		{
 			health -= damage;
+			state = new EStateGelDamage(this);
+			SetState(state);
 			if (health <= 0)
 			{
 				Die();

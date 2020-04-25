@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game1.EnemySprites
 {
-    class GelIdleJump :ISprite
+    class GelDamage :ISprite
     {
         Texture2D texture;
         IEnemy enemy;
@@ -12,13 +12,13 @@ namespace Game1.EnemySprites
         int srcHeight = 16;
         int destWidth = 8;
         int destHeight = 16;
-        int srcX = 1; /*Change this*/
-        int srcY = 11;  /*and this*/
+        int srcX = 55; /*Change this*/
+        int srcY = 33;  /*and this*/
         int curFrame = 1;
         int totalFrames = 2; /*Maybe this*/
         int delay = 0;
 
-        public GelIdleJump(IEnemy enemy, Texture2D texture)
+        public GelDamage(IEnemy enemy, Texture2D texture)
         {
             this.texture = texture;
             this.enemy = enemy;
@@ -46,13 +46,13 @@ namespace Game1.EnemySprites
             Rectangle srcRec;
             if (curFrame == 1) /*Change these to correct frames, might need to add/delete else if*/
             {
-                srcX = 10;
-                srcY = 11;
+                srcX = 55;
+                srcY = 33;
             }
             else if (curFrame == 2)
             {
-                srcX = 1;
-                srcY = 11;
+                srcX = 10;
+                srcY = 15;
             }
             srcRec = new Rectangle(srcX, srcY, srcWidth, srcHeight);
             spriteBatch.Begin();

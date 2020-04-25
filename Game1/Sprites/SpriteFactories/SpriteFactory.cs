@@ -266,10 +266,6 @@ namespace Game1
             return new AquaFireballRight(projectile, bossLinkSheet);
         }
         /*Enemy Sprites*/
-        public ISprite GetGelIdleJump(IEnemy enemy)
-        {
-            return new GelIdleJump(enemy, enemyLinkSheet);
-        }
         public ISprite GetGelMovingLeft(IEnemy enemy)
         {
             return new GelMovingLeft(enemy, enemyLinkSheet);
@@ -285,6 +281,10 @@ namespace Game1
         public ISprite GetGelMovingDown(IEnemy enemy)
         {
             return new GelMovingDown(enemy, enemyLinkSheet);
+        }
+        public ISprite GetGelDamage(IEnemy enemy)
+        {
+            return new GelDamage(enemy, enemyLinkSheet);
         }
         public ISprite GetKeeseMovingUp(IEnemy enemy)
         {
@@ -325,6 +325,10 @@ namespace Game1
         public ISprite GetGoriyaMovingUp(IEnemy enemy)
         {
             return new GoriyaMovingUp(enemy, enemyLinkSheet);
+        }
+        public ISprite GetGoriyaDamage(IEnemy enemy)
+        {
+            return new GoriyaDamage(enemy, enemyLinkSheet);
         }
         public ISprite GetAquamentusMovingToPlayer(IEnemy enemy, Game1 game)
         {

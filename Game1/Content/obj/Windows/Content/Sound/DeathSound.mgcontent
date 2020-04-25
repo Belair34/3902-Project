@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/ggams/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/DeathSound.wav</SourceFile>
-  <SourceTime>2020-04-24T20:03:31.9068463-04:00</SourceTime>
-  <DestFile>C:/Users/ggams/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/DeathSound.xnb</DestFile>
-  <DestTime>2020-04-24T20:15:21.2205063-04:00</DestTime>
+  <SourceFile>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/Sound/DeathSound.wav</SourceFile>
+  <SourceTime>2020-04-24T17:45:39.2696162-04:00</SourceTime>
+  <DestFile>C:/Users/Zhiren Xu/Source/Repos/Belair34/3902-Project/Game1/Content/bin/Windows/Content/Sound/DeathSound.xnb</DestFile>
+  <DestTime>2020-04-24T23:05:02.6828052-04:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

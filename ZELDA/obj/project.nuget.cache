@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "TWw+wfL3ykMAkB0lKP8HzEkGnQ1D0DRv6/Y7BBho+puVrEgikEPGQLhISEZkkigtvxzT7hf7X31UsZqo/2B5Yg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\ZELDA\\ZELDA\\ZELDA.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+  ],
+  "logs": []
+}
